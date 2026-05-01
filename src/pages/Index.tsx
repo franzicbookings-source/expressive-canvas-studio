@@ -47,8 +47,8 @@ const Index = () => {
           className="absolute inset-0 -z-10"
           style={{ background: "var(--gradient-warm), var(--gradient-hero)" }}
         />
-        <div className="container-wide pt-20 md:pt-28 pb-20 md:pb-32">
-          <div className="grid grid-cols-12 gap-y-10">
+        <div className="container-wide pt-16 md:pt-24 pb-16 md:pb-24">
+          <div className="grid grid-cols-12 gap-y-8">
             <Reveal className="col-span-12 md:col-span-2 hidden md:block">
               <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground leading-relaxed">
                 <p>(00)</p>
@@ -59,7 +59,7 @@ const Index = () => {
 
             <div className="col-span-12 md:col-span-10">
               <Reveal>
-                <h1 className="display-mega">
+                <h1 className="display-mega max-w-[18ch]">
                   We design <span className="serif text-accent">the internet</span>
                   <br />
                   for brands that refuse
@@ -68,24 +68,24 @@ const Index = () => {
                 </h1>
               </Reveal>
 
-              <div className="mt-12 grid grid-cols-12 gap-6 items-end">
-                <Reveal delay={120} className="col-span-12 md:col-span-6 md:col-start-7">
-                  <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-xl">
+              <div className="mt-10 grid grid-cols-12 gap-6 items-end">
+                <Reveal delay={120} className="col-span-12 md:col-span-6 md:col-start-6 lg:col-start-7">
+                  <p className="text-base md:text-lg text-foreground/80 leading-relaxed max-w-md">
                     A digital studio out of Newcastle, building the websites,
                     brands and product surfaces growing African companies
                     actually deserve.
                   </p>
-                  <div className="mt-8 flex flex-wrap gap-3">
+                  <div className="mt-6 flex flex-wrap gap-3">
                     <Link
                       to="/contact"
-                      className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3.5 text-sm font-medium hover:opacity-90 transition"
+                      className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium hover:opacity-90 transition"
                     >
                       Start a project <ArrowRight className="h-4 w-4" />
                     </Link>
                     <a
                       href={`https://wa.me/${SITE.whatsapp}`}
                       target="_blank" rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-6 py-3.5 text-sm font-medium hover:border-foreground/40 transition"
+                      className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-5 py-3 text-sm font-medium hover:border-foreground/40 transition"
                     >
                       Chat on WhatsApp
                     </a>
