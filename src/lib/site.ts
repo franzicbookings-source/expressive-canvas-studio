@@ -1,4 +1,8 @@
 // Centralized site content — easy to edit later.
+import portfolioNyatee from "@/assets/portfolio-nyatee.webp";
+import portfolioEvents from "@/assets/portfolio-events.webp";
+import portfolioUmzilikazi from "@/assets/portfolio-umzilikazi.webp";
+import portfolioKeepNNAlive from "@/assets/portfolio-keepnnalive.webp";
 
 export const SITE = {
   name: "Ntombii Tech",
@@ -83,11 +87,11 @@ export const SITE = {
     },
   ],
   projects: [
-    { slug: "nyatee", title: "Nyatee Foundation", category: "Non-Profit Branding & Web", image: "https://ntombii.tech/portfolio-nyatee.png", href: "https://nyateefoundation.org.za/" },
-    { slug: "events", title: "Where Every Detail Tells Your Story", category: "Luxury Events & Hospitality", image: "https://ntombii.tech/portfolio-events.png", href: "https://sknowhiteevents.co.za/" },
-    { slug: "umzilikazi", title: "Umzilikazi Senior Secondary", category: "Education & Institutional Web", image: "https://ntombii.tech/portfolio-umzilinkazi.png", href: "https://umzilikazi.vercel.app/" },
-    { slug: "ntombii", title: "Ntombii Tech — Agency Website", category: "Agency Branding & Web", image: "https://ntombii.tech/portfolio-ntombii.png", href: "http://ntombii.tech/" },
-    { slug: "keepnnalive", title: "Keep Newcastle Alive With Possibilities", category: "Community & Civic Web", image: "https://ntombii.tech/portfolio-keepnnalive.png", href: "https://keepnnalive.co.za/" },
+    { slug: "nyatee", title: "Nyatee Foundation", category: "Non-Profit Branding & Web", image: portfolioNyatee, href: "https://nyateefoundation.org.za/" },
+    { slug: "events", title: "Where Every Detail Tells Your Story", category: "Luxury Events & Hospitality", image: portfolioEvents, href: "https://sknowhiteevents.co.za/" },
+    { slug: "umzilikazi", title: "Umzilikazi Senior Secondary", category: "Education & Institutional Web", image: portfolioUmzilikazi, href: "https://umzilikazi.vercel.app/" },
+    { slug: "ntombii", title: "Ntombii Tech — Agency Website", category: "Agency Branding & Web", image: portfolioNyatee, href: "http://ntombii.tech/" },
+    { slug: "keepnnalive", title: "Keep Newcastle Alive With Possibilities", category: "Community & Civic Web", image: portfolioKeepNNAlive, href: "https://keepnnalive.co.za/" },
   ],
   pricing: [
     {
