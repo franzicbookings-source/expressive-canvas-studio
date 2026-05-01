@@ -65,6 +65,19 @@ const Contact = () => {
 
   return (
     <>
+      <SEO
+        title="Contact — Get a Quote in 24 Hours | Ntombii Tech"
+        description="Tell us about your project — we'll come back with a clear plan within 24 hours. WhatsApp +27 81 236 0230 or email hello@ntombii.tech. Based in Newcastle, KZN."
+        path="/contact"
+        keywords="contact web designer Newcastle, web design quote KZN, hire web developer Northern KZN, Ntombii Tech contact"
+        schemas={[
+          localBusinessSchema(),
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Contact", url: "/contact" },
+          ]),
+        ]}
+      />
       <section className="container-wide pt-16 pb-12 md:pt-24">
         <Reveal>
           <p className="eyebrow">Talk to us</p>
