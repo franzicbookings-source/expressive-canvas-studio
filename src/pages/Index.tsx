@@ -246,7 +246,7 @@ const Index = () => {
       <section className="container-wide py-28 md:py-40">
         <div className="grid grid-cols-12 gap-6 mb-14 items-end">
           <div className="col-span-12 md:col-span-7">
-            {sectionLabel("06", "Pricing")}
+            {sectionLabel("05", "Pricing")}
             <h2 className="display-xl">
               Honest pricing.
               <br />
@@ -319,7 +319,7 @@ const Index = () => {
       <section className="container-wide py-24 md:py-32 border-t border-border/60">
         <div className="grid grid-cols-12 gap-6 mb-12 items-end">
           <div className="col-span-12 md:col-span-6">
-            {sectionLabel("07", "Journal")}
+            {sectionLabel("06", "Journal")}
             <h2 className="display-xl">
               Notes from <span className="serif text-accent">the studio.</span>
             </h2>
