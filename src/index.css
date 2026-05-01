@@ -150,6 +150,14 @@
   .marquee {
     animation: marquee 40s linear infinite;
   }
+  .marquee-speed {
+    animation-duration: 22s; /* mobile: slower */
+  }
+  @media (min-width: 768px) {
+    .marquee-speed {
+      animation-duration: 13s; /* desktop: faster */
+    }
+  }
   .marquee-pause:hover .marquee {
     animation-play-state: paused;
   }
