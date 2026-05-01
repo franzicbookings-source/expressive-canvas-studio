@@ -1,8 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site";
+import logoUrl from "@/assets/ntombii-tech-logo.png";
 
 const links = [
   { to: "/work", label: "Work" },
@@ -30,28 +31,40 @@ export const SiteNav = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "backdrop-blur-xl bg-background/75 border-b border-border/60"
-          : "bg-transparent",
+          ? "backdrop-blur-xl bg-background/80 border-b border-border/60 shadow-[0_1px_0_0_hsl(var(--border)/0.4)]"
+          : "bg-background/40 backdrop-blur-md",
       )}
     >
-      <div className="container-wide flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-1 font-semibold tracking-tight" aria-label="Ntombii Tech home">
-          <span className="text-base">Ntombii</span>
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent dot-pulse mx-0.5" aria-hidden />
-          <span className="text-base text-muted-foreground">tech</span>
+      <div className="container-wide flex h-20 items-center justify-between gap-6">
+        {/* Logo */}
+        <Link
+          to="/"
+          className="flex items-center shrink-0"
+          aria-label="Ntombii Tech home"
+        >
+          <img
+            src={logoUrl}
+            alt="Ntombii Tech"
+            className="h-7 md:h-8 w-auto select-none"
+            draggable={false}
+          />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1">
+        {/* Centered nav pill */}
+        <nav
+          className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1 rounded-full border border-border/60 bg-background/70 backdrop-blur px-1.5 py-1.5 shadow-[0_1px_2px_hsl(220_14%_11%/0.04)]"
+          aria-label="Primary"
+        >
           {links.map((l) => (
             <NavLink
               key={l.to}
               to={l.to}
               className={({ isActive }) =>
                 cn(
-                  "px-3 py-2 text-sm rounded-full transition-colors",
+                  "px-4 py-1.5 text-sm rounded-full transition-all duration-200",
                   isActive
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground",
+                    ? "bg-foreground text-background"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted",
                 )
               }
             >
@@ -60,18 +73,30 @@ export const SiteNav = () => {
           ))}
         </nav>
 
-        <div className="hidden md:flex">
+        {/* Right CTA */}
+        <div className="hidden md:flex items-center gap-3 shrink-0">
+          <a
+            href={`https://wa.me/${SITE.whatsapp}`}
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            WhatsApp
+          </a>
           <Link
             to="/contact"
-            className="inline-flex items-center rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background hover:opacity-90 transition"
+            className="group inline-flex items-center gap-1.5 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:opacity-90 transition"
           >
             Let's talk
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
         </div>
 
+        {/* Mobile toggle */}
         <button
           aria-label="Menu"
-          className="md:hidden p-2 -mr-2"
+          aria-expanded={open}
+          className="md:hidden inline-flex items-center justify-center h-10 w-10 -mr-2 rounded-full hover:bg-muted transition"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -86,7 +111,7 @@ export const SiteNav = () => {
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="px-2 py-3 text-base text-foreground"
+                className="px-2 py-3 text-base text-foreground border-b border-border/40 last:border-0"
               >
                 {l.label}
               </Link>
@@ -94,9 +119,10 @@ export const SiteNav = () => {
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex justify-center rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background"
+              className="mt-3 inline-flex justify-center items-center gap-1.5 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background"
             >
               Let's talk
+              <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
