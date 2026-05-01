@@ -157,7 +157,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 md:auto-rows-[180px] lg:auto-rows-[200px] gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-12 md:auto-rows-[150px] lg:auto-rows-[170px] gap-3">
           {capabilities.map((c, i) => {
             const isDark = c.tone === "dark";
             return (
@@ -372,10 +372,10 @@ const Index = () => {
       </section>
 
       {/* ───────────── CLOSING CTA ───────────── */}
-      <section className="container-wide py-16 md:py-24">
-        <CursorGlow className="rounded-[2rem] bg-foreground text-background p-8 md:p-16 lg:p-20 noise">
+      <section className="container-wide py-14 md:py-20">
+        <CursorGlow className="rounded-[2rem] bg-foreground text-background p-8 md:p-12 lg:p-16 noise">
           <div className="relative">
-            <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-background/50 mb-10">
+            <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-background/50 mb-8">
               <span>(09)</span>
               <span className="h-px w-8 bg-background/30" />
               <span>Closing</span>

@@ -43,13 +43,13 @@ const Pricing = () => (
                 <span className="text-xs px-2.5 py-1 rounded-full bg-accent text-accent-foreground">Popular</span>
               )}
             </div>
-            <div className="mt-6 flex items-baseline gap-2">
-              <span className="display text-5xl md:text-6xl">{tier.from}</span>
+            <div className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <span className="display text-4xl sm:text-5xl md:text-6xl leading-none">{tier.from}</span>
               {tier.original && (
                 <span className={`text-sm line-through ${tier.popular ? "text-background/50" : "text-muted-foreground"}`}>{tier.original}</span>
               )}
             </div>
-            <p className={`mt-2 text-sm ${tier.popular ? "text-background/70" : "text-muted-foreground"}`}>Project starting price</p>
+            <p className={`mt-3 text-sm ${tier.popular ? "text-background/70" : "text-muted-foreground"}`}>Project starting price</p>
             <ul className="mt-8 space-y-3">
               {tier.features.map((f) => (
                 <li key={f} className="flex items-start gap-2 text-sm">

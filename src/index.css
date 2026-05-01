@@ -217,4 +217,16 @@
 
   /* Hairline rule */
   .rule { @apply h-px w-full bg-border/70; }
+
+  /* Logo accent dot — gentle breathing pulse */
+  .dot-pulse {
+    animation: dotPulse 2.6s cubic-bezier(.4,0,.6,1) infinite;
+  }
+  @keyframes dotPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.55; transform: scale(0.85); }
+  }
+
+  /* Tabular nums helper */
+  .nums { font-variant-numeric: tabular-nums; }
 }
