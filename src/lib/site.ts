@@ -100,7 +100,7 @@ export const SITE = {
     { slug: "events", title: "Where Every Detail Tells Your Story", category: "Luxury Events & Hospitality", image: portfolioEvents, href: "https://sknowhiteevents.co.za/" },
     { slug: "umzilikazi", title: "Umzilikazi Senior Secondary", category: "Education & Institutional Web", image: portfolioUmzilikazi, href: "https://umzilikazi.vercel.app/" },
     
-    { slug: "keepnnalive", title: "Keep Newcastle Alive With Possibilities", category: "Community & Civic Web", image: portfolioKeepNNAlive, href: "https://keepnnalive.co.za/" },
+    { slug: "keepnnalive", title: "Keep Newcastle Alive With Possibilities", category: "Community & Civic Web", image: portfolioKeepNNAlive, href: "https://keepnnalive.org.za/" },
   ],
   pricing: [
     {
