@@ -99,7 +99,7 @@ export const SITE = {
     { slug: "nyatee", title: "Nyatee Foundation", category: "Non-Profit Branding & Web", image: portfolioNyatee, href: "https://nyateefoundation.org.za/" },
     { slug: "events", title: "Where Every Detail Tells Your Story", category: "Luxury Events & Hospitality", image: portfolioEvents, href: "https://sknowhiteevents.co.za/" },
     { slug: "umzilikazi", title: "Umzilikazi Senior Secondary", category: "Education & Institutional Web", image: portfolioUmzilikazi, href: "https://umzilikazi.vercel.app/" },
-    { slug: "ntombii", title: "Ntombii Tech — Agency Website", category: "Agency Branding & Web", image: portfolioNyatee, href: "http://ntombii.tech/" },
+    
     { slug: "keepnnalive", title: "Keep Newcastle Alive With Possibilities", category: "Community & Civic Web", image: portfolioKeepNNAlive, href: "https://keepnnalive.co.za/" },
   ],
   pricing: [
