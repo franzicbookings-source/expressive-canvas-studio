@@ -39,7 +39,7 @@ export const TrustedBy = () => {
             <div className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-20 z-10 bg-gradient-to-r from-background to-transparent" />
             <div className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-20 z-10 bg-gradient-to-l from-background to-transparent" />
 
-            <div className="marquee flex w-max items-center gap-12 md:gap-16" style={{ animationDuration: "13s" }}>
+            <div className="marquee marquee-speed flex w-max items-center gap-12 md:gap-16">
               {clientLogos.map((c) => (
                 <LogoItem key={c.name} c={c} />
               ))}
