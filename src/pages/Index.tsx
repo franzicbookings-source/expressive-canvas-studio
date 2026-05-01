@@ -242,55 +242,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ───────────── NUMBERS BAND (DARK) ───────────── */}
-      <section className="bg-foreground text-background py-24 md:py-36 mt-20 noise relative overflow-hidden">
-        <div className="container-wide">
-          <div className="grid grid-cols-12 gap-6 mb-14">
-            <div className="col-span-12 md:col-span-2">
-              <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-background/50">
-                <span>(05)</span>
-                <span className="h-px w-8 bg-background/30" />
-                <span>By the numbers</span>
-              </div>
-            </div>
-            <div className="col-span-12 md:col-span-10">
-              <h2 className="display-xl">
-                Quietly <span className="serif text-accent">measurable.</span>
-              </h2>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6">
-            {SITE.stats.map((s, i) => (
-              <Reveal key={s.label} delay={i * 80}>
-                <div className="display text-6xl md:text-8xl text-background leading-none">{s.value}</div>
-                <div className="rule my-5 bg-background/15" />
-                <div className="text-sm text-background/60 uppercase tracking-[0.18em]">{s.label}</div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-
-        {/* dark band ticker */}
-        <div className="mt-24 border-t border-background/15 py-5 overflow-hidden">
-          <div className="flex w-max ticker whitespace-nowrap">
-            {[...Array(3)].flatMap((_, k) =>
-              ["Newcastle", "Vryheid", "Pongola", "Madadeni", "Dundee", "Nongoma", "Durban", "Johannesburg"].map((t, i) => (
-                <span key={`${k}-${i}`} className="px-8 text-sm text-background/40 inline-flex items-center gap-8">
-                  Serving — {t}
-                  <span className="text-accent">✦</span>
-                </span>
-              )),
-            )}
-          </div>
-        </div>
-      </section>
-
       {/* ───────────── PRICING TEASER ───────────── */}
       <section className="container-wide py-28 md:py-40">
         <div className="grid grid-cols-12 gap-6 mb-14 items-end">
           <div className="col-span-12 md:col-span-7">
-            {sectionLabel("06", "Pricing")}
+            {sectionLabel("05", "Pricing")}
             <h2 className="display-xl">
               Honest pricing.
               <br />
@@ -363,7 +319,7 @@ const Index = () => {
       <section className="container-wide py-24 md:py-32 border-t border-border/60">
         <div className="grid grid-cols-12 gap-6 mb-12 items-end">
           <div className="col-span-12 md:col-span-6">
-            {sectionLabel("07", "Journal")}
+            {sectionLabel("06", "Journal")}
             <h2 className="display-xl">
               Notes from <span className="serif text-accent">the studio.</span>
             </h2>
