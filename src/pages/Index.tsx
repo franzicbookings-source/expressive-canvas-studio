@@ -101,7 +101,7 @@ const Index = () => {
           <div className="flex w-max ticker whitespace-nowrap">
             {[...Array(3)].flatMap((_, k) =>
               SITE.marquee.map((t, i) => (
-                <span key={`${k}-${i}`} className="px-8 text-[11px] uppercase tracking-[0.22em] text-muted-foreground inline-flex items-center gap-8">
+                <span key={`${k}-${i}`} className="px-6 text-[11px] uppercase tracking-[0.22em] text-muted-foreground inline-flex items-center gap-6">
                   {t}
                   <span className="text-accent">✦</span>
                 </span>
@@ -112,7 +112,7 @@ const Index = () => {
       </section>
 
       {/* ───────────── MANIFESTO ───────────── */}
-      <section className="container-wide py-28 md:py-44">
+      <section className="container-wide py-20 md:py-28">
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-2">
             {sectionLabel("01", "Manifesto")}
@@ -152,14 +152,14 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 md:auto-rows-[180px] gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-12 md:auto-rows-[180px] lg:auto-rows-[200px] gap-3">
           {capabilities.map((c, i) => {
             const isDark = c.tone === "dark";
             return (
               <Reveal
                 key={c.t}
                 delay={i * 60}
-                className={`${c.span} rounded-3xl p-7 md:p-9 flex flex-col justify-between min-h-[200px] border transition group ${
+                className={`${c.span} rounded-3xl p-6 md:p-7 lg:p-8 flex flex-col justify-between min-h-[180px] border transition group ${
                   isDark
                     ? "bg-foreground text-background border-foreground"
                     : "bg-card border-border/70 hover:border-foreground/30"
@@ -172,7 +172,7 @@ const Index = () => {
                   <ArrowUpRight className={`h-4 w-4 transition-all group-hover:-translate-y-1 group-hover:translate-x-1 ${isDark ? "text-background/60" : "text-muted-foreground"}`} />
                 </div>
                 <div>
-                  <h3 className={`display text-2xl md:text-3xl ${isDark ? "" : ""}`}>{c.t}</h3>
+                  <h3 className={`display text-xl md:text-2xl ${isDark ? "" : ""}`}>{c.t}</h3>
                   <p className={`mt-3 text-sm leading-relaxed max-w-sm ${isDark ? "text-background/70" : "text-muted-foreground"}`}>
                     {c.d}
                   </p>
@@ -184,7 +184,7 @@ const Index = () => {
       </section>
 
       {/* ───────────── SELECTED WORK (HOVER PREVIEW) ───────────── */}
-      <section className="container-wide py-28 md:py-40 border-t border-border/60">
+      <section className="container-wide py-20 md:py-28 border-t border-border/60">
         <div className="grid grid-cols-12 gap-6 mb-12 md:mb-20">
           <div className="col-span-12 md:col-span-2">
             {sectionLabel("03", "Selected work")}
@@ -212,7 +212,7 @@ const Index = () => {
       </section>
 
       {/* ───────────── PROCESS ───────────── */}
-      <section className="container-wide py-24 md:py-32 border-t border-border/60">
+      <section className="container-wide py-16 md:py-24 border-t border-border/60">
         <div className="grid grid-cols-12 gap-6 mb-12">
           <div className="col-span-12 md:col-span-2">
             {sectionLabel("04", "Process")}
@@ -232,7 +232,7 @@ const Index = () => {
                 delay={i * 80}
                 className="snap-start-x w-[280px] md:w-auto bg-card border border-border/70 rounded-3xl p-7 flex flex-col"
               >
-                <div className="display text-6xl text-accent leading-none">{p.n}</div>
+                <div className="display text-5xl md:text-6xl text-accent leading-none">{p.n}</div>
                 <div className="rule my-6" />
                 <h3 className="display text-xl">{p.t}</h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.d}</p>
@@ -243,7 +243,7 @@ const Index = () => {
       </section>
 
       {/* ───────────── PRICING TEASER ───────────── */}
-      <section className="container-wide py-28 md:py-40">
+      <section className="container-wide py-20 md:py-28">
         <div className="grid grid-cols-12 gap-6 mb-14 items-end">
           <div className="col-span-12 md:col-span-7">
             {sectionLabel("05", "Pricing")}
