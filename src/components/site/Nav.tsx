@@ -35,7 +35,7 @@ export const SiteNav = () => {
           : "bg-background/40 backdrop-blur-md",
       )}
     >
-      <div className="container-wide flex h-20 items-center justify-between gap-6">
+      <div className="container-wide flex h-24 md:h-28 items-center justify-between gap-6">
         {/* Logo */}
         <Link
           to="/"
@@ -45,7 +45,7 @@ export const SiteNav = () => {
           <img
             src={logoUrl}
             alt="Ntombii Tech"
-            className="h-7 md:h-8 w-auto select-none"
+            className="h-12 md:h-14 w-auto select-none"
             draggable={false}
           />
         </Link>
