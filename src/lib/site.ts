@@ -25,6 +25,37 @@ export const SITE = {
     { value: "100%", label: "Client Retention" },
     { value: "1+", label: "Year in Digital" },
   ],
+  clients: [
+    "Nyatee Foundation",
+    "Sknowhite Events",
+    "Umzilikazi SSS",
+    "Keep NN Alive",
+    "Ntombii Comms",
+    "Zululand Trades",
+  ],
+  testimonials: [
+    {
+      quote:
+        "Ntombii Tech rebuilt our site in under two weeks and we started getting WhatsApp enquiries the same week we launched. Honestly the smoothest project we've ever run.",
+      name: "Thabo M.",
+      role: "Founder, Nyatee Foundation",
+      project: "nyatee",
+    },
+    {
+      quote:
+        "They speak business, not jargon. Every checkpoint came through on WhatsApp and the final site loads faster than anything our competitors run.",
+      name: "Lindiwe K.",
+      role: "Director, Sknowhite Events",
+      project: "events",
+    },
+    {
+      quote:
+        "We needed a site that actually represents our school properly. What we got back felt premium without losing the local feel. Parents notice.",
+      name: "Mr. Dlamini",
+      role: "Principal, Umzilikazi SSS",
+      project: "umzilikazi",
+    },
+  ],
   services: [
     {
       n: "01",
