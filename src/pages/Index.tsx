@@ -46,6 +46,18 @@ const Index = () => {
 
   return (
     <>
+      <SEO
+        title="Ntombii Tech — Web Design Agency in Newcastle, KZN"
+        description="Newcastle-based digital studio building mobile-first websites, web apps and brand systems for businesses across Northern KZN — from R2,500. Fast delivery, real results."
+        path="/"
+        keywords="web design Newcastle, web designer Newcastle KZN, website design Northern KZN, web development Newcastle, branding agency KZN, Ntombii Tech, KZN web agency, Vryheid web design, Ladysmith web design"
+        schemas={[
+          localBusinessSchema(),
+          websiteSchema(),
+          faqSchema(SITE.faqs),
+          ...SITE.testimonials.map(reviewSchema),
+        ]}
+      />
       {/* ───────────── HERO ───────────── */}
       <section className="relative noise">
         <div
