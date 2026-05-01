@@ -5,6 +5,8 @@ import { StatusBar } from "@/components/home/StatusBar";
 import { Reveal } from "@/components/home/Reveal";
 import { HoverPreview } from "@/components/home/HoverPreview";
 import { CursorGlow } from "@/components/home/CursorGlow";
+import { TrustedBy } from "@/components/home/TrustedBy";
+import { Testimonials } from "@/components/home/Testimonials";
 
 const sectionLabel = (n: string, label: string) => (
   <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-muted-foreground mb-10">
@@ -111,6 +113,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ───────────── TRUSTED BY ───────────── */}
+      <TrustedBy />
+
       {/* ───────────── MANIFESTO ───────────── */}
       <section className="container-wide py-20 md:py-28">
         <div className="grid grid-cols-12 gap-6">
@@ -211,11 +216,14 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ───────────── TESTIMONIALS ───────────── */}
+      <Testimonials />
+
       {/* ───────────── PROCESS ───────────── */}
       <section className="container-wide py-16 md:py-24 border-t border-border/60">
         <div className="grid grid-cols-12 gap-6 mb-12">
           <div className="col-span-12 md:col-span-2">
-            {sectionLabel("04", "Process")}
+            {sectionLabel("05", "Process")}
           </div>
           <div className="col-span-12 md:col-span-10">
             <h2 className="display-xl">
@@ -246,7 +254,7 @@ const Index = () => {
       <section className="container-wide py-20 md:py-28">
         <div className="grid grid-cols-12 gap-6 mb-14 items-end">
           <div className="col-span-12 md:col-span-7">
-            {sectionLabel("05", "Pricing")}
+            {sectionLabel("06", "Pricing")}
             <h2 className="display-xl">
               Honest pricing.
               <br />
@@ -319,7 +327,7 @@ const Index = () => {
       <section className="container-wide py-16 md:py-24 border-t border-border/60">
         <div className="grid grid-cols-12 gap-6 mb-12 items-end">
           <div className="col-span-12 md:col-span-6">
-            {sectionLabel("06", "Journal")}
+            {sectionLabel("07", "Journal")}
             <h2 className="display-xl">
               Notes from <span className="serif text-accent">the studio.</span>
             </h2>
@@ -368,7 +376,7 @@ const Index = () => {
         <CursorGlow className="rounded-[2rem] bg-foreground text-background p-8 md:p-16 lg:p-20 noise">
           <div className="relative">
             <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-background/50 mb-10">
-              <span>(08)</span>
+              <span>(09)</span>
               <span className="h-px w-8 bg-background/30" />
               <span>Closing</span>
             </div>
