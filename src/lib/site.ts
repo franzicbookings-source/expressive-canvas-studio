@@ -157,7 +157,7 @@ export const SITE = {
       title: "Why Northern KZN Is Behind Online — And How Your Business Can Lead",
       category: "Northern KZN",
       date: "Apr 16, 2026",
-      cover: "https://ntombii.tech/why-northern-kzn-behind-online-how-to-lead.png",
+      cover: blogNorthernKznBehind,
       excerpt: "Northern KZN lags behind Gauteng and Western Cape in online business presence. Here's why — and how forward-thinking local businesses can take the lead.",
       body: [
         "If you live in Newcastle, Madadeni, Dundee or anywhere across northern KZN, you've felt it: the local economy moves at a different pace online than Johannesburg or Cape Town. Search a service and you'll see ads from Gauteng companies long before any local listing appears.",
@@ -171,7 +171,7 @@ export const SITE = {
       title: "Vryheid & Zululand Commerce — The Digital Opportunity",
       category: "Northern KZN",
       date: "Apr 16, 2026",
-      cover: "https://ntombii.tech/vryheid-zululand-commerce-online.png",
+      cover: blogVryheidZululand,
       excerpt: "Vryheid, Pongola, Nongoma — Zululand District's commercial hubs are missing out online. Here's the digital blueprint for northern KZN businesses.",
       body: [
         "Zululand's commercial heart — Vryheid, Pongola, Nongoma — has serious buying power, but online discoverability is patchy. Search for an electrician in Vryheid and Google often shows results from Newcastle or Durban.",
@@ -184,7 +184,7 @@ export const SITE = {
       title: "Construction & Trades in Northern KZN — The Digital Playbook",
       category: "Northern KZN",
       date: "Apr 16, 2026",
-      cover: "https://ntombii.tech/northern-kzn-construction-trades-online.png",
+      cover: blogConstructionTrades,
       excerpt: "Builders, plumbers, electricians, and contractors in northern KZN can dominate online with the right strategy. Here's how.",
       body: [
         "Trades are still won and lost on referrals — but the referral now starts with a Google search. If a homeowner in Newcastle searches \"plumber near me\" at 9pm, they want a number and a WhatsApp link, not a brochure.",
