@@ -28,9 +28,49 @@ export const HoverPreview = ({ items }: { items: Item[] }) => {
         Hover any title to preview
       </p>
 
-      <ul className="divide-y divide-border/60 border-y border-border/60">
+      {/* Mobile: full-bleed image cards */}
+      <ul className="md:hidden grid gap-6">
         {items.map((p, i) => (
           <li key={p.slug} id={p.slug}>
+            <a
+              href={p.href}
+              target="_blank"
+              rel="noreferrer"
+              className="group block"
+            >
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 group-active:scale-[1.02]"
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/10 to-transparent"
+                />
+                <span className="absolute top-3 left-3 text-[11px] uppercase tracking-[0.22em] text-background/90 tabular-nums">
+                  ({String(i + 1).padStart(2, "0")})
+                </span>
+                <ArrowUpRight className="absolute top-3 right-3 h-5 w-5 text-background/90" />
+                <div className="absolute bottom-4 left-4 right-4 text-background">
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-background/75 mb-1.5">
+                    {p.category}
+                  </p>
+                  <h3 className="display text-2xl leading-tight">
+                    {p.title}
+                  </h3>
+                </div>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      {/* Desktop: hover list */}
+      <ul className="hidden md:block divide-y divide-border/60 border-y border-border/60">
+        {items.map((p, i) => (
+          <li key={p.slug} id={`${p.slug}-d`}>
             <a
               href={p.href}
               target="_blank"
@@ -38,32 +78,17 @@ export const HoverPreview = ({ items }: { items: Item[] }) => {
               onMouseEnter={() => setHover(i)}
               onMouseLeave={() => setHover(null)}
               onMouseMove={onMove}
-              className="group grid grid-cols-12 items-center gap-3 md:gap-4 py-5 md:py-10 px-1 transition-colors"
+              className="group grid grid-cols-12 items-center gap-4 py-10 px-1 transition-colors"
             >
-              <span className="col-span-2 md:col-span-1 text-xs text-muted-foreground tabular-nums">
+              <span className="col-span-1 text-xs text-muted-foreground tabular-nums">
                 {String(i + 1).padStart(2, "0")}
               </span>
-
-              {/* Mobile thumbnail (inline) */}
-              <div className="col-span-3 md:hidden aspect-[4/3] overflow-hidden rounded-xl bg-muted">
-                <img
-                  src={p.image}
-                  alt=""
-                  loading="lazy"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-
-              <div className="col-span-6 md:col-span-7 flex flex-col">
-                <h3 className="display text-lg sm:text-xl md:text-5xl leading-tight md:leading-none transition-transform duration-500 md:group-hover:translate-x-3 md:group-hover:text-accent">
+              <div className="col-span-7 flex flex-col">
+                <h3 className="display text-5xl leading-none transition-transform duration-500 group-hover:translate-x-3 group-hover:text-accent">
                   {p.title}
                 </h3>
-                <span className="md:hidden mt-1 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-                  {p.category}
-                </span>
               </div>
-
-              <span className="hidden md:block col-span-3 text-sm text-muted-foreground">
+              <span className="col-span-3 text-sm text-muted-foreground">
                 {p.category}
               </span>
               <ArrowUpRight className="col-span-1 ml-auto h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:rotate-45 transition-all" />
