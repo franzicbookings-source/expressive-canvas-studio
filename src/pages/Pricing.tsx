@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { SITE } from "@/lib/site";
+import { SEO } from "@/components/seo/SEO";
+import { breadcrumbSchema, faqSchema } from "@/lib/seo";
 
 const alwaysIncluded = [
   "Two rounds of revisions per stage",
@@ -13,6 +15,19 @@ const alwaysIncluded = [
 
 const Pricing = () => (
   <>
+    <SEO
+      title="Website Pricing in KZN — From R2,500 | Ntombii Tech"
+      description="Honest, fixed website pricing for South African businesses. Starter R2,500, Business R3,500, Premium R7,500. Built in Newcastle, serving all of Northern KZN."
+      path="/pricing"
+      keywords="website cost Newcastle, web design pricing KZN, affordable website South Africa, cheap website design Newcastle, website price Vryheid"
+      schemas={[
+        breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Pricing", url: "/pricing" },
+        ]),
+        faqSchema(SITE.faqs.filter((f) => /cost|price|how much/i.test(f.q))),
+      ]}
+    />
     <section className="container-wide pt-16 pb-12 md:pt-24 text-center">
       <Reveal>
         <p className="eyebrow justify-center">Pricing</p>

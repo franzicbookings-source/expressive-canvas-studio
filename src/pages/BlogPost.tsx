@@ -2,6 +2,8 @@ import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { SITE } from "@/lib/site";
+import { SEO } from "@/components/seo/SEO";
+import { articleSchema, breadcrumbSchema } from "@/lib/seo";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -20,6 +22,22 @@ const BlogPost = () => {
 
   return (
     <article>
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        path={`/blog/${post.slug}`}
+        type="article"
+        image={post.cover}
+        keywords={`${post.category}, Northern KZN, Newcastle, web design, ${post.title}`}
+        schemas={[
+          articleSchema(post),
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Journal", url: "/blog" },
+            { name: post.title, url: `/blog/${post.slug}` },
+          ]),
+        ]}
+      />
       <header className="container-tight pt-16 pb-10 md:pt-24">
         <Reveal>
           <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">

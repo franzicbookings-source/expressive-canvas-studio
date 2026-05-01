@@ -1,9 +1,23 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "@/components/site/Reveal";
 import { SITE } from "@/lib/site";
+import { SEO } from "@/components/seo/SEO";
+import { breadcrumbSchema } from "@/lib/seo";
 
 const Blog = () => (
   <>
+    <SEO
+      title="Journal — Northern KZN Digital Strategy & Web Design"
+      description="Honest writing for South African business owners trying to win online. Local SEO, web design, and digital strategy for Newcastle, Vryheid, Ladysmith and Northern KZN."
+      path="/blog"
+      keywords="Northern KZN digital, Newcastle SEO, KZN web design blog, local SEO South Africa, small business website blog"
+      schemas={[
+        breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Journal", url: "/blog" },
+        ]),
+      ]}
+    />
     <section className="container-wide pt-16 pb-12 md:pt-24">
       <Reveal>
         <p className="eyebrow">Journal</p>
