@@ -28,8 +28,8 @@ export const HoverPreview = ({ items }: { items: Item[] }) => {
         Hover any title to preview
       </p>
 
-      {/* Mobile: full-bleed image cards */}
-      <ul className="md:hidden grid gap-6">
+      {/* Mobile: full mockup, no crop, no overlay text */}
+      <ul className="md:hidden grid gap-8">
         {items.map((p, i) => (
           <li key={p.slug} id={p.slug}>
             <a
@@ -38,29 +38,25 @@ export const HoverPreview = ({ items }: { items: Item[] }) => {
               rel="noreferrer"
               className="group block"
             >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted">
+              <div className="rounded-2xl overflow-hidden bg-muted">
                 <img
                   src={p.image}
                   alt={p.title}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-active:scale-[1.02]"
+                  decoding="async"
+                  className="block w-full h-auto object-contain transition-transform duration-700 group-active:scale-[1.01]"
                 />
-                <div
-                  aria-hidden
-                  className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/10 to-transparent"
-                />
-                <span className="absolute top-3 left-3 text-[11px] uppercase tracking-[0.22em] text-background/90 tabular-nums">
-                  ({String(i + 1).padStart(2, "0")})
-                </span>
-                <ArrowUpRight className="absolute top-3 right-3 h-5 w-5 text-background/90" />
-                <div className="absolute bottom-4 left-4 right-4 text-background">
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-background/75 mb-1.5">
-                    {p.category}
+              </div>
+              <div className="mt-4 flex items-start justify-between gap-3">
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground tabular-nums mb-1">
+                    ({String(i + 1).padStart(2, "0")}) — {p.category}
                   </p>
                   <h3 className="display text-2xl leading-tight">
                     {p.title}
                   </h3>
                 </div>
+                <ArrowUpRight className="h-5 w-5 text-muted-foreground shrink-0 mt-1" />
               </div>
             </a>
           </li>
