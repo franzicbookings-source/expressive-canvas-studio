@@ -48,7 +48,7 @@ const Work = () => (
             className="group block lift rounded-3xl overflow-hidden bg-card border border-border/70 h-full"
           >
             <div className={`overflow-hidden bg-muted ${i === 0 ? "aspect-[16/8]" : "aspect-[16/10]"}`}>
-              <img src={p.image} alt={p.title} loading="lazy" className="h-full w-full object-cover group-hover:scale-[1.03] transition duration-700" />
+              <img src={p.image} alt={p.title} loading="lazy" className="h-full w-full object-contain" />
             </div>
             <div className="p-6 md:p-8 flex items-start justify-between gap-4">
               <div>
