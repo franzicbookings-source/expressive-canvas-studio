@@ -263,7 +263,7 @@ const Index = () => {
 
         <div className="grid grid-cols-12 gap-5">
           {/* hero card */}
-          <div className="col-span-12 md:col-span-7 rounded-3xl bg-foreground text-background p-8 md:p-12 relative overflow-hidden">
+          <div className="col-span-12 md:col-span-7 rounded-3xl bg-foreground text-background p-7 md:p-10 relative overflow-hidden">
             <div
               aria-hidden
               className="absolute -bottom-32 -right-20 h-96 w-96 rounded-full"
@@ -274,9 +274,9 @@ const Index = () => {
                 <span className="text-[11px] uppercase tracking-[0.22em] text-background/60">Most chosen</span>
                 <span className="text-xs px-2.5 py-1 rounded-full bg-accent text-accent-foreground">Popular</span>
               </div>
-              <h3 className="display text-3xl mt-6">{featured.name}</h3>
+              <h3 className="display text-2xl md:text-3xl mt-6">{featured.name}</h3>
               <div className="mt-6 flex items-baseline gap-3">
-                <span className="display text-7xl">{featured.from}</span>
+                <span className="display text-5xl md:text-6xl">{featured.from}</span>
                 {featured.original && (
                   <span className="text-sm line-through text-background/50">{featured.original}</span>
                 )}
@@ -316,7 +316,7 @@ const Index = () => {
       </section>
 
       {/* ───────────── JOURNAL ───────────── */}
-      <section className="container-wide py-24 md:py-32 border-t border-border/60">
+      <section className="container-wide py-16 md:py-24 border-t border-border/60">
         <div className="grid grid-cols-12 gap-6 mb-12 items-end">
           <div className="col-span-12 md:col-span-6">
             {sectionLabel("06", "Journal")}
@@ -364,15 +364,15 @@ const Index = () => {
       </section>
 
       {/* ───────────── CLOSING CTA ───────────── */}
-      <section className="container-wide py-20 md:py-28">
-        <CursorGlow className="rounded-[2rem] bg-foreground text-background p-10 md:p-24 noise">
+      <section className="container-wide py-16 md:py-24">
+        <CursorGlow className="rounded-[2rem] bg-foreground text-background p-8 md:p-16 lg:p-20 noise">
           <div className="relative">
             <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-background/50 mb-10">
               <span>(08)</span>
               <span className="h-px w-8 bg-background/30" />
               <span>Closing</span>
             </div>
-            <h2 className="display-mega max-w-5xl">
+            <h2 className="display-mega max-w-[14ch]">
               Let's build
               <br />
               <span className="serif text-accent">the next thing.</span>
