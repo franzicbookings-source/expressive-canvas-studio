@@ -8,6 +8,7 @@ import logoUrl from "@/assets/ntombii-tech-logo.png";
 const links = [
   { to: "/work", label: "Work" },
   { to: "/services", label: "Services" },
+  { to: "/areas", label: "Areas" },
   { to: "/pricing", label: "Pricing" },
   { to: "/about", label: "About" },
   { to: "/blog", label: "Blog" },
@@ -219,11 +220,15 @@ export const SiteFooter = () => {
           </ul>
         </div>
         <div className="md:col-span-3">
-          <h4 className="text-sm font-medium mb-4">Connect</h4>
+          <h4 className="text-sm font-medium mb-4">Areas served</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><a className="hover:text-foreground" href={SITE.socials.instagram} target="_blank" rel="noreferrer">Instagram ↗</a></li>
-            <li><a className="hover:text-foreground" href={SITE.socials.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a></li>
-            <li><a className="hover:text-foreground" href={SITE.socials.twitter} target="_blank" rel="noreferrer">X / Twitter ↗</a></li>
+            <li><Link className="hover:text-foreground" to="/areas/newcastle">Newcastle</Link></li>
+            <li><Link className="hover:text-foreground" to="/areas/madadeni">Madadeni</Link></li>
+            <li><Link className="hover:text-foreground" to="/areas/vryheid">Vryheid</Link></li>
+            <li><Link className="hover:text-foreground" to="/areas/ladysmith">Ladysmith</Link></li>
+            <li><Link className="hover:text-foreground" to="/areas/dundee">Dundee</Link></li>
+            <li><Link className="hover:text-foreground" to="/areas/utrecht">Utrecht</Link></li>
+            <li><Link className="hover:text-foreground font-medium text-foreground" to="/areas">All areas →</Link></li>
           </ul>
         </div>
       </div>
