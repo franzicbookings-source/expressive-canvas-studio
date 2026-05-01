@@ -3,6 +3,15 @@ import portfolioNyatee from "@/assets/portfolio-nyatee.webp";
 import portfolioEvents from "@/assets/portfolio-events.webp";
 import portfolioUmzilikazi from "@/assets/portfolio-umzilikazi.webp";
 import portfolioKeepNNAlive from "@/assets/portfolio-keepnnalive.webp";
+import blogNorthernKznBehind from "@/assets/blog-northern-kzn-behind.webp";
+import blogVryheidZululand from "@/assets/blog-vryheid-zululand.webp";
+import blogConstructionTrades from "@/assets/blog-construction-trades.webp";
+import blogNewcastleDesigner from "@/assets/blog-newcastle-designer.webp";
+import blogVryheidCost from "@/assets/blog-vryheid-cost.webp";
+import blogLadysmithGoogle from "@/assets/blog-ladysmith-google.webp";
+import blogMadadeniOsizweni from "@/assets/blog-madadeni-osizweni.webp";
+import blogUtrechtDundee from "@/assets/blog-utrecht-dundee.webp";
+import blogSeoChecklist from "@/assets/blog-seo-checklist.webp";
 
 export const SITE = {
   name: "Ntombii Tech",
