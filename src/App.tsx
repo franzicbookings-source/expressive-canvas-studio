@@ -1,20 +1,22 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Layout } from "@/components/site/Layout";
 import Index from "./pages/Index.tsx";
-import Services from "./pages/Services.tsx";
-import Work from "./pages/Work.tsx";
-import Pricing from "./pages/Pricing.tsx";
-import About from "./pages/About.tsx";
-import Blog from "./pages/Blog.tsx";
-import BlogPost from "./pages/BlogPost.tsx";
-import Contact from "./pages/Contact.tsx";
-import Areas from "./pages/Areas.tsx";
-import LocationPage from "./pages/LocationPage.tsx";
-import NotFound from "./pages/NotFound.tsx";
+
+const Services = lazy(() => import("./pages/Services.tsx"));
+const Work = lazy(() => import("./pages/Work.tsx"));
+const Pricing = lazy(() => import("./pages/Pricing.tsx"));
+const About = lazy(() => import("./pages/About.tsx"));
+const Blog = lazy(() => import("./pages/Blog.tsx"));
+const BlogPost = lazy(() => import("./pages/BlogPost.tsx"));
+const Contact = lazy(() => import("./pages/Contact.tsx"));
+const Areas = lazy(() => import("./pages/Areas.tsx"));
+const LocationPage = lazy(() => import("./pages/LocationPage.tsx"));
+const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -25,19 +27,21 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Layout>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/work" element={<Work />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/areas" element={<Areas />} />
-            <Route path="/areas/:town" element={<LocationPage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={null}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/work" element={<Work />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/areas" element={<Areas />} />
+              <Route path="/areas/:town" element={<LocationPage />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </Layout>
       </BrowserRouter>
     </TooltipProvider>
