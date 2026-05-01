@@ -36,22 +36,22 @@ export const SITE = {
   testimonials: [
     {
       quote:
-        "Ntombii Tech rebuilt our site in under two weeks and we started getting WhatsApp enquiries the same week we launched. Honestly the smoothest project we've ever run.",
-      name: "Thabo M.",
+        "Ntombii Tech rebuilt our entire site in under two months — roughly 90% faster than the previous agency we worked with. Professional from the first call to handover, and the result speaks for itself.",
+      name: "MK Nyathi",
       role: "Founder, Nyatee Foundation",
       project: "nyatee",
     },
     {
       quote:
-        "They speak business, not jargon. Every checkpoint came through on WhatsApp and the final site loads faster than anything our competitors run.",
-      name: "Lindiwe K.",
-      role: "Director, Sknowhite Events",
+        "They handled both our branding and the full build, and only charged me once. I only found out later most agencies bill those separately — that alone tells you the kind of integrity you're dealing with.",
+      name: "Sknowhite Events",
+      role: "Owner, Sknowhite Events",
       project: "events",
     },
     {
       quote:
         "We needed a site that actually represents our school properly. What we got back felt premium without losing the local feel. Parents notice.",
-      name: "Mr. Dlamini",
+      name: "Mr. Zulu",
       role: "Principal, Umzilikazi SSS",
       project: "umzilikazi",
     },
