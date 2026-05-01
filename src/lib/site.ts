@@ -3,6 +3,15 @@ import portfolioNyatee from "@/assets/portfolio-nyatee.webp";
 import portfolioEvents from "@/assets/portfolio-events.webp";
 import portfolioUmzilikazi from "@/assets/portfolio-umzilikazi.webp";
 import portfolioKeepNNAlive from "@/assets/portfolio-keepnnalive.webp";
+import blogNorthernKznBehind from "@/assets/blog-northern-kzn-behind.webp";
+import blogVryheidZululand from "@/assets/blog-vryheid-zululand.webp";
+import blogConstructionTrades from "@/assets/blog-construction-trades.webp";
+import blogNewcastleDesigner from "@/assets/blog-newcastle-designer.webp";
+import blogVryheidCost from "@/assets/blog-vryheid-cost.webp";
+import blogLadysmithGoogle from "@/assets/blog-ladysmith-google.webp";
+import blogMadadeniOsizweni from "@/assets/blog-madadeni-osizweni.webp";
+import blogUtrechtDundee from "@/assets/blog-utrecht-dundee.webp";
+import blogSeoChecklist from "@/assets/blog-seo-checklist.webp";
 
 export const SITE = {
   name: "Ntombii Tech",
@@ -148,7 +157,7 @@ export const SITE = {
       title: "Why Northern KZN Is Behind Online — And How Your Business Can Lead",
       category: "Northern KZN",
       date: "Apr 16, 2026",
-      cover: "https://ntombii.tech/why-northern-kzn-behind-online-how-to-lead.png",
+      cover: blogNorthernKznBehind,
       excerpt: "Northern KZN lags behind Gauteng and Western Cape in online business presence. Here's why — and how forward-thinking local businesses can take the lead.",
       body: [
         "If you live in Newcastle, Madadeni, Dundee or anywhere across northern KZN, you've felt it: the local economy moves at a different pace online than Johannesburg or Cape Town. Search a service and you'll see ads from Gauteng companies long before any local listing appears.",
@@ -162,7 +171,7 @@ export const SITE = {
       title: "Vryheid & Zululand Commerce — The Digital Opportunity",
       category: "Northern KZN",
       date: "Apr 16, 2026",
-      cover: "https://ntombii.tech/vryheid-zululand-commerce-online.png",
+      cover: blogVryheidZululand,
       excerpt: "Vryheid, Pongola, Nongoma — Zululand District's commercial hubs are missing out online. Here's the digital blueprint for northern KZN businesses.",
       body: [
         "Zululand's commercial heart — Vryheid, Pongola, Nongoma — has serious buying power, but online discoverability is patchy. Search for an electrician in Vryheid and Google often shows results from Newcastle or Durban.",
@@ -175,7 +184,7 @@ export const SITE = {
       title: "Construction & Trades in Northern KZN — The Digital Playbook",
       category: "Northern KZN",
       date: "Apr 16, 2026",
-      cover: "https://ntombii.tech/northern-kzn-construction-trades-online.png",
+      cover: blogConstructionTrades,
       excerpt: "Builders, plumbers, electricians, and contractors in northern KZN can dominate online with the right strategy. Here's how.",
       body: [
         "Trades are still won and lost on referrals — but the referral now starts with a Google search. If a homeowner in Newcastle searches \"plumber near me\" at 9pm, they want a number and a WhatsApp link, not a brochure.",
@@ -188,7 +197,7 @@ export const SITE = {
       title: "Best Web Designer in Newcastle — What to Look For in 2026",
       category: "Newcastle",
       date: "Apr 18, 2026",
-      cover: "https://ntombii.tech/og-image.jpg",
+      cover: blogNewcastleDesigner,
       excerpt: "Most Newcastle businesses pick a web designer on price alone — and pay for it later. Here's what actually matters when hiring locally in 2026.",
       body: [
         "Newcastle has more web designers than ever — most of them part-time, most of them building on free templates, almost none of them building for SEO. The price tag looks great until your site loads in 8 seconds and ranks nowhere.",
@@ -204,7 +213,7 @@ export const SITE = {
       title: "How Much Does a Website Cost in Vryheid? (2026 Guide)",
       category: "Vryheid",
       date: "Apr 20, 2026",
-      cover: "https://ntombii.tech/og-image.jpg",
+      cover: blogVryheidCost,
       excerpt: "A clear, honest breakdown of website pricing for Vryheid businesses — from R2,500 starters to R25,000+ custom builds. No hidden costs.",
       body: [
         "If you've asked three Vryheid web designers for a quote, you've probably gotten three wildly different numbers. Here's the actual breakdown of what a website costs in Vryheid in 2026, and what you should expect at each tier.",
@@ -221,7 +230,7 @@ export const SITE = {
       title: "Why Ladysmith Businesses Are Losing Customers to Google",
       category: "Ladysmith",
       date: "Apr 22, 2026",
-      cover: "https://ntombii.tech/og-image.jpg",
+      cover: blogLadysmithGoogle,
       excerpt: "Ladysmith has decades of brand equity offline — but customers now decide online. Here's how to stop losing them to bigger Newcastle and Durban competitors.",
       body: [
         "Walk down Murchison Street and you'll see businesses that have been trusted for 30+ years. Now Google 'mechanic Ladysmith' or 'plumber Ladysmith' — and the results are mostly Newcastle, Pietermaritzburg, or Durban operators paying for ads.",
@@ -236,7 +245,7 @@ export const SITE = {
       title: "Madadeni & Osizweni — Getting Your Township Business Found Online",
       category: "Madadeni",
       date: "Apr 24, 2026",
-      cover: "https://ntombii.tech/og-image.jpg",
+      cover: blogMadadeniOsizweni,
       excerpt: "Madadeni and Osizweni have thousands of small businesses but almost zero online presence. Here's the simple playbook to be the first one your customers find.",
       body: [
         "Madadeni and Osizweni are two of the largest townships in South Africa, with thriving local economies — spazas, salons, schools, funeral parlours, trades, transport. But search any of those services on Google and you'll see almost nothing local.",
@@ -251,7 +260,7 @@ export const SITE = {
       title: "Utrecht & Dundee — Small Business Digital Guide for 2026",
       category: "Northern KZN",
       date: "Apr 26, 2026",
-      cover: "https://ntombii.tech/og-image.jpg",
+      cover: blogUtrechtDundee,
       excerpt: "A practical digital guide for Utrecht, Dundee, Glencoe, and Dannhauser small businesses — including farms, lodges, trades, and tourism operators.",
       body: [
         "If you run a business in Utrecht, Dundee, Glencoe, or Dannhauser, your customer base is bigger than your town — it's the whole catchment plus everyone passing through to the Battlefields, the Berg, or up to Mpumalanga. A website is how you capture that wider audience.",
@@ -266,7 +275,7 @@ export const SITE = {
       title: "Northern KZN Local SEO Checklist — The 10 Steps That Actually Work",
       category: "Northern KZN",
       date: "Apr 28, 2026",
-      cover: "https://ntombii.tech/og-image.jpg",
+      cover: blogSeoChecklist,
       excerpt: "A free, practical local SEO checklist for any Northern KZN business — Newcastle, Vryheid, Ladysmith, Dundee, Utrecht and beyond. No fluff, just what works.",
       body: [
         "Local SEO isn't magic — it's a checklist. If you do these 10 things, you will outrank most Northern KZN competitors within 60–90 days. Guaranteed.",
