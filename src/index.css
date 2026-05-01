@@ -151,7 +151,7 @@
     animation: marquee 40s linear infinite;
   }
   .marquee-speed {
-    animation-duration: 22s; /* mobile: slower */
+    animation-duration: 5.5s; /* mobile: 4x faster */
   }
   @media (min-width: 768px) {
     .marquee-speed {
