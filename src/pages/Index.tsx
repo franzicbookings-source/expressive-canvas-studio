@@ -6,6 +6,13 @@ import { HoverPreview } from "@/components/home/HoverPreview";
 import { CursorGlow } from "@/components/home/CursorGlow";
 import { TrustedBy } from "@/components/home/TrustedBy";
 import { Testimonials } from "@/components/home/Testimonials";
+import { SEO } from "@/components/seo/SEO";
+import {
+  faqSchema,
+  localBusinessSchema,
+  reviewSchema,
+  websiteSchema,
+} from "@/lib/seo";
 
 const sectionLabel = (n: string, label: string) => (
   <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-muted-foreground mb-10">
