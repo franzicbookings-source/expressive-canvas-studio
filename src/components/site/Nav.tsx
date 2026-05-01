@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site";
-import logoUrl from "@/assets/ntombii-tech-logo.png";
+import logoUrl from "@/assets/ntombii-tech-logo.webp";
 
 const links = [
   { to: "/work", label: "Work" },
