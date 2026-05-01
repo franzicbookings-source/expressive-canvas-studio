@@ -101,6 +101,15 @@
     @apply tracking-tight;
     letter-spacing: -0.02em;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+      transform: none !important;
+      opacity: 1 !important;
+      transition: none !important;
+    }
+    html { scroll-behavior: auto; }
+  }
 }
 
 @layer components {
