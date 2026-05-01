@@ -17,7 +17,7 @@ const sectionLabel = (n: string, label: string) => (
 
 export const Testimonials = () => {
   const autoplay = useRef(
-    Autoplay({ delay: 6000, stopOnInteraction: true, stopOnMouseEnter: true }),
+    Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true, playOnInit: true }),
   );
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
