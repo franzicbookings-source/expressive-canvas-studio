@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { SITE } from "@/lib/site";
-import { StatusBar } from "@/components/home/StatusBar";
 import { Reveal } from "@/components/home/Reveal";
 import { HoverPreview } from "@/components/home/HoverPreview";
 import { CursorGlow } from "@/components/home/CursorGlow";
@@ -40,8 +39,6 @@ const Index = () => {
 
   return (
     <>
-      <StatusBar />
-
       {/* ───────────── HERO ───────────── */}
       <section className="relative noise">
         <div
@@ -98,19 +95,6 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Live ticker — replaces marquee */}
-        <div className="border-y border-border/60 bg-background/70 backdrop-blur-sm py-3 overflow-hidden">
-          <div className="flex w-max ticker whitespace-nowrap">
-            {[...Array(3)].flatMap((_, k) =>
-              SITE.marquee.map((t, i) => (
-                <span key={`${k}-${i}`} className="px-6 text-[11px] uppercase tracking-[0.22em] text-muted-foreground inline-flex items-center gap-6">
-                  {t}
-                  <span className="text-accent">✦</span>
-                </span>
-              )),
-            )}
-          </div>
-        </div>
       </section>
 
       {/* ───────────── TRUSTED BY ───────────── */}
