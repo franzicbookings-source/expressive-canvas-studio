@@ -167,8 +167,8 @@
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     letter-spacing: -0.045em;
-    line-height: 0.95;
-    font-size: clamp(2.75rem, 8vw, 6.5rem);
+    line-height: 0.98;
+    font-size: clamp(2.5rem, 6.2vw, 5.25rem);
   }
   .display-xl {
     font-family: 'Inter', sans-serif;
