@@ -1,8 +1,8 @@
 import knawpLogo from "@/assets/clients/knawp.webp";
-import sknowhiteLogo from "@/assets/clients/sknowhite.png";
-import auntywamaLogo from "@/assets/clients/auntywama.png";
-import nyateeLogo from "@/assets/clients/nyatee.png";
-import umzilikaziLogo from "@/assets/clients/umzilikazi.png";
+import sknowhiteLogo from "@/assets/clients/sknowhite.webp";
+import auntywamaLogo from "@/assets/clients/auntywama.webp";
+import nyateeLogo from "@/assets/clients/nyatee.webp";
+import umzilikaziLogo from "@/assets/clients/umzilikazi.webp";
 
 const clientLogos = [
   { name: "Nyatee Foundation", src: nyateeLogo, h: "h-10 md:h-12" },

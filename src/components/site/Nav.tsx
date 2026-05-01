@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site";
-import logoUrl from "@/assets/ntombii-tech-logo.png";
+import logoUrl from "@/assets/ntombii-tech-logo.webp";
 
 const links = [
   { to: "/work", label: "Work" },
@@ -48,6 +48,10 @@ export const SiteNav = () => {
             alt="Ntombii Tech"
             className="h-12 md:h-14 w-auto select-none"
             draggable={false}
+            width={224}
+            height={56}
+            fetchPriority="high"
+            decoding="async"
           />
         </Link>
 
