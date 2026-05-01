@@ -35,31 +35,34 @@ const Work = () => (
       </Reveal>
     </section>
 
-    <section className="container-wide pb-24 md:pb-32 grid gap-8 md:grid-cols-2">
-      {SITE.projects.map((p, i) => (
-        <Reveal
-          key={p.slug}
-          delay={i * 90}
-          className={i === 0 ? "md:col-span-2" : ""}
-        >
-          <a
-            href={p.href}
-            target="_blank" rel="noreferrer"
-            className="group block lift rounded-3xl overflow-hidden bg-card border border-border/70 h-full"
-          >
-            <div className={`overflow-hidden bg-muted ${i === 0 ? "aspect-[16/8]" : "aspect-[16/10]"}`}>
-              <img src={p.image} alt={p.title} loading="lazy" className="h-full w-full object-contain" />
-            </div>
-            <div className="p-6 md:p-8 flex items-start justify-between gap-4">
-              <div>
-                <p className="text-xs text-muted-foreground">{p.category}</p>
-                <h2 className="display mt-2 text-2xl md:text-3xl">{p.title}</h2>
+    <section className="container-wide pb-24 md:pb-32">
+      <div className="columns-1 md:columns-2 gap-8 [column-fill:_balance]">
+        {SITE.projects.map((p, i) => (
+          <Reveal key={p.slug} delay={i * 90} className="mb-8 break-inside-avoid">
+            <a
+              href={p.href}
+              target="_blank" rel="noreferrer"
+              className="group block lift rounded-3xl overflow-hidden bg-card border border-border/70"
+            >
+              <div className="overflow-hidden bg-muted">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  loading="lazy"
+                  className="block w-full h-auto group-hover:scale-[1.03] transition duration-700"
+                />
               </div>
-              <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-accent transition shrink-0" />
-            </div>
-          </a>
-        </Reveal>
-      ))}
+              <div className="p-6 md:p-8 flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-xs text-muted-foreground">{p.category}</p>
+                  <h2 className="display mt-2 text-2xl md:text-3xl">{p.title}</h2>
+                </div>
+                <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-accent transition shrink-0" />
+              </div>
+            </a>
+          </Reveal>
+        ))}
+      </div>
     </section>
 
     <section className="container-wide pb-24">
