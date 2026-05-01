@@ -35,9 +35,9 @@ export const SiteNav = () => {
       )}
     >
       <div className="container-wide flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 font-semibold tracking-tight">
+        <Link to="/" className="flex items-center gap-1 font-semibold tracking-tight" aria-label="Ntombii Tech home">
           <span className="text-base">Ntombii</span>
-          <span className="text-accent">.</span>
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent dot-pulse mx-0.5" aria-hidden />
           <span className="text-base text-muted-foreground">tech</span>
         </Link>
 
@@ -106,12 +106,59 @@ export const SiteNav = () => {
 };
 
 export const SiteFooter = () => {
+  const onSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value?.trim();
+    if (!email) return;
+    const wa = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(
+      `Hi Ntombii Tech — please add me to the studio newsletter: ${email}`,
+    )}`;
+    window.open(wa, "_blank", "noopener");
+    form.reset();
+  };
+
   return (
     <footer className="border-t border-border/60 mt-24 bg-background">
-      <div className="container-wide py-16 grid gap-12 md:grid-cols-4">
-        <div className="md:col-span-2">
-          <Link to="/" className="font-semibold tracking-tight">
-            Ntombii<span className="text-accent">.</span>tech
+      {/* Newsletter band */}
+      <div className="border-b border-border/60">
+        <div className="container-wide py-12 md:py-16 grid gap-8 md:grid-cols-12 items-end">
+          <div className="md:col-span-6">
+            <p className="eyebrow">Studio dispatch</p>
+            <h3 className="display mt-3 text-2xl md:text-3xl">
+              One short email a month. <span className="serif text-accent">No spam, ever.</span>
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground max-w-md">
+              Notes from the studio — what we shipped, what we learned, and the
+              local KZN web stories worth your time.
+            </p>
+          </div>
+          <form onSubmit={onSubscribe} className="md:col-span-6 md:col-start-7 flex flex-col sm:flex-row gap-3">
+            <label htmlFor="newsletter-email" className="sr-only">Email address</label>
+            <input
+              id="newsletter-email"
+              name="email"
+              type="email"
+              required
+              placeholder="you@business.co.za"
+              className="flex-1 rounded-full border border-border bg-background px-5 py-3 text-sm placeholder:text-muted-foreground/70 focus:outline-none focus:border-foreground/40 transition"
+            />
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium hover:opacity-90 transition"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div className="container-wide py-16 grid gap-12 md:grid-cols-12">
+        <div className="md:col-span-5">
+          <Link to="/" className="font-semibold tracking-tight inline-flex items-center gap-1" aria-label="Ntombii Tech home">
+            <span>Ntombii</span>
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent dot-pulse mx-0.5" aria-hidden />
+            <span className="text-muted-foreground">tech</span>
           </Link>
           <p className="mt-3 text-sm text-muted-foreground max-w-sm">
             A Newcastle-born digital product studio building mobile-first websites and brands for KZN and beyond.
@@ -123,32 +170,45 @@ export const SiteFooter = () => {
           >
             {SITE.whatsappDisplay} →
           </a>
+          <p className="mt-6 text-xs text-muted-foreground">
+            {SITE.location} · Mon–Fri, 09:00–17:00 SAST
+          </p>
         </div>
-        <div>
+        <div className="md:col-span-2">
           <h4 className="text-sm font-medium mb-4">Studio</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><Link className="hover:text-foreground" to="/work">Work</Link></li>
             <li><Link className="hover:text-foreground" to="/services">Services</Link></li>
             <li><Link className="hover:text-foreground" to="/pricing">Pricing</Link></li>
             <li><Link className="hover:text-foreground" to="/about">About</Link></li>
-            <li><Link className="hover:text-foreground" to="/blog">Blog</Link></li>
-            <li><Link className="hover:text-foreground" to="/contact">Contact</Link></li>
           </ul>
         </div>
-        <div>
+        <div className="md:col-span-2">
+          <h4 className="text-sm font-medium mb-4">Resources</h4>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            <li><Link className="hover:text-foreground" to="/blog">Journal</Link></li>
+            <li><Link className="hover:text-foreground" to="/contact">Contact</Link></li>
+            <li><a className="hover:text-foreground" href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noreferrer">WhatsApp</a></li>
+            <li><a className="hover:text-foreground" href="mailto:hello@ntombii.tech">hello@ntombii.tech</a></li>
+          </ul>
+        </div>
+        <div className="md:col-span-3">
           <h4 className="text-sm font-medium mb-4">Connect</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><a className="hover:text-foreground" href={SITE.socials.instagram} target="_blank" rel="noreferrer">Instagram</a></li>
-            <li><a className="hover:text-foreground" href={SITE.socials.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></li>
-            <li><a className="hover:text-foreground" href={SITE.socials.twitter} target="_blank" rel="noreferrer">X / Twitter</a></li>
-            <li><a className="hover:text-foreground" href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noreferrer">WhatsApp</a></li>
+            <li><a className="hover:text-foreground" href={SITE.socials.instagram} target="_blank" rel="noreferrer">Instagram ↗</a></li>
+            <li><a className="hover:text-foreground" href={SITE.socials.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a></li>
+            <li><a className="hover:text-foreground" href={SITE.socials.twitter} target="_blank" rel="noreferrer">X / Twitter ↗</a></li>
           </ul>
         </div>
       </div>
       <div className="border-t border-border/60">
         <div className="container-wide py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Ntombii Tech. Newcastle, KZN.</p>
-          <p>Designed & built in-house.</p>
+          <p>© {new Date().getFullYear()} Ntombii Tech. All rights reserved.</p>
+          <div className="flex items-center gap-5">
+            <Link to="/contact" className="hover:text-foreground">Privacy</Link>
+            <Link to="/contact" className="hover:text-foreground">Terms</Link>
+            <span className="hidden sm:inline">Designed & built in-house.</span>
+          </div>
         </div>
       </div>
     </footer>
