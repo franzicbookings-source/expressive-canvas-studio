@@ -5,6 +5,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Reveal } from "@/components/site/Reveal";
 import { SITE } from "@/lib/site";
+import { SEO } from "@/components/seo/SEO";
+import { breadcrumbSchema, localBusinessSchema } from "@/lib/seo";
 
 const schema = z.object({
   name: z.string().trim().min(1, "Required").max(100),

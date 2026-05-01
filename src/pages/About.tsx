@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "@/components/site/Reveal";
 import { SITE } from "@/lib/site";
+import { SEO } from "@/components/seo/SEO";
+import { breadcrumbSchema, localBusinessSchema } from "@/lib/seo";
 
 const principles = [
   { n: "01", t: "Clarity over cleverness", d: "If a visitor can't act in 5 seconds, the design has failed." },
@@ -18,6 +20,19 @@ const currently = [
 
 const About = () => (
   <>
+    <SEO
+      title="About — Newcastle Digital Studio | Ntombii Tech"
+      description="Ntombii Tech is a Newcastle-born digital studio. We design and build mobile-first websites and brand systems for African companies — fast, focused, and AI-assisted."
+      path="/about"
+      keywords="Ntombii Tech about, Newcastle web agency, KZN digital studio, African design agency"
+      schemas={[
+        localBusinessSchema(),
+        breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "About", url: "/about" },
+        ]),
+      ]}
+    />
     <section className="container-wide pt-16 pb-16 md:pt-24">
       <Reveal>
         <p className="eyebrow">About the studio</p>
