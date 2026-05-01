@@ -18,7 +18,7 @@ const Pricing = () => (
         <p className="eyebrow justify-center">Pricing</p>
       </Reveal>
       <Reveal delay={80}>
-        <h1 className="display mt-4 text-5xl md:text-7xl">
+        <h1 className="display mt-4 text-4xl md:text-5xl lg:text-6xl">
           Honest pricing. <span className="serif text-accent">Real value.</span>
         </h1>
       </Reveal>

@@ -47,8 +47,8 @@ const Index = () => {
           className="absolute inset-0 -z-10"
           style={{ background: "var(--gradient-warm), var(--gradient-hero)" }}
         />
-        <div className="container-wide pt-20 md:pt-28 pb-20 md:pb-32">
-          <div className="grid grid-cols-12 gap-y-10">
+        <div className="container-wide pt-16 md:pt-24 pb-16 md:pb-24">
+          <div className="grid grid-cols-12 gap-y-8">
             <Reveal className="col-span-12 md:col-span-2 hidden md:block">
               <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground leading-relaxed">
                 <p>(00)</p>
@@ -59,7 +59,7 @@ const Index = () => {
 
             <div className="col-span-12 md:col-span-10">
               <Reveal>
-                <h1 className="display-mega">
+                <h1 className="display-mega max-w-[18ch]">
                   We design <span className="serif text-accent">the internet</span>
                   <br />
                   for brands that refuse
@@ -68,24 +68,24 @@ const Index = () => {
                 </h1>
               </Reveal>
 
-              <div className="mt-12 grid grid-cols-12 gap-6 items-end">
-                <Reveal delay={120} className="col-span-12 md:col-span-6 md:col-start-7">
-                  <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-xl">
+              <div className="mt-10 grid grid-cols-12 gap-6 items-end">
+                <Reveal delay={120} className="col-span-12 md:col-span-6 md:col-start-6 lg:col-start-7">
+                  <p className="text-base md:text-lg text-foreground/80 leading-relaxed max-w-md">
                     A digital studio out of Newcastle, building the websites,
                     brands and product surfaces growing African companies
                     actually deserve.
                   </p>
-                  <div className="mt-8 flex flex-wrap gap-3">
+                  <div className="mt-6 flex flex-wrap gap-3">
                     <Link
                       to="/contact"
-                      className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3.5 text-sm font-medium hover:opacity-90 transition"
+                      className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium hover:opacity-90 transition"
                     >
                       Start a project <ArrowRight className="h-4 w-4" />
                     </Link>
                     <a
                       href={`https://wa.me/${SITE.whatsapp}`}
                       target="_blank" rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-6 py-3.5 text-sm font-medium hover:border-foreground/40 transition"
+                      className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-5 py-3 text-sm font-medium hover:border-foreground/40 transition"
                     >
                       Chat on WhatsApp
                     </a>
@@ -101,7 +101,7 @@ const Index = () => {
           <div className="flex w-max ticker whitespace-nowrap">
             {[...Array(3)].flatMap((_, k) =>
               SITE.marquee.map((t, i) => (
-                <span key={`${k}-${i}`} className="px-8 text-[11px] uppercase tracking-[0.22em] text-muted-foreground inline-flex items-center gap-8">
+                <span key={`${k}-${i}`} className="px-6 text-[11px] uppercase tracking-[0.22em] text-muted-foreground inline-flex items-center gap-6">
                   {t}
                   <span className="text-accent">✦</span>
                 </span>
@@ -112,7 +112,7 @@ const Index = () => {
       </section>
 
       {/* ───────────── MANIFESTO ───────────── */}
-      <section className="container-wide py-28 md:py-44">
+      <section className="container-wide py-20 md:py-28">
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-2">
             {sectionLabel("01", "Manifesto")}
@@ -152,14 +152,14 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 md:auto-rows-[180px] gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-12 md:auto-rows-[180px] lg:auto-rows-[200px] gap-3">
           {capabilities.map((c, i) => {
             const isDark = c.tone === "dark";
             return (
               <Reveal
                 key={c.t}
                 delay={i * 60}
-                className={`${c.span} rounded-3xl p-7 md:p-9 flex flex-col justify-between min-h-[200px] border transition group ${
+                className={`${c.span} rounded-3xl p-6 md:p-7 lg:p-8 flex flex-col justify-between min-h-[180px] border transition group ${
                   isDark
                     ? "bg-foreground text-background border-foreground"
                     : "bg-card border-border/70 hover:border-foreground/30"
@@ -172,7 +172,7 @@ const Index = () => {
                   <ArrowUpRight className={`h-4 w-4 transition-all group-hover:-translate-y-1 group-hover:translate-x-1 ${isDark ? "text-background/60" : "text-muted-foreground"}`} />
                 </div>
                 <div>
-                  <h3 className={`display text-2xl md:text-3xl ${isDark ? "" : ""}`}>{c.t}</h3>
+                  <h3 className={`display text-xl md:text-2xl ${isDark ? "" : ""}`}>{c.t}</h3>
                   <p className={`mt-3 text-sm leading-relaxed max-w-sm ${isDark ? "text-background/70" : "text-muted-foreground"}`}>
                     {c.d}
                   </p>
@@ -184,7 +184,7 @@ const Index = () => {
       </section>
 
       {/* ───────────── SELECTED WORK (HOVER PREVIEW) ───────────── */}
-      <section className="container-wide py-28 md:py-40 border-t border-border/60">
+      <section className="container-wide py-20 md:py-28 border-t border-border/60">
         <div className="grid grid-cols-12 gap-6 mb-12 md:mb-20">
           <div className="col-span-12 md:col-span-2">
             {sectionLabel("03", "Selected work")}
@@ -212,7 +212,7 @@ const Index = () => {
       </section>
 
       {/* ───────────── PROCESS ───────────── */}
-      <section className="container-wide py-24 md:py-32 border-t border-border/60">
+      <section className="container-wide py-16 md:py-24 border-t border-border/60">
         <div className="grid grid-cols-12 gap-6 mb-12">
           <div className="col-span-12 md:col-span-2">
             {sectionLabel("04", "Process")}
@@ -232,7 +232,7 @@ const Index = () => {
                 delay={i * 80}
                 className="snap-start-x w-[280px] md:w-auto bg-card border border-border/70 rounded-3xl p-7 flex flex-col"
               >
-                <div className="display text-6xl text-accent leading-none">{p.n}</div>
+                <div className="display text-5xl md:text-6xl text-accent leading-none">{p.n}</div>
                 <div className="rule my-6" />
                 <h3 className="display text-xl">{p.t}</h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.d}</p>
@@ -243,7 +243,7 @@ const Index = () => {
       </section>
 
       {/* ───────────── PRICING TEASER ───────────── */}
-      <section className="container-wide py-28 md:py-40">
+      <section className="container-wide py-20 md:py-28">
         <div className="grid grid-cols-12 gap-6 mb-14 items-end">
           <div className="col-span-12 md:col-span-7">
             {sectionLabel("05", "Pricing")}
@@ -263,7 +263,7 @@ const Index = () => {
 
         <div className="grid grid-cols-12 gap-5">
           {/* hero card */}
-          <div className="col-span-12 md:col-span-7 rounded-3xl bg-foreground text-background p-8 md:p-12 relative overflow-hidden">
+          <div className="col-span-12 md:col-span-7 rounded-3xl bg-foreground text-background p-7 md:p-10 relative overflow-hidden">
             <div
               aria-hidden
               className="absolute -bottom-32 -right-20 h-96 w-96 rounded-full"
@@ -274,9 +274,9 @@ const Index = () => {
                 <span className="text-[11px] uppercase tracking-[0.22em] text-background/60">Most chosen</span>
                 <span className="text-xs px-2.5 py-1 rounded-full bg-accent text-accent-foreground">Popular</span>
               </div>
-              <h3 className="display text-3xl mt-6">{featured.name}</h3>
+              <h3 className="display text-2xl md:text-3xl mt-6">{featured.name}</h3>
               <div className="mt-6 flex items-baseline gap-3">
-                <span className="display text-7xl">{featured.from}</span>
+                <span className="display text-5xl md:text-6xl">{featured.from}</span>
                 {featured.original && (
                   <span className="text-sm line-through text-background/50">{featured.original}</span>
                 )}
@@ -316,7 +316,7 @@ const Index = () => {
       </section>
 
       {/* ───────────── JOURNAL ───────────── */}
-      <section className="container-wide py-24 md:py-32 border-t border-border/60">
+      <section className="container-wide py-16 md:py-24 border-t border-border/60">
         <div className="grid grid-cols-12 gap-6 mb-12 items-end">
           <div className="col-span-12 md:col-span-6">
             {sectionLabel("06", "Journal")}
@@ -364,15 +364,15 @@ const Index = () => {
       </section>
 
       {/* ───────────── CLOSING CTA ───────────── */}
-      <section className="container-wide py-20 md:py-28">
-        <CursorGlow className="rounded-[2rem] bg-foreground text-background p-10 md:p-24 noise">
+      <section className="container-wide py-16 md:py-24">
+        <CursorGlow className="rounded-[2rem] bg-foreground text-background p-8 md:p-16 lg:p-20 noise">
           <div className="relative">
             <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-background/50 mb-10">
               <span>(08)</span>
               <span className="h-px w-8 bg-background/30" />
               <span>Closing</span>
             </div>
-            <h2 className="display-mega max-w-5xl">
+            <h2 className="display-mega max-w-[14ch]">
               Let's build
               <br />
               <span className="serif text-accent">the next thing.</span>

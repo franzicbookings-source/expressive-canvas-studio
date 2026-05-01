@@ -10,7 +10,7 @@ const NotFound = () => {
   return (
     <section className="min-h-[70vh] flex flex-col items-center justify-center text-center container-tight">
       <p className="eyebrow">404</p>
-      <h1 className="display mt-4 text-5xl md:text-7xl">
+      <h1 className="display mt-4 text-4xl md:text-5xl lg:text-6xl">
         Page not <span className="serif text-accent">found.</span>
       </h1>
       <p className="mt-6 text-muted-foreground max-w-md">

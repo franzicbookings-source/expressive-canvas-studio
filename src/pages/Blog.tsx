@@ -9,7 +9,7 @@ const Blog = () => (
         <p className="eyebrow">Journal</p>
       </Reveal>
       <Reveal delay={80}>
-        <h1 className="display mt-4 text-5xl md:text-7xl max-w-4xl">
+        <h1 className="display mt-4 text-4xl md:text-5xl lg:text-6xl max-w-4xl">
           Stories, strategies, <span className="serif text-accent">digital thinking.</span>
         </h1>
       </Reveal>

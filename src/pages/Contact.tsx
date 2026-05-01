@@ -68,7 +68,7 @@ const Contact = () => {
           <p className="eyebrow">Talk to us</p>
         </Reveal>
         <Reveal delay={80}>
-          <h1 className="display mt-4 text-5xl md:text-7xl max-w-4xl">
+          <h1 className="display mt-4 text-4xl md:text-5xl lg:text-6xl max-w-4xl">
             Request a callback <span className="serif text-accent">or start on WhatsApp.</span>
           </h1>
         </Reveal>
