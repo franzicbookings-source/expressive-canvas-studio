@@ -67,30 +67,30 @@ const Index = () => {
                 </h1>
               </Reveal>
 
-              <div className="mt-10 grid grid-cols-12 gap-6 items-end">
-                <Reveal delay={120} className="col-span-12 md:col-span-6 md:col-start-6 lg:col-start-7">
-                  <p className="text-base md:text-lg text-foreground/80 leading-relaxed max-w-md">
-                    A digital studio out of Newcastle, building the websites,
-                    brands and product surfaces growing African companies
-                    actually deserve.
-                  </p>
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    <Link
-                      to="/contact"
-                      className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium hover:opacity-90 transition"
-                    >
-                      Start a project <ArrowRight className="h-4 w-4" />
-                    </Link>
-                    <a
-                      href={`https://wa.me/${SITE.whatsapp}`}
-                      target="_blank" rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-5 py-3 text-sm font-medium hover:border-foreground/40 transition"
-                    >
-                      Chat on WhatsApp
-                    </a>
-                  </div>
-                </Reveal>
-              </div>
+              <Reveal delay={120}>
+                <p className="mt-8 text-base md:text-lg text-foreground/80 leading-relaxed max-w-xl">
+                  A digital studio out of Newcastle, building the websites,
+                  brands and product surfaces growing African companies
+                  actually deserve.
+                </p>
+              </Reveal>
+              <Reveal delay={200}>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium hover:opacity-90 transition"
+                  >
+                    Start a project <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <a
+                    href={`https://wa.me/${SITE.whatsapp}`}
+                    target="_blank" rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-5 py-3 text-sm font-medium hover:border-foreground/40 transition"
+                  >
+                    Chat on WhatsApp
+                  </a>
+                </div>
+              </Reveal>
             </div>
           </div>
         </div>
