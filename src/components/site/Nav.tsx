@@ -48,6 +48,10 @@ export const SiteNav = () => {
             alt="Ntombii Tech"
             className="h-12 md:h-14 w-auto select-none"
             draggable={false}
+            width={224}
+            height={56}
+            fetchPriority="high"
+            decoding="async"
           />
         </Link>
 
