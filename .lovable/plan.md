@@ -1,42 +1,52 @@
-# Wave 1 — Credibility lift
+# Add Umzilikazi logo + convert "Trusted by" into a sliding marquee
 
-Add the two highest-impact missing pieces to the homepage: client testimonials and a "trusted by" wordmark strip. The About stats grid stays as-is per your call.
+You now have 5 client logos total. Static rows feel cramped on mobile and waste the "movement = activity" cue agencies usually exploit. Let's slide them.
 
 ## What ships
 
-### 1. Data layer (`src/lib/site.ts`)
-Add two new arrays:
-- `clients` — six client/wordmark names rendered as monochrome text marks (placeholder names from existing projects + a couple of generic ones; easy to swap for real logos later)
-- `testimonials` — three short quotes with name, role and a project slug for cross-linking
+### 1. Add the new logo
+- Copy the uploaded Umzilikazi Senior Secondary School crest into `src/assets/clients/umzilikazi.png`
+- Add it to the `clientLogos` array in `TrustedBy.tsx`
 
-Three placeholder testimonials are written in the voice of real KZN clients and clearly tied to existing portfolio projects (Nyatee, Sknowhite Events, Umzilikazi). You can replace text with real quotes later — structure stays the same.
+### 2. Convert "Trusted by" into an infinite marquee
 
-### 2. Trusted-by strip (`src/components/home/TrustedBy.tsx`)
-A quiet hairline section that sits **right after the ticker**, before the Manifesto. Layout:
+Layout becomes:
 
 ```text
-TRUSTED BY    Nyatee · Sknowhite · Umzilikazi · Keep NN Alive · ...
+TRUSTED BY  →  [logo] [logo] [logo] [logo] [logo] [logo] [logo] [logo] ...
+              <-------- continuously sliding right-to-left -------->
 ```
 
-Wordmarks rendered in muted foreground, uppercase tracking. On mobile they wrap into 2-3 rows; on desktop they sit on one line with thin separators.
+**How it works:**
+- The 5 logos are rendered **twice** back-to-back inside a flex track
+- A CSS keyframe animation translates the track from `0%` to `-50%` over ~30s, looping seamlessly (the second copy slides into the exact position the first copy started, so the eye sees no jump)
+- Pauses on hover (desktop) so users can actually look at a logo if they want
+- Respects `prefers-reduced-motion` — falls back to the current static wrap layout for users who've opted out of motion
+- Edge fades: thin gradient masks on the left/right edges fade logos in/out of the viewport instead of hard-cutting them at the container edge
 
-### 3. Testimonials section (`src/components/home/Testimonials.tsx`)
-Slotted between **Selected Work** and **Process** as section `(04)` — existing Process / Pricing / Journal numbers shift up by one (04→05, 05→06, 06→07, closing 08→09).
+**Why a marquee here (vs static or carousel):**
+- Static: was fine with 4, gets visually heavy and crowded as the list grows
+- Carousel with arrows: too much UI for a trust strip — buttons compete with the logos
+- Marquee: zero UI, signals momentum, scales to 5/10/20 logos with no layout work, and matches the same "in-motion" feel the hero section already sets
 
-Layout: editorial — one large featured quote on the left (serif italic accent on the opening word), two smaller quote cards on the right. Each card carries name, role, and a small "View project ↗" link to the matching portfolio item.
+### 3. Visual treatment stays consistent
+- Same monochrome / `opacity-70 → 100 on hover` treatment
+- Same hairline border-bottom and muted "TRUSTED BY" eyebrow label on the left
+- Logo heights stay 40–56px so nothing dominates
 
-### 4. Homepage wiring (`src/pages/Index.tsx`)
-- Import and render `<TrustedBy />` after the ticker block
-- Import and render `<Testimonials />` after the Selected Work section
-- Renumber subsequent section labels
+## Technical details
 
-## Out of scope for Wave 1
-- No real logo SVGs (text wordmarks only — quick to swap later)
-- No carousel / autoplay — static, intentional
-- No changes to About, Services, Pricing, Work, Blog, Contact
+- New keyframe `marquee-x` added in `src/index.css` (`translateX(0) → translateX(-50%)`, linear, infinite, ~30s)
+- Utility class `.marquee-track` with the animation + `animation-play-state: paused` on `:hover` and inside `@media (prefers-reduced-motion: reduce)`
+- `TrustedBy.tsx` becomes: eyebrow label (left, fixed) + an `overflow-hidden` viewport with the doubled track inside, plus left/right gradient fade overlays (`bg-gradient-to-r from-background`)
+- `aria-hidden="true"` on the duplicated logo set so screen readers only announce the list once
 
 ## Files touched
-- `src/lib/site.ts` — add `clients` + `testimonials`
-- `src/components/home/TrustedBy.tsx` — new
-- `src/components/home/Testimonials.tsx` — new
-- `src/pages/Index.tsx` — slot in two sections, renumber labels
+
+- `src/assets/clients/umzilikazi.png` — new (copied from your upload)
+- `src/components/home/TrustedBy.tsx` — refactor to marquee, add 5th logo
+- `src/index.css` — add `marquee-x` keyframe + `.marquee-track` utility
+
+## Out of scope
+- No changes to the hero, testimonials, or any other section
+- Not touching the existing service ticker (already removed)
