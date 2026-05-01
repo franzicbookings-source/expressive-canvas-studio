@@ -152,4 +152,52 @@
     from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
   }
+
+  /* Editorial display sizes */
+  .display-mega {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    line-height: 0.92;
+    font-size: clamp(3.25rem, 11vw, 10.5rem);
+  }
+  .display-xl {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    font-size: clamp(2.5rem, 7vw, 6rem);
+  }
+
+  /* Subtle film grain */
+  .noise {
+    position: relative;
+  }
+  .noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.045;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  .ticker {
+    animation: ticker 60s linear infinite;
+  }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .scroll-snap-x {
+    scroll-snap-type: x mandatory;
+  }
+  .snap-start-x {
+    scroll-snap-align: start;
+  }
+
+  /* Hairline rule */
+  .rule { @apply h-px w-full bg-border/70; }
 }
