@@ -59,7 +59,7 @@ export const SiteNav = () => {
 
         {/* Centered nav pill */}
         <nav
-          className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1 rounded-full border border-border/60 bg-background/70 backdrop-blur px-1.5 py-1.5 shadow-[0_1px_2px_hsl(220_14%_11%/0.04)]"
+          className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-0.5 rounded-full border border-border/60 bg-card/60 backdrop-blur px-1.5 py-1.5 shadow-[0_1px_2px_hsl(220_14%_11%/0.04)]"
           aria-label="Primary"
         >
           {links.map((l) => (
@@ -68,10 +68,10 @@ export const SiteNav = () => {
               to={l.to}
               className={({ isActive }) =>
                 cn(
-                  "px-4 py-1.5 text-sm rounded-full transition-all duration-200",
+                  "nav-underline px-4 py-1.5 text-sm rounded-full transition-all duration-200",
                   isActive
                     ? "bg-foreground text-background"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted",
+                    : "text-muted-foreground hover:text-foreground",
                 )
               }
             >
@@ -82,6 +82,7 @@ export const SiteNav = () => {
 
         {/* Right CTA */}
         <div className="hidden md:flex items-center gap-3 shrink-0">
+          <ThemeToggle />
           <a
             href={`https://wa.me/${SITE.whatsapp}`}
             target="_blank"
@@ -90,24 +91,29 @@ export const SiteNav = () => {
           >
             WhatsApp
           </a>
-          <Link
+          <MagneticButton
+            as={Link as any}
             to="/contact"
+            strength={0.25}
             className="group inline-flex items-center gap-1.5 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:opacity-90 transition"
           >
             Let's talk
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </Link>
+          </MagneticButton>
         </div>
 
         {/* Mobile toggle */}
-        <button
-          aria-label="Menu"
-          aria-expanded={open}
-          className="md:hidden inline-flex items-center justify-center h-10 w-10 -mr-2 rounded-full hover:bg-muted transition"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="md:hidden flex items-center gap-1 -mr-1">
+          <ThemeToggle />
+          <button
+            aria-label="Menu"
+            aria-expanded={open}
+            className="inline-flex items-center justify-center h-10 w-10 rounded-full hover:bg-muted transition"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {open && (
