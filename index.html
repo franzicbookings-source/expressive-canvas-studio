@@ -1,19 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ntombii Tech - Next-Gen Design Agency for Growing Brands</title>
     <meta name="description" content="Newcastle-born digital product studio building mobile-first websites, web apps and brand systems for KZN and beyond.">
     <meta name="author" content="Ntombii Tech" />
-    <meta name="theme-color" content="#FBFBFD" />
+    <meta name="theme-color" content="#0a0d14" />
     <link rel="canonical" href="https://ntombii.tech/" />
     <link rel="apple-touch-icon" href="/favicon.png" />
 
+    <script>
+      // Pre-paint theme — no flash, no loading screen. Default: dark.
+      (function(){
+        try {
+          var stored = localStorage.getItem('ntombii-theme');
+          var theme = stored === 'light' ? 'light' : 'dark';
+          var root = document.documentElement;
+          root.classList.remove('light','dark');
+          root.classList.add(theme);
+          root.style.colorScheme = theme;
+        } catch(e){}
+      })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" /></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" /></noscript>
 
     
     
