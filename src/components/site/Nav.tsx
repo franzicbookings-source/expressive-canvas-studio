@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site";
+import { ThemeToggle } from "@/components/site/ThemeToggle";
+import { Magnetic } from "@/components/home/MagneticButton";
 import logoUrl from "@/assets/ntombii-tech-logo.webp";
 
 const links = [
@@ -66,10 +68,10 @@ export const SiteNav = () => {
               to={l.to}
               className={({ isActive }) =>
                 cn(
-                  "px-4 py-1.5 text-sm rounded-full transition-all duration-200",
+                  "nav-link px-4 py-1.5 text-sm rounded-full transition-all duration-200",
                   isActive
                     ? "bg-foreground text-background"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted",
+                    : "text-muted-foreground hover:text-foreground",
                 )
               }
             >
@@ -80,32 +82,38 @@ export const SiteNav = () => {
 
         {/* Right CTA */}
         <div className="hidden md:flex items-center gap-3 shrink-0">
+          <ThemeToggle />
           <a
             href={`https://wa.me/${SITE.whatsapp}`}
             target="_blank"
             rel="noreferrer"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="text-sm text-muted-foreground hover:text-accent transition-colors"
           >
             WhatsApp
           </a>
-          <Link
-            to="/contact"
-            className="group inline-flex items-center gap-1.5 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:opacity-90 transition"
-          >
-            Let's talk
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </Link>
+          <Magnetic strength={10}>
+            <Link
+              to="/contact"
+              className="magnetic group inline-flex items-center gap-1.5 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition"
+            >
+              Let's talk
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </Link>
+          </Magnetic>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          aria-label="Menu"
-          aria-expanded={open}
-          className="md:hidden inline-flex items-center justify-center h-10 w-10 -mr-2 rounded-full hover:bg-muted transition"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        {/* Mobile right cluster */}
+        <div className="md:hidden flex items-center gap-1">
+          <ThemeToggle className="h-9 w-9" />
+          <button
+            aria-label="Menu"
+            aria-expanded={open}
+            className="inline-flex items-center justify-center h-10 w-10 -mr-2 rounded-full hover:bg-muted transition"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {open && (
