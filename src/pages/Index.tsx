@@ -62,62 +62,103 @@ const Index = () => {
         ]}
       />
       {/* ───────────── HERO ───────────── */}
-      <section className="relative noise">
+      <section className="relative noise overflow-hidden">
         <div
           aria-hidden
-          className="absolute inset-0 -z-10"
-          style={{ background: "var(--gradient-warm), var(--gradient-hero)" }}
+          className="absolute inset-0 -z-20"
+          style={{ background: "var(--gradient-mesh), var(--gradient-hero)" }}
         />
-        <div className="container-wide pt-16 md:pt-24 pb-16 md:pb-24">
-          <div className="grid grid-cols-12 gap-y-8">
-            <Reveal className="col-span-12 md:col-span-2 hidden md:block">
-              <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground leading-relaxed">
-                <p>(00)</p>
+        <HeroBg />
+
+        {/* Floating accent details */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute top-[18%] left-[6%] h-2 w-2 rounded-full bg-accent particle" />
+          <div className="absolute top-[30%] right-[12%] h-1.5 w-1.5 rounded-full bg-accent/70 particle" style={{ animationDelay: "1.4s" }} />
+          <div className="absolute bottom-[22%] left-[20%] h-2.5 w-2.5 rounded-full bg-accent/80 particle" style={{ animationDelay: "2.6s" }} />
+          <div className="absolute top-[60%] right-[8%] h-40 w-40 rounded-full bg-accent/10 blur-3xl orb-float" />
+          <div className="absolute -top-10 -left-10 h-72 w-72 rounded-full bg-accent/10 blur-3xl orb-float" style={{ animationDelay: "3s" }} />
+        </div>
+
+        <div className="container-wide pt-12 md:pt-20 pb-20 md:pb-32">
+          <div className="grid grid-cols-12 gap-y-10">
+            <div className="col-span-12 md:col-span-2 hidden md:block">
+              <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground leading-relaxed fade-up">
+                <p className="nums">(00)</p>
                 <p className="mt-2">— Studio</p>
                 <p className="mt-1 text-foreground">Ntombii.tech</p>
+                <div className="mt-6 flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent dot-pulse" />
+                  <span>Available · 2026</span>
+                </div>
               </div>
-            </Reveal>
+            </div>
 
             <div className="col-span-12 md:col-span-10">
-              <Reveal>
-                <h1 className="display-mega max-w-[18ch]">
-                  We design <span className="serif text-accent">the internet</span>
-                  <br />
-                  for brands that refuse
-                  <br />
-                  to look <span className="serif">like everyone else.</span>
-                </h1>
-              </Reveal>
+              <p className="eyebrow fade-up">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent dot-pulse" />
+                Newcastle · KZN · Worldwide
+              </p>
+
+              <h1 className="display-mega mt-6 max-w-[16ch]">
+                <span className="reveal-word"><span style={{ animationDelay: "0.05s" }}>We&nbsp;design&nbsp;</span></span>
+                <span className="reveal-word"><span className="serif text-accent" style={{ animationDelay: "0.15s" }}>the&nbsp;internet</span></span>
+                <br />
+                <span className="reveal-word"><span style={{ animationDelay: "0.25s" }}>for&nbsp;brands&nbsp;that&nbsp;refuse</span></span>
+                <br />
+                <span className="reveal-word"><span style={{ animationDelay: "0.35s" }}>to&nbsp;look&nbsp;</span></span>
+                <span className="reveal-word"><span className="serif" style={{ animationDelay: "0.45s" }}>like&nbsp;everyone&nbsp;else.</span></span>
+              </h1>
 
               <Reveal delay={120}>
-                <p className="mt-8 text-base md:text-lg text-foreground/80 leading-relaxed max-w-xl">
+                <p className="mt-10 text-base md:text-lg text-foreground/80 leading-relaxed max-w-xl">
                   A digital studio out of Newcastle, building the websites,
                   brands and product surfaces growing African companies
                   actually deserve.
                 </p>
               </Reveal>
+
               <Reveal delay={200}>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium hover:opacity-90 transition"
-                  >
-                    Start a project <ArrowRight className="h-4 w-4" />
-                  </Link>
-                  <a
-                    href={`https://wa.me/${SITE.whatsapp}`}
-                    target="_blank" rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-5 py-3 text-sm font-medium hover:border-foreground/40 transition"
-                  >
-                    Chat on WhatsApp
-                  </a>
+                <div className="mt-8 flex flex-wrap gap-4 items-center">
+                  <Magnetic>
+                    <Link
+                      to="/contact"
+                      className="magnetic inline-flex items-center gap-2 rounded-full bg-accent text-accent-foreground px-6 py-3.5 text-sm font-medium transition"
+                    >
+                      Start a project <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Magnetic>
+                  <Magnetic strength={8}>
+                    <a
+                      href={`https://wa.me/${SITE.whatsapp}`}
+                      target="_blank" rel="noreferrer"
+                      className="magnetic inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-6 py-3.5 text-sm font-medium hover:border-accent/50 transition"
+                    >
+                      <span className="h-1.5 w-1.5 rounded-full bg-accent dot-pulse" />
+                      Chat on WhatsApp
+                    </a>
+                  </Magnetic>
+                </div>
+              </Reveal>
+
+              {/* Mini stats strip */}
+              <Reveal delay={320}>
+                <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-px bg-border/60 border border-border/60 rounded-2xl overflow-hidden max-w-3xl">
+                  {SITE.stats.map((s) => (
+                    <div key={s.label} className="bg-background/80 backdrop-blur px-5 py-5">
+                      <div className="display text-2xl md:text-3xl text-accent">{s.value}</div>
+                      <div className="mt-1 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">{s.label}</div>
+                    </div>
+                  ))}
                 </div>
               </Reveal>
             </div>
           </div>
         </div>
-
       </section>
+
+      {/* ───────────── BIG MARQUEE ───────────── */}
+      <MarqueeWords />
+
 
       {/* ───────────── TRUSTED BY ───────────── */}
       <TrustedBy />
