@@ -4,6 +4,8 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 import logoUrl from "@/assets/ntombii-tech-logo.webp";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { MagneticButton } from "@/components/fx/MagneticButton";
 
 const links = [
   { to: "/work", label: "Work" },
