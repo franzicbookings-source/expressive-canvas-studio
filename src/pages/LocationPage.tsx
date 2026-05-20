@@ -24,7 +24,7 @@ const LocationPage = () => {
   if (!loc) return <Navigate to="/areas" replace />;
 
   const title = `Web Design in ${loc.name} — Websites, Branding & Local SEO`;
-  const description = `Mobile-first websites for ${loc.name} businesses. Built in Newcastle, serving ${loc.region}. Branding, web design and local SEO from R2,500.`;
+  const description = `Affordable, mobile-first websites for ${loc.name} businesses. Built by Ntombii Tech in Newcastle, serving ${loc.region}. Branding, web design and local SEO from R2,500.`;
   const keywords = [
     `web designer ${loc.name}`,
     `web design ${loc.name}`,
