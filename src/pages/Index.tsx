@@ -6,6 +6,9 @@ import { HoverPreview } from "@/components/home/HoverPreview";
 import { CursorGlow } from "@/components/home/CursorGlow";
 import { TrustedBy } from "@/components/home/TrustedBy";
 import { Testimonials } from "@/components/home/Testimonials";
+import { HeroBg } from "@/components/home/HeroBg";
+import { MarqueeWords } from "@/components/home/MarqueeWords";
+import { Magnetic } from "@/components/home/MagneticButton";
 import { SEO } from "@/components/seo/SEO";
 import {
   faqSchema,
