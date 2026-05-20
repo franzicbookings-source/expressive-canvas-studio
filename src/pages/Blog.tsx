@@ -8,7 +8,7 @@ const Blog = () => (
   <>
     <SEO
       title="Journal — Northern KZN Digital Strategy & Web Design"
-      description="Honest writing for South African business owners trying to win online. Local SEO, web design, and digital strategy for Newcastle, Vryheid, Ladysmith and Northern KZN."
+      description="Honest writing for SA business owners winning online. Local SEO, web design and digital strategy for Newcastle, Vryheid, Ladysmith and Northern KZN."
       path="/blog"
       keywords="Northern KZN digital, Newcastle SEO, KZN web design blog, local SEO South Africa, small business website blog"
       schemas={[
