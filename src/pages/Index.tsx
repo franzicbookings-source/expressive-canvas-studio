@@ -7,12 +7,6 @@ import { CursorGlow } from "@/components/home/CursorGlow";
 import { TrustedBy } from "@/components/home/TrustedBy";
 import { Testimonials } from "@/components/home/Testimonials";
 import { SEO } from "@/components/seo/SEO";
-import { TextReveal } from "@/components/fx/TextReveal";
-import { MagneticButton } from "@/components/fx/MagneticButton";
-import { MarqueeRow } from "@/components/fx/MarqueeRow";
-import { ParticleField } from "@/components/fx/ParticleField";
-import { FloatingMockups } from "@/components/fx/FloatingMockups";
-import { Parallax } from "@/components/fx/Parallax";
 import {
   faqSchema,
   localBusinessSchema,
@@ -44,18 +38,6 @@ const process = [
   { n: "04", t: "Launch", d: "We ship, monitor, and iterate. Your site keeps getting better after go-live." },
 ];
 
-const marqueeWords = [
-  "DESIGN",
-  "DEVELOPMENT",
-  "BRANDING",
-  "WEBSITES",
-  "AUTOMATION",
-  "DIGITAL SYSTEMS",
-  "CREATIVE TECH",
-  "ONLINE GROWTH",
-  "BUSINESS TOOLS",
-];
-
 const Index = () => {
   const featured = SITE.pricing[1];
   const others = SITE.pricing.filter((p) => p !== featured);
@@ -76,131 +58,69 @@ const Index = () => {
           ...SITE.testimonials.map(reviewSchema),
         ]}
       />
-
       {/* ───────────── HERO ───────────── */}
-      <section className="relative noise overflow-hidden">
-        {/* Aurora + hero gradient */}
-        <div aria-hidden className="absolute inset-0 -z-20 aurora-shift" />
+      <section className="relative noise">
         <div
           aria-hidden
-          className="absolute inset-0 -z-30"
-          style={{ background: "var(--gradient-hero)" }}
+          className="absolute inset-0 -z-10"
+          style={{ background: "var(--gradient-warm), var(--gradient-hero)" }}
         />
-        {/* Dot grid */}
-        <div aria-hidden className="absolute inset-0 -z-10 dot-grid opacity-60" />
-        {/* Particle field */}
-        <div aria-hidden className="absolute inset-0 -z-10 pointer-events-none">
-          <ParticleField />
-        </div>
+        <div className="container-wide pt-16 md:pt-24 pb-16 md:pb-24">
+          <div className="grid grid-cols-12 gap-y-8">
+            <Reveal className="col-span-12 md:col-span-2 hidden md:block">
+              <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground leading-relaxed">
+                <p>(00)</p>
+                <p className="mt-2">— Studio</p>
+                <p className="mt-1 text-foreground">Ntombii.tech</p>
+              </div>
+            </Reveal>
 
-        <div className="container-wide pt-20 md:pt-28 pb-16 md:pb-24">
-          <div className="grid grid-cols-12 gap-y-10">
-            <div className="col-span-12 md:col-span-2 hidden md:block">
+            <div className="col-span-12 md:col-span-10">
               <Reveal>
-                <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground leading-relaxed">
-                  <p>(00)</p>
-                  <p className="mt-2">— Studio</p>
-                  <p className="mt-1 text-foreground flex items-center gap-2">
-                    Ntombii.tech
-                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent dot-pulse" />
-                  </p>
-                </div>
+                <h1 className="display-mega max-w-[18ch]">
+                  We design <span className="serif text-accent">the internet</span>
+                  <br />
+                  for brands that refuse
+                  <br />
+                  to look <span className="serif">like everyone else.</span>
+                </h1>
               </Reveal>
-            </div>
 
-            <div className="col-span-12 md:col-span-10 lg:col-span-7">
-              <h1 className="display-mega max-w-[18ch]">
-                <TextReveal stagger={70}>We design</TextReveal>{" "}
-                <span className="serif text-accent">
-                  <TextReveal stagger={70} delay={200}>the internet</TextReveal>
-                </span>
-                <br />
-                <TextReveal stagger={70} delay={420}>for brands that refuse</TextReveal>
-                <br />
-                <TextReveal stagger={70} delay={760}>to look</TextReveal>{" "}
-                <span className="serif">
-                  <TextReveal stagger={70} delay={1000}>like everyone else.</TextReveal>
-                </span>
-              </h1>
-
-              <Reveal delay={400}>
+              <Reveal delay={120}>
                 <p className="mt-8 text-base md:text-lg text-foreground/80 leading-relaxed max-w-xl">
                   A digital studio out of Newcastle, building the websites,
                   brands and product surfaces growing African companies
                   actually deserve.
                 </p>
               </Reveal>
-              <Reveal delay={500}>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <MagneticButton
-                    as={Link as any}
+              <Reveal delay={200}>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link
                     to="/contact"
-                    strength={0.35}
-                    className="group relative inline-flex items-center gap-2 rounded-full bg-accent text-accent-foreground px-6 py-3.5 text-sm font-medium sheen overflow-hidden"
+                    className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium hover:opacity-90 transition"
                   >
-                    Start a project
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </MagneticButton>
-                  <MagneticButton
-                    as="a"
+                    Start a project <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <a
                     href={`https://wa.me/${SITE.whatsapp}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    strength={0.25}
-                    className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-6 py-3.5 text-sm font-medium hover:border-foreground/40 hover:text-accent transition"
+                    target="_blank" rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-5 py-3 text-sm font-medium hover:border-foreground/40 transition"
                   >
                     Chat on WhatsApp
-                  </MagneticButton>
+                  </a>
                 </div>
-              </Reveal>
-
-              {/* Stat strip */}
-              <Reveal delay={650}>
-                <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-6 max-w-2xl">
-                  {SITE.stats.map((s) => (
-                    <div key={s.label} className="flex flex-col">
-                      <span className="display text-3xl md:text-4xl text-foreground">{s.value}</span>
-                      <span className="mt-1 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">{s.label}</span>
-                    </div>
-                  ))}
-                </div>
-              </Reveal>
-            </div>
-
-            {/* Floating creative-tech visual */}
-            <div className="col-span-12 lg:col-span-3 lg:pl-4">
-              <Reveal delay={300}>
-                <Parallax speed={6}>
-                  <FloatingMockups />
-                </Parallax>
               </Reveal>
             </div>
           </div>
         </div>
 
-        {/* Scroll hint */}
-        <div className="container-wide pb-6 hidden md:flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-          <span>↓ Scroll to explore</span>
-          <span className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent dot-pulse" />
-            Available · {SITE.location}
-          </span>
-        </div>
-      </section>
-
-      {/* ───────────── MARQUEE SERVICE WORDS ───────────── */}
-      <section
-        aria-label="What we do"
-        className="border-y border-border/60 bg-card/30 py-6 md:py-10"
-      >
-        <MarqueeRow items={marqueeWords} />
       </section>
 
       {/* ───────────── TRUSTED BY ───────────── */}
       <TrustedBy />
 
       {/* ───────────── MANIFESTO ───────────── */}
-      <section className="container-wide py-20 md:py-28 relative">
+      <section className="container-wide py-20 md:py-28">
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-2">
             {sectionLabel("01", "Manifesto")}
@@ -234,9 +154,8 @@ const Index = () => {
               We work like an in-house team — not a vendor. From the first
               wireframe to the hundredth iteration, one studio, one standard.
             </p>
-            <Link to="/services" className="mt-5 inline-flex items-center gap-2 text-sm font-medium hover:text-accent group">
-              All capabilities
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            <Link to="/services" className="mt-5 inline-flex items-center gap-2 text-sm font-medium hover:text-accent">
+              All capabilities <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -248,20 +167,20 @@ const Index = () => {
               <Reveal
                 key={c.t}
                 delay={i * 60}
-                className={`${c.span} spark rounded-3xl p-6 md:p-7 lg:p-8 flex flex-col justify-between min-h-[180px] border lift group ${
+                className={`${c.span} rounded-3xl p-6 md:p-7 lg:p-8 flex flex-col justify-between min-h-[180px] border transition group ${
                   isDark
                     ? "bg-foreground text-background border-foreground"
-                    : "bg-card border-border/70 hover:border-accent/50"
+                    : "bg-card border-border/70 hover:border-foreground/30"
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <span className={`text-[11px] uppercase tracking-[0.22em] nums ${isDark ? "text-background/60" : "text-muted-foreground"}`}>
-                    0{i + 1} / 06
+                  <span className={`text-[11px] uppercase tracking-[0.22em] ${isDark ? "text-background/60" : "text-muted-foreground"}`}>
+                    0{i + 1}
                   </span>
                   <ArrowUpRight className={`h-4 w-4 transition-all group-hover:-translate-y-1 group-hover:translate-x-1 ${isDark ? "text-background/60" : "text-muted-foreground"}`} />
                 </div>
                 <div>
-                  <h3 className={`display text-xl md:text-2xl`}>{c.t}</h3>
+                  <h3 className={`display text-xl md:text-2xl ${isDark ? "" : ""}`}>{c.t}</h3>
                   <p className={`mt-3 text-sm leading-relaxed max-w-sm ${isDark ? "text-background/70" : "text-muted-foreground"}`}>
                     {c.d}
                   </p>
@@ -294,9 +213,8 @@ const Index = () => {
         </Reveal>
 
         <div className="mt-12 flex justify-end">
-          <Link to="/work" className="inline-flex items-center gap-2 text-sm font-medium hover:text-accent group">
-            Browse the full archive
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <Link to="/work" className="inline-flex items-center gap-2 text-sm font-medium hover:text-accent">
+            Browse the full archive <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -323,9 +241,9 @@ const Index = () => {
               <Reveal
                 key={p.n}
                 delay={i * 80}
-                className="snap-start-x w-[280px] md:w-auto bg-card border border-border/70 hover:border-accent/50 rounded-3xl p-7 flex flex-col lift spark"
+                className="snap-start-x w-[280px] md:w-auto bg-card border border-border/70 rounded-3xl p-7 flex flex-col"
               >
-                <div className="section-num">{p.n}</div>
+                <div className="display text-5xl md:text-6xl text-accent leading-none">{p.n}</div>
                 <div className="rule my-6" />
                 <h3 className="display text-xl">{p.t}</h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.d}</p>
@@ -356,7 +274,7 @@ const Index = () => {
 
         <div className="grid grid-cols-12 gap-5">
           {/* hero card */}
-          <div className="col-span-12 md:col-span-7 rounded-3xl bg-foreground text-background p-7 md:p-10 relative overflow-hidden sheen">
+          <div className="col-span-12 md:col-span-7 rounded-3xl bg-foreground text-background p-7 md:p-10 relative overflow-hidden">
             <div
               aria-hidden
               className="absolute -bottom-32 -right-20 h-96 w-96 rounded-full"
@@ -382,28 +300,25 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
-              <MagneticButton
-                as={Link as any}
+              <Link
                 to="/contact"
-                strength={0.25}
                 className="mt-10 inline-flex items-center gap-2 rounded-full bg-background text-foreground px-6 py-3.5 text-sm font-medium hover:opacity-90 transition"
               >
                 Choose Business <ArrowRight className="h-4 w-4" />
-              </MagneticButton>
+              </Link>
             </div>
           </div>
 
           <div className="col-span-12 md:col-span-5 grid gap-5">
             {others.map((tier) => (
-              <div key={tier.name} className="spark rounded-3xl bg-card border border-border/70 hover:border-accent/50 p-7 flex flex-col lift">
+              <div key={tier.name} className="rounded-3xl bg-card border border-border/70 p-7 flex flex-col">
                 <div className="flex items-baseline justify-between">
                   <h3 className="display text-xl">{tier.name}</h3>
                   <span className="display text-3xl">{tier.from}</span>
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground">{tier.features.slice(0, 3).join(" · ")}</p>
-                <Link to="/pricing" className="mt-6 text-sm font-medium inline-flex items-center gap-1 hover:text-accent group">
-                  See full details
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                <Link to="/pricing" className="mt-6 text-sm font-medium inline-flex items-center gap-1 hover:text-accent">
+                  See full details <ArrowUpRight className="h-4 w-4" />
                 </Link>
               </div>
             ))}
@@ -421,16 +336,15 @@ const Index = () => {
             </h2>
           </div>
           <div className="col-span-12 md:col-span-3 md:col-start-10">
-            <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-medium hover:text-accent group">
-              Read the journal
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-medium hover:text-accent">
+              Read the journal <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
 
         <div className="grid grid-cols-12 gap-6">
           <Reveal className="col-span-12 md:col-span-7">
-            <Link to={`/blog/${featuredPost.slug}`} className="group block lift rounded-3xl overflow-hidden bg-card border border-border/70 hover:border-accent/50 h-full">
+            <Link to={`/blog/${featuredPost.slug}`} className="group block lift rounded-3xl overflow-hidden bg-card border border-border/70 h-full">
               <div className="aspect-[16/10] overflow-hidden bg-muted">
                 <img src={featuredPost.cover} alt={featuredPost.title} loading="lazy" className="h-full w-full object-cover group-hover:scale-[1.03] transition duration-700" />
               </div>
@@ -445,7 +359,7 @@ const Index = () => {
           <div className="col-span-12 md:col-span-5 grid gap-6">
             {otherPosts.map((p, i) => (
               <Reveal key={p.slug} delay={(i + 1) * 100}>
-                <Link to={`/blog/${p.slug}`} className="group grid grid-cols-5 gap-4 rounded-3xl overflow-hidden bg-card border border-border/70 hover:border-accent/50 lift">
+                <Link to={`/blog/${p.slug}`} className="group grid grid-cols-5 gap-4 rounded-3xl overflow-hidden bg-card border border-border/70 lift">
                   <div className="col-span-2 aspect-square overflow-hidden bg-muted">
                     <img src={p.cover} alt={p.title} loading="lazy" className="h-full w-full object-cover group-hover:scale-[1.05] transition duration-700" />
                   </div>
@@ -458,11 +372,6 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* ───────────── SECONDARY MARQUEE (Reverse) ───────────── */}
-      <section className="border-y border-border/60 bg-card/30 py-6 md:py-10 overflow-hidden">
-        <MarqueeRow items={marqueeWords} reverse />
       </section>
 
       {/* ───────────── CLOSING CTA ───────────── */}
@@ -485,24 +394,19 @@ const Index = () => {
                 with a clear plan, timeline, and price — no decks, no fluff.
               </p>
               <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-wrap gap-3">
-                <MagneticButton
-                  as={Link as any}
+                <Link
                   to="/contact"
-                  strength={0.35}
-                  className="inline-flex items-center gap-2 rounded-full bg-accent text-accent-foreground px-7 py-4 text-sm font-medium sheen overflow-hidden"
+                  className="inline-flex items-center gap-2 rounded-full bg-background text-foreground px-7 py-4 text-sm font-medium hover:opacity-90 transition"
                 >
                   Start a project <ArrowRight className="h-4 w-4" />
-                </MagneticButton>
-                <MagneticButton
-                  as="a"
+                </Link>
+                <a
                   href={`https://wa.me/${SITE.whatsapp}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  strength={0.25}
+                  target="_blank" rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-background/30 px-7 py-4 text-sm font-medium hover:bg-background/10 transition"
                 >
                   WhatsApp us
-                </MagneticButton>
+                </a>
               </div>
             </div>
           </div>
