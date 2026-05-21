@@ -8,6 +8,7 @@ import { Layout } from "@/components/site/Layout";
 import Index from "./pages/Index.tsx";
 
 const Services = lazy(() => import("./pages/Services.tsx"));
+const ServiceDetail = lazy(() => import("./pages/ServiceDetail.tsx"));
 const Work = lazy(() => import("./pages/Work.tsx"));
 const Pricing = lazy(() => import("./pages/Pricing.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
@@ -31,6 +32,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/services/:slug" element={<ServiceDetail />} />
               <Route path="/work" element={<Work />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/about" element={<About />} />
