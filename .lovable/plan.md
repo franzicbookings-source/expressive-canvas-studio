@@ -1,49 +1,88 @@
-## Problem
+# Homepage redesign — Ntombii Tech
 
-All blog post cover images are broken because they point to external URLs that don't exist:
-- 3 posts use `https://ntombii.tech/<slug>.png` (404)
-- 6 posts use `https://ntombii.tech/og-image.jpg` (404)
+A full rebuild of `src/pages/Index.tsx` plus a few supporting tweaks. Everything stays on the existing tech stack and design tokens (cream `--background`, near-black `--foreground`, vivid orange `--accent`). No other pages are touched.
 
-The Blog index and individual BlogPost pages both render `<img src={post.cover}>`, so every card and hero image is broken site-wide.
+---
 
-## Fix
+## 1. Hero device mockup (generated asset)
 
-### 1. Generate 9 local cover images
+- Copy your attached Snesenzo screenshot into `src/assets/ref-snesenzo.png`.
+- Generate **one** transparent-background hero image (`src/assets/hero-devices.png`) using the premium image model:
+  - Composition: laptop (centered, large) + tablet (right, slightly behind) + phone (front-left), all showing the Snesenzo site on their screens
+  - Transparent PNG, no studio floor, no shadow rectangle, no background plate — only devices + soft contact shadow directly beneath
+  - 1920×1280, screens sharp and legible
+- Used at desktop and mobile (no separate second render — one image scales cleanly).
 
-Create one branded cover per post in `src/assets/` as WebP (matches existing portfolio assets). Each cover will be on-brand (dark background, accent color, clean typography) and visually distinct using the post's category/title — no stock photos, no text-heavy mockups. Lightweight (~80-150KB each, lazy-loaded already).
+## 2. Header (`src/components/site/Nav.tsx`)
 
-Files to create:
-- `src/assets/blog-northern-kzn-behind.webp`
-- `src/assets/blog-vryheid-zululand.webp`
-- `src/assets/blog-construction-trades.webp`
-- `src/assets/blog-newcastle-designer.webp`
-- `src/assets/blog-vryheid-cost.webp`
-- `src/assets/blog-ladysmith-google.webp`
-- `src/assets/blog-madadeni-osizweni.webp`
-- `src/assets/blog-utrecht-dundee.webp`
-- `src/assets/blog-seo-checklist.webp`
+- Update primary nav order to: Home · Capabilities · Work · Process · Pricing · About
+  - "Capabilities" anchors to `/#capabilities`, "Process" to `/#process` (homepage sections), the rest stay as routes
+- Replace "Let's talk" CTA copy with **"Start a project →"** (black pill, unchanged styling)
+- Footer untouched (the recently-added Capabilities list stays)
 
-### 2. Wire them into `src/lib/site.ts`
+## 3. Homepage (`src/pages/Index.tsx`) — full rebuild, sections in order
 
-Import the 9 new assets and replace each post's `cover:` string with the imported asset reference. This makes Vite hash + bundle them so they always load (works in dev, preview, and production).
+**Hero (split layout)**
+- Left: small uppercase eyebrow `DIGITAL · DESIGN · BRAND · PRINT`, the existing display-mega headline with italic serif accents on *the* / *like everyone else*, supporting paragraph (already updated copy), orange primary "Start a project →" pill + dark outlined "Chat on WhatsApp"
+- Right: the generated `hero-devices.png`, a small floating black card *"Design that works online and in real life."*, and a circular orange-dot stamp
+- Mobile: stacks — text, buttons, then mockup; mockup capped so the hero doesn't get tall
 
-### 3. Verify
+**Trusted by** (existing `TrustedBy` component, unchanged)
 
-Confirm Blog index grid and BlogPost hero images render after the change.
+**Manifesto** (existing, unchanged)
 
-## Custom domain question
+**Capabilities — DARK section (`id="capabilities"`)**
+- Full-bleed near-black background with subtle noise + orange radial glow
+- Eyebrow `CAPABILITIES` in orange · headline *"Everything your business needs to show up __properly__."* (italic serif orange on "properly") · right-column supporting copy
+- 8-card bento grid on dark: dark cards with hairline white/10 borders, orange line icon top-left, white title, muted-grey body, arrow icon top-right, orange hover glow + border
+- Card copy matches your brief (Websites / Brand Systems / Graphic Design / Print & Signage / Web Engineering / Mobile Surfaces / Signage Solutions / Corporate Gifts)
+- Icons via lucide: Globe, Palette, PenTool, Printer, Code2, Smartphone, Megaphone, Gift
 
-Your domain `ntombii.tech` (and `www.ntombii.tech`) is already showing as connected in the project — both URLs are listed as active custom domains. DNS propagation typically completes within **a few minutes to 24 hours**, with up to 72 hours in rare cases. SSL is provisioned automatically once DNS verifies.
+**Selected work (cream)**
+- Eyebrow `SELECTED WORK` · headline *"A small __portfolio__ of serious work."* (italic on portfolio)
+- Two-column: left = project meta (name, category, description, "View project ↗"), right = large project image with small carousel arrows
+- Carousel cycles through existing `SITE.projects`; Nyatee first
 
-If it's not loading yet:
-- Wait up to 24 hours and retry
-- Check `dnschecker.org` to confirm the A record points to `185.158.133.1` globally
-- Make sure you've clicked **Publish → Update** at least once so the latest build is live (frontend changes only go live after publishing)
+**Testimonials — DARK section**
+- Replaces current `Testimonials` carousel on the homepage (component file kept, just not used here)
+- Eyebrow `TESTIMONIALS` · headline *"Words from __people__ we've actually shipped __for__."* (italic on people / for)
+- Big single testimonial card with subtle dark gradient, Mr. Zulu quote, "View project ↗" link, small left/right pager to step through `SITE.testimonials`
 
-No code action needed for the domain — it's just propagation time.
+**Process (cream, `id="process"`)**
+- Eyebrow `OUR PROCESS` · headline *"Four steps. __Zero drama.__"*
+- 4 compact cards, horizontal on desktop, stacked on mobile, using existing process copy
 
-## Out of scope
+**Pricing teaser & Journal** — preserved from current homepage (already on brand, copy unchanged)
 
-- Redesigning blog layout
-- Changing post copy
-- Adding new posts
+**Final CTA strip — DARK**
+- Full-width dark band with orange accent line
+- Left: orange double-dot mark + headline *"Ready to make your business look as __serious__ as the work behind it?"*
+- Right: orange "Start a project →" pill
+
+## 4. Mobile QA
+
+- Hero mockup `max-h-[420px]` on mobile, `object-contain`
+- Capabilities cards: single column on mobile, generous padding, no awkward empty space
+- Process: stacked vertical
+- Floating WhatsApp FAB already exists; verify it doesn't overlap the final CTA on mobile (bottom padding bump if needed)
+
+## 5. Copy / typo sweep across the homepage
+
+Confirm: Identities, Lighthouse, Built, Through, "Sub-1s loads". Update any service summaries used on the homepage accordingly (the cards in section 3 use the corrected copy).
+
+---
+
+### Technical notes
+
+- No new dependencies. Existing Tailwind tokens (`bg-foreground`, `text-background`, `text-accent`, `border-border`, `bg-card`, `text-muted-foreground`, `serif`, `display-*`) cover everything
+- New dark sections use `bg-foreground text-background` with `noise` + `var(--gradient-warm)` overlays for depth
+- Carousel uses existing shadcn `carousel` primitive (already installed) — no extra libs
+- `Testimonials` component file is not deleted, just not imported on Index, so other pages can still use it later
+- Image generation: `imagegen.generate_image` with `model: "premium"`, `transparent_background: true`, prompt referencing the copied Snesenzo screenshot for the on-screen content
+
+### Out of scope (not changed)
+
+- Other pages (Services, Work, Pricing, About, Blog, Areas)
+- `src/lib/site.ts` data (services array already updated previously)
+- `src/index.css` tokens (palette stays exactly as-is)
+- Footer structure
