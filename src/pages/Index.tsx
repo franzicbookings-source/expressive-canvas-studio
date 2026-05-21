@@ -147,15 +147,20 @@ const Index = () => {
           <div className="col-span-12 md:col-span-6">
             {sectionLabel("02", "Capabilities")}
             <h2 className="display-xl">
-              Everything you need
+              From your website
               <br />
-              <span className="serif text-muted-foreground">under one roof.</span>
+              <span className="serif text-muted-foreground">to your signage —</span>
+              <br />
+              everything your business needs
+              <br />
+              <span className="serif text-muted-foreground">to show up properly.</span>
             </h2>
           </div>
           <div className="col-span-12 md:col-span-5 md:col-start-8">
             <p className="text-muted-foreground">
-              We work like an in-house team — not a vendor. From the first
-              wireframe to the hundredth iteration, one studio, one standard.
+              We work like an in-house team — not a vendor. One studio handling
+              your digital presence, your print, your brand, and everything in
+              between.
             </p>
             <Link to="/services" className="mt-5 inline-flex items-center gap-2 text-sm font-medium hover:text-accent">
               All capabilities <ArrowUpRight className="h-4 w-4" />
