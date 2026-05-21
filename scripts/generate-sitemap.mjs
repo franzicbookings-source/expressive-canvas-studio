@@ -36,6 +36,16 @@ const SERVICE_SLUGS = [
   "corporate-gifts",
 ];
 
+// Location × service combos: 6 services × 10 towns = 60 URLs
+const LOCATION_SERVICE_KEYS = [
+  "graphic-design",
+  "printing-services",
+  "branding",
+  "ink-toner",
+  "signage",
+  "corporate-gifts",
+];
+
 const STATIC_ROUTES = [
   { url: "/", priority: "1.0", change: "weekly" },
   { url: "/services", priority: "0.9", change: "monthly" },
@@ -61,6 +71,16 @@ const urls = [
     priority: "0.9",
     change: "monthly",
   })),
+  ...LOCATION_SERVICE_KEYS.flatMap((key) =>
+    [
+      "newcastle", "madadeni", "osizweni", "dannhauser", "utrecht",
+      "ladysmith", "dundee", "glencoe", "estcourt", "bergville",
+    ].map((town) => ({
+      loc: `${SITE_URL}/${key}-${town}`,
+      priority: "0.7",
+      change: "monthly",
+    })),
+  ),
   ...POST_SLUGS.map((slug) => ({
     loc: `${SITE_URL}/blog/${slug}`,
     priority: "0.7",
