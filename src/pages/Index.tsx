@@ -566,7 +566,7 @@ const Index = () => {
 
       {/* ───────────── FINAL CTA STRIP — DARK ───────────── */}
       <section className="container-wide py-14 md:py-20">
-        <CursorGlow className="rounded-[2rem] text-background p-8 md:p-14 relative overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
+        <div className="rounded-[2rem] text-background p-8 md:p-14 relative overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
           <div className="relative grid grid-cols-12 gap-8 items-center">
             <div className="col-span-12 md:col-span-8">
               <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-background/50 mb-6">
