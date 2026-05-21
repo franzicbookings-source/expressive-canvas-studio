@@ -27,6 +27,15 @@ const POST_SLUGS = [
   "northern-kzn-local-seo-checklist",
 ];
 
+const SERVICE_SLUGS = [
+  "branding",
+  "graphic-design",
+  "printing",
+  "ink-toner",
+  "signage",
+  "corporate-gifts",
+];
+
 const STATIC_ROUTES = [
   { url: "/", priority: "1.0", change: "weekly" },
   { url: "/services", priority: "0.9", change: "monthly" },
@@ -42,6 +51,11 @@ const today = new Date().toISOString().split("T")[0];
 
 const urls = [
   ...STATIC_ROUTES.map((r) => ({ ...r, loc: `${SITE_URL}${r.url}` })),
+  ...SERVICE_SLUGS.map((slug) => ({
+    loc: `${SITE_URL}/services/${slug}`,
+    priority: "0.9",
+    change: "monthly",
+  })),
   ...LOCATION_SLUGS.map((slug) => ({
     loc: `${SITE_URL}/areas/${slug}`,
     priority: "0.9",

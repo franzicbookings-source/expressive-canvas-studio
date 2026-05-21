@@ -1,8 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site";
+import { SERVICE_DETAILS } from "@/lib/serviceDetails";
 import logoUrl from "@/assets/ntombii-tech-logo.webp";
 
 const links = [
@@ -76,6 +77,45 @@ export const SiteNav = () => {
               {l.label}
             </NavLink>
           ))}
+
+          {/* Services dropdown */}
+          <div className="relative group">
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                cn(
+                  "inline-flex items-center gap-1 px-4 py-1.5 text-sm rounded-full transition-all duration-200",
+                  isActive
+                    ? "bg-foreground text-background"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted",
+                )
+              }
+            >
+              Services
+              <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
+            </NavLink>
+            <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50">
+              <div className="min-w-[240px] rounded-2xl border border-border/70 bg-background/95 backdrop-blur-xl shadow-lg p-2">
+                {SERVICE_DETAILS.map((s) => (
+                  <Link
+                    key={s.slug}
+                    to={`/services/${s.slug}`}
+                    className="block px-4 py-2.5 text-sm rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted transition"
+                  >
+                    {s.navLabel}
+                  </Link>
+                ))}
+                <div className="border-t border-border/60 mt-1 pt-1">
+                  <Link
+                    to="/services"
+                    className="block px-4 py-2.5 text-sm rounded-xl text-foreground hover:bg-muted transition font-medium"
+                  >
+                    All services →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </nav>
 
         {/* Right CTA */}
@@ -121,6 +161,30 @@ export const SiteNav = () => {
                 {l.label}
               </Link>
             ))}
+
+            {/* Services group */}
+            <div className="pt-2 mt-1 border-t border-border/40">
+              <p className="px-2 py-2 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                Services
+              </p>
+              {SERVICE_DETAILS.map((s) => (
+                <Link
+                  key={s.slug}
+                  to={`/services/${s.slug}`}
+                  onClick={() => setOpen(false)}
+                  className="block px-2 py-2.5 text-sm text-foreground"
+                >
+                  {s.navLabel}
+                </Link>
+              ))}
+              <Link
+                to="/services"
+                onClick={() => setOpen(false)}
+                className="block px-2 py-2.5 text-sm font-medium text-foreground"
+              >
+                All services →
+              </Link>
+            </div>
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
@@ -215,11 +279,12 @@ export const SiteFooter = () => {
           </ul>
           <h4 className="text-sm font-medium mt-6 mb-4">Capabilities</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link className="hover:text-foreground" to="/services">Graphic Design</Link></li>
-            <li><Link className="hover:text-foreground" to="/services">Print Services</Link></li>
-            <li><Link className="hover:text-foreground" to="/services">Ink & Toner Supply</Link></li>
-            <li><Link className="hover:text-foreground" to="/services">Signage Solutions</Link></li>
-            <li><Link className="hover:text-foreground" to="/services">Corporate Gifts</Link></li>
+            <li><Link className="hover:text-foreground" to="/services/branding">Branding & Identity</Link></li>
+            <li><Link className="hover:text-foreground" to="/services/graphic-design">Graphic Design</Link></li>
+            <li><Link className="hover:text-foreground" to="/services/printing">Printing Services</Link></li>
+            <li><Link className="hover:text-foreground" to="/services/ink-toner">Ink & Toner Supply</Link></li>
+            <li><Link className="hover:text-foreground" to="/services/signage">Signage Solutions</Link></li>
+            <li><Link className="hover:text-foreground" to="/services/corporate-gifts">Corporate Gifts</Link></li>
           </ul>
         </div>
         <div className="md:col-span-2">
