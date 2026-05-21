@@ -4,21 +4,12 @@ import {
   ArrowRight,
   ArrowUpRight,
   Check,
-  Globe,
-  Palette,
-  PenTool,
-  Printer,
-  Code2,
-  Smartphone,
-  Megaphone,
-  Gift,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { Reveal } from "@/components/home/Reveal";
 import { TrustedBy } from "@/components/home/TrustedBy";
-import { CursorGlow } from "@/components/home/CursorGlow";
 import { SEO } from "@/components/seo/SEO";
 import {
   faqSchema,
