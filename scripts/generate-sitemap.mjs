@@ -36,6 +36,16 @@ const SERVICE_SLUGS = [
   "corporate-gifts",
 ];
 
+// Location × service combos: 6 services × 10 towns = 60 URLs
+const LOCATION_SERVICE_KEYS = [
+  "graphic-design",
+  "printing-services",
+  "branding",
+  "ink-toner",
+  "signage",
+  "corporate-gifts",
+];
+
 const STATIC_ROUTES = [
   { url: "/", priority: "1.0", change: "weekly" },
   { url: "/services", priority: "0.9", change: "monthly" },

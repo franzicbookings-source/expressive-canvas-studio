@@ -17,6 +17,7 @@ const BlogPost = lazy(() => import("./pages/BlogPost.tsx"));
 const Contact = lazy(() => import("./pages/Contact.tsx"));
 const Areas = lazy(() => import("./pages/Areas.tsx"));
 const LocationPage = lazy(() => import("./pages/LocationPage.tsx"));
+const LocationServicePage = lazy(() => import("./pages/LocationServicePage.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient();
@@ -41,6 +42,12 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/areas" element={<Areas />} />
               <Route path="/areas/:town" element={<LocationPage />} />
+              <Route path="/graphic-design-:town" element={<LocationServicePage serviceKey="graphic-design" />} />
+              <Route path="/printing-services-:town" element={<LocationServicePage serviceKey="printing-services" />} />
+              <Route path="/branding-:town" element={<LocationServicePage serviceKey="branding" />} />
+              <Route path="/ink-toner-:town" element={<LocationServicePage serviceKey="ink-toner" />} />
+              <Route path="/signage-:town" element={<LocationServicePage serviceKey="signage" />} />
+              <Route path="/corporate-gifts-:town" element={<LocationServicePage serviceKey="corporate-gifts" />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
