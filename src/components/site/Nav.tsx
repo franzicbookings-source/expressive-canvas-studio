@@ -279,11 +279,12 @@ export const SiteFooter = () => {
           </ul>
           <h4 className="text-sm font-medium mt-6 mb-4">Capabilities</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link className="hover:text-foreground" to="/services">Graphic Design</Link></li>
-            <li><Link className="hover:text-foreground" to="/services">Print Services</Link></li>
-            <li><Link className="hover:text-foreground" to="/services">Ink & Toner Supply</Link></li>
-            <li><Link className="hover:text-foreground" to="/services">Signage Solutions</Link></li>
-            <li><Link className="hover:text-foreground" to="/services">Corporate Gifts</Link></li>
+            <li><Link className="hover:text-foreground" to="/services/branding">Branding & Identity</Link></li>
+            <li><Link className="hover:text-foreground" to="/services/graphic-design">Graphic Design</Link></li>
+            <li><Link className="hover:text-foreground" to="/services/printing">Printing Services</Link></li>
+            <li><Link className="hover:text-foreground" to="/services/ink-toner">Ink & Toner Supply</Link></li>
+            <li><Link className="hover:text-foreground" to="/services/signage">Signage Solutions</Link></li>
+            <li><Link className="hover:text-foreground" to="/services/corporate-gifts">Corporate Gifts</Link></li>
           </ul>
         </div>
         <div className="md:col-span-2">
