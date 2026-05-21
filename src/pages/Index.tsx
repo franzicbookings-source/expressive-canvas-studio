@@ -17,7 +17,7 @@ import {
   reviewSchema,
   websiteSchema,
 } from "@/lib/seo";
-import heroDevices from "@/assets/hero-devices.png";
+import heroDevices from "@/assets/hero-devices.webp";
 
 const sectionLabel = (n: string, label: string, tone: "light" | "dark" = "light") => (
   <div
