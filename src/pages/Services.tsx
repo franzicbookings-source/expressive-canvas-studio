@@ -45,7 +45,7 @@ const Services = () => (
 
     <section className="container-wide pb-24 md:pb-32 grid gap-px bg-border/70 rounded-3xl overflow-hidden border border-border/70 md:grid-cols-2">
       {SITE.services.map((s, i) => (
-        <Reveal key={s.n} delay={i * 90} className="bg-background p-8 md:p-12">
+        <Reveal key={s.n} delay={i * 90} className="bg-background p-8 md:p-12 flex flex-col">
           <div className="flex items-baseline justify-between">
             <span className="text-xs text-muted-foreground">{s.n}</span>
             <ArrowUpRight className="h-4 w-4 text-muted-foreground" />
@@ -60,6 +60,14 @@ const Services = () => (
               </li>
             ))}
           </ul>
+          <a
+            href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(`Hi Ntombii Tech — I'd like a quote for ${s.title}.`)}`}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent transition self-start"
+          >
+            Get a quote <ArrowUpRight className="h-4 w-4" />
+          </a>
         </Reveal>
       ))}
     </section>

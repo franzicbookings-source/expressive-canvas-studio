@@ -24,11 +24,13 @@ const sectionLabel = (n: string, label: string) => (
 
 const capabilities = [
   { t: "Interfaces", d: "Product UI and design systems built to scale from MVP to enterprise.", span: "md:col-span-7 md:row-span-2", tone: "dark" },
-  { t: "Brand systems", d: "Identities with backbone — logo, palette, type, voice, motion.", span: "md:col-span-5" },
-  { t: "Web engineering", d: "React, Vite, headless. Sub-1s loads. Real Lighthouse scores.", span: "md:col-span-5" },
-  { t: "Mobile surfaces", d: "Mobile-first by default — built for South African data realities.", span: "md:col-span-4" },
-  { t: "AI workflows", d: "We ship faster because our process runs on AI, not in spite of it.", span: "md:col-span-4" },
-  { t: "Launch & iterate", d: "We don't disappear at handoff. Weekly improvements, monthly reviews.", span: "md:col-span-4" },
+  { t: "Brand systems", d: "Identities with backbone — logo, type, voice, colour. Built to last.", span: "md:col-span-5" },
+  { t: "Graphic design", d: "Print-ready and digital design that makes your business look the part — every time.", span: "md:col-span-5" },
+  { t: "Web engineering", d: "React, Next.js, headless. Sub-1s loads. Real Lighthouse scores.", span: "md:col-span-4" },
+  { t: "Print services", d: "Flyers, brochures, business cards and more — ordered through us, delivered to your door.", span: "md:col-span-4" },
+  { t: "Ink & toner supply", d: "Keep your office running. Premium cartridges sourced and delivered fast across KZN.", span: "md:col-span-4" },
+  { t: "Signage solutions", d: "Banners, shop fronts, vehicle branding. Your name, impossible to miss.", span: "md:col-span-6" },
+  { t: "Corporate gifts", d: "Branded gifts that work harder than a handshake — perfect for clients, staff and events.", span: "md:col-span-6" },
 ];
 
 const process = [
@@ -88,9 +90,10 @@ const Index = () => {
 
               <Reveal delay={120}>
                 <p className="mt-8 text-base md:text-lg text-foreground/80 leading-relaxed max-w-xl">
-                  A digital studio out of Newcastle, building the websites,
-                  brands and product surfaces growing African companies
-                  actually deserve.
+                  A business studio out of Newcastle, KZN. We build websites,
+                  shape brands, design print, supply ink, erect signage and
+                  deliver corporate gifts — everything your business needs to
+                  show up properly.
                 </p>
               </Reveal>
               <Reveal delay={200}>
@@ -144,15 +147,20 @@ const Index = () => {
           <div className="col-span-12 md:col-span-6">
             {sectionLabel("02", "Capabilities")}
             <h2 className="display-xl">
-              Everything you need
+              From your website
               <br />
-              <span className="serif text-muted-foreground">under one roof.</span>
+              <span className="serif text-muted-foreground">to your signage —</span>
+              <br />
+              everything your business needs
+              <br />
+              <span className="serif text-muted-foreground">to show up properly.</span>
             </h2>
           </div>
           <div className="col-span-12 md:col-span-5 md:col-start-8">
             <p className="text-muted-foreground">
-              We work like an in-house team — not a vendor. From the first
-              wireframe to the hundredth iteration, one studio, one standard.
+              We work like an in-house team — not a vendor. One studio handling
+              your digital presence, your print, your brand, and everything in
+              between.
             </p>
             <Link to="/services" className="mt-5 inline-flex items-center gap-2 text-sm font-medium hover:text-accent">
               All capabilities <ArrowUpRight className="h-4 w-4" />
