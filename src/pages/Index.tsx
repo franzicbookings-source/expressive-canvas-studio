@@ -219,16 +219,9 @@ const Index = () => {
       {/* ───────────── CAPABILITIES — DARK ───────────── */}
       <section
         id="capabilities"
-        className="relative bg-foreground text-background noise overflow-hidden"
+        className="relative text-background overflow-hidden"
+        style={{ backgroundColor: "#0a0a0a" }}
       >
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(900px 500px at 85% 10%, hsl(14 95% 55% / 0.18), transparent 60%), radial-gradient(700px 400px at 10% 90%, hsl(14 95% 55% / 0.08), transparent 60%)",
-          }}
-        />
         <div className="container-wide py-20 md:py-28 relative">
           <div className="grid grid-cols-12 gap-6 mb-12 md:mb-16 items-end">
             <div className="col-span-12 md:col-span-7">
@@ -257,18 +250,15 @@ const Index = () => {
               <Reveal
                 key={c.t}
                 delay={i * 50}
-                className="group relative rounded-3xl border border-background/10 bg-background/[0.03] hover:bg-background/[0.06] hover:border-accent/40 p-6 md:p-7 flex flex-col justify-between min-h-[220px] transition-all duration-300 backdrop-blur-sm"
+                className="group relative rounded-3xl border border-background/10 hover:border-accent/40 p-6 md:p-7 flex flex-col justify-between min-h-[220px] transition-all duration-300"
               >
                 <div className="flex items-start justify-between">
-                  <div className="h-11 w-11 rounded-2xl border border-accent/30 bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-                    <c.Icon className="h-5 w-5" strokeWidth={1.6} />
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-background/50 tabular-nums">
+                    0{i + 1}
                   </div>
                   <ArrowUpRight className="h-4 w-4 text-background/40 group-hover:text-accent transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </div>
                 <div className="mt-8">
-                  <div className="text-[11px] uppercase tracking-[0.22em] text-background/40 mb-2 tabular-nums">
-                    0{i + 1}
-                  </div>
                   <h3 className="display text-lg md:text-xl text-background">{c.t}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-background/60">
                     {c.d}
