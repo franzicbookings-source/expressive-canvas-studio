@@ -105,7 +105,7 @@ const Index = () => {
           style={{ background: "var(--gradient-warm), var(--gradient-hero)" }}
         />
         <div className="container-wide pt-12 md:pt-20 pb-16 md:pb-24">
-          <div className="grid grid-cols-12 gap-10 lg:gap-6 items-center">
+          <div className="grid grid-cols-12 gap-y-10 lg:gap-6 items-center">
             <div className="col-span-12 lg:col-span-7">
               <Reveal>
                 <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-muted-foreground flex items-center gap-2">
