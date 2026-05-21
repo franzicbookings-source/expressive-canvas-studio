@@ -77,6 +77,45 @@ export const SiteNav = () => {
               {l.label}
             </NavLink>
           ))}
+
+          {/* Services dropdown */}
+          <div className="relative group">
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                cn(
+                  "inline-flex items-center gap-1 px-4 py-1.5 text-sm rounded-full transition-all duration-200",
+                  isActive
+                    ? "bg-foreground text-background"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted",
+                )
+              }
+            >
+              Services
+              <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
+            </NavLink>
+            <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50">
+              <div className="min-w-[240px] rounded-2xl border border-border/70 bg-background/95 backdrop-blur-xl shadow-lg p-2">
+                {SERVICE_DETAILS.map((s) => (
+                  <Link
+                    key={s.slug}
+                    to={`/services/${s.slug}`}
+                    className="block px-4 py-2.5 text-sm rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted transition"
+                  >
+                    {s.navLabel}
+                  </Link>
+                ))}
+                <div className="border-t border-border/60 mt-1 pt-1">
+                  <Link
+                    to="/services"
+                    className="block px-4 py-2.5 text-sm rounded-xl text-foreground hover:bg-muted transition font-medium"
+                  >
+                    All services →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </nav>
 
         {/* Right CTA */}
