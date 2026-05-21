@@ -90,9 +90,10 @@ const Index = () => {
 
               <Reveal delay={120}>
                 <p className="mt-8 text-base md:text-lg text-foreground/80 leading-relaxed max-w-xl">
-                  A digital studio out of Newcastle, building the websites,
-                  brands and product surfaces growing African companies
-                  actually deserve.
+                  A business studio out of Newcastle, KZN. We build websites,
+                  shape brands, design print, supply ink, erect signage and
+                  deliver corporate gifts — everything your business needs to
+                  show up properly.
                 </p>
               </Reveal>
               <Reveal delay={200}>
