@@ -1,0 +1,40 @@
+# Ntombii Tech
+
+> Newcastle-born digital studio building mobile-first websites, brand systems, print, signage and corporate gifts for Northern KZN businesses and beyond.
+
+Ntombii Tech is a design and development studio based in Newcastle, KwaZulu-Natal. We build production websites, brand identities, graphic design, printing, signage, ink & toner supply and corporate gifts for SMEs, NGOs and growing African brands.
+
+## Pages
+
+- [Home](/): Studio overview, capabilities and selected work.
+- [Services](/services): Full list of services — web, brand, print, signage, gifts.
+- [Work](/work): Selected client projects and case studies.
+- [Pricing](/pricing): Transparent packages and starting prices.
+- [About](/about): Team, story and how we work.
+- [Process](/process): Our four-step delivery process.
+- [Contact](/contact): Start a project or get a quote on WhatsApp.
+- [Blog](/blog): Articles on web, branding and local business growth.
+- [Areas Served](/areas): Northern KZN towns we work with.
+
+## Services
+
+- [Branding](/services/branding): Logo, identity systems and brand guidelines.
+- [Graphic Design](/services/graphic-design): Marketing collateral, social and pitch decks.
+- [Printing](/services/printing): Business cards, flyers, banners and large-format print.
+- [Ink & Toner](/services/ink-toner): Genuine and compatible cartridges, delivered.
+- [Signage](/services/signage): Shopfront, vehicle and event signage.
+- [Corporate Gifts](/services/corporate-gifts): Branded gifts and merchandise.
+
+## Areas
+
+- [Newcastle](/areas/newcastle): Web, branding and local SEO for Newcastle businesses.
+- [Madadeni](/areas/madadeni): Township-focused brand and web work.
+- [Vryheid](/areas/vryheid): Northern KZN web design and branding.
+- [Ladysmith](/areas/ladysmith): Sites and brand systems for Ladysmith SMEs.
+- [Dundee](/areas/dundee): Web, print and signage for Dundee.
+
+## Optional
+
+- [Web Design Newcastle](/graphic-design-newcastle): Localised graphic design landing page.
+- [Printing Services Dundee](/printing-services-dundee): Localised print services landing page.
+- [Signage Ladysmith](/signage-ladysmith): Localised signage landing page.
