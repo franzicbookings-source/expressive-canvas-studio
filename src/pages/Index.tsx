@@ -356,15 +356,7 @@ const Index = () => {
       </section>
 
       {/* ───────────── TESTIMONIALS — DARK ───────────── */}
-      <section className="relative bg-foreground text-background noise overflow-hidden">
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(800px 500px at 20% 30%, hsl(14 95% 55% / 0.14), transparent 60%)",
-          }}
-        />
+      <section className="relative text-background overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
         <div className="container-wide py-20 md:py-28 relative">
           <div className="grid grid-cols-12 gap-6 mb-12 md:mb-16 items-end">
             <div className="col-span-12 md:col-span-8">
