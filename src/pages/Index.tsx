@@ -591,7 +591,7 @@ const Index = () => {
           </div>
           {/* Bottom margin so floating WA button doesn't clash */}
           <div className="h-2 md:h-0" />
-        </CursorGlow>
+        </div>
       </section>
     </>
   );
