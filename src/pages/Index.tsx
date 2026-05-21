@@ -336,12 +336,12 @@ const Index = () => {
               rel="noreferrer"
               className="group block rounded-3xl overflow-hidden bg-card border border-border/70 lift"
             >
-              <div className="aspect-[16/10] overflow-hidden bg-muted">
+              <div className="overflow-hidden bg-muted">
                 <img
                   src={project.image}
                   alt={project.title}
                   loading="lazy"
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.02]"
+                  className="w-full h-auto object-contain object-top transition duration-700 group-hover:scale-[1.02]"
                 />
               </div>
             </a>
