@@ -32,14 +32,14 @@ const sectionLabel = (n: string, label: string, tone: "light" | "dark" = "light"
 );
 
 const capabilities = [
-  { Icon: Globe, t: "Websites", d: "Business websites, landing pages, school sites and booking flows built for mobile-first visitors." },
-  { Icon: Palette, t: "Brand Systems", d: "Logos, colours, typography, templates and voice — so your business looks consistent everywhere." },
-  { Icon: PenTool, t: "Graphic Design", d: "Posters, flyers, profiles, pitch decks and digital designs that do not look like templates." },
-  { Icon: Printer, t: "Print & Signage", d: "Banners, shopfronts, vehicle branding and print-ready assets for real-world visibility." },
-  { Icon: Code2, t: "Web Engineering", d: "React, Vite, headless builds, performance tuning and clean front-end systems." },
-  { Icon: Smartphone, t: "Mobile Surfaces", d: "Mobile-first by default — built for South African data realities." },
-  { Icon: Megaphone, t: "Signage Solutions", d: "Banners, shopfronts and vehicle branding. Your name, impossible to miss." },
-  { Icon: Gift, t: "Corporate Gifts", d: "Branded gifts that work harder than a handshake — perfect for clients, staff and events." },
+  { t: "Websites", d: "Business websites, landing pages, school sites and booking flows built for mobile-first visitors." },
+  { t: "Brand Systems", d: "Logos, colours, typography, templates and voice — so your business looks consistent everywhere." },
+  { t: "Graphic Design", d: "Posters, flyers, profiles, pitch decks and digital designs that do not look like templates." },
+  { t: "Print & Signage", d: "Banners, shopfronts, vehicle branding and print-ready assets for real-world visibility." },
+  { t: "Web Engineering", d: "React, Vite, headless builds, performance tuning and clean front-end systems." },
+  { t: "Mobile Surfaces", d: "Mobile-first by default — built for South African data realities." },
+  { t: "Signage Solutions", d: "Banners, shopfronts and vehicle branding. Your name, impossible to miss." },
+  { t: "Corporate Gifts", d: "Branded gifts that work harder than a handshake — perfect for clients, staff and events." },
 ];
 
 const process = [
