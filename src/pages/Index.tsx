@@ -24,11 +24,13 @@ const sectionLabel = (n: string, label: string) => (
 
 const capabilities = [
   { t: "Interfaces", d: "Product UI and design systems built to scale from MVP to enterprise.", span: "md:col-span-7 md:row-span-2", tone: "dark" },
-  { t: "Brand systems", d: "Identities with backbone — logo, palette, type, voice, motion.", span: "md:col-span-5" },
-  { t: "Web engineering", d: "React, Vite, headless. Sub-1s loads. Real Lighthouse scores.", span: "md:col-span-5" },
-  { t: "Mobile surfaces", d: "Mobile-first by default — built for South African data realities.", span: "md:col-span-4" },
-  { t: "AI workflows", d: "We ship faster because our process runs on AI, not in spite of it.", span: "md:col-span-4" },
-  { t: "Launch & iterate", d: "We don't disappear at handoff. Weekly improvements, monthly reviews.", span: "md:col-span-4" },
+  { t: "Brand systems", d: "Identities with backbone — logo, type, voice, colour. Built to last.", span: "md:col-span-5" },
+  { t: "Graphic design", d: "Print-ready and digital design that makes your business look the part — every time.", span: "md:col-span-5" },
+  { t: "Web engineering", d: "React, Next.js, headless. Sub-1s loads. Real Lighthouse scores.", span: "md:col-span-4" },
+  { t: "Print services", d: "Flyers, brochures, business cards and more — ordered through us, delivered to your door.", span: "md:col-span-4" },
+  { t: "Ink & toner supply", d: "Keep your office running. Premium cartridges sourced and delivered fast across KZN.", span: "md:col-span-4" },
+  { t: "Signage solutions", d: "Banners, shop fronts, vehicle branding. Your name, impossible to miss.", span: "md:col-span-6" },
+  { t: "Corporate gifts", d: "Branded gifts that work harder than a handshake — perfect for clients, staff and events.", span: "md:col-span-6" },
 ];
 
 const process = [
