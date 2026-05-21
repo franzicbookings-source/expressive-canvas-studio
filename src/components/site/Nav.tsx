@@ -6,12 +6,12 @@ import { SITE } from "@/lib/site";
 import logoUrl from "@/assets/ntombii-tech-logo.webp";
 
 const links = [
+  { to: "/", label: "Home" },
+  { to: "/#capabilities", label: "Capabilities" },
   { to: "/work", label: "Work" },
-  { to: "/services", label: "Services" },
-  { to: "/areas", label: "Areas" },
+  { to: "/#process", label: "Process" },
   { to: "/pricing", label: "Pricing" },
   { to: "/about", label: "About" },
-  { to: "/blog", label: "Blog" },
 ];
 
 export const SiteNav = () => {
