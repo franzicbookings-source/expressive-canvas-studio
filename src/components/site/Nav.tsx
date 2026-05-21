@@ -1,8 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site";
+import { SERVICE_DETAILS } from "@/lib/serviceDetails";
 import logoUrl from "@/assets/ntombii-tech-logo.webp";
 
 const links = [
