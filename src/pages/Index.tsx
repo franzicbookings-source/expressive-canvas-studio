@@ -374,7 +374,7 @@ const Index = () => {
           </div>
 
           <Reveal>
-            <div className="relative rounded-[2rem] border border-background/10 bg-gradient-to-br from-background/[0.05] to-background/[0.02] p-8 md:p-14 backdrop-blur-sm">
+            <div className="relative rounded-[2rem] border border-background/10 p-8 md:p-14">
               <div className="display text-5xl md:text-7xl text-accent leading-none mb-6 select-none">"</div>
               <blockquote className="display text-2xl md:text-4xl leading-tight max-w-4xl text-background">
                 {testimonial.quote}
