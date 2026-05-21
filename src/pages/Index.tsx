@@ -4,21 +4,12 @@ import {
   ArrowRight,
   ArrowUpRight,
   Check,
-  Globe,
-  Palette,
-  PenTool,
-  Printer,
-  Code2,
-  Smartphone,
-  Megaphone,
-  Gift,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { Reveal } from "@/components/home/Reveal";
 import { TrustedBy } from "@/components/home/TrustedBy";
-import { CursorGlow } from "@/components/home/CursorGlow";
 import { SEO } from "@/components/seo/SEO";
 import {
   faqSchema,
@@ -41,14 +32,14 @@ const sectionLabel = (n: string, label: string, tone: "light" | "dark" = "light"
 );
 
 const capabilities = [
-  { Icon: Globe, t: "Websites", d: "Business websites, landing pages, school sites and booking flows built for mobile-first visitors." },
-  { Icon: Palette, t: "Brand Systems", d: "Logos, colours, typography, templates and voice — so your business looks consistent everywhere." },
-  { Icon: PenTool, t: "Graphic Design", d: "Posters, flyers, profiles, pitch decks and digital designs that do not look like templates." },
-  { Icon: Printer, t: "Print & Signage", d: "Banners, shopfronts, vehicle branding and print-ready assets for real-world visibility." },
-  { Icon: Code2, t: "Web Engineering", d: "React, Vite, headless builds, performance tuning and clean front-end systems." },
-  { Icon: Smartphone, t: "Mobile Surfaces", d: "Mobile-first by default — built for South African data realities." },
-  { Icon: Megaphone, t: "Signage Solutions", d: "Banners, shopfronts and vehicle branding. Your name, impossible to miss." },
-  { Icon: Gift, t: "Corporate Gifts", d: "Branded gifts that work harder than a handshake — perfect for clients, staff and events." },
+  { t: "Websites", d: "Business websites, landing pages, school sites and booking flows built for mobile-first visitors." },
+  { t: "Brand Systems", d: "Logos, colours, typography, templates and voice — so your business looks consistent everywhere." },
+  { t: "Graphic Design", d: "Posters, flyers, profiles, pitch decks and digital designs that do not look like templates." },
+  { t: "Print & Signage", d: "Banners, shopfronts, vehicle branding and print-ready assets for real-world visibility." },
+  { t: "Web Engineering", d: "React, Vite, headless builds, performance tuning and clean front-end systems." },
+  { t: "Mobile Surfaces", d: "Mobile-first by default — built for South African data realities." },
+  { t: "Signage Solutions", d: "Banners, shopfronts and vehicle branding. Your name, impossible to miss." },
+  { t: "Corporate Gifts", d: "Branded gifts that work harder than a handshake — perfect for clients, staff and events." },
 ];
 
 const process = [
@@ -219,16 +210,9 @@ const Index = () => {
       {/* ───────────── CAPABILITIES — DARK ───────────── */}
       <section
         id="capabilities"
-        className="relative bg-foreground text-background noise overflow-hidden"
+        className="relative text-background overflow-hidden"
+        style={{ backgroundColor: "#0a0a0a" }}
       >
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(900px 500px at 85% 10%, hsl(14 95% 55% / 0.18), transparent 60%), radial-gradient(700px 400px at 10% 90%, hsl(14 95% 55% / 0.08), transparent 60%)",
-          }}
-        />
         <div className="container-wide py-20 md:py-28 relative">
           <div className="grid grid-cols-12 gap-6 mb-12 md:mb-16 items-end">
             <div className="col-span-12 md:col-span-7">
@@ -257,18 +241,15 @@ const Index = () => {
               <Reveal
                 key={c.t}
                 delay={i * 50}
-                className="group relative rounded-3xl border border-background/10 bg-background/[0.03] hover:bg-background/[0.06] hover:border-accent/40 p-6 md:p-7 flex flex-col justify-between min-h-[220px] transition-all duration-300 backdrop-blur-sm"
+                className="group relative rounded-3xl border border-background/10 hover:border-accent/40 p-6 md:p-7 flex flex-col justify-between min-h-[220px] transition-all duration-300"
               >
                 <div className="flex items-start justify-between">
-                  <div className="h-11 w-11 rounded-2xl border border-accent/30 bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-                    <c.Icon className="h-5 w-5" strokeWidth={1.6} />
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-background/50 tabular-nums">
+                    0{i + 1}
                   </div>
                   <ArrowUpRight className="h-4 w-4 text-background/40 group-hover:text-accent transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </div>
                 <div className="mt-8">
-                  <div className="text-[11px] uppercase tracking-[0.22em] text-background/40 mb-2 tabular-nums">
-                    0{i + 1}
-                  </div>
                   <h3 className="display text-lg md:text-xl text-background">{c.t}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-background/60">
                     {c.d}
@@ -346,12 +327,12 @@ const Index = () => {
               rel="noreferrer"
               className="group block rounded-3xl overflow-hidden bg-card border border-border/70 lift"
             >
-              <div className="aspect-[16/10] overflow-hidden bg-muted">
+              <div className="overflow-hidden bg-muted">
                 <img
                   src={project.image}
                   alt={project.title}
                   loading="lazy"
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.02]"
+                  className="w-full h-auto object-contain object-top transition duration-700 group-hover:scale-[1.02]"
                 />
               </div>
             </a>
@@ -366,15 +347,7 @@ const Index = () => {
       </section>
 
       {/* ───────────── TESTIMONIALS — DARK ───────────── */}
-      <section className="relative bg-foreground text-background noise overflow-hidden">
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(800px 500px at 20% 30%, hsl(14 95% 55% / 0.14), transparent 60%)",
-          }}
-        />
+      <section className="relative text-background overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
         <div className="container-wide py-20 md:py-28 relative">
           <div className="grid grid-cols-12 gap-6 mb-12 md:mb-16 items-end">
             <div className="col-span-12 md:col-span-8">
@@ -392,7 +365,7 @@ const Index = () => {
           </div>
 
           <Reveal>
-            <div className="relative rounded-[2rem] border border-background/10 bg-gradient-to-br from-background/[0.05] to-background/[0.02] p-8 md:p-14 backdrop-blur-sm">
+            <div className="relative rounded-[2rem] border border-background/10 p-8 md:p-14">
               <div className="display text-5xl md:text-7xl text-accent leading-none mb-6 select-none">"</div>
               <blockquote className="display text-2xl md:text-4xl leading-tight max-w-4xl text-background">
                 {testimonial.quote}
@@ -487,12 +460,7 @@ const Index = () => {
         </div>
 
         <div className="grid grid-cols-12 gap-5">
-          <div className="col-span-12 md:col-span-7 rounded-3xl bg-foreground text-background p-7 md:p-10 relative overflow-hidden">
-            <div
-              aria-hidden
-              className="absolute -bottom-32 -right-20 h-96 w-96 rounded-full"
-              style={{ background: "radial-gradient(closest-side, hsl(var(--accent) / 0.45), transparent)" }}
-            />
+          <div className="col-span-12 md:col-span-7 rounded-3xl text-background p-7 md:p-10 relative overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
             <div className="relative">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] uppercase tracking-[0.22em] text-background/60">Most chosen</span>
@@ -589,15 +557,7 @@ const Index = () => {
 
       {/* ───────────── FINAL CTA STRIP — DARK ───────────── */}
       <section className="container-wide py-14 md:py-20">
-        <CursorGlow className="rounded-[2rem] bg-foreground text-background p-8 md:p-14 noise relative overflow-hidden">
-          <div
-            aria-hidden
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background:
-                "radial-gradient(700px 400px at 90% 50%, hsl(14 95% 55% / 0.25), transparent 60%)",
-            }}
-          />
+        <div className="rounded-[2rem] text-background p-8 md:p-14 relative overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
           <div className="relative grid grid-cols-12 gap-8 items-center">
             <div className="col-span-12 md:col-span-8">
               <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-background/50 mb-6">
@@ -622,7 +582,7 @@ const Index = () => {
           </div>
           {/* Bottom margin so floating WA button doesn't clash */}
           <div className="h-2 md:h-0" />
-        </CursorGlow>
+        </div>
       </section>
     </>
   );
