@@ -469,12 +469,7 @@ const Index = () => {
         </div>
 
         <div className="grid grid-cols-12 gap-5">
-          <div className="col-span-12 md:col-span-7 rounded-3xl bg-foreground text-background p-7 md:p-10 relative overflow-hidden">
-            <div
-              aria-hidden
-              className="absolute -bottom-32 -right-20 h-96 w-96 rounded-full"
-              style={{ background: "radial-gradient(closest-side, hsl(var(--accent) / 0.45), transparent)" }}
-            />
+          <div className="col-span-12 md:col-span-7 rounded-3xl text-background p-7 md:p-10 relative overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
             <div className="relative">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] uppercase tracking-[0.22em] text-background/60">Most chosen</span>
