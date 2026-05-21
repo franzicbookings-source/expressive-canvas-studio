@@ -71,6 +71,16 @@ const urls = [
     priority: "0.9",
     change: "monthly",
   })),
+  ...LOCATION_SERVICE_KEYS.flatMap((key) =>
+    [
+      "newcastle", "madadeni", "osizweni", "dannhauser", "utrecht",
+      "ladysmith", "dundee", "glencoe", "estcourt", "bergville",
+    ].map((town) => ({
+      loc: `${SITE_URL}/${key}-${town}`,
+      priority: "0.7",
+      change: "monthly",
+    })),
+  ),
   ...POST_SLUGS.map((slug) => ({
     loc: `${SITE_URL}/blog/${slug}`,
     priority: "0.7",
