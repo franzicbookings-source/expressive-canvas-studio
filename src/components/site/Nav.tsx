@@ -161,6 +161,30 @@ export const SiteNav = () => {
                 {l.label}
               </Link>
             ))}
+
+            {/* Services group */}
+            <div className="pt-2 mt-1 border-t border-border/40">
+              <p className="px-2 py-2 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                Services
+              </p>
+              {SERVICE_DETAILS.map((s) => (
+                <Link
+                  key={s.slug}
+                  to={`/services/${s.slug}`}
+                  onClick={() => setOpen(false)}
+                  className="block px-2 py-2.5 text-sm text-foreground"
+                >
+                  {s.navLabel}
+                </Link>
+              ))}
+              <Link
+                to="/services"
+                onClick={() => setOpen(false)}
+                className="block px-2 py-2.5 text-sm font-medium text-foreground"
+              >
+                All services →
+              </Link>
+            </div>
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
