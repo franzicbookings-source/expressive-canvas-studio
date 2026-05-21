@@ -1,11 +1,24 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { useState } from "react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Check,
+  Globe,
+  Palette,
+  PenTool,
+  Printer,
+  Code2,
+  Smartphone,
+  Megaphone,
+  Gift,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { SITE } from "@/lib/site";
 import { Reveal } from "@/components/home/Reveal";
-import { HoverPreview } from "@/components/home/HoverPreview";
-import { CursorGlow } from "@/components/home/CursorGlow";
 import { TrustedBy } from "@/components/home/TrustedBy";
-import { Testimonials } from "@/components/home/Testimonials";
+import { CursorGlow } from "@/components/home/CursorGlow";
 import { SEO } from "@/components/seo/SEO";
 import {
   faqSchema,
@@ -13,32 +26,45 @@ import {
   reviewSchema,
   websiteSchema,
 } from "@/lib/seo";
+import heroDevices from "@/assets/hero-devices.png";
 
-const sectionLabel = (n: string, label: string) => (
-  <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-muted-foreground mb-10">
-    <span className="tabular-nums">({n})</span>
-    <span className="h-px w-8 bg-border" />
+const sectionLabel = (n: string, label: string, tone: "light" | "dark" = "light") => (
+  <div
+    className={`flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] mb-10 ${
+      tone === "dark" ? "text-background/60" : "text-muted-foreground"
+    }`}
+  >
+    <span className="tabular-nums text-accent">({n})</span>
+    <span className={`h-px w-8 ${tone === "dark" ? "bg-background/30" : "bg-border"}`} />
     <span>{label}</span>
   </div>
 );
 
 const capabilities = [
-  { t: "Interfaces", d: "Product UI and design systems built to scale from MVP to enterprise.", span: "md:col-span-7 md:row-span-2", tone: "dark" },
-  { t: "Brand systems", d: "Identities with backbone — logo, type, voice, colour. Built to last.", span: "md:col-span-5" },
-  { t: "Graphic design", d: "Print-ready and digital design that makes your business look the part — every time.", span: "md:col-span-5" },
-  { t: "Web engineering", d: "React, Next.js, headless. Sub-1s loads. Real Lighthouse scores.", span: "md:col-span-4" },
-  { t: "Print services", d: "Flyers, brochures, business cards and more — ordered through us, delivered to your door.", span: "md:col-span-4" },
-  { t: "Ink & toner supply", d: "Keep your office running. Premium cartridges sourced and delivered fast across KZN.", span: "md:col-span-4" },
-  { t: "Signage solutions", d: "Banners, shop fronts, vehicle branding. Your name, impossible to miss.", span: "md:col-span-6" },
-  { t: "Corporate gifts", d: "Branded gifts that work harder than a handshake — perfect for clients, staff and events.", span: "md:col-span-6" },
+  { Icon: Globe, t: "Websites", d: "Business websites, landing pages, school sites and booking flows built for mobile-first visitors." },
+  { Icon: Palette, t: "Brand Systems", d: "Logos, colours, typography, templates and voice — so your business looks consistent everywhere." },
+  { Icon: PenTool, t: "Graphic Design", d: "Posters, flyers, profiles, pitch decks and digital designs that do not look like templates." },
+  { Icon: Printer, t: "Print & Signage", d: "Banners, shopfronts, vehicle branding and print-ready assets for real-world visibility." },
+  { Icon: Code2, t: "Web Engineering", d: "React, Vite, headless builds, performance tuning and clean front-end systems." },
+  { Icon: Smartphone, t: "Mobile Surfaces", d: "Mobile-first by default — built for South African data realities." },
+  { Icon: Megaphone, t: "Signage Solutions", d: "Banners, shopfronts and vehicle branding. Your name, impossible to miss." },
+  { Icon: Gift, t: "Corporate Gifts", d: "Branded gifts that work harder than a handshake — perfect for clients, staff and events." },
 ];
 
 const process = [
   { n: "01", t: "Discover", d: "60-minute call. We map the goal, audience, constraints and what 'win' looks like." },
-  { n: "02", t: "Design", d: "Wireframes in 72 hours. Visual direction in a week. You approve every checkpoint on WhatsApp." },
-  { n: "03", t: "Build", d: "Engineered in React with performance, SEO and accessibility baked in — not bolted on." },
-  { n: "04", t: "Launch", d: "We ship, monitor, and iterate. Your site keeps getting better after go-live." },
+  { n: "02", t: "Design", d: "Wireframes, direction and visuals — you see the plan before we build." },
+  { n: "03", t: "Build", d: "Clean code, fast loads, mobile-first. We build like it matters." },
+  { n: "04", t: "Launch", d: "Tested, optimised and handed over. Then we keep improving." },
 ];
+
+// Small double-dot brand mark
+const DotMark = ({ className = "" }: { className?: string }) => (
+  <span className={`inline-flex items-center gap-1 ${className}`} aria-hidden>
+    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+  </span>
+);
 
 const Index = () => {
   const featured = SITE.pricing[1];
@@ -46,13 +72,23 @@ const Index = () => {
   const featuredPost = SITE.posts[0];
   const otherPosts = SITE.posts.slice(1, 3);
 
+  const [projectIdx, setProjectIdx] = useState(0);
+  const project = SITE.projects[projectIdx];
+  const stepProject = (dir: 1 | -1) =>
+    setProjectIdx((i) => (i + dir + SITE.projects.length) % SITE.projects.length);
+
+  const [testimonialIdx, setTestimonialIdx] = useState(2); // Mr. Zulu by default
+  const testimonial = SITE.testimonials[testimonialIdx];
+  const stepTestimonial = (dir: 1 | -1) =>
+    setTestimonialIdx((i) => (i + dir + SITE.testimonials.length) % SITE.testimonials.length);
+
   return (
     <>
       <SEO
         title="Ntombii Tech — Web Design Agency in Newcastle, KZN"
-        description="Newcastle-based digital studio building mobile-first websites, web apps and brand systems for businesses across Northern KZN — from R2,500. Fast delivery, real results."
+        description="Newcastle-based business studio building websites, brand systems, print, signage and corporate gifts for KZN companies — everything you need to show up properly."
         path="/"
-        keywords="web design Newcastle, web designer Newcastle KZN, website design Northern KZN, web development Newcastle, branding agency KZN, Ntombii Tech, KZN web agency, Vryheid web design, Ladysmith web design"
+        keywords="web design Newcastle, web designer Newcastle KZN, branding agency KZN, print Newcastle, signage Newcastle, corporate gifts KZN, Ntombii Tech"
         schemas={[
           localBusinessSchema(),
           websiteSchema(),
@@ -60,26 +96,26 @@ const Index = () => {
           ...SITE.testimonials.map(reviewSchema),
         ]}
       />
+
       {/* ───────────── HERO ───────────── */}
-      <section className="relative noise">
+      <section className="relative noise overflow-hidden">
         <div
           aria-hidden
           className="absolute inset-0 -z-10"
           style={{ background: "var(--gradient-warm), var(--gradient-hero)" }}
         />
-        <div className="container-wide pt-16 md:pt-24 pb-16 md:pb-24">
-          <div className="grid grid-cols-12 gap-y-8">
-            <Reveal className="col-span-12 md:col-span-2 hidden md:block">
-              <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground leading-relaxed">
-                <p>(00)</p>
-                <p className="mt-2">— Studio</p>
-                <p className="mt-1 text-foreground">Ntombii.tech</p>
-              </div>
-            </Reveal>
-
-            <div className="col-span-12 md:col-span-10">
+        <div className="container-wide pt-12 md:pt-20 pb-16 md:pb-24">
+          <div className="grid grid-cols-12 gap-y-10 lg:gap-6 items-center">
+            <div className="col-span-12 lg:col-span-7">
               <Reveal>
-                <h1 className="display-mega max-w-[18ch]">
+                <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-muted-foreground flex items-center gap-2">
+                  <DotMark />
+                  <span>Digital · Design · Brand · Print</span>
+                </p>
+              </Reveal>
+
+              <Reveal delay={80}>
+                <h1 className="display-mega mt-6 max-w-[18ch]">
                   We design <span className="serif text-accent">the internet</span>
                   <br />
                   for brands that refuse
@@ -88,7 +124,7 @@ const Index = () => {
                 </h1>
               </Reveal>
 
-              <Reveal delay={120}>
+              <Reveal delay={140}>
                 <p className="mt-8 text-base md:text-lg text-foreground/80 leading-relaxed max-w-xl">
                   A business studio out of Newcastle, KZN. We build websites,
                   shape brands, design print, supply ink, erect signage and
@@ -96,27 +132,66 @@ const Index = () => {
                   show up properly.
                 </p>
               </Reveal>
+
               <Reveal delay={200}>
-                <div className="mt-6 flex flex-wrap gap-3">
+                <div className="mt-8 flex flex-wrap gap-3">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium hover:opacity-90 transition"
+                    className="group inline-flex items-center gap-2 rounded-full bg-accent text-accent-foreground px-6 py-3.5 text-sm font-medium hover:opacity-90 transition shadow-[0_8px_24px_-12px_hsl(14_95%_55%/0.7)]"
                   >
-                    Start a project <ArrowRight className="h-4 w-4" />
+                    Start a project
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                   <a
                     href={`https://wa.me/${SITE.whatsapp}`}
-                    target="_blank" rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 backdrop-blur px-5 py-3 text-sm font-medium hover:border-foreground/40 transition"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background/60 backdrop-blur px-6 py-3.5 text-sm font-medium hover:border-foreground/40 transition"
                   >
                     Chat on WhatsApp
                   </a>
                 </div>
               </Reveal>
             </div>
+
+            {/* Hero mockup */}
+            <Reveal delay={120} className="col-span-12 lg:col-span-5 relative">
+              <div className="relative w-full">
+                <img
+                  src={heroDevices}
+                  alt="Ntombii Tech portfolio shown on laptop, tablet and phone"
+                  width={1600}
+                  height={1120}
+                  fetchPriority="high"
+                  decoding="async"
+                  className="w-full h-auto max-h-[360px] sm:max-h-[440px] lg:max-h-[560px] object-contain"
+                />
+
+                {/* Floating black caption card */}
+                <div className="absolute -bottom-2 left-2 sm:left-6 max-w-[220px] sm:max-w-[260px] rounded-2xl bg-foreground text-background p-4 shadow-[var(--shadow-lift)]">
+                  <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-background/50">
+                    <DotMark />
+                    <span>Ntombii Tech</span>
+                  </div>
+                  <p className="mt-2 text-sm leading-snug">
+                    Design that works <span className="serif text-accent">online</span> and in real life.
+                  </p>
+                </div>
+
+                {/* Circular stamp */}
+                <div className="hidden md:flex absolute -top-2 right-2 h-20 w-20 rounded-full bg-accent text-accent-foreground items-center justify-center text-center shadow-[var(--shadow-lift)]">
+                  <div className="text-[9px] font-semibold uppercase tracking-[0.18em] leading-tight">
+                    Made in
+                    <br />
+                    Newcastle
+                    <br />
+                    KZN
+                  </div>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
-
       </section>
 
       {/* ───────────── TRUSTED BY ───────────── */}
@@ -141,84 +216,147 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ───────────── CAPABILITIES (BENTO) ───────────── */}
-      <section className="container-wide py-20 md:py-28 border-t border-border/60">
-        <div className="grid grid-cols-12 gap-6 mb-10 md:mb-16 items-end">
-          <div className="col-span-12 md:col-span-6">
-            {sectionLabel("02", "Capabilities")}
-            <h2 className="display-xl">
-              From your website
-              <br />
-              <span className="serif text-muted-foreground">to your signage —</span>
-              <br />
-              everything your business needs
-              <br />
-              <span className="serif text-muted-foreground">to show up properly.</span>
-            </h2>
+      {/* ───────────── CAPABILITIES — DARK ───────────── */}
+      <section
+        id="capabilities"
+        className="relative bg-foreground text-background noise overflow-hidden"
+      >
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(900px 500px at 85% 10%, hsl(14 95% 55% / 0.18), transparent 60%), radial-gradient(700px 400px at 10% 90%, hsl(14 95% 55% / 0.08), transparent 60%)",
+          }}
+        />
+        <div className="container-wide py-20 md:py-28 relative">
+          <div className="grid grid-cols-12 gap-6 mb-12 md:mb-16 items-end">
+            <div className="col-span-12 md:col-span-7">
+              <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-accent mb-8">
+                <span className="tabular-nums">(02)</span>
+                <span className="h-px w-8 bg-accent/50" />
+                <span>Capabilities</span>
+              </div>
+              <h2 className="display-xl">
+                Everything your business
+                <br />
+                needs to show up{" "}
+                <span className="serif text-accent">properly.</span>
+              </h2>
+            </div>
+            <div className="col-span-12 md:col-span-4 md:col-start-9">
+              <p className="text-background/70 leading-relaxed">
+                From websites and brand systems to signage, print and corporate
+                gifts — one studio, one standard, one number to call.
+              </p>
+            </div>
           </div>
-          <div className="col-span-12 md:col-span-5 md:col-start-8">
-            <p className="text-muted-foreground">
-              We work like an in-house team — not a vendor. One studio handling
-              your digital presence, your print, your brand, and everything in
-              between.
-            </p>
-            <Link to="/services" className="mt-5 inline-flex items-center gap-2 text-sm font-medium hover:text-accent">
-              All capabilities <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 md:auto-rows-[150px] lg:auto-rows-[170px] gap-3">
-          {capabilities.map((c, i) => {
-            const isDark = c.tone === "dark";
-            return (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {capabilities.map((c, i) => (
               <Reveal
                 key={c.t}
-                delay={i * 60}
-                className={`${c.span} rounded-3xl p-6 md:p-7 lg:p-8 flex flex-col justify-between min-h-[180px] border transition group ${
-                  isDark
-                    ? "bg-foreground text-background border-foreground"
-                    : "bg-card border-border/70 hover:border-foreground/30"
-                }`}
+                delay={i * 50}
+                className="group relative rounded-3xl border border-background/10 bg-background/[0.03] hover:bg-background/[0.06] hover:border-accent/40 p-6 md:p-7 flex flex-col justify-between min-h-[220px] transition-all duration-300 backdrop-blur-sm"
               >
-                <div className="flex items-center justify-between">
-                  <span className={`text-[11px] uppercase tracking-[0.22em] ${isDark ? "text-background/60" : "text-muted-foreground"}`}>
-                    0{i + 1}
-                  </span>
-                  <ArrowUpRight className={`h-4 w-4 transition-all group-hover:-translate-y-1 group-hover:translate-x-1 ${isDark ? "text-background/60" : "text-muted-foreground"}`} />
+                <div className="flex items-start justify-between">
+                  <div className="h-11 w-11 rounded-2xl border border-accent/30 bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                    <c.Icon className="h-5 w-5" strokeWidth={1.6} />
+                  </div>
+                  <ArrowUpRight className="h-4 w-4 text-background/40 group-hover:text-accent transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </div>
-                <div>
-                  <h3 className={`display text-xl md:text-2xl ${isDark ? "" : ""}`}>{c.t}</h3>
-                  <p className={`mt-3 text-sm leading-relaxed max-w-sm ${isDark ? "text-background/70" : "text-muted-foreground"}`}>
+                <div className="mt-8">
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-background/40 mb-2 tabular-nums">
+                    0{i + 1}
+                  </div>
+                  <h3 className="display text-lg md:text-xl text-background">{c.t}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-background/60">
                     {c.d}
                   </p>
                 </div>
               </Reveal>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ───────────── SELECTED WORK (HOVER PREVIEW) ───────────── */}
+      {/* ───────────── SELECTED WORK ───────────── */}
       <section className="container-wide py-20 md:py-28 border-t border-border/60">
-        <div className="grid grid-cols-12 gap-6 mb-12 md:mb-20">
-          <div className="col-span-12 md:col-span-2">
+        <div className="grid grid-cols-12 gap-6 mb-12 md:mb-16 items-end">
+          <div className="col-span-12 md:col-span-7">
             {sectionLabel("03", "Selected work")}
+            <h2 className="display-xl">
+              A small <span className="serif text-accent">portfolio</span>
+              <br />
+              of <span className="serif">serious</span> work.
+            </h2>
           </div>
-          <div className="col-span-12 md:col-span-10">
-            <Reveal>
-              <h2 className="display-xl">
-                A small <span className="serif text-accent">portfolio</span>
-                <br />
-                of <span className="serif">serious</span> work.
-              </h2>
-            </Reveal>
+          <div className="col-span-12 md:col-span-4 md:col-start-9">
+            <p className="text-muted-foreground">
+              A handful of recent builds across non-profit, education,
+              hospitality and civic work — each shipped fast, each built to last.
+            </p>
           </div>
         </div>
 
-        <Reveal>
-          <HoverPreview items={SITE.projects} />
-        </Reveal>
+        <div className="grid grid-cols-12 gap-8 md:gap-12 items-center">
+          <Reveal className="col-span-12 md:col-span-4 order-2 md:order-1">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+              {project.category}
+            </p>
+            <h3 className="display mt-3 text-3xl md:text-4xl">{project.title}</h3>
+            <p className="mt-5 text-muted-foreground leading-relaxed">
+              Website design and development delivered end-to-end — brand,
+              build, content and launch. Live and shipping today.
+            </p>
+            <a
+              href={project.href}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent transition"
+            >
+              View project <ArrowUpRight className="h-4 w-4" />
+            </a>
+
+            <div className="mt-8 flex items-center gap-3">
+              <button
+                aria-label="Previous project"
+                onClick={() => stepProject(-1)}
+                className="h-10 w-10 rounded-full border border-border hover:border-foreground/40 hover:bg-muted flex items-center justify-center transition"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+              <button
+                aria-label="Next project"
+                onClick={() => stepProject(1)}
+                className="h-10 w-10 rounded-full border border-border hover:border-foreground/40 hover:bg-muted flex items-center justify-center transition"
+              >
+                <ChevronRight className="h-4 w-4" />
+              </button>
+              <span className="ml-2 text-xs text-muted-foreground tabular-nums">
+                {String(projectIdx + 1).padStart(2, "0")} / {String(SITE.projects.length).padStart(2, "0")}
+              </span>
+            </div>
+          </Reveal>
+
+          <Reveal delay={100} className="col-span-12 md:col-span-8 order-1 md:order-2">
+            <a
+              href={project.href}
+              target="_blank"
+              rel="noreferrer"
+              className="group block rounded-3xl overflow-hidden bg-card border border-border/70 lift"
+            >
+              <div className="aspect-[16/10] overflow-hidden bg-muted">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.02]"
+                />
+              </div>
+            </a>
+          </Reveal>
+        </div>
 
         <div className="mt-12 flex justify-end">
           <Link to="/work" className="inline-flex items-center gap-2 text-sm font-medium hover:text-accent">
@@ -227,42 +365,110 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ───────────── TESTIMONIALS ───────────── */}
-      <Testimonials />
+      {/* ───────────── TESTIMONIALS — DARK ───────────── */}
+      <section className="relative bg-foreground text-background noise overflow-hidden">
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(800px 500px at 20% 30%, hsl(14 95% 55% / 0.14), transparent 60%)",
+          }}
+        />
+        <div className="container-wide py-20 md:py-28 relative">
+          <div className="grid grid-cols-12 gap-6 mb-12 md:mb-16 items-end">
+            <div className="col-span-12 md:col-span-8">
+              <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-accent mb-8">
+                <span className="tabular-nums">(04)</span>
+                <span className="h-px w-8 bg-accent/50" />
+                <span>Testimonials</span>
+              </div>
+              <h2 className="display-xl">
+                Words from <span className="serif text-accent">people</span>
+                <br />
+                we've actually shipped <span className="serif text-accent">for.</span>
+              </h2>
+            </div>
+          </div>
+
+          <Reveal>
+            <div className="relative rounded-[2rem] border border-background/10 bg-gradient-to-br from-background/[0.05] to-background/[0.02] p-8 md:p-14 backdrop-blur-sm">
+              <div className="display text-5xl md:text-7xl text-accent leading-none mb-6 select-none">"</div>
+              <blockquote className="display text-2xl md:text-4xl leading-tight max-w-4xl text-background">
+                {testimonial.quote}
+              </blockquote>
+
+              <div className="mt-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+                <div>
+                  <div className="display text-lg text-background">{testimonial.name}</div>
+                  <div className="text-sm text-background/60 mt-1">{testimonial.role}</div>
+                  <Link
+                    to="/work"
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent hover:opacity-80 transition"
+                  >
+                    View project <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                </div>
+                <div className="flex items-center gap-3">
+                  <button
+                    aria-label="Previous testimonial"
+                    onClick={() => stepTestimonial(-1)}
+                    className="h-10 w-10 rounded-full border border-background/20 hover:border-accent hover:text-accent flex items-center justify-center transition"
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                  </button>
+                  <button
+                    aria-label="Next testimonial"
+                    onClick={() => stepTestimonial(1)}
+                    className="h-10 w-10 rounded-full border border-background/20 hover:border-accent hover:text-accent flex items-center justify-center transition"
+                  >
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
+                  <span className="ml-2 text-xs text-background/50 tabular-nums">
+                    {String(testimonialIdx + 1).padStart(2, "0")} / {String(SITE.testimonials.length).padStart(2, "0")}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       {/* ───────────── PROCESS ───────────── */}
-      <section className="container-wide py-16 md:py-24 border-t border-border/60">
-        <div className="grid grid-cols-12 gap-6 mb-12">
-          <div className="col-span-12 md:col-span-2">
-            {sectionLabel("05", "Process")}
-          </div>
-          <div className="col-span-12 md:col-span-10">
+      <section id="process" className="container-wide py-20 md:py-28">
+        <div className="grid grid-cols-12 gap-6 mb-12 md:mb-16 items-end">
+          <div className="col-span-12 md:col-span-7">
+            {sectionLabel("05", "Our process")}
             <h2 className="display-xl">
-              Four steps. <span className="serif text-muted-foreground">Zero drama.</span>
+              Four steps. <span className="serif text-accent">Zero drama.</span>
             </h2>
+          </div>
+          <div className="col-span-12 md:col-span-4 md:col-start-9">
+            <p className="text-muted-foreground">
+              A simple rhythm built around WhatsApp checkpoints. You see what's
+              happening every step, no agency theatre.
+            </p>
           </div>
         </div>
 
-        <div className="overflow-x-auto -mx-6 px-6 scroll-snap-x">
-          <div className="flex gap-5 min-w-max md:min-w-0 md:grid md:grid-cols-4">
-            {process.map((p, i) => (
-              <Reveal
-                key={p.n}
-                delay={i * 80}
-                className="snap-start-x w-[280px] md:w-auto bg-card border border-border/70 rounded-3xl p-7 flex flex-col"
-              >
-                <div className="display text-5xl md:text-6xl text-accent leading-none">{p.n}</div>
-                <div className="rule my-6" />
-                <h3 className="display text-xl">{p.t}</h3>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.d}</p>
-              </Reveal>
-            ))}
-          </div>
+        <div className="grid gap-5 md:grid-cols-4">
+          {process.map((p, i) => (
+            <Reveal
+              key={p.n}
+              delay={i * 80}
+              className="rounded-3xl bg-card border border-border/70 p-7 flex flex-col hover:border-foreground/30 transition"
+            >
+              <div className="display text-5xl md:text-6xl text-accent leading-none">{p.n}</div>
+              <div className="rule my-6" />
+              <h3 className="display text-xl">{p.t}</h3>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.d}</p>
+            </Reveal>
+          ))}
         </div>
       </section>
 
       {/* ───────────── PRICING TEASER ───────────── */}
-      <section className="container-wide py-20 md:py-28">
+      <section className="container-wide py-20 md:py-28 border-t border-border/60">
         <div className="grid grid-cols-12 gap-6 mb-14 items-end">
           <div className="col-span-12 md:col-span-7">
             {sectionLabel("06", "Pricing")}
@@ -281,7 +487,6 @@ const Index = () => {
         </div>
 
         <div className="grid grid-cols-12 gap-5">
-          {/* hero card */}
           <div className="col-span-12 md:col-span-7 rounded-3xl bg-foreground text-background p-7 md:p-10 relative overflow-hidden">
             <div
               aria-hidden
@@ -382,42 +587,41 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ───────────── CLOSING CTA ───────────── */}
+      {/* ───────────── FINAL CTA STRIP — DARK ───────────── */}
       <section className="container-wide py-14 md:py-20">
-        <CursorGlow className="rounded-[2rem] bg-foreground text-background p-8 md:p-12 lg:p-16 noise">
-          <div className="relative">
-            <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-background/50 mb-8">
-              <span>(09)</span>
-              <span className="h-px w-8 bg-background/30" />
-              <span>Closing</span>
-            </div>
-            <h2 className="display-mega max-w-[14ch]">
-              Let's build
-              <br />
-              <span className="serif text-accent">the next thing.</span>
-            </h2>
-            <div className="mt-12 grid grid-cols-12 gap-6 items-end">
-              <p className="col-span-12 md:col-span-6 text-background/70 text-lg max-w-xl">
-                Tell us the shape of the idea. We'll respond within 24 hours
-                with a clear plan, timeline, and price — no decks, no fluff.
-              </p>
-              <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-wrap gap-3">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-background text-foreground px-7 py-4 text-sm font-medium hover:opacity-90 transition"
-                >
-                  Start a project <ArrowRight className="h-4 w-4" />
-                </Link>
-                <a
-                  href={`https://wa.me/${SITE.whatsapp}`}
-                  target="_blank" rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-background/30 px-7 py-4 text-sm font-medium hover:bg-background/10 transition"
-                >
-                  WhatsApp us
-                </a>
+        <CursorGlow className="rounded-[2rem] bg-foreground text-background p-8 md:p-14 noise relative overflow-hidden">
+          <div
+            aria-hidden
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(700px 400px at 90% 50%, hsl(14 95% 55% / 0.25), transparent 60%)",
+            }}
+          />
+          <div className="relative grid grid-cols-12 gap-8 items-center">
+            <div className="col-span-12 md:col-span-8">
+              <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-background/50 mb-6">
+                <DotMark />
+                <span>Closing</span>
               </div>
+              <h2 className="display text-3xl md:text-5xl leading-[1.05] max-w-2xl">
+                Ready to make your business look
+                as <span className="serif text-accent">serious</span> as the
+                work behind it?
+              </h2>
+            </div>
+            <div className="col-span-12 md:col-span-4 flex md:justify-end">
+              <Link
+                to="/contact"
+                className="group inline-flex items-center gap-2 rounded-full bg-accent text-accent-foreground px-7 py-4 text-sm font-medium hover:opacity-90 transition shadow-[0_12px_32px_-12px_hsl(14_95%_55%/0.8)]"
+              >
+                Start a project
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
             </div>
           </div>
+          {/* Bottom margin so floating WA button doesn't clash */}
+          <div className="h-2 md:h-0" />
         </CursorGlow>
       </section>
     </>

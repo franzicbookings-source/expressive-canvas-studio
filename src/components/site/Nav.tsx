@@ -6,12 +6,12 @@ import { SITE } from "@/lib/site";
 import logoUrl from "@/assets/ntombii-tech-logo.webp";
 
 const links = [
+  { to: "/", label: "Home" },
+  { to: "/#capabilities", label: "Capabilities" },
   { to: "/work", label: "Work" },
-  { to: "/services", label: "Services" },
-  { to: "/areas", label: "Areas" },
+  { to: "/#process", label: "Process" },
   { to: "/pricing", label: "Pricing" },
   { to: "/about", label: "About" },
-  { to: "/blog", label: "Blog" },
 ];
 
 export const SiteNav = () => {
@@ -92,7 +92,7 @@ export const SiteNav = () => {
             to="/contact"
             className="group inline-flex items-center gap-1.5 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:opacity-90 transition"
           >
-            Let's talk
+            Start a project
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
         </div>
@@ -126,7 +126,7 @@ export const SiteNav = () => {
               onClick={() => setOpen(false)}
               className="mt-3 inline-flex justify-center items-center gap-1.5 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background"
             >
-              Let's talk
+              Start a project
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
