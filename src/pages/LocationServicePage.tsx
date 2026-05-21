@@ -20,12 +20,32 @@ const SectionLabel = ({ n, label }: { n: string; label: string }) => (
   </div>
 );
 
-type Props = { serviceKey: string };
+const SERVICE_KEYS = [
+  "graphic-design",
+  "printing-services",
+  "branding",
+  "ink-toner",
+  "signage",
+  "corporate-gifts",
+];
 
-const LocationServicePage = ({ serviceKey }: Props) => {
-  const { town: townSlug } = useParams<{ town: string }>();
-  const svc = getLocationService(serviceKey);
-  const town = townSlug ? getTown(townSlug) : undefined;
+function parseSlug(slug?: string): { serviceKey: string; townSlug: string } | null {
+  if (!slug) return null;
+  for (const key of SERVICE_KEYS) {
+    const prefix = `${key}-`;
+    if (slug.startsWith(prefix)) {
+      const townSlug = slug.slice(prefix.length);
+      if (townSlug) return { serviceKey: key, townSlug };
+    }
+  }
+  return null;
+}
+
+const LocationServicePage = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const parsed = parseSlug(slug);
+  const svc = parsed ? getLocationService(parsed.serviceKey) : undefined;
+  const town = parsed ? getTown(parsed.townSlug) : undefined;
   if (!svc || !town) return <Navigate to="/areas" replace />;
 
   const path = `/${svc.key}-${town.slug}`;
