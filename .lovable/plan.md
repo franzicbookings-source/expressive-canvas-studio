@@ -1,18 +1,15 @@
-## Plan: Add Google Search Console verification
+## Fix hero caption card on mobile
 
-**What:** Add the verification meta tag to `index.html` so Google can confirm ownership of ntombii.tech.
+The black "Design that works online and in real life" card currently floats over the bottom-left of the device mockup. On mobile this looks cramped — it overlaps the laptop/phone image and sits awkwardly against the screen edge.
 
-**Change:** In `index.html`, inside `<head>` (right after the existing `<meta name="author">`), insert:
+### Change
+In `src/pages/Index.tsx` (hero mockup block, ~lines 149–183):
 
-```html
-<meta name="google-site-verification" content="B06mCRBoqWCGnFg93jN7ghc3dO-6hQvvoDtp2ulNBNs" />
-```
+1. **Mobile (default):** make the caption card flow **below** the device image instead of absolutely overlapping it.
+   - Card becomes `static` on mobile, centered, with comfortable horizontal margin and a wider max-width (e.g. `max-w-sm mx-auto mt-6`).
+   - Keep the current floating absolute behavior from `sm:` upward (`sm:absolute sm:-bottom-2 sm:left-6`).
+2. **Spacing:** add a bit more top margin on the image wrapper and tighten the image `max-h` on the smallest screens so the composition breathes.
+3. **Card polish:** slightly larger padding (`p-5`) and a touch more line-height so the two-line caption doesn't feel squeezed.
+4. Leave the desktop "Made in Newcastle KZN" stamp and all copy untouched.
 
-**Why this works:** The tag is server-rendered in the static HTML (not injected by React), so Googlebot will see it on the first fetch of https://ntombii.tech/.
-
-**After implementing — what you do:**
-1. Publish the project so the change goes live on ntombii.tech.
-2. In Google Search Console, click **Verify** on the property.
-3. Once verified, (re)submit the sitemap: `https://ntombii.tech/sitemap.xml`.
-
-**Note:** Keep the meta tag in place permanently — if you remove it, Google can un-verify the property.
+No business logic or content changes — purely responsive layout polish to the hero card.

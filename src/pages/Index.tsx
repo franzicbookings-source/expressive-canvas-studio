@@ -155,16 +155,16 @@ const Index = () => {
                   height={1120}
                   fetchPriority="high"
                   decoding="async"
-                  className="w-full h-auto max-h-[360px] sm:max-h-[440px] lg:max-h-[560px] object-contain"
+                  className="w-full h-auto max-h-[300px] sm:max-h-[440px] lg:max-h-[560px] object-contain"
                 />
 
                 {/* Floating black caption card */}
-                <div className="absolute -bottom-2 left-2 sm:left-6 max-w-[220px] sm:max-w-[260px] rounded-2xl bg-foreground text-background p-4 shadow-[var(--shadow-lift)]">
+                <div className="relative sm:absolute sm:-bottom-2 sm:left-6 mt-6 sm:mt-0 mx-auto sm:mx-0 max-w-sm sm:max-w-[260px] rounded-2xl bg-foreground text-background p-5 sm:p-4 shadow-[var(--shadow-lift)]">
                   <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-background/50">
                     <DotMark />
                     <span>Ntombii Tech</span>
                   </div>
-                  <p className="mt-2 text-sm leading-snug">
+                  <p className="mt-2 text-sm leading-relaxed">
                     Design that works <span className="serif text-accent">online</span> and in real life.
                   </p>
                 </div>
