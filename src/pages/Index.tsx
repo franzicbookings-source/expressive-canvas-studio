@@ -208,11 +208,11 @@ const Index = () => {
                 We help businesses, schools, organisations, startups and local
                 brands show up properly online and in real life. That means
                 professional{" "}
-                <Link to="/services/web-design" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
+                <Link to="/services" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
                   websites
                 </Link>
                 ,{" "}
-                <Link to="/services/web-development" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
+                <Link to="/services" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
                   web development
                 </Link>
                 ,{" "}
@@ -220,7 +220,7 @@ const Index = () => {
                   brand systems
                 </Link>
                 ,{" "}
-                <Link to="/services/local-seo" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
+                <Link to="/services" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
                   local SEO
                 </Link>
                 ,{" "}
