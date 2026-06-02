@@ -76,10 +76,10 @@ const Index = () => {
   return (
     <>
       <SEO
-        title="Ntombii Tech — Web Design Agency in Newcastle, KZN"
-        description="Newcastle-based business studio building websites, brand systems, print, signage and corporate gifts for KZN companies — everything you need to show up properly."
+        title="Web Design & Digital Solutions Company in Newcastle, KZN | Ntombii Tech"
+        description="Ntombii Tech is a South African digital solutions and web design company in Newcastle, KwaZulu-Natal. We build websites, web apps, brand systems, print, signage, ink solutions and corporate gifts for businesses, schools and organisations across KZN and South Africa."
         path="/"
-        keywords="web design Newcastle, web designer Newcastle KZN, branding agency KZN, print Newcastle, signage Newcastle, corporate gifts KZN, Ntombii Tech"
+        keywords="web design Newcastle KZN, web designer Newcastle, website development South Africa, affordable business websites, small business web design KZN, school websites South Africa, branding Newcastle, local SEO KZN, print and signage Newcastle, corporate gifts KZN, Ntombii Tech"
         schemas={[
           localBusinessSchema(),
           websiteSchema(),
@@ -101,26 +101,27 @@ const Index = () => {
               <Reveal>
                 <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-muted-foreground flex items-center gap-2">
                   <DotMark />
-                  <span>Digital · Design · Brand · Print</span>
+                  <span>Web Design · Branding · Print · Signage · KZN</span>
                 </p>
               </Reveal>
 
               <Reveal delay={80}>
                 <h1 className="display-mega mt-6 max-w-[18ch]">
-                  We design <span className="serif text-accent">the internet</span>
+                  Web design &amp; <span className="serif text-accent">digital solutions</span>
                   <br />
-                  for brands that refuse
+                  for South African
                   <br />
-                  to look <span className="serif">like everyone else.</span>
+                  businesses that <span className="serif">mean business.</span>
                 </h1>
               </Reveal>
 
               <Reveal delay={140}>
                 <p className="mt-8 text-base md:text-lg text-foreground/80 leading-relaxed max-w-xl">
-                  A business studio out of Newcastle, KZN. We build websites,
-                  shape brands, design print, supply ink, erect signage and
-                  deliver corporate gifts — everything your business needs to
-                  show up properly.
+                  Ntombii Tech is a digital solutions and web design company based in
+                  <strong className="font-medium"> Newcastle, KwaZulu-Natal</strong>. We help local
+                  businesses, schools, organisations and startups across South Africa with
+                  professional websites, web apps, branding, print, signage, ink and
+                  corporate gifts — WhatsApp-friendly, mobile-first and built to be found on Google.
                 </p>
               </Reveal>
 
@@ -187,6 +188,100 @@ const Index = () => {
 
       {/* ───────────── TRUSTED BY ───────────── */}
       <TrustedBy />
+
+      {/* ───────────── ENTITY / WHO WE ARE ───────────── */}
+      <section className="container-wide py-16 md:py-20 border-t border-border/60">
+        <div className="grid grid-cols-12 gap-6">
+          <div className="col-span-12 md:col-span-3">
+            {sectionLabel("00", "Who we are")}
+          </div>
+          <div className="col-span-12 md:col-span-9 space-y-6">
+            <Reveal>
+              <h2 className="display text-3xl md:text-4xl lg:text-5xl leading-tight max-w-3xl">
+                Ntombii Tech is a South African{" "}
+                <span className="serif text-accent">digital solutions</span> company
+                based in Newcastle, KZN.
+              </h2>
+            </Reveal>
+            <Reveal delay={80}>
+              <p className="text-base md:text-lg text-foreground/75 leading-relaxed max-w-3xl">
+                We help businesses, schools, organisations, startups and local
+                brands show up properly online and in real life. That means
+                professional{" "}
+                <Link to="/services" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
+                  websites
+                </Link>
+                ,{" "}
+                <Link to="/services" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
+                  web development
+                </Link>
+                ,{" "}
+                <Link to="/services/branding" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
+                  brand systems
+                </Link>
+                ,{" "}
+                <Link to="/services" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
+                  local SEO
+                </Link>
+                ,{" "}
+                <Link to="/services/printing" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
+                  print
+                </Link>
+                ,{" "}
+                <Link to="/services/signage" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
+                  signage
+                </Link>
+                ,{" "}
+                <Link to="/services/ink-toner" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
+                  ink supply
+                </Link>{" "}
+                and{" "}
+                <Link to="/services/corporate-gifts" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
+                  corporate gifts
+                </Link>{" "}
+                — delivered from Newcastle and trusted by clients across{" "}
+                <Link to="/areas/newcastle" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
+                  Newcastle
+                </Link>
+                ,{" "}
+                <Link to="/areas/madadeni" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
+                  Madadeni
+                </Link>
+                ,{" "}
+                <Link to="/areas/vryheid" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
+                  Vryheid
+                </Link>
+                ,{" "}
+                <Link to="/areas/ladysmith" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
+                  Ladysmith
+                </Link>{" "}
+                and wider KwaZulu-Natal.
+              </p>
+            </Reveal>
+            <Reveal delay={160}>
+              <dl className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-5 pt-4 border-t border-border/60">
+                <div>
+                  <dt className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">What we do</dt>
+                  <dd className="mt-2 text-sm text-foreground/85">Websites, web apps, branding &amp; digital growth</dd>
+                </div>
+                <div>
+                  <dt className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Where</dt>
+                  <dd className="mt-2 text-sm text-foreground/85">Newcastle, KZN — serving South Africa</dd>
+                </div>
+                <div>
+                  <dt className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Who we serve</dt>
+                  <dd className="mt-2 text-sm text-foreground/85">Small businesses, schools, NGOs &amp; startups</dd>
+                </div>
+                <div>
+                  <dt className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Why trust us</dt>
+                  <dd className="mt-2 text-sm text-foreground/85">5★ rated · 30+ projects · 100% client retention</dd>
+                </div>
+              </dl>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
 
       {/* ───────────── MANIFESTO ───────────── */}
       <section className="container-wide py-20 md:py-28">
