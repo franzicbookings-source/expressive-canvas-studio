@@ -76,10 +76,10 @@ const Index = () => {
   return (
     <>
       <SEO
-        title="Ntombii Tech — Web Design Agency in Newcastle, KZN"
-        description="Newcastle-based business studio building websites, brand systems, print, signage and corporate gifts for KZN companies — everything you need to show up properly."
+        title="Web Design & Digital Solutions Company in Newcastle, KZN | Ntombii Tech"
+        description="Ntombii Tech is a South African digital solutions and web design company in Newcastle, KwaZulu-Natal. We build websites, web apps, brand systems, print, signage, ink solutions and corporate gifts for businesses, schools and organisations across KZN and South Africa."
         path="/"
-        keywords="web design Newcastle, web designer Newcastle KZN, branding agency KZN, print Newcastle, signage Newcastle, corporate gifts KZN, Ntombii Tech"
+        keywords="web design Newcastle KZN, web designer Newcastle, website development South Africa, affordable business websites, small business web design KZN, school websites South Africa, branding Newcastle, local SEO KZN, print and signage Newcastle, corporate gifts KZN, Ntombii Tech"
         schemas={[
           localBusinessSchema(),
           websiteSchema(),
