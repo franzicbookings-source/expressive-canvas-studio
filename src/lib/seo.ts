@@ -12,12 +12,13 @@ export const absUrl = (path: string) =>
 // --------- LocalBusiness / Organization (site-wide) ---------
 export const localBusinessSchema = () => ({
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["ProfessionalService", "LocalBusiness"],
   "@id": `${SITE_URL}/#business`,
   name: SITE.name,
   alternateName: "Ntombii Communications",
   description:
-    "Newcastle-based digital studio designing and building mobile-first websites, web apps and brand systems for businesses across Northern KZN.",
+    "South African digital solutions and web design company based in Newcastle, KwaZulu-Natal — building websites, web apps, brand systems, print, signage, ink and corporate gifts for local businesses, schools and organisations.",
+  slogan: "Design that works online and in real life.",
   url: SITE_URL,
   telephone: ORG_PHONE,
   email: ORG_EMAIL,
@@ -35,14 +36,25 @@ export const localBusinessSchema = () => ({
     latitude: -27.7574,
     longitude: 29.9318,
   },
-  areaServed: LOCATIONS.map((l) => ({
-    "@type": "City",
-    name: l.name,
-  })),
-  sameAs: [
-    SITE.socials.instagram,
-    SITE.socials.linkedin,
-  ].filter(Boolean),
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "KwaZulu-Natal" },
+    { "@type": "Country", name: "South Africa" },
+    ...LOCATIONS.map((l) => ({ "@type": "City", name: l.name })),
+  ],
+  knowsAbout: [
+    "Web design",
+    "Website development",
+    "E-commerce websites",
+    "School websites",
+    "Web applications",
+    "Branding and logo design",
+    "Local SEO",
+    "Print and graphic design",
+    "Signage",
+    "Ink and toner supply",
+    "Corporate gifts",
+  ],
+  sameAs: [SITE.socials.instagram].filter(Boolean),
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
