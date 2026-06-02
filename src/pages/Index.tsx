@@ -101,26 +101,27 @@ const Index = () => {
               <Reveal>
                 <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-muted-foreground flex items-center gap-2">
                   <DotMark />
-                  <span>Digital · Design · Brand · Print</span>
+                  <span>Web Design · Branding · Print · Signage · KZN</span>
                 </p>
               </Reveal>
 
               <Reveal delay={80}>
                 <h1 className="display-mega mt-6 max-w-[18ch]">
-                  We design <span className="serif text-accent">the internet</span>
+                  Web design &amp; <span className="serif text-accent">digital solutions</span>
                   <br />
-                  for brands that refuse
+                  for South African
                   <br />
-                  to look <span className="serif">like everyone else.</span>
+                  businesses that <span className="serif">mean business.</span>
                 </h1>
               </Reveal>
 
               <Reveal delay={140}>
                 <p className="mt-8 text-base md:text-lg text-foreground/80 leading-relaxed max-w-xl">
-                  A business studio out of Newcastle, KZN. We build websites,
-                  shape brands, design print, supply ink, erect signage and
-                  deliver corporate gifts — everything your business needs to
-                  show up properly.
+                  Ntombii Tech is a digital solutions and web design company based in
+                  <strong className="font-medium"> Newcastle, KwaZulu-Natal</strong>. We help local
+                  businesses, schools, organisations and startups across South Africa with
+                  professional websites, web apps, branding, print, signage, ink and
+                  corporate gifts — WhatsApp-friendly, mobile-first and built to be found on Google.
                 </p>
               </Reveal>
 
