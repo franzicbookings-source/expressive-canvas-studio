@@ -59,6 +59,59 @@ const About = () => (
       ))}
     </section>
 
+    {/* Founder */}
+    <section className="container-wide py-20 border-t border-border/60">
+      <div className="grid gap-10 md:grid-cols-12 md:gap-14 items-center">
+        <Reveal className="md:col-span-5">
+          <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-card aspect-[4/5]">
+            <img
+              src={founderImage.url}
+              alt="Sabelo Ndlovu — The Technoking, founder of Ntombii Tech, wearing a branded Ntombii Tech shirt"
+              className="h-full w-full object-cover"
+              loading="lazy"
+              width={1136}
+              height={1420}
+            />
+          </div>
+        </Reveal>
+        <Reveal delay={120} className="md:col-span-7">
+          <p className="eyebrow">Founder</p>
+          <h2 className="display mt-4 text-3xl md:text-5xl leading-[1.05]">
+            Sabelo Ndlovu — <span className="serif text-accent">The Technoking.</span>
+          </h2>
+          <p className="mt-6 text-lg text-muted-foreground">
+            Sabelo Ndlovu, also known as <strong className="text-foreground">The Technoking</strong>, is the founder of Ntombii Tech. He's a tech creative and digital builder focused on helping brands, businesses and entrepreneurs grow through modern websites, smart digital solutions and a strong online presence.
+          </p>
+          <p className="mt-4 text-muted-foreground">
+            Based in Newcastle, KwaZulu-Natal, Sabelo leads every project personally — from the first WhatsApp brief to the live site — bringing the same standards to a local salon's first website as to a school's full digital rebuild.
+          </p>
+          <dl className="mt-8 grid gap-4 sm:grid-cols-2 text-sm">
+            <div className="rounded-2xl border border-border/70 bg-card p-5">
+              <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Role</dt>
+              <dd className="mt-2 font-medium">Founder & Lead Builder</dd>
+            </div>
+            <div className="rounded-2xl border border-border/70 bg-card p-5">
+              <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Based in</dt>
+              <dd className="mt-2 font-medium">Newcastle, KZN</dd>
+            </div>
+            <div className="rounded-2xl border border-border/70 bg-card p-5">
+              <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Company reg.</dt>
+              <dd className="mt-2 font-medium">2022/529038/07</dd>
+            </div>
+            <div className="rounded-2xl border border-border/70 bg-card p-5">
+              <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Find him on</dt>
+              <dd className="mt-2 flex flex-wrap gap-x-4 gap-y-1 font-medium">
+                <a href={SITE.socials.instagram} target="_blank" rel="noreferrer" className="hover:text-accent">Instagram</a>
+                <a href={SITE.socials.facebook} target="_blank" rel="noreferrer" className="hover:text-accent">Facebook</a>
+              </dd>
+            </div>
+          </dl>
+        </Reveal>
+      </div>
+    </section>
+
+
+
     <section className="container-tight py-20 grid md:grid-cols-2 gap-12">
       <Reveal>
         <h2 className="display text-3xl md:text-4xl">Our approach</h2>
