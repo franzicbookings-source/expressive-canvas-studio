@@ -20,7 +20,8 @@ export const SITE = {
   whatsapp: "27812360230",
   whatsappDisplay: "+27 81 236 0230",
   socials: {
-    instagram: "https://www.instagram.com/ntombii_communications",
+    instagram: "https://www.instagram.com/ntombii_tech",
+    facebook: "https://www.facebook.com/share/1DVpeKGEGi/",
     twitter: "https://twitter.com/",
     linkedin: "https://www.linkedin.com/",
   },

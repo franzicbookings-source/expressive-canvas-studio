@@ -3,6 +3,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { SITE } from "@/lib/site";
 import { SEO } from "@/components/seo/SEO";
 import { breadcrumbSchema, localBusinessSchema } from "@/lib/seo";
+import founderImage from "@/assets/sabelo-ndlovu-founder.png.asset.json";
 
 const principles = [
   { n: "01", t: "Clarity over cleverness", d: "If a visitor can't act in 5 seconds, the design has failed." },

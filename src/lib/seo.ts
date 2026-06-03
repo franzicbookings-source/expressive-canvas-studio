@@ -54,7 +54,17 @@ export const localBusinessSchema = () => ({
     "Ink and toner supply",
     "Corporate gifts",
   ],
-  sameAs: [SITE.socials.instagram].filter(Boolean),
+  sameAs: [SITE.socials.instagram, SITE.socials.facebook].filter(Boolean),
+  founder: {
+    "@type": "Person",
+    name: "Sabelo Ndlovu",
+    alternateName: "The Technoking",
+    jobTitle: "Founder",
+    description:
+      "Sabelo Ndlovu (The Technoking) is the founder of Ntombii Tech — a tech creative and digital builder helping brands, businesses and entrepreneurs grow through modern websites, smart digital solutions and a strong online presence.",
+    sameAs: [SITE.socials.instagram, SITE.socials.facebook].filter(Boolean),
+  },
+  taxID: "2022/529038/07",
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
