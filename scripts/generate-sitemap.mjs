@@ -34,6 +34,13 @@ const SERVICE_SLUGS = [
   "ink-toner",
   "signage",
   "corporate-gifts",
+  "web-design",
+  "web-development",
+  "ecommerce",
+  "school-websites",
+  "local-seo",
+  "logo-design",
+  "web-apps",
 ];
 
 // Location × service combos: 6 services × 10 towns = 60 URLs

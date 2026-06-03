@@ -613,6 +613,374 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       { label: "Printing Services", href: "/services/printing" },
     ],
   },
+
+  // ───────────────────────── WEB DESIGN ─────────────────────────
+  {
+    slug: "web-design",
+    navLabel: "Web Design",
+    seoTitle: "Web Design Newcastle KZN | Professional Website Design | Ntombii Tech",
+    seoDescription:
+      "Professional web design in Newcastle, KwaZulu-Natal. Mobile-first websites for small businesses, schools and organisations across South Africa. Free WhatsApp quote.",
+    keywords:
+      "web design Newcastle, website design KZN, web designer Amajuba, professional website South Africa, small business website Newcastle",
+    eyebrow: "Web Design",
+    headline: "Websites that look professional",
+    headlineItalic: "and actually bring you customers.",
+    body:
+      "We design clean, fast, mobile-first websites for South African businesses. Based in Newcastle, serving Amajuba, KZN and the rest of South Africa. Every site is built to be found on Google and easy to update.",
+    ctaLabel: "Get a website quote",
+    ctaMessage: "Hi Ntombii Tech — I'd like a quote for a website.",
+    s1Label: "What you get",
+    s1Heading: "Everything a small business needs to look serious online.",
+    s1Body:
+      "We design the kind of website your business deserves — one that loads fast, works on every phone, and gives customers a reason to call or WhatsApp you.",
+    s1Cards: [
+      { title: "Mobile-first design", body: "Designed for the phone first, then desktop. Because 80% of your visitors are on mobile." },
+      { title: "Fast, modern build", body: "Built on React for speed. Pages load in under 2 seconds — Google rewards that." },
+      { title: "On-page SEO", body: "Proper titles, meta descriptions, headings, schema and image alt text on every page." },
+      { title: "WhatsApp & call buttons", body: "Sticky CTAs so visitors can reach you in one tap. We track them too." },
+      { title: "Contact forms", body: "Forms that deliver enquiries to your email and WhatsApp — no leads lost." },
+      { title: "Easy to update", body: "We hand it over with a simple guide, or stay on as your maintainer. Your call." },
+    ],
+    s2Label: "Who this is for",
+    s2Heading: "Small businesses, schools and professionals who want to be taken seriously.",
+    s2Body:
+      "If you're still relying on a Facebook page or a free site builder, you're losing customers to competitors with proper websites. We work with retailers, tradespeople, schools, salons, restaurants, professionals and NGOs across Newcastle, Madadeni, Vryheid, Ladysmith, Dundee, Utrecht and wider KZN.",
+    s2Cards: [
+      { title: "Starting price", body: "From R4 500 for a 5-page small business website. See Pricing for full packages." },
+      { title: "Turnaround", body: "Most sites delivered in 7–14 working days from approved brief." },
+      { title: "Hosting & domain", body: "We set up your domain and hosting. You own everything from day one." },
+      { title: "Support after launch", body: "30 days of free tweaks. Optional monthly care plan after." },
+    ],
+    s3Label: "How it works",
+    s3Heading: "Three steps from idea to live site.",
+    s3Cards: [
+      { title: "Brief & quote", body: "WhatsApp us what you do and what you need. We send a fixed quote within 24 hours." },
+      { title: "Design & build", body: "We design the site, you approve, we build. WhatsApp check-ins, no surprises." },
+      { title: "Launch & train", body: "We launch on your domain and show you how to update it. You're in control." },
+    ],
+    ctaHeading: "Ready for a website that actually works for your business?",
+    ctaBody: "WhatsApp us your idea — even a voice note works. We'll send you a quote and timeline fast.",
+    ctaButton: "Start your website on WhatsApp",
+    ctaButtonMessage: "Hi Ntombii Tech — I'd like to start a website project.",
+    related: [
+      { label: "Web Development", href: "/services/web-development" },
+      { label: "E-commerce", href: "/services/ecommerce" },
+      { label: "Local SEO", href: "/services/local-seo" },
+    ],
+  },
+
+  // ───────────────────────── WEB DEVELOPMENT ─────────────────────────
+  {
+    slug: "web-development",
+    navLabel: "Web Development",
+    seoTitle: "Web Development Newcastle KZN | React Developers | Ntombii Tech",
+    seoDescription:
+      "Custom web development in Newcastle, KZN. React-based production builds, integrations, dashboards and web apps for South African businesses.",
+    keywords:
+      "web development Newcastle, React developer KZN, custom web development South Africa, web developer Amajuba",
+    eyebrow: "Web Development",
+    headline: "Production-grade web development,",
+    headlineItalic: "built in Newcastle.",
+    body:
+      "When a template won't cut it, we build it from scratch. Modern React + TypeScript stacks, proper integrations, real performance. For businesses that need their website to do real work.",
+    ctaLabel: "Discuss your project",
+    ctaMessage: "Hi Ntombii Tech — I'd like to discuss a web development project.",
+    s1Label: "What we build",
+    s1Heading: "Custom websites and web apps engineered to last.",
+    s1Body:
+      "We don't drop a template and call it a day. We build with React, TypeScript and Tailwind — the same stack used by global companies — tuned for South African connections and devices.",
+    s1Cards: [
+      { title: "Custom websites", body: "Bespoke designs, custom features, custom CMS. Whatever your business needs to do, we build it." },
+      { title: "Web applications", body: "Dashboards, booking systems, calculators, member portals, internal tools." },
+      { title: "API integrations", body: "Connect to WhatsApp Business, payment gateways, CRMs, email marketing — anything with an API." },
+      { title: "Performance optimisation", body: "Sub-2-second load times. Core Web Vitals green. Built for SA network conditions." },
+      { title: "Headless CMS", body: "Edit your own content without breaking the design. Sanity, Supabase or custom admin." },
+      { title: "Maintenance & upgrades", body: "Ongoing care plans. Security, backups, bug fixes, new features." },
+    ],
+    s2Label: "Who this is for",
+    s2Heading: "Businesses with a real brief, not just a brochure site.",
+    s2Body:
+      "If you've outgrown WordPress, your developer ghosted you, or you need something genuinely custom — talk to us. We work with growing businesses across South Africa from our base in Newcastle, KZN.",
+    s3Label: "How it works",
+    s3Heading: "We scope properly. Then we build.",
+    s3Cards: [
+      { title: "Discovery call", body: "A proper conversation about what you actually need. No assumptions." },
+      { title: "Scope & quote", body: "A written scope, fixed quote, and timeline. You know exactly what you're getting." },
+      { title: "Build & deploy", body: "Weekly demos, transparent progress. Launch when it's right — not when it's late." },
+    ],
+    ctaHeading: "Have a real build in mind?",
+    ctaBody: "WhatsApp us a short brief. If it's a fit, we'll set up a call this week.",
+    ctaButton: "Send your brief",
+    ctaButtonMessage: "Hi Ntombii Tech — here's my web development brief:",
+    related: [
+      { label: "Web Design", href: "/services/web-design" },
+      { label: "Web Apps", href: "/services/web-apps" },
+      { label: "E-commerce", href: "/services/ecommerce" },
+    ],
+  },
+
+  // ───────────────────────── E-COMMERCE ─────────────────────────
+  {
+    slug: "ecommerce",
+    navLabel: "E-commerce Websites",
+    seoTitle: "E-commerce Website Design Newcastle KZN | Online Stores | Ntombii Tech",
+    seoDescription:
+      "Online store development in Newcastle, KZN. Sell your products online with a fast, secure e-commerce site. Payment gateways, delivery, WhatsApp checkout.",
+    keywords:
+      "ecommerce Newcastle, online store KZN, online shop South Africa, ecommerce website Amajuba, Shopify alternative Newcastle",
+    eyebrow: "E-commerce",
+    headline: "Sell online,",
+    headlineItalic: "without selling your soul to fees.",
+    body:
+      "We build online stores for South African businesses — proper checkout, local payment gateways, WhatsApp order confirmations and shipping that actually works in SA.",
+    ctaLabel: "Get an online store quote",
+    ctaMessage: "Hi Ntombii Tech — I'd like a quote for an online store.",
+    s1Label: "What's included",
+    s1Heading: "Everything you need to start selling.",
+    s1Body:
+      "From product photos to checkout to delivery — we build the whole engine, not just a storefront.",
+    s1Cards: [
+      { title: "Product catalogue", body: "Unlimited products with images, variants, stock tracking and categories." },
+      { title: "SA payment gateways", body: "PayFast, Yoco, Peach, Stripe — accept cards, EFT, SnapScan and Zapper." },
+      { title: "Shipping & delivery", body: "Courier integrations, pickup points, local delivery zones for KZN." },
+      { title: "WhatsApp order alerts", body: "You get notified the moment an order comes in — and so does the customer." },
+      { title: "Mobile checkout", body: "One-page checkout that works on every phone. No abandoned carts because of bad UX." },
+      { title: "SEO for products", body: "Every product page gets proper schema, meta and structured data — Google can sell for you." },
+    ],
+    s2Label: "Who this is for",
+    s2Heading: "Retailers, makers and brands ready to sell beyond the shop floor.",
+    s2Body:
+      "Whether you sell 5 products or 5 000, we'll build a store sized to your business. We work with retailers and manufacturers across Newcastle, KZN and South Africa.",
+    s3Label: "How it works",
+    s3Heading: "From catalogue to checkout in 3 steps.",
+    s3Cards: [
+      { title: "Plan", body: "We map your products, payment, shipping and tax setup before we touch the design." },
+      { title: "Build", body: "Storefront, checkout, admin and integrations — all built and tested." },
+      { title: "Launch & train", body: "We load your first products with you and train you to run the store yourself." },
+    ],
+    ctaHeading: "Ready to sell online?",
+    ctaBody: "WhatsApp us about your products. We'll send a quote with options for your stage of business.",
+    ctaButton: "Start your online store",
+    ctaButtonMessage: "Hi Ntombii Tech — I'd like to start an online store.",
+    related: [
+      { label: "Web Design", href: "/services/web-design" },
+      { label: "Local SEO", href: "/services/local-seo" },
+      { label: "Branding & Identity", href: "/services/branding" },
+    ],
+  },
+
+  // ───────────────────────── SCHOOL WEBSITES ─────────────────────────
+  {
+    slug: "school-websites",
+    navLabel: "School Websites",
+    seoTitle: "School Website Design Newcastle KZN | Schools & Colleges | Ntombii Tech",
+    seoDescription:
+      "Professional school websites in Newcastle, KZN. Application forms, news, calendars, photo galleries and parent portals for primary and high schools across South Africa.",
+    keywords:
+      "school website design Newcastle, school website KZN, high school website South Africa, primary school website Amajuba",
+    eyebrow: "School Websites",
+    headline: "Websites that make your school",
+    headlineItalic: "the obvious choice for parents.",
+    body:
+      "We design and build websites for primary schools, high schools and colleges across KZN and South Africa — built around what parents actually need to find: fees, admissions, news, contact.",
+    ctaLabel: "Get a school website quote",
+    ctaMessage: "Hi Ntombii Tech — I'd like a quote for a school website.",
+    s1Label: "What's included",
+    s1Heading: "Built for the real questions parents ask.",
+    s1Body:
+      "Most school sites bury the information parents want. We put it front and centre — admissions, fees, term dates, contact — then layer in the rest.",
+    s1Cards: [
+      { title: "Admissions & forms", body: "Online application forms that deliver to the office email, with PDF downloads." },
+      { title: "News & announcements", body: "Easy to update news section so the principal can post without calling us." },
+      { title: "Calendar & events", body: "Term dates, sports fixtures, parent meetings — all in one place." },
+      { title: "Photo galleries", body: "Showcase school life, events, sports and achievements." },
+      { title: "Staff & departments", body: "Profiles for leadership and academic teams. Builds trust before the first visit." },
+      { title: "POPIA-compliant", body: "Privacy policy, consent on forms, and secure handling of learner data." },
+    ],
+    s2Label: "Who this is for",
+    s2Heading: "Public, private and independent schools that want to compete on more than reputation.",
+    s2Body:
+      "Parents Google your school before they enquire. If your site looks dated, they assume the school is too. We help schools across Newcastle, Madadeni, Vryheid, Ladysmith and KZN show up properly.",
+    s3Label: "How it works",
+    s3Heading: "Three steps. Live before the next intake.",
+    s3Cards: [
+      { title: "Discovery", body: "We meet with the school to understand departments, programmes and brand." },
+      { title: "Design & build", body: "We design, you approve at the SGB level, we build and load content." },
+      { title: "Launch & training", body: "We train the school's chosen person to update news and events." },
+    ],
+    ctaHeading: "Ready to give your school the website it deserves?",
+    ctaBody: "WhatsApp us — we'll send a quote and examples of school sites we've built.",
+    ctaButton: "Get a school website quote",
+    ctaButtonMessage: "Hi Ntombii Tech — I'd like a quote for a school website.",
+    related: [
+      { label: "Web Design", href: "/services/web-design" },
+      { label: "Branding & Identity", href: "/services/branding" },
+      { label: "Printing Services", href: "/services/printing" },
+    ],
+  },
+
+  // ───────────────────────── LOCAL SEO ─────────────────────────
+  {
+    slug: "local-seo",
+    navLabel: "Local SEO",
+    seoTitle: "Local SEO Newcastle KZN | Get Found on Google | Ntombii Tech",
+    seoDescription:
+      "Local SEO services in Newcastle, KZN. Get your business found on Google for the searches your customers actually type. Google Business Profile, on-page, local schema.",
+    keywords:
+      "local SEO Newcastle, SEO KZN, Google Business Newcastle, SEO services Amajuba, get found on Google South Africa",
+    eyebrow: "Local SEO",
+    headline: "Get found by the customers",
+    headlineItalic: "already searching for you.",
+    body:
+      "Local SEO that gets you into the Google Map pack, on the first page for your services + town, and recommended by AI search like ChatGPT and Gemini. Built for South African small businesses.",
+    ctaLabel: "Get a local SEO audit",
+    ctaMessage: "Hi Ntombii Tech — I'd like a local SEO audit.",
+    s1Label: "What we do",
+    s1Heading: "The full local SEO stack — not just keywords.",
+    s1Body:
+      "Local SEO is part technical, part content, part listings, part reputation. We do all four, in the right order, with monthly reporting.",
+    s1Cards: [
+      { title: "Google Business Profile", body: "Full setup or rescue. Categories, services, photos, posts and review strategy." },
+      { title: "On-page SEO", body: "Titles, meta, headings, schema, internal linking on every page that matters." },
+      { title: "Location pages", body: "Dedicated pages for each town and service combination — built to rank." },
+      { title: "Local citations", body: "Consistent name, address, phone across SA directories and platforms." },
+      { title: "Reviews strategy", body: "A system for getting more Google reviews — ethically, consistently." },
+      { title: "AI search optimisation", body: "Entity, schema and content tuning so ChatGPT, Gemini and Perplexity recommend you." },
+    ],
+    s2Label: "Who this is for",
+    s2Heading: "Local businesses tired of being invisible on Google.",
+    s2Body:
+      "If you're not in the Google Map pack for your service in your town, you're losing customers daily to competitors who are. We help businesses across Newcastle, Madadeni, Vryheid, Ladysmith, Dundee and wider KZN climb the rankings.",
+    s2Cards: [
+      { title: "Starting price", body: "Audits from R1 500. Ongoing local SEO from R2 500/month." },
+      { title: "First results", body: "Google Business wins in 2–4 weeks. Organic rankings 60–90 days." },
+      { title: "Reporting", body: "Monthly report: rankings, traffic, calls, directions, leads." },
+      { title: "No lock-in", body: "Month-to-month. Stay because it works, not because of a contract." },
+    ],
+    s3Label: "How it works",
+    s3Heading: "Audit. Fix. Grow.",
+    s3Cards: [
+      { title: "Audit", body: "We benchmark your site, listings, reviews and competitors. You get a written report." },
+      { title: "Fix the foundations", body: "Technical SEO, Google Business, schema, location pages — all sorted first." },
+      { title: "Grow rankings", body: "Monthly content, citations, reviews and link-building to push you up." },
+    ],
+    ctaHeading: "Want to know where you stand on Google?",
+    ctaBody: "WhatsApp us your website and town. We'll do a free quick check before quoting.",
+    ctaButton: "Request a free SEO check",
+    ctaButtonMessage: "Hi Ntombii Tech — please do a free local SEO check on my business.",
+    related: [
+      { label: "Web Design", href: "/services/web-design" },
+      { label: "Web Development", href: "/services/web-development" },
+      { label: "Branding & Identity", href: "/services/branding" },
+    ],
+  },
+
+  // ───────────────────────── LOGO DESIGN ─────────────────────────
+  {
+    slug: "logo-design",
+    navLabel: "Logo Design",
+    seoTitle: "Logo Design Newcastle KZN | Professional Logos | Ntombii Tech",
+    seoDescription:
+      "Professional logo design in Newcastle, KZN. Custom logos for small businesses, schools and startups across South Africa. Vector files, all formats included.",
+    keywords:
+      "logo design Newcastle, logo designer KZN, custom logo South Africa, business logo Amajuba",
+    eyebrow: "Logo Design",
+    headline: "A logo that earns",
+    headlineItalic: "your business respect.",
+    body:
+      "Custom logo design for South African businesses, schools and startups. Original concepts, proper vector files, every format you'll ever need. Based in Newcastle, KZN.",
+    ctaLabel: "Get a logo quote",
+    ctaMessage: "Hi Ntombii Tech — I'd like a quote for a logo.",
+    s1Label: "What you get",
+    s1Heading: "More than a picture — a working brand mark.",
+    s1Body:
+      "A logo isn't art. It's a tool. We design logos that work small, big, in colour, in black, on a t-shirt, on a sign, online and on a business card.",
+    s1Cards: [
+      { title: "Primary logo", body: "Full horizontal/stacked logo with your name and mark." },
+      { title: "Logo variations", body: "Alternate layouts for tight spaces, dark backgrounds and social icons." },
+      { title: "Icon mark", body: "A standalone symbol for favicons, app icons and watermarks." },
+      { title: "Vector files", body: "AI, SVG, EPS — scale to any size without losing quality." },
+      { title: "Web & print files", body: "PNG, JPG and PDF in correct colour profiles for screen and print." },
+      { title: "Mini brand sheet", body: "Your colours, fonts and clear-space rules on a one-page reference." },
+    ],
+    s2Label: "Who this is for",
+    s2Heading: "Anyone starting up, rebranding, or finally going pro.",
+    s2Body:
+      "New businesses, side hustles going formal, churches, schools, NGOs, sports teams — if it needs a logo, we'll design one that fits.",
+    s2Cards: [
+      { title: "Starting price", body: "From R1 500 for a logo + variations + files." },
+      { title: "Turnaround", body: "First concepts in 3–5 working days." },
+      { title: "Concepts", body: "2–3 directions per round. Two revision rounds included." },
+      { title: "Ownership", body: "Full ownership and copyright handed to you on final payment." },
+    ],
+    s3Label: "How it works",
+    s3Heading: "Brief. Design. Deliver.",
+    s3Cards: [
+      { title: "Brief", body: "We ask the right questions about your business, audience and competition." },
+      { title: "Concepts", body: "We send 2–3 distinct directions. You pick one to refine." },
+      { title: "Deliver", body: "Final files in every format, plus a mini brand sheet." },
+    ],
+    ctaHeading: "Need a logo that doesn't look like everyone else's?",
+    ctaBody: "WhatsApp us your business name and a sentence about what you do.",
+    ctaButton: "Start your logo on WhatsApp",
+    ctaButtonMessage: "Hi Ntombii Tech — I'd like a quote for a logo.",
+    related: [
+      { label: "Branding & Identity", href: "/services/branding" },
+      { label: "Graphic Design", href: "/services/graphic-design" },
+      { label: "Printing Services", href: "/services/printing" },
+    ],
+  },
+
+  // ───────────────────────── WEB APPS ─────────────────────────
+  {
+    slug: "web-apps",
+    navLabel: "Web Apps",
+    seoTitle: "Web App Development Newcastle KZN | Custom Digital Systems | Ntombii Tech",
+    seoDescription:
+      "Custom web app development in Newcastle, KZN. Dashboards, booking systems, member portals and internal tools for South African businesses.",
+    keywords:
+      "web app development Newcastle, custom software KZN, internal tools South Africa, booking system Amajuba, dashboard developer Newcastle",
+    eyebrow: "Web Apps",
+    headline: "Custom digital systems",
+    headlineItalic: "that run your business.",
+    body:
+      "When spreadsheets stop scaling and off-the-shelf software doesn't fit, we build the system you actually need. Built on modern, maintainable stacks — owned by you.",
+    ctaLabel: "Discuss your web app",
+    ctaMessage: "Hi Ntombii Tech — I'd like to discuss a web app project.",
+    s1Label: "What we build",
+    s1Heading: "Software shaped exactly to your operation.",
+    s1Body:
+      "Every business has those processes that everyone hates because no software does it right. We build the one that does.",
+    s1Cards: [
+      { title: "Booking & scheduling", body: "Service bookings, appointments, room reservations — with reminders and payments." },
+      { title: "Admin dashboards", body: "Custom dashboards for your team — orders, jobs, customers, reports in one place." },
+      { title: "Member & client portals", body: "Logged-in areas for clients to view documents, status, invoices and history." },
+      { title: "Internal tools", body: "Replace messy spreadsheets with a real interface your team will actually use." },
+      { title: "Workflow automation", body: "Forms that route, notify, calculate and trigger the next step automatically." },
+      { title: "Integrations", body: "Connect to WhatsApp, accounting, payments, email — anything with an API." },
+    ],
+    s2Label: "Who this is for",
+    s2Heading: "Businesses ready to invest in proper systems.",
+    s2Body:
+      "If you've outgrown spreadsheets, paid for SaaS you don't use, or have a process only one person knows how to run — let's talk. We work with SMEs across KZN and South Africa from our Newcastle base.",
+    s3Label: "How it works",
+    s3Heading: "Scope first. Build right. Hand over clean.",
+    s3Cards: [
+      { title: "Discovery & scope", body: "We map your workflow, users and data. You get a clear scope and quote." },
+      { title: "Build in sprints", body: "Two-week sprints with demos. You see progress weekly, not at the end." },
+      { title: "Launch & support", body: "We deploy, train your team, and support you as you grow." },
+    ],
+    ctaHeading: "Got a process begging for proper software?",
+    ctaBody: "WhatsApp us a short description. We'll set up a free scoping call.",
+    ctaButton: "Discuss your web app",
+    ctaButtonMessage: "Hi Ntombii Tech — I'd like to discuss a web app:",
+    related: [
+      { label: "Web Development", href: "/services/web-development" },
+      { label: "E-commerce", href: "/services/ecommerce" },
+      { label: "Web Design", href: "/services/web-design" },
+    ],
+  },
 ];
 
 export const getServiceDetail = (slug: string) =>
