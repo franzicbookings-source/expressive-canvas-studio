@@ -4,6 +4,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { SITE } from "@/lib/site";
 import { SEO } from "@/components/seo/SEO";
 import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
+import { SERVICE_DETAILS } from "@/lib/serviceDetails";
 
 const process = [
   { n: "01", t: "Discover", d: "A short call, a tighter brief. We surface the real goal before any pixel moves." },
@@ -70,6 +71,35 @@ const Services = () => (
           </a>
         </Reveal>
       ))}
+    </section>
+
+    {/* All service detail pages */}
+    <section className="container-wide pb-24">
+      <Reveal>
+        <p className="eyebrow">All services</p>
+        <h2 className="display mt-4 text-3xl md:text-5xl max-w-3xl">
+          Every service, <span className="serif text-accent">in detail.</span>
+        </h2>
+        <p className="mt-4 max-w-2xl text-muted-foreground">
+          Pick a service to see what's included, pricing guidance, turnaround and FAQs.
+        </p>
+      </Reveal>
+      <div className="mt-10 grid gap-px bg-border/70 rounded-3xl overflow-hidden border border-border/70 md:grid-cols-2 lg:grid-cols-3">
+        {SERVICE_DETAILS.map((s, i) => (
+          <Reveal key={s.slug} delay={i * 40}>
+            <Link
+              to={`/services/${s.slug}`}
+              className="group flex items-center justify-between bg-background p-6 md:p-7 hover:bg-card transition h-full"
+            >
+              <div>
+                <span className="display text-lg md:text-xl">{s.navLabel}</span>
+                <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{s.eyebrow}</p>
+              </div>
+              <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-colors shrink-0 ml-3" />
+            </Link>
+          </Reveal>
+        ))}
+      </div>
     </section>
 
     {/* How we work */}
