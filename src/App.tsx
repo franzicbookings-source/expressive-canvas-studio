@@ -10,6 +10,7 @@ import Index from "./pages/Index.tsx";
 const Services = lazy(() => import("./pages/Services.tsx"));
 const ServiceDetail = lazy(() => import("./pages/ServiceDetail.tsx"));
 const Work = lazy(() => import("./pages/Work.tsx"));
+const CaseStudy = lazy(() => import("./pages/CaseStudy.tsx"));
 const Pricing = lazy(() => import("./pages/Pricing.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
 const Blog = lazy(() => import("./pages/Blog.tsx"));
@@ -35,6 +36,7 @@ const App = () => (
               <Route path="/services" element={<Services />} />
               <Route path="/services/:slug" element={<ServiceDetail />} />
               <Route path="/work" element={<Work />} />
+              <Route path="/work/:slug" element={<CaseStudy />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/about" element={<About />} />
               <Route path="/blog" element={<Blog />} />

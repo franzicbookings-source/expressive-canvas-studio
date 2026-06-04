@@ -39,9 +39,8 @@ const Work = () => (
       <div className="columns-1 md:columns-2 gap-8 [column-fill:_balance]">
         {SITE.projects.map((p, i) => (
           <Reveal key={p.slug} delay={i * 90} className="mb-8 break-inside-avoid">
-            <a
-              href={p.href}
-              target="_blank" rel="noreferrer"
+            <Link
+              to={`/work/${p.slug}`}
               className="group block lift rounded-3xl overflow-hidden bg-card border border-border/70"
             >
               <div className="overflow-hidden bg-muted">
@@ -56,10 +55,11 @@ const Work = () => (
                 <div>
                   <p className="text-xs text-muted-foreground">{p.category}</p>
                   <h2 className="display mt-2 text-2xl md:text-3xl">{p.title}</h2>
+                  <p className="mt-3 text-xs text-muted-foreground">Read case study →</p>
                 </div>
                 <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-accent transition shrink-0" />
               </div>
-            </a>
+            </Link>
           </Reveal>
         ))}
       </div>
