@@ -12,7 +12,10 @@ const LOCATION_SLUGS = [
   "newcastle", "madadeni", "osizweni", "vryheid", "ladysmith",
   "dundee", "utrecht", "pongola", "nongoma", "glencoe",
   "dannhauser", "estcourt", "bergville", "ulundi", "paulpietersburg",
+  "durban", "johannesburg", "pretoria", "south-africa",
 ];
+
+const CASE_STUDY_SLUGS = ["nyatee", "events", "umzilikazi", "keepnnalive"];
 
 // Mirror of post slugs.
 const POST_SLUGS = [
@@ -91,6 +94,11 @@ const urls = [
   ...POST_SLUGS.map((slug) => ({
     loc: `${SITE_URL}/blog/${slug}`,
     priority: "0.7",
+    change: "monthly",
+  })),
+  ...CASE_STUDY_SLUGS.map((slug) => ({
+    loc: `${SITE_URL}/work/${slug}`,
+    priority: "0.8",
     change: "monthly",
   })),
 ];

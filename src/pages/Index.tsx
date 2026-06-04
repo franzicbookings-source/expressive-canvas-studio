@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -32,14 +32,14 @@ const sectionLabel = (n: string, label: string, tone: "light" | "dark" = "light"
 );
 
 const capabilities = [
-  { t: "Websites", d: "Business websites, landing pages, school sites and booking flows built for mobile-first visitors." },
-  { t: "Brand Systems", d: "Logos, colours, typography, templates and voice — so your business looks consistent everywhere." },
-  { t: "Graphic Design", d: "Posters, flyers, profiles, pitch decks and digital designs that do not look like templates." },
-  { t: "Print & Signage", d: "Banners, shopfronts, vehicle branding and print-ready assets for real-world visibility." },
-  { t: "Web Engineering", d: "React, Vite, headless builds, performance tuning and clean front-end systems." },
-  { t: "Mobile Surfaces", d: "Mobile-first by default — built for South African data realities." },
-  { t: "Signage Solutions", d: "Banners, shopfronts and vehicle branding. Your name, impossible to miss." },
-  { t: "Corporate Gifts", d: "Branded gifts that work harder than a handshake — perfect for clients, staff and events." },
+  { t: "Websites", d: "Business websites, landing pages, school sites and booking flows built for mobile-first visitors.", href: "/services/web-design" },
+  { t: "Brand Systems", d: "Logos, colours, typography, templates and voice — so your business looks consistent everywhere.", href: "/services/branding" },
+  { t: "Graphic Design", d: "Posters, flyers, profiles, pitch decks and digital designs that do not look like templates.", href: "/services/graphic-design" },
+  { t: "Print & Signage", d: "Banners, shopfronts, vehicle branding and print-ready assets for real-world visibility.", href: "/services/printing" },
+  { t: "Web Engineering", d: "React, Vite, headless builds, performance tuning and clean front-end systems.", href: "/services/web-development" },
+  { t: "Mobile Surfaces", d: "Mobile-first by default — built for South African data realities.", href: "/services/web-apps" },
+  { t: "Signage Solutions", d: "Banners, shopfronts and vehicle branding. Your name, impossible to miss.", href: "/services/signage" },
+  { t: "Corporate Gifts", d: "Branded gifts that work harder than a handshake — perfect for clients, staff and events.", href: "/services/corporate-gifts" },
 ];
 
 const process = [
@@ -72,6 +72,18 @@ const Index = () => {
   const testimonial = SITE.testimonials[testimonialIdx];
   const stepTestimonial = (dir: 1 | -1) =>
     setTestimonialIdx((i) => (i + dir + SITE.testimonials.length) % SITE.testimonials.length);
+
+  // Smooth-scroll to hash targets (e.g. /#capabilities) when navigated from another page.
+  const routerLocation = useLocation();
+  useEffect(() => {
+    if (!routerLocation.hash) return;
+    const id = routerLocation.hash.slice(1);
+    const el = document.getElementById(id);
+    if (el) {
+      // Defer so layout is painted first.
+      requestAnimationFrame(() => el.scrollIntoView({ behavior: "smooth", block: "start" }));
+    }
+  }, [routerLocation.hash]);
 
   return (
     <>
@@ -333,23 +345,24 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {capabilities.map((c, i) => (
-              <Reveal
-                key={c.t}
-                delay={i * 50}
-                className="group relative rounded-3xl border border-background/10 hover:border-accent/40 p-6 md:p-7 flex flex-col justify-between min-h-[220px] transition-all duration-300"
-              >
-                <div className="flex items-start justify-between">
-                  <div className="text-[11px] uppercase tracking-[0.22em] text-background/50 tabular-nums">
-                    0{i + 1}
+              <Reveal key={c.t} delay={i * 50}>
+                <Link
+                  to={c.href}
+                  className="group relative rounded-3xl border border-background/10 hover:border-accent/40 p-6 md:p-7 flex flex-col justify-between min-h-[220px] transition-all duration-300 h-full"
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="text-[11px] uppercase tracking-[0.22em] text-background/50 tabular-nums">
+                      0{i + 1}
+                    </div>
+                    <ArrowUpRight className="h-4 w-4 text-background/40 group-hover:text-accent transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   </div>
-                  <ArrowUpRight className="h-4 w-4 text-background/40 group-hover:text-accent transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </div>
-                <div className="mt-8">
-                  <h3 className="display text-lg md:text-xl text-background">{c.t}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-background/60">
-                    {c.d}
-                  </p>
-                </div>
+                  <div className="mt-8">
+                    <h3 className="display text-lg md:text-xl text-background">{c.t}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-background/60">
+                      {c.d}
+                    </p>
+                  </div>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -602,7 +615,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ───────────── JOURNAL ───────────── */}
+      {/* ───────────── JOURNAL (hidden on home — still accessible at /blog) ─────────────
       <section className="container-wide py-16 md:py-24 border-t border-border/60">
         <div className="grid grid-cols-12 gap-6 mb-12 items-end">
           <div className="col-span-12 md:col-span-6">
@@ -649,6 +662,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* ───────────── FINAL CTA STRIP — DARK ───────────── */}
       <section className="container-wide py-14 md:py-20">

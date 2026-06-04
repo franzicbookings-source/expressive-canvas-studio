@@ -260,6 +260,78 @@ export const LOCATIONS: Location[] = [
       { q: "Is it worth building a website for a Paulpietersburg business?", a: "Yes — even low-volume search markets reward early movers. A R2,500 starter site captures 100% of the local Google traffic that exists." },
     ],
   },
+  {
+    slug: "durban",
+    name: "Durban",
+    region: "eThekwini Metro, KZN",
+    district: "eThekwini",
+    intro:
+      "Durban is South Africa's third-largest city and KZN's economic engine — a port, tourism and manufacturing powerhouse where digital competition is real. Standing out here requires sharper design, faster sites, and tighter local SEO than anywhere else in the province.",
+    hook: "In Durban, a slow site is the same as no site. Speed, schema, and clarity win.",
+    industries: ["Logistics & port", "Tourism & hospitality", "Manufacturing", "Retail & franchises", "Healthcare", "Professional services"],
+    neighborhoods: ["Umhlanga", "Ballito", "Berea", "Morningside", "Westville", "Hillcrest", "Pinetown", "Chatsworth", "Phoenix", "Amanzimtoti"],
+    landmarks: ["Moses Mabhida Stadium", "uShaka Marine World", "Suncoast", "Gateway Theatre of Shopping", "Durban Harbour"],
+    geo: { lat: -29.8587, lng: 31.0218 },
+    faqs: [
+      { q: "Do you work with Durban businesses remotely from Newcastle?", a: "Yes — every project runs on WhatsApp and video calls. Distance is no obstacle; we've shipped builds for Durban and Umhlanga clients without an in-person meeting." },
+      { q: "How much does a website cost in Durban?", a: "Our Starter sites begin at R2,500 and most Durban SMEs launch on Business at R3,500. Larger Umhlanga and Ballito brands typically run R7,500–R25,000 for custom builds." },
+      { q: "Can you handle Durban local SEO and Google Business Profile?", a: "Yes. Every Durban build includes Google Business Profile setup, local schema markup, and area-targeted page copy for suburbs like Umhlanga, Berea, and Westville." },
+    ],
+  },
+  {
+    slug: "johannesburg",
+    name: "Johannesburg",
+    region: "Gauteng",
+    district: "City of Johannesburg",
+    intro:
+      "Johannesburg is South Africa's commercial capital — fast, competitive, and unforgiving for businesses that don't show up online with conviction. We build Joburg brands clean, fast websites that look as serious as the deals being closed in them.",
+    hook: "Joburg moves fast. Your website should load faster.",
+    industries: ["Finance & fintech", "Mining & engineering", "Retail & franchises", "Logistics", "Tech startups", "Professional services"],
+    neighborhoods: ["Sandton", "Rosebank", "Fourways", "Randburg", "Bryanston", "Midrand", "Soweto", "Roodepoort", "Centurion-adjacent", "Melville"],
+    landmarks: ["Sandton City", "Nelson Mandela Square", "Constitution Hill", "Soweto Towers", "OR Tambo International"],
+    geo: { lat: -26.2041, lng: 28.0473 },
+    faqs: [
+      { q: "Do you serve Johannesburg from KZN?", a: "Yes — 100% remote delivery via WhatsApp and Zoom. We've worked with Sandton and Rosebank clients across full project lifecycles without an in-person handover." },
+      { q: "How long does a Johannesburg business website take?", a: "Starter sites ship in under a week. Business builds run a 72-hour design sprint and ship in 1–2 weeks. Custom Joburg brand builds take 3–6 weeks." },
+      { q: "Can you compete with Joburg agencies on quality?", a: "Yes — and on price. Most Joburg agencies quote R20,000+ for what we deliver from R3,500 with the same React/Vite stack, Core Web Vitals tuning, and schema markup." },
+    ],
+  },
+  {
+    slug: "pretoria",
+    name: "Pretoria",
+    region: "Gauteng (Tshwane Metro)",
+    district: "City of Tshwane",
+    intro:
+      "Pretoria is the administrative capital — government, embassies, universities, and serious B2B service firms. The bar for credibility is high here, and a polished website is non-negotiable for any business pitching to corporate or government clients.",
+    hook: "In Pretoria, your website is your first interview. Dress it sharp.",
+    industries: ["Government & public sector", "Education & universities", "Engineering & consulting", "Embassies & NGOs", "Automotive", "Professional services"],
+    neighborhoods: ["Centurion", "Hatfield", "Brooklyn", "Menlyn", "Waterkloof", "Lynnwood", "Arcadia", "Mamelodi", "Atteridgeville", "Pretoria North"],
+    landmarks: ["Union Buildings", "Voortrekker Monument", "Menlyn Park", "University of Pretoria", "Loftus Versfeld"],
+    geo: { lat: -25.7479, lng: 28.2293 },
+    faqs: [
+      { q: "Do you build websites for Pretoria consulting and B2B firms?", a: "Yes — clean, credibility-first sites with capability statements, downloadable PDFs, case studies, and lead-capture forms are a strong fit for Pretoria's B2B economy." },
+      { q: "Can you help Pretoria businesses tender for government work?", a: "Yes. We build sites with the corporate polish, supplier directories, and BEE-friendly content structure tender adjudicators expect to see." },
+    ],
+  },
+  {
+    slug: "south-africa",
+    name: "South Africa",
+    region: "Nationwide",
+    district: "National",
+    intro:
+      "Ntombii Tech serves businesses across South Africa — from Cape Town to Polokwane, Gqeberha to Mbombela. Every project runs on WhatsApp and video calls, so wherever you are, you get a Newcastle-based studio delivering work that competes nationally.",
+    hook: "You don't need to be in our city. You just need a site that gets you found in yours.",
+    industries: ["SMEs across all sectors", "Schools & education", "Non-profits & NGOs", "E-commerce", "Hospitality & tourism", "Professional services"],
+    neighborhoods: ["Gauteng", "Western Cape", "KwaZulu-Natal", "Eastern Cape", "Free State", "Limpopo", "Mpumalanga", "North West", "Northern Cape"],
+    landmarks: ["Table Mountain", "Cradle of Humankind", "Drakensberg", "Kruger National Park", "Robben Island"],
+    geo: { lat: -28.4793, lng: 24.6727 },
+    faqs: [
+      { q: "Do you work with clients outside KwaZulu-Natal?", a: "Yes. We've shipped websites for clients across South Africa — Gauteng, Western Cape, Eastern Cape, and Limpopo. WhatsApp + Zoom is our standard workflow." },
+      { q: "How much does a small business website cost in South Africa?", a: "Our Starter package is R2,500 for a one-page site. Most SMEs launch on Business at R3,500. Custom builds for e-commerce, schools, and corporates start at R7,500." },
+      { q: "Can you provide local SEO for any South African city?", a: "Yes. Every build includes Google Business Profile setup, local schema markup, and city-targeted page copy — whether you're in Johannesburg, Cape Town, Durban, or anywhere else in SA." },
+      { q: "Do you accept EFT and card payments?", a: "Yes — EFT, card via Yoco/Stripe, and 50% deposit terms for projects over R5,000. Full invoice issued for SARS compliance." },
+    ],
+  },
 ];
 
 export const getLocation = (slug?: string) =>

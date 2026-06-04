@@ -1,24 +1,61 @@
-## Phase 2 — Missing service pages
+## Part A — Fix Capabilities cards (homepage)
 
-Add 7 new service detail pages so every offering in the entity definition has its own indexable, AI-citable page.
+The 8 capability cards in `src/pages/Index.tsx` show an `ArrowUpRight` icon but aren't clickable. Make each card a real `Link` to its matching service detail page.
 
-### New pages (route → slug)
-1. `/services/web-design` — Website Design (primary "web design Newcastle KZN" landing)
-2. `/services/web-development` — Web Development (React / production builds)
-3. `/services/ecommerce` — E-commerce Websites
-4. `/services/school-websites` — School Websites
-5. `/services/local-seo` — Local SEO
-6. `/services/logo-design` — Logo Design (links back to Branding)
-7. `/services/web-apps` — Web Apps / Digital Systems
+Mapping (capability title → existing slug in `SERVICE_DETAILS`):
+- Websites → `/services/web-design`
+- Brand Systems → `/services/branding`
+- Graphic Design → `/services/graphic-design`
+- Print & Signage → `/services/printing`
+- Web Engineering → `/services/web-development`
+- Mobile Surfaces → `/services/web-apps`
+- Signage Solutions → `/services/signage`
+- Corporate Gifts → `/services/corporate-gifts`
 
-### Implementation
-- Append 7 new `ServiceDetail` objects to the existing `SERVICE_DETAILS` array in `src/lib/serviceDetails.ts`. Reuses the existing `ServiceDetail.tsx` page, so no routing changes needed (`/services/:slug` already resolves them).
-- Each new entry includes: unique SEO title + description + keywords, hero H1, "What we do" with 4–6 included items, "Who this is for", 3-step process, FAQs (3–5 questions targeting buyer intent like "how much", "how long", "do you build X"), WhatsApp CTA with prefilled message, and 3 related-page internal links.
-- Each page automatically gets `Service` + `BreadcrumbList` schema via the existing template. I'll extend the template to also inject `FAQPage` schema when the detail has FAQs (currently it doesn't).
-- Update `src/pages/Services.tsx` index so the new services appear in the services grid with anchor links to their detail pages.
-- Switch the 3 placeholder homepage links (web-design, web-development, local-seo) from `/services` to the real new URLs.
-- Add the 7 new URLs to `scripts/generate-sitemap.ts` so the regenerated `sitemap.xml` includes them.
+Add a `slug` field to each item in the `capabilities` array and convert the `Reveal` card wrapper into a `Link` (keep the Reveal as inner container, or use `asChild`-style nesting via `<Reveal><Link>...</Link></Reveal>`).
 
-### Out of scope for Phase 2
-- Adding the new services into every existing location page's "services offered" list (heavy edit across 15 + 60 pages) — defer to Phase 4 internal-linking sweep.
-- New nav menu items (current top nav uses `Services` as a single entry; the index page lists them, which is enough).
+Also verify the `/#capabilities` nav link scrolls correctly when clicked from non-home pages; if not, add a small effect in `Index.tsx` to scroll to `#capabilities` on mount when the hash is present.
+
+## Part B — Hide Journal section from homepage
+
+In `src/pages/Index.tsx`, comment out (do NOT delete) the `{/* JOURNAL */}` section (~lines 605–651). Leaves `/blog` and `/blog/:slug` routes, the Blog page, the data in `src/lib/site.ts`, and the nav "Journal" link untouched.
+
+## Part C — Phase 3
+
+### C1. New location pages (4)
+Append to `LOCATIONS` array in `src/lib/locations.ts`:
+1. `durban` — eThekwini, KZN metro
+2. `johannesburg` — Gauteng, business capital
+3. `pretoria` — Tshwane, Gauteng
+4. `south-africa` — national service page
+
+Each gets the same shape as existing locations (intro, hook, industries, neighborhoods, landmarks, geo, FAQs). Existing `/areas/:town` route + `LocationPage.tsx` will render them automatically. Add the 4 new URLs (plus the 7 service-combo URLs each, if `LocationServicePage` enumerates them) to `scripts/generate-sitemap.mjs` and regenerate `public/sitemap.xml`.
+
+### C2. Case study pages (4)
+Convert the 4 existing portfolio items into full case studies at `/work/:slug`:
+- `nyatee` — Nyatee Foundation
+- `events` — Sknowhite Events
+- `umzilikazi` — Umzilikazi Senior Secondary
+- `keepnnalive` — Keep Newcastle Alive
+
+Implementation:
+- New file `src/lib/caseStudies.ts` with a `CASE_STUDIES` array keyed by slug. Each entry: hero image, client, sector, location, year, scope (services delivered), challenge, approach, outcome, 3–5 result bullets, screenshots (reuse existing portfolio images), live URL, related services (links to `/services/<slug>`).
+- New page `src/pages/CaseStudy.tsx` rendering a single case study with `SEO` (CreativeWork + BreadcrumbList schema) and a WhatsApp CTA.
+- Add route `/work/:slug` in `src/App.tsx` (lazy import).
+- Update `src/pages/Work.tsx` and the homepage "Selected work" card to link to `/work/<slug>` instead of the external `href` (keep the external link as a "View live site ↗" secondary action inside the case study).
+- Add 4 new URLs to `scripts/generate-sitemap.mjs` and regenerate sitemap.
+
+### Out of scope
+- Adding Durban/Joburg/Pretoria into every existing service detail's "areas served" copy.
+- New nav menu entries (Case studies will be reachable via `/work` and homepage links).
+- Touching `src/lib/site.ts` posts (Journal data stays for future re-enable).
+
+## Files touched
+- `src/pages/Index.tsx` (capabilities → links, hide Journal)
+- `src/lib/locations.ts` (+4 locations)
+- `src/lib/caseStudies.ts` (new)
+- `src/pages/CaseStudy.tsx` (new)
+- `src/pages/Work.tsx` (link to internal case studies)
+- `src/App.tsx` (route)
+- `scripts/generate-sitemap.mjs` + `public/sitemap.xml`
+- `.lovable/plan.md` (update progress notes)
