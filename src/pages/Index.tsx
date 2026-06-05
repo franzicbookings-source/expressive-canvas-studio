@@ -18,6 +18,7 @@ import {
   websiteSchema,
 } from "@/lib/seo";
 import heroDevices from "@/assets/hero-devices.webp";
+import founderImage from "@/assets/sabelo-ndlovu-founder.png.asset.json";
 
 const sectionLabel = (n: string, label: string, tone: "light" | "dark" = "light") => (
   <div
