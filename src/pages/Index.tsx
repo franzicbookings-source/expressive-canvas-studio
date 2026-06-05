@@ -694,6 +694,46 @@ const Index = () => {
           <div className="h-2 md:h-0" />
         </div>
       </section>
+
+      {/* ───────────── FOUNDER PREVIEW ───────────── */}
+      <section className="container-wide pb-16 md:pb-24">
+        <Reveal>
+          <Link
+            to="/about"
+            className="group grid grid-cols-12 gap-6 md:gap-10 items-center rounded-[2rem] border border-border/70 bg-card p-6 md:p-10 lift"
+          >
+            <div className="col-span-12 md:col-span-4">
+              <div className="relative overflow-hidden rounded-2xl bg-muted aspect-[4/5]">
+                <img
+                  src={founderImage.url}
+                  alt="Sabelo Ndlovu, The Technoking, founder of Ntombii Tech"
+                  loading="lazy"
+                  className="h-full w-full object-cover group-hover:scale-[1.03] transition duration-700"
+                  width={1136}
+                  height={1420}
+                />
+              </div>
+            </div>
+            <div className="col-span-12 md:col-span-8">
+              <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-muted-foreground mb-6">
+                <span className="tabular-nums text-accent">(08)</span>
+                <span className="h-px w-8 bg-border" />
+                <span>The Founder</span>
+              </div>
+              <h2 className="display text-3xl md:text-5xl leading-[1.05]">
+                Sabelo Ndlovu. <span className="serif text-accent">The Technoking.</span>
+              </h2>
+              <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-2xl">
+                Tech creative and digital builder behind Ntombii Tech. Helping brands, businesses and entrepreneurs grow through modern websites, smart digital solutions and a strong online presence.
+              </p>
+              <span className="mt-7 inline-flex items-center gap-2 text-sm font-medium group-hover:text-accent">
+                Read the full story
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </span>
+            </div>
+          </Link>
+        </Reveal>
+      </section>
     </>
   );
 };
