@@ -61,7 +61,7 @@ const Pricing = () => (
             <div className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <span className="display text-4xl sm:text-5xl md:text-6xl leading-none">{tier.from}</span>
               {tier.original && (
-                <span className={`text-sm line-through ${tier.popular ? "text-background/50" : "text-muted-foreground"}`}>{tier.original}</span>
+                <span className={`text-sm line-through ${tier.popular ? "text-background/75" : "text-muted-foreground"}`}>{tier.original}</span>
               )}
             </div>
             <p className={`mt-3 text-sm ${tier.popular ? "text-background/70" : "text-muted-foreground"}`}>Project starting price</p>

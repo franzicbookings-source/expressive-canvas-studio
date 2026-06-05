@@ -174,7 +174,7 @@ const Index = () => {
 
                 {/* Floating black caption card */}
                 <div className="relative sm:absolute sm:-bottom-2 sm:left-6 mt-6 sm:mt-0 mx-auto sm:mx-0 max-w-sm sm:max-w-[260px] rounded-2xl bg-foreground text-background p-5 sm:p-4 shadow-[var(--shadow-lift)]">
-                  <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-background/50">
+                  <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-background/75">
                     <DotMark />
                     <span>Ntombii Tech</span>
                   </div>
@@ -352,10 +352,10 @@ const Index = () => {
                   className="group relative rounded-3xl border border-background/10 hover:border-accent/40 p-6 md:p-7 flex flex-col justify-between min-h-[220px] transition-all duration-300 h-full"
                 >
                   <div className="flex items-start justify-between">
-                    <div className="text-[11px] uppercase tracking-[0.22em] text-background/50 tabular-nums">
+                    <div className="text-[11px] uppercase tracking-[0.22em] text-background/75 tabular-nums">
                       0{i + 1}
                     </div>
-                    <ArrowUpRight className="h-4 w-4 text-background/40 group-hover:text-accent transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    <ArrowUpRight className="h-4 w-4 text-background/70 group-hover:text-accent transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   </div>
                   <div className="mt-8">
                     <h3 className="display text-lg md:text-xl text-background">{c.t}</h3>
@@ -506,7 +506,7 @@ const Index = () => {
                   >
                     <ChevronRight className="h-4 w-4" />
                   </button>
-                  <span className="ml-2 text-xs text-background/50 tabular-nums">
+                  <span className="ml-2 text-xs text-background/75 tabular-nums">
                     {String(testimonialIdx + 1).padStart(2, "0")} / {String(SITE.testimonials.length).padStart(2, "0")}
                   </span>
                 </div>
@@ -579,7 +579,7 @@ const Index = () => {
               <div className="mt-6 flex items-baseline gap-3">
                 <span className="display text-5xl md:text-6xl">{featured.from}</span>
                 {featured.original && (
-                  <span className="text-sm line-through text-background/50">{featured.original}</span>
+                  <span className="text-sm line-through text-background/75">{featured.original}</span>
                 )}
               </div>
               <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-w-lg">
@@ -670,7 +670,7 @@ const Index = () => {
         <div className="rounded-[2rem] text-background p-8 md:p-14 relative overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
           <div className="relative grid grid-cols-12 gap-8 items-center">
             <div className="col-span-12 md:col-span-8">
-              <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-background/50 mb-6">
+              <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-background/75 mb-6">
                 <DotMark />
                 <span>Closing</span>
               </div>
