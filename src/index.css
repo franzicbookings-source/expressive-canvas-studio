@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ntombii Tech — Apple-inspired light premium design system.
+/* Ntombii Tech - Apple-inspired light premium design system.
    All colors HSL.
 */
 
@@ -234,7 +234,7 @@
   /* Hairline rule */
   .rule { @apply h-px w-full bg-border/70; }
 
-  /* Logo accent dot — gentle breathing pulse */
+  /* Logo accent dot - gentle breathing pulse */
   .dot-pulse {
     animation: dotPulse 2.6s cubic-bezier(.4,0,.6,1) infinite;
   }

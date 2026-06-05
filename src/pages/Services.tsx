@@ -8,7 +8,7 @@ import { SERVICE_DETAILS } from "@/lib/serviceDetails";
 
 const process = [
   { n: "01", t: "Discover", d: "A short call, a tighter brief. We surface the real goal before any pixel moves." },
-  { n: "02", t: "Design", d: "Wireframes, then visuals. You approve at each gate — no surprises at handoff." },
+  { n: "02", t: "Design", d: "Wireframes, then visuals. You approve at each gate - no surprises at handoff." },
   { n: "03", t: "Build", d: "Production code, tuned for speed and SEO from day one. WhatsApp-fast feedback." },
   { n: "04", t: "Hand-off", d: "Launch, train, document. You leave with a site you can run without us." },
 ];
@@ -16,7 +16,7 @@ const process = [
 const Services = () => (
   <>
     <SEO
-      title="Services — Web Design, Development & Branding in KZN"
+      title="Services - Web Design, Development & Branding in KZN"
       description="UI/UX, web development, mobile design and brand systems for South African businesses. Built in Newcastle, serving Northern KZN. Mobile-first, AI-assisted, fast delivery."
       path="/services"
       keywords="web design services Newcastle, web development KZN, branding agency Newcastle, UI UX design South Africa, mobile design Northern KZN"
@@ -62,7 +62,7 @@ const Services = () => (
             ))}
           </ul>
           <a
-            href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(`Hi Ntombii Tech — I'd like a quote for ${s.title}.`)}`}
+            href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(`Hi Ntombii Tech - I'd like a quote for ${s.title}.`)}`}
             target="_blank"
             rel="noreferrer"
             className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent transition self-start"
@@ -126,7 +126,7 @@ const Services = () => (
         <div className="rounded-[2rem] bg-card border border-border/70 p-10 md:p-16 text-center">
           <h2 className="display text-3xl md:text-5xl">Got something specific in mind?</h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            We also take on web apps, e-commerce builds, and custom UI work — quoted after a short call.
+            We also take on web apps, e-commerce builds, and custom UI work - quoted after a short call.
           </p>
           <Link to="/contact" className="mt-8 inline-flex rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium">
             Start a conversation

@@ -16,7 +16,7 @@ const alwaysIncluded = [
 const Pricing = () => (
   <>
     <SEO
-      title="Website Pricing in KZN — From R2,500 | Ntombii Tech"
+      title="Website Pricing in KZN - From R2,500 | Ntombii Tech"
       description="Honest, fixed website pricing for South African businesses. Starter R2,500, Business R3,500, Premium R7,500. Built in Newcastle, serving all of Northern KZN."
       path="/pricing"
       keywords="website cost Newcastle, web design pricing KZN, affordable website South Africa, cheap website design Newcastle, website price Vryheid"
@@ -39,7 +39,7 @@ const Pricing = () => (
       </Reveal>
       <Reveal delay={160}>
         <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground">
-          Three simple packages designed for South African businesses. No hidden fees — every quote includes design, build, and launch.
+          Three simple packages designed for South African businesses. No hidden fees - every quote includes design, build, and launch.
         </p>
       </Reveal>
     </section>
@@ -115,7 +115,7 @@ const Pricing = () => (
         <div className="rounded-[2rem] bg-card border border-border/70 p-10 md:p-14 text-center">
           <h2 className="display text-3xl md:text-4xl">Need something custom?</h2>
           <p className="mt-3 text-muted-foreground max-w-lg mx-auto">
-            Web apps, SaaS, e-commerce — get a tailored quote within 24 hours.
+            Web apps, SaaS, e-commerce - get a tailored quote within 24 hours.
           </p>
           <div className="mt-6 flex items-center justify-center gap-3 flex-wrap">
             <Link to="/contact" className="inline-flex rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium">

@@ -12,7 +12,7 @@ const waLink = (msg: string) =>
 const SectionLabel = ({ n, label }: { n: string; label: string }) => (
   <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
     <span className="text-accent font-medium">({n})</span>
-    <span>— {label}</span>
+    <span>- {label}</span>
   </div>
 );
 
@@ -75,7 +75,7 @@ const ServiceDetail = () => {
         </Reveal>
       </section>
 
-      {/* ───────── 01 — WHAT WE DO ───────── */}
+      {/* ───────── 01 - WHAT WE DO ───────── */}
       <section className="container-wide py-16 md:py-20 border-t border-border/60">
         <div className="grid grid-cols-12 gap-6 mb-12 items-end">
           <div className="col-span-12 md:col-span-7">
@@ -111,7 +111,7 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-      {/* ───────── 02 — WHO / WHY / TURNAROUND ───────── */}
+      {/* ───────── 02 - WHO / WHY / TURNAROUND ───────── */}
       <section className="container-wide py-16 md:py-20 border-t border-border/60">
         <Reveal>
           <SectionLabel n="02" label={s.s2Label} />
@@ -148,7 +148,7 @@ const ServiceDetail = () => {
         )}
       </section>
 
-      {/* ───────── 03 — PROCESS ───────── */}
+      {/* ───────── 03 - PROCESS ───────── */}
       <section className="container-wide py-16 md:py-20 border-t border-border/60">
         <Reveal>
           <SectionLabel n="03" label={s.s3Label} />
@@ -183,7 +183,7 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-      {/* ───────── 04 — CTA ───────── */}
+      {/* ───────── 04 - CTA ───────── */}
       <section className="container-wide py-16 md:py-24">
         <div
           className="rounded-[2rem] text-background p-8 md:p-14 relative overflow-hidden"

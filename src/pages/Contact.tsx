@@ -66,8 +66,8 @@ const Contact = () => {
   return (
     <>
       <SEO
-        title="Contact — Get a Quote in 24 Hours | Ntombii Tech"
-        description="Tell us about your project — we'll come back with a clear plan within 24 hours. WhatsApp +27 81 236 0230 or email hello@ntombii.tech. Based in Newcastle, KZN."
+        title="Contact - Get a Quote in 24 Hours | Ntombii Tech"
+        description="Tell us about your project - we'll come back with a clear plan within 24 hours. WhatsApp +27 81 236 0230 or email hello@ntombii.tech. Based in Newcastle, KZN."
         path="/contact"
         keywords="contact web designer Newcastle, web design quote KZN, hire web developer Northern KZN, Ntombii Tech contact"
         schemas={[
@@ -89,7 +89,7 @@ const Contact = () => {
         </Reveal>
         <Reveal delay={160}>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            Share your contact details and project type. Ntombii Tech will follow up with the best next step for your build — typically within 24 hours.
+            Share your contact details and project type. Ntombii Tech will follow up with the best next step for your build - typically within 24 hours.
           </p>
         </Reveal>
       </section>
@@ -116,7 +116,7 @@ const Contact = () => {
             <div className="rounded-3xl bg-card border border-border/70 p-6">
               <MapPin className="h-5 w-5" />
               <h3 className="display mt-4 text-2xl">Studio</h3>
-              <p className="mt-1 text-sm text-muted-foreground">Newcastle, KZN — South Africa</p>
+              <p className="mt-1 text-sm text-muted-foreground">Newcastle, KZN - South Africa</p>
             </div>
           </Reveal>
           <Reveal delay={200}>

@@ -59,9 +59,9 @@ const CaseStudy = () => {
         </Reveal>
         <Reveal delay={80}>
           <h1 className="display mt-4 text-4xl md:text-5xl lg:text-6xl max-w-5xl leading-[1.05]">
-            {c.title.split(" — ")[0]} —{" "}
+            {c.title.split(" - ")[0]} -{" "}
             <span className="serif text-accent">
-              {c.title.split(" — ")[1] || ""}
+              {c.title.split(" - ")[1] || ""}
             </span>
           </h1>
         </Reveal>

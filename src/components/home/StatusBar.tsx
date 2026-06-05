@@ -26,7 +26,7 @@ export const StatusBar = () => {
             <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-75 animate-ping" />
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
           </span>
-          <span>Booking Q3 · 2026 — 2 slots open</span>
+          <span>Booking Q3 · 2026 - 2 slots open</span>
         </div>
         <div className="flex items-center gap-6">
           <span>Newcastle · KZN</span>

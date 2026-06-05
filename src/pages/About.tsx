@@ -8,13 +8,13 @@ import founderImage from "@/assets/sabelo-ndlovu-founder.png.asset.json";
 const principles = [
   { n: "01", t: "Clarity over cleverness", d: "If a visitor can't act in 5 seconds, the design has failed." },
   { n: "02", t: "Ship, then refine", d: "We move in tight sprints. Real feedback beats perfect drafts." },
-  { n: "03", t: "Respect the brief — then question it", d: "We push back where it earns you a better outcome." },
+  { n: "03", t: "Respect the brief - then question it", d: "We push back where it earns you a better outcome." },
   { n: "04", t: "Pixels are promises", d: "Every detail signals how you'll treat the customer offline too." },
 ];
 
 const currently = [
   { k: "Listening", v: "Long-form interviews on craft & focus" },
-  { k: "Reading", v: "Atomic Habits — for the third time" },
+  { k: "Reading", v: "Atomic Habits - for the third time" },
   { k: "Building", v: "Internal AI tooling for faster handoffs" },
   { k: "Watching", v: "How African studios are reshaping web design" },
 ];
@@ -22,8 +22,8 @@ const currently = [
 const About = () => (
   <>
     <SEO
-      title="About — Newcastle Digital Studio | Ntombii Tech"
-      description="Ntombii Tech is a Newcastle-born digital studio. We design and build mobile-first websites and brand systems for African companies — fast, focused, and AI-assisted."
+      title="About - Newcastle Digital Studio | Ntombii Tech"
+      description="Ntombii Tech is a Newcastle-born digital studio. We design and build mobile-first websites and brand systems for African companies - fast, focused, and AI-assisted."
       path="/about"
       keywords="Ntombii Tech about, Newcastle web agency, KZN digital studio, African design agency"
       schemas={[
@@ -66,7 +66,7 @@ const About = () => (
           <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-card aspect-[4/5]">
             <img
               src={founderImage.url}
-              alt="Sabelo Ndlovu — The Technoking, founder of Ntombii Tech, wearing a branded Ntombii Tech shirt"
+              alt="Sabelo Ndlovu - The Technoking, founder of Ntombii Tech, wearing a branded Ntombii Tech shirt"
               className="h-full w-full object-cover"
               loading="lazy"
               width={1136}
@@ -77,13 +77,13 @@ const About = () => (
         <Reveal delay={120} className="md:col-span-7">
           <p className="eyebrow">Founder</p>
           <h2 className="display mt-4 text-3xl md:text-5xl leading-[1.05]">
-            Sabelo Ndlovu — <span className="serif text-accent">The Technoking.</span>
+            Sabelo Ndlovu - <span className="serif text-accent">The Technoking.</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
             Sabelo Ndlovu, also known as <strong className="text-foreground">The Technoking</strong>, is the founder of Ntombii Tech. He's a tech creative and digital builder focused on helping brands, businesses and entrepreneurs grow through modern websites, smart digital solutions and a strong online presence.
           </p>
           <p className="mt-4 text-muted-foreground">
-            Based in Newcastle, KwaZulu-Natal, Sabelo leads every project personally — from the first WhatsApp brief to the live site — bringing the same standards to a local salon's first website as to a school's full digital rebuild.
+            Based in Newcastle, KwaZulu-Natal, Sabelo leads every project personally - from the first WhatsApp brief to the live site - bringing the same standards to a local salon's first website as to a school's full digital rebuild.
           </p>
           <dl className="mt-8 grid gap-4 sm:grid-cols-2 text-sm">
             <div className="rounded-2xl border border-border/70 bg-card p-5">
@@ -122,7 +122,7 @@ const About = () => (
       <Reveal delay={120}>
         <h2 className="display text-3xl md:text-4xl">What we believe</h2>
         <p className="mt-4 text-muted-foreground">
-          Northern KZN businesses deserve world-class digital presence. Local doesn't mean lo-fi. We build sites that compete with anything coming out of Johannesburg or Cape Town — and load just as fast.
+          Northern KZN businesses deserve world-class digital presence. Local doesn't mean lo-fi. We build sites that compete with anything coming out of Johannesburg or Cape Town - and load just as fast.
         </p>
       </Reveal>
     </section>
@@ -155,7 +155,7 @@ const About = () => (
             Inputs <span className="serif text-accent">shape outputs.</span>
           </h2>
           <p className="mt-4 text-sm text-muted-foreground">
-            What we're absorbing this season — small windows into the studio.
+            What we're absorbing this season - small windows into the studio.
           </p>
         </Reveal>
         <div className="md:col-span-2 divide-y divide-border/70 border-y border-border/70">

@@ -33,18 +33,18 @@ const sectionLabel = (n: string, label: string, tone: "light" | "dark" = "light"
 
 const capabilities = [
   { t: "Websites", d: "Business websites, landing pages, school sites and booking flows built for mobile-first visitors.", href: "/services/web-design" },
-  { t: "Brand Systems", d: "Logos, colours, typography, templates and voice — so your business looks consistent everywhere.", href: "/services/branding" },
+  { t: "Brand Systems", d: "Logos, colours, typography, templates and voice - so your business looks consistent everywhere.", href: "/services/branding" },
   { t: "Graphic Design", d: "Posters, flyers, profiles, pitch decks and digital designs that do not look like templates.", href: "/services/graphic-design" },
   { t: "Print & Signage", d: "Banners, shopfronts, vehicle branding and print-ready assets for real-world visibility.", href: "/services/printing" },
   { t: "Web Engineering", d: "React, Vite, headless builds, performance tuning and clean front-end systems.", href: "/services/web-development" },
-  { t: "Mobile Surfaces", d: "Mobile-first by default — built for South African data realities.", href: "/services/web-apps" },
+  { t: "Mobile Surfaces", d: "Mobile-first by default - built for South African data realities.", href: "/services/web-apps" },
   { t: "Signage Solutions", d: "Banners, shopfronts and vehicle branding. Your name, impossible to miss.", href: "/services/signage" },
-  { t: "Corporate Gifts", d: "Branded gifts that work harder than a handshake — perfect for clients, staff and events.", href: "/services/corporate-gifts" },
+  { t: "Corporate Gifts", d: "Branded gifts that work harder than a handshake - perfect for clients, staff and events.", href: "/services/corporate-gifts" },
 ];
 
 const process = [
   { n: "01", t: "Discover", d: "60-minute call. We map the goal, audience, constraints and what 'win' looks like." },
-  { n: "02", t: "Design", d: "Wireframes, direction and visuals — you see the plan before we build." },
+  { n: "02", t: "Design", d: "Wireframes, direction and visuals - you see the plan before we build." },
   { n: "03", t: "Build", d: "Clean code, fast loads, mobile-first. We build like it matters." },
   { n: "04", t: "Launch", d: "Tested, optimised and handed over. Then we keep improving." },
 ];
@@ -133,7 +133,7 @@ const Index = () => {
                   <strong className="font-medium"> Newcastle, KwaZulu-Natal</strong>. We help local
                   businesses, schools, organisations and startups across South Africa with
                   professional websites, web apps, branding, print, signage, ink and
-                  corporate gifts — WhatsApp-friendly, mobile-first and built to be found on Google.
+                  corporate gifts - WhatsApp-friendly, mobile-first and built to be found on Google.
                 </p>
               </Reveal>
 
@@ -251,7 +251,7 @@ const Index = () => {
                 <Link to="/services/corporate-gifts" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
                   corporate gifts
                 </Link>{" "}
-                — delivered from Newcastle and trusted by clients across{" "}
+                - delivered from Newcastle and trusted by clients across{" "}
                 <Link to="/areas/newcastle" className="underline decoration-accent/40 underline-offset-4 hover:text-foreground">
                   Newcastle
                 </Link>
@@ -278,7 +278,7 @@ const Index = () => {
                 </div>
                 <div>
                   <dt className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Where</dt>
-                  <dd className="mt-2 text-sm text-foreground/85">Newcastle, KZN — serving South Africa</dd>
+                  <dd className="mt-2 text-sm text-foreground/85">Newcastle, KZN - serving South Africa</dd>
                 </div>
                 <div>
                   <dt className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Who we serve</dt>
@@ -305,7 +305,7 @@ const Index = () => {
             <Reveal>
               <p className="display-xl text-foreground/90">
                 Beautiful is the <span className="serif text-accent">baseline</span>.
-                We're here for what it does <span className="serif">next</span> —
+                We're here for what it does <span className="serif">next</span> -
                 bookings filled, leads answered, brands that finally look as
                 <span className="serif text-accent"> serious</span> as the people behind them.
               </p>
@@ -314,7 +314,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ───────────── CAPABILITIES — DARK ───────────── */}
+      {/* ───────────── CAPABILITIES - DARK ───────────── */}
       <section
         id="capabilities"
         className="relative text-background overflow-hidden"
@@ -338,7 +338,7 @@ const Index = () => {
             <div className="col-span-12 md:col-span-4 md:col-start-9">
               <p className="text-background/70 leading-relaxed">
                 From websites and brand systems to signage, print and corporate
-                gifts — one studio, one standard, one number to call.
+                gifts - one studio, one standard, one number to call.
               </p>
             </div>
           </div>
@@ -383,7 +383,7 @@ const Index = () => {
           <div className="col-span-12 md:col-span-4 md:col-start-9">
             <p className="text-muted-foreground">
               A handful of recent builds across non-profit, education,
-              hospitality and civic work — each shipped fast, each built to last.
+              hospitality and civic work - each shipped fast, each built to last.
             </p>
           </div>
         </div>
@@ -395,7 +395,7 @@ const Index = () => {
             </p>
             <h3 className="display mt-3 text-3xl md:text-4xl">{project.title}</h3>
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              Website design and development delivered end-to-end — brand,
+              Website design and development delivered end-to-end - brand,
               build, content and launch. Live and shipping today.
             </p>
             <a
@@ -454,7 +454,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ───────────── TESTIMONIALS — DARK ───────────── */}
+      {/* ───────────── TESTIMONIALS - DARK ───────────── */}
       <section className="relative text-background overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
         <div className="container-wide py-20 md:py-28 relative">
           <div className="grid grid-cols-12 gap-6 mb-12 md:mb-16 items-end">
@@ -562,7 +562,7 @@ const Index = () => {
           <div className="col-span-12 md:col-span-4 md:col-start-9">
             <p className="text-muted-foreground">
               Three starting points, all fully scoped before we begin. Custom work
-              is quoted after a 30-minute discovery — never blind.
+              is quoted after a 30-minute discovery - never blind.
             </p>
           </div>
         </div>
@@ -615,7 +615,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ───────────── JOURNAL (hidden on home — still accessible at /blog) ─────────────
+      {/* ───────────── JOURNAL (hidden on home - still accessible at /blog) ─────────────
       <section className="container-wide py-16 md:py-24 border-t border-border/60">
         <div className="grid grid-cols-12 gap-6 mb-12 items-end">
           <div className="col-span-12 md:col-span-6">
@@ -664,7 +664,7 @@ const Index = () => {
       </section>
       */}
 
-      {/* ───────────── FINAL CTA STRIP — DARK ───────────── */}
+      {/* ───────────── FINAL CTA STRIP - DARK ───────────── */}
       <section className="container-wide py-14 md:py-20">
         <div className="rounded-[2rem] text-background p-8 md:p-14 relative overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
           <div className="relative grid grid-cols-12 gap-8 items-center">

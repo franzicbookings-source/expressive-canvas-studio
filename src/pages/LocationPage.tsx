@@ -14,7 +14,7 @@ import {
 const services = [
   { t: "Web Design", d: "Mobile-first websites that load fast and convert visitors into WhatsApp leads." },
   { t: "Web Development", d: "Production React builds with SEO, schema and Core Web Vitals tuned from day one." },
-  { t: "Branding", d: "Logo, palette, typography and templates — a complete identity from R3,500." },
+  { t: "Branding", d: "Logo, palette, typography and templates - a complete identity from R3,500." },
   { t: "Local SEO", d: "Google Business profile setup, schema markup, and town-targeted page copy." },
 ];
 
@@ -23,7 +23,7 @@ const LocationPage = () => {
   const loc = getLocation(town);
   if (!loc) return <Navigate to="/areas" replace />;
 
-  const title = `Web Design in ${loc.name} — Websites, Branding & Local SEO`;
+  const title = `Web Design in ${loc.name} - Websites, Branding & Local SEO`;
   const description = `Affordable, mobile-first websites for ${loc.name} businesses. Built by Ntombii Tech in Newcastle, serving ${loc.region}. Branding, web design and local SEO from R2,500.`;
   const keywords = [
     `web designer ${loc.name}`,
@@ -234,7 +234,7 @@ const LocationPage = () => {
           <div className="rounded-[2rem] bg-foreground text-background p-10 md:p-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <p className="text-xs uppercase tracking-[0.22em] text-background/60">
-                {loc.name} — let's go
+                {loc.name} - let's go
               </p>
               <h2 className="display mt-3 text-3xl md:text-5xl max-w-2xl">
                 Ready to be the{" "}

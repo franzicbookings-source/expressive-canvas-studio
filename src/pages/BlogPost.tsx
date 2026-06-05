@@ -75,7 +75,7 @@ const BlogPost = () => {
         <Reveal>
           <div className="mt-12 rounded-3xl bg-card border border-border/70 p-8 md:p-10">
             <h3 className="display text-2xl">Want this for your business?</h3>
-            <p className="mt-2 text-muted-foreground">Tell us about your project — we'll come back with a clear plan within 24 hours.</p>
+            <p className="mt-2 text-muted-foreground">Tell us about your project - we'll come back with a clear plan within 24 hours.</p>
             <Link to="/contact" className="mt-5 inline-flex rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium">
               Start a project
             </Link>

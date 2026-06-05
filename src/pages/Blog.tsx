@@ -7,7 +7,7 @@ import { breadcrumbSchema } from "@/lib/seo";
 const Blog = () => (
   <>
     <SEO
-      title="Journal — Northern KZN Digital Strategy & Web Design"
+      title="Journal - Northern KZN Digital Strategy & Web Design"
       description="Honest writing for South African business owners trying to win online. Local SEO, web design, and digital strategy for Newcastle, Vryheid, Ladysmith and Northern KZN."
       path="/blog"
       keywords="Northern KZN digital, Newcastle SEO, KZN web design blog, local SEO South Africa, small business website blog"
@@ -29,7 +29,7 @@ const Blog = () => (
       </Reveal>
       <Reveal delay={160}>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-          Honest writing for South African business owners trying to win online — especially across northern KZN. No fluff, no jargon, just what's working right now.
+          Honest writing for South African business owners trying to win online - especially across northern KZN. No fluff, no jargon, just what's working right now.
         </p>
       </Reveal>
     </section>

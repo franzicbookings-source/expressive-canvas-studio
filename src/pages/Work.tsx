@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/seo";
 const Work = () => (
   <>
     <SEO
-      title="Selected Work — Websites & Brands by Ntombii Tech"
+      title="Selected Work - Websites & Brands by Ntombii Tech"
       description="Recent web design and branding projects across non-profit, hospitality, education and civic spaces. Each project shipped fast and earned its keep."
       path="/work"
       keywords="Ntombii Tech portfolio, web design portfolio Newcastle, KZN web design examples, Nyatee Foundation website, Sknowhite Events website"

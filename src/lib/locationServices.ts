@@ -64,10 +64,10 @@ export const LOCATION_SERVICES: LocationService[] = [
     heroTitle: (t) => `Graphic design services in ${t}.`,
     heroItalic: "Professional. Fast. Print-ready.",
     heroBody: (t) =>
-      `Ntombii Tech provides professional graphic design to businesses in ${t} and surrounding areas. Flyers, business cards, social media graphics, brochures and more — designed fast and delivered digitally or to print.`,
+      `Ntombii Tech provides professional graphic design to businesses in ${t} and surrounding areas. Flyers, business cards, social media graphics, brochures and more - designed fast and delivered digitally or to print.`,
     heroCta: "Send your brief on WhatsApp",
     heroCtaMessage: (t) =>
-      `Hi Ntombii Tech — I need graphic design in ${t}. Here's my brief:`,
+      `Hi Ntombii Tech - I need graphic design in ${t}. Here's my brief:`,
     s1Label: "What we design",
     s1Heading: (t) => `What we design for ${t} businesses.`,
     s1Cards: [
@@ -82,13 +82,13 @@ export const LOCATION_SERVICES: LocationService[] = [
     s2Label: "Serving the area",
     s2Heading: (t) => `Serving ${t}.`,
     s2Body: (t, nearby) =>
-      `We work with businesses, schools, NGOs and entrepreneurs in ${t} and nearby areas including ${nearbyList(nearby)}. Fast turnaround — most jobs within 24 to 48 hours. Files delivered digitally or we manage print and delivery for you.`,
+      `We work with businesses, schools, NGOs and entrepreneurs in ${t} and nearby areas including ${nearbyList(nearby)}. Fast turnaround - most jobs within 24 to 48 hours. Files delivered digitally or we manage print and delivery for you.`,
     s3Label: "Get started",
     s3Heading: "Ready to look the part?",
     s3Body: () =>
-      `WhatsApp us your brief — tell us what you need and when. We'll send a quote fast.`,
+      `WhatsApp us your brief - tell us what you need and when. We'll send a quote fast.`,
     ctaButton: "WhatsApp Ntombii Tech",
-    ctaMessage: (t) => `Hi Ntombii Tech — I'd like a graphic design quote in ${t}.`,
+    ctaMessage: (t) => `Hi Ntombii Tech - I'd like a graphic design quote in ${t}.`,
     seoTitle: (t) => `Graphic Design Services ${t} KZN | Ntombii Tech`,
     seoDescription: (t) =>
       `Professional graphic design in ${t}, KwaZulu-Natal. Flyers, business cards, social media and more. Fast turnaround. WhatsApp Ntombii Tech for a free quote.`,
@@ -104,9 +104,9 @@ export const LOCATION_SERVICES: LocationService[] = [
     heroTitle: (t) => `Professional printing in ${t}.`,
     heroItalic: "Order on WhatsApp. Delivered to your door.",
     heroBody: (t) =>
-      `Ntombii Tech handles professional printing for businesses, schools, NGOs and organisations in ${t}. Business cards, flyers, brochures, banners and more. One contact — we manage everything.`,
+      `Ntombii Tech handles professional printing for businesses, schools, NGOs and organisations in ${t}. Business cards, flyers, brochures, banners and more. One contact - we manage everything.`,
     heroCta: "Get a print quote",
-    heroCtaMessage: (t) => `Hi Ntombii Tech — I need printing in ${t}. Quantity / details:`,
+    heroCtaMessage: (t) => `Hi Ntombii Tech - I need printing in ${t}. Quantity / details:`,
     s1Label: "What we print",
     s1Heading: () => "What we print.",
     s1Cards: [
@@ -126,9 +126,9 @@ export const LOCATION_SERVICES: LocationService[] = [
     s3Label: "Get started",
     s3Heading: "What do you need printed?",
     s3Body: () =>
-      `Send us a WhatsApp — tell us what you need and when. We'll send a quote fast and sort the rest.`,
+      `Send us a WhatsApp - tell us what you need and when. We'll send a quote fast and sort the rest.`,
     ctaButton: "Order print on WhatsApp",
-    ctaMessage: (t) => `Hi Ntombii Tech — I'd like a printing quote in ${t}.`,
+    ctaMessage: (t) => `Hi Ntombii Tech - I'd like a printing quote in ${t}.`,
     seoTitle: (t) => `Printing Services ${t} KZN | Ntombii Tech`,
     seoDescription: (t) =>
       `Professional printing in ${t}, KwaZulu-Natal. Flyers, business cards, brochures, banners delivered to your door. WhatsApp Ntombii Tech for a fast quote.`,
@@ -144,10 +144,10 @@ export const LOCATION_SERVICES: LocationService[] = [
     heroTitle: (t) => `Brand identity for ${t} businesses.`,
     heroItalic: "Look serious. Build trust. Win clients.",
     heroBody: (t) =>
-      `Ntombii Tech builds professional brand identities for businesses in ${t} — from logo design to full brand systems. Whether you're starting fresh or rebranding, we give your business the visual identity it deserves.`,
+      `Ntombii Tech builds professional brand identities for businesses in ${t} - from logo design to full brand systems. Whether you're starting fresh or rebranding, we give your business the visual identity it deserves.`,
     heroCta: "Start your brand",
     heroCtaMessage: (t) =>
-      `Hi Ntombii Tech — I'd like a branding & identity quote in ${t}.`,
+      `Hi Ntombii Tech - I'd like a branding & identity quote in ${t}.`,
     s1Label: "What's included",
     s1Heading: () => "What's included.",
     s1Cards: [
@@ -161,14 +161,14 @@ export const LOCATION_SERVICES: LocationService[] = [
     s2Label: "For local businesses",
     s2Heading: (t) => `For ${t} businesses.`,
     s2Body: (t, nearby) =>
-      `We work with startups, established businesses, NGOs and entrepreneurs in ${t} and surrounding areas including ${nearbyList(nearby)}. A strong brand is the foundation of everything — your website, your print, your signage, your staff uniforms. Get it right from the start.`,
+      `We work with startups, established businesses, NGOs and entrepreneurs in ${t} and surrounding areas including ${nearbyList(nearby)}. A strong brand is the foundation of everything - your website, your print, your signage, your staff uniforms. Get it right from the start.`,
     s3Label: "Get started",
     s3Heading: "Ready to build a brand that means business?",
     s3Body: () =>
       `WhatsApp us for a free quote. No forms. No waiting. Just a conversation.`,
     ctaButton: "WhatsApp us for a free quote",
     ctaMessage: (t) =>
-      `Hi Ntombii Tech — I'd like to start a branding project in ${t}.`,
+      `Hi Ntombii Tech - I'd like to start a branding project in ${t}.`,
     seoTitle: (t) => `Branding & Logo Design ${t} KZN | Ntombii Tech`,
     seoDescription: (t) =>
       `Professional branding and logo design in ${t}, KwaZulu-Natal. Full brand identity systems for businesses, NGOs and startups. Free quote on WhatsApp.`,
@@ -184,10 +184,10 @@ export const LOCATION_SERVICES: LocationService[] = [
     heroTitle: (t) => `Ink & toner delivered in ${t}.`,
     heroItalic: "Never run out at the wrong time.",
     heroBody: (t) =>
-      `Ntombii Tech supplies premium ink and toner cartridges to businesses, schools and offices in ${t}. Order on WhatsApp and get your cartridges delivered — no queues, no delays.`,
+      `Ntombii Tech supplies premium ink and toner cartridges to businesses, schools and offices in ${t}. Order on WhatsApp and get your cartridges delivered - no queues, no delays.`,
     heroCta: "Order cartridges now",
     heroCtaMessage: (t) =>
-      `Hi Ntombii Tech — I need ink/toner delivered in ${t}. Printer model:`,
+      `Hi Ntombii Tech - I need ink/toner delivered in ${t}. Printer model:`,
     s1Label: "What we supply",
     s1Heading: () => "What we supply.",
     s1Cards: [
@@ -210,10 +210,10 @@ export const LOCATION_SERVICES: LocationService[] = [
     s3Body: () => `WhatsApp us your printer model and we'll sort you out fast.`,
     ctaButton: "Order ink or toner now",
     ctaMessage: (t) =>
-      `Hi Ntombii Tech — I need ink/toner in ${t}. My printer is:`,
+      `Hi Ntombii Tech - I need ink/toner in ${t}. My printer is:`,
     seoTitle: (t) => `Ink & Toner Cartridge Delivery ${t} KZN | Ntombii Tech`,
     seoDescription: (t) =>
-      `Premium ink and toner cartridges delivered in ${t}, KwaZulu-Natal. All major printer brands. Fast delivery. Order on WhatsApp — Ntombii Tech.`,
+      `Premium ink and toner cartridges delivered in ${t}, KwaZulu-Natal. All major printer brands. Fast delivery. Order on WhatsApp - Ntombii Tech.`,
     keywords: (t) =>
       `ink cartridges ${t}, toner supply ${t} KZN, printer cartridges ${t}, HP toner ${t}, Canon ink ${t}`,
     parentHref: "/services/ink-toner",
@@ -226,10 +226,10 @@ export const LOCATION_SERVICES: LocationService[] = [
     heroTitle: (t) => `Signage solutions in ${t}.`,
     heroItalic: "Make your business impossible to miss.",
     heroBody: (t) =>
-      `Ntombii Tech designs and delivers professional signage for businesses in ${t} — from shop fronts to vehicle branding, banners to office signs. Get noticed. Get remembered.`,
+      `Ntombii Tech designs and delivers professional signage for businesses in ${t} - from shop fronts to vehicle branding, banners to office signs. Get noticed. Get remembered.`,
     heroCta: "Get a signage quote",
     heroCtaMessage: (t) =>
-      `Hi Ntombii Tech — I need a signage quote in ${t}. Details:`,
+      `Hi Ntombii Tech - I need a signage quote in ${t}. Details:`,
     s1Label: "Signage we provide",
     s1Heading: () => "Signage we provide.",
     s1Cards: [
@@ -243,13 +243,13 @@ export const LOCATION_SERVICES: LocationService[] = [
     s2Label: "Serving the area",
     s2Heading: (t) => `Serving ${t}.`,
     s2Body: (t, nearby) =>
-      `We work with businesses, retailers, schools and organisations in ${t} and surrounding areas including ${nearbyList(nearby)}. Your signage works 24 hours a day — it's your most consistent marketing asset. We handle design, production and delivery so you don't have to manage multiple suppliers.`,
+      `We work with businesses, retailers, schools and organisations in ${t} and surrounding areas including ${nearbyList(nearby)}. Your signage works 24 hours a day - it's your most consistent marketing asset. We handle design, production and delivery so you don't have to manage multiple suppliers.`,
     s3Label: "Get started",
     s3Heading: "Let's get your business noticed.",
     s3Body: () =>
       `WhatsApp us for a free signage quote. Tell us what you need and we'll get back to you fast.`,
     ctaButton: "Get a free signage quote",
-    ctaMessage: (t) => `Hi Ntombii Tech — I'd like a signage quote in ${t}.`,
+    ctaMessage: (t) => `Hi Ntombii Tech - I'd like a signage quote in ${t}.`,
     seoTitle: (t) => `Signage Solutions ${t} KZN | Ntombii Tech`,
     seoDescription: (t) =>
       `Professional signage for businesses in ${t}, KwaZulu-Natal. Shop fronts, vehicle branding, banners and more. WhatsApp Ntombii Tech for a free quote.`,
@@ -265,10 +265,10 @@ export const LOCATION_SERVICES: LocationService[] = [
     heroTitle: (t) => `Corporate gifts in ${t}.`,
     heroItalic: "Branded. Delivered. Remembered.",
     heroBody: (t) =>
-      `Ntombii Tech sources and delivers branded corporate gifts for businesses, NGOs, schools and events in ${t}. Staff gifts, client gifts, event giveaways and year-end packs — all carrying your logo.`,
+      `Ntombii Tech sources and delivers branded corporate gifts for businesses, NGOs, schools and events in ${t}. Staff gifts, client gifts, event giveaways and year-end packs - all carrying your logo.`,
     heroCta: "Get a gifts quote",
     heroCtaMessage: (t) =>
-      `Hi Ntombii Tech — I'd like a corporate gifts quote in ${t}. Occasion / quantity:`,
+      `Hi Ntombii Tech - I'd like a corporate gifts quote in ${t}. Occasion / quantity:`,
     s1Label: "What we supply",
     s1Heading: () => "What we supply.",
     s1Cards: [
@@ -282,14 +282,14 @@ export const LOCATION_SERVICES: LocationService[] = [
     s2Label: "Local businesses & organisations",
     s2Heading: (t) => `For ${t} businesses & organisations.`,
     s2Body: (t, nearby) =>
-      `We supply corporate gifts to businesses, government departments, schools, NGOs and community organisations in ${t} and surrounding areas including ${nearbyList(nearby)}. No order too small — we work with any budget and any quantity. Delivery to your ${t} address included.`,
+      `We supply corporate gifts to businesses, government departments, schools, NGOs and community organisations in ${t} and surrounding areas including ${nearbyList(nearby)}. No order too small - we work with any budget and any quantity. Delivery to your ${t} address included.`,
     s3Label: "Get started",
     s3Heading: "Reward your team. Impress your clients.",
     s3Body: () =>
       `WhatsApp us to discuss your corporate gifting needs. No order too small, no brief too big.`,
     ctaButton: "WhatsApp us for a quote",
     ctaMessage: (t) =>
-      `Hi Ntombii Tech — I'd like a corporate gifts quote in ${t}.`,
+      `Hi Ntombii Tech - I'd like a corporate gifts quote in ${t}.`,
     seoTitle: (t) => `Corporate Gifts ${t} KZN | Ntombii Tech`,
     seoDescription: (t) =>
       `Branded corporate gifts delivered in ${t}, KwaZulu-Natal. Staff gifts, client gifts, event giveaways and year-end packs. WhatsApp Ntombii Tech.`,
