@@ -50,7 +50,7 @@ export const HoverPreview = ({ items }: { items: Item[] }) => {
               <div className="mt-4 flex items-start justify-between gap-3">
                 <div>
                   <p className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground tabular-nums mb-1">
-                    ({String(i + 1).padStart(2, "0")}) — {p.category}
+                    ({String(i + 1).padStart(2, "0")}) - {p.category}
                   </p>
                   <h3 className="display text-2xl leading-tight">
                     {p.title}

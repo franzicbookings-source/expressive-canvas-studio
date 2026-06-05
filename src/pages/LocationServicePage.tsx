@@ -16,7 +16,7 @@ const waLink = (msg: string) =>
 const SectionLabel = ({ n, label }: { n: string; label: string }) => (
   <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
     <span className="text-accent font-medium">({n})</span>
-    <span>— {label}</span>
+    <span>- {label}</span>
   </div>
 );
 
@@ -70,7 +70,7 @@ const LocationServicePage = () => {
             { name: `${svc.navLabel} ${town.name}`, url: path },
           ]),
           serviceSchema({
-            title: `${svc.navLabel} — ${town.name}`,
+            title: `${svc.navLabel} - ${town.name}`,
             summary: svc.seoDescription(town.name),
           }),
         ]}

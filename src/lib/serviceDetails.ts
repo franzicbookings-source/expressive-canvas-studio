@@ -15,22 +15,22 @@ export type ServiceDetail = {
   body: string;
   ctaLabel: string;
   ctaMessage: string; // WhatsApp prefilled message
-  // Section 01 — What we do / What we design / What we print / What we supply / What we offer
+  // Section 01 - What we do / What we design / What we print / What we supply / What we offer
   s1Label: string;
   s1Heading: string;
   s1Body: string;
   s1Cards: ServiceCard[];
-  // Section 02 — Who/Why/Turnaround
+  // Section 02 - Who/Why/Turnaround
   s2Label: string;
   s2Heading: string;
   s2Body?: string;
   s2Cards?: ServiceCard[];
-  // Section 03 — Process / How it works
+  // Section 03 - Process / How it works
   s3Label: string;
   s3Heading: string;
   s3Body?: string;
   s3Cards: ServiceCard[]; // numbered 01/02/03 from index
-  // Section 04 — CTA
+  // Section 04 - CTA
   ctaHeading: string;
   ctaBody: string;
   ctaButton: string;
@@ -53,14 +53,14 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     headline: "Your brand is the first thing they judge.",
     headlineItalic: "Make it count.",
     body:
-      "Before a client reads your proposal, visits your store, or picks up the phone — they've already formed an opinion. We build brand identities that make that first impression work in your favour. Based in Newcastle, serving businesses across the Amajuba District and wider KZN.",
+      "Before a client reads your proposal, visits your store, or picks up the phone - they've already formed an opinion. We build brand identities that make that first impression work in your favour. Based in Newcastle, serving businesses across the Amajuba District and wider KZN.",
     ctaLabel: "Start your brand",
     ctaMessage:
-      "Hi Ntombii Tech — I'd like to start a branding & identity project.",
+      "Hi Ntombii Tech - I'd like to start a branding & identity project.",
     s1Label: "What we do",
     s1Heading: "Brand identity that goes beyond a logo.",
     s1Body:
-      "A logo is just the start. We build complete brand systems — the visual language that runs across everything your business touches. From your business card to your shopfront, your social media to your letterhead, everything speaks the same language.",
+      "A logo is just the start. We build complete brand systems - the visual language that runs across everything your business touches. From your business card to your shopfront, your social media to your letterhead, everything speaks the same language.",
     s1Cards: [
       {
         title: "Logo design",
@@ -96,7 +96,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     s2Label: "Who this is for",
     s2Heading: "Built for businesses that are ready to look serious.",
     s2Body:
-      "Whether you're launching a new business, rebranding after years of inconsistency, or finally formalising what you've been doing informally — this is for you. We work with local businesses, NGOs, schools, and entrepreneurs across Newcastle, Dannhauser, Utrecht, Ladysmith, Dundee and surrounding KZN towns.",
+      "Whether you're launching a new business, rebranding after years of inconsistency, or finally formalising what you've been doing informally - this is for you. We work with local businesses, NGOs, schools, and entrepreneurs across Newcastle, Dannhauser, Utrecht, Ladysmith, Dundee and surrounding KZN towns.",
     s3Label: "Process",
     s3Heading: "Three steps. One brand.",
     s3Cards: [
@@ -121,7 +121,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       "WhatsApp us for a free quote. No forms. No waiting. Just a conversation.",
     ctaButton: "Get a free quote",
     ctaButtonMessage:
-      "Hi Ntombii Tech — I'd like a free quote for branding & identity.",
+      "Hi Ntombii Tech - I'd like a free quote for branding & identity.",
     related: [
       { label: "Graphic Design", href: "/services/graphic-design" },
       { label: "Printing Services", href: "/services/printing" },
@@ -141,14 +141,14 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     headline: "Design that does the talking.",
     headlineItalic: "For every platform. Every purpose.",
     body:
-      "From a flyer for tomorrow's event to a full marketing campaign — we design print-ready and digital graphics that make your business look the part. Fast turnaround. Professional finish. Based in Newcastle, serving clients across KZN.",
+      "From a flyer for tomorrow's event to a full marketing campaign - we design print-ready and digital graphics that make your business look the part. Fast turnaround. Professional finish. Based in Newcastle, serving clients across KZN.",
     ctaLabel: "Send us your brief",
     ctaMessage:
-      "Hi Ntombii Tech — I have a graphic design brief I'd like to share.",
+      "Hi Ntombii Tech - I have a graphic design brief I'd like to share.",
     s1Label: "What we design",
     s1Heading: "Everything your business needs to look professional.",
     s1Body:
-      "Good design isn't a luxury — it's the difference between a client taking you seriously and scrolling past. We handle all the design work that keeps your business looking sharp, consistently.",
+      "Good design isn't a luxury - it's the difference between a client taking you seriously and scrolling past. We handle all the design work that keeps your business looking sharp, consistently.",
     s1Cards: [
       {
         title: "Flyers & posters",
@@ -194,7 +194,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     s2Label: "Turnaround",
     s2Heading: "Fast when you need it. Polished every time.",
     s2Body:
-      "We understand that deadlines are real. Most standard design jobs are turned around within 24–48 hours. Rush jobs can be accommodated — just tell us when you need it and we'll make a plan. We serve clients in Newcastle, Madadeni, Osizweni, Ladysmith, Dundee, Glencoe, Dannhauser and across the Amajuba and uMzinyathi districts.",
+      "We understand that deadlines are real. Most standard design jobs are turned around within 24–48 hours. Rush jobs can be accommodated - just tell us when you need it and we'll make a plan. We serve clients in Newcastle, Madadeni, Osizweni, Ladysmith, Dundee, Glencoe, Dannhauser and across the Amajuba and uMzinyathi districts.",
     s3Label: "How it works",
     s3Heading: "Three steps. Done.",
     s3Cards: [
@@ -216,10 +216,10 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     ],
     ctaHeading: "Tell us what you need.",
     ctaBody:
-      "WhatsApp us your brief — even a voice note works. We'll get back to you with a quote fast.",
+      "WhatsApp us your brief - even a voice note works. We'll get back to you with a quote fast.",
     ctaButton: "Send your brief on WhatsApp",
     ctaButtonMessage:
-      "Hi Ntombii Tech — here's my graphic design brief:",
+      "Hi Ntombii Tech - here's my graphic design brief:",
     related: [
       { label: "Printing Services", href: "/services/printing" },
       { label: "Signage Solutions", href: "/services/signage" },
@@ -241,7 +241,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     body:
       "We source and manage professional printing for businesses, schools, NGOs and organisations across Newcastle and KZN. You get print-ready quality without the hassle of dealing with multiple suppliers. One call. One contact. Done.",
     ctaLabel: "Get a print quote",
-    ctaMessage: "Hi Ntombii Tech — I'd like a quote for printing.",
+    ctaMessage: "Hi Ntombii Tech - I'd like a quote for printing.",
     s1Label: "What we print",
     s1Heading: "Print for every business need.",
     s1Body:
@@ -305,7 +305,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     s3Label: "Why Ntombii Tech",
     s3Heading: "One contact. No runaround.",
     s3Body:
-      "We handle the whole process — design, print, delivery. You don't need to deal with multiple suppliers or chase anyone. We serve businesses in Newcastle CBD, Madadeni, Osizweni, Lennoxton, Hutten Heights, Dannhauser, Utrecht, Ladysmith, Dundee, Glencoe and surrounding towns.",
+      "We handle the whole process - design, print, delivery. You don't need to deal with multiple suppliers or chase anyone. We serve businesses in Newcastle CBD, Madadeni, Osizweni, Lennoxton, Hutten Heights, Dannhauser, Utrecht, Ladysmith, Dundee, Glencoe and surrounding towns.",
     s3Cards: [
       {
         title: "Design + print + deliver",
@@ -325,10 +325,10 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     ],
     ctaHeading: "What do you need printed?",
     ctaBody:
-      "Send us a WhatsApp — tell us what you need and when you need it. We'll sort the rest.",
+      "Send us a WhatsApp - tell us what you need and when you need it. We'll sort the rest.",
     ctaButton: "Order your print on WhatsApp",
     ctaButtonMessage:
-      "Hi Ntombii Tech — I'd like to order print. Here's what I need:",
+      "Hi Ntombii Tech - I'd like to order print. Here's what I need:",
     related: [
       { label: "Ink & Toner Supply", href: "/services/ink-toner" },
       { label: "Graphic Design", href: "/services/graphic-design" },
@@ -348,9 +348,9 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     headline: "Never run out of ink again.",
     headlineItalic: "Premium cartridges. Fast delivery. No fuss.",
     body:
-      "We supply premium quality ink and toner cartridges for businesses, schools, and offices across Newcastle and KZN. Order on WhatsApp and get your cartridges delivered — no queues, no delays, no stress.",
+      "We supply premium quality ink and toner cartridges for businesses, schools, and offices across Newcastle and KZN. Order on WhatsApp and get your cartridges delivered - no queues, no delays, no stress.",
     ctaLabel: "Order cartridges now",
-    ctaMessage: "Hi Ntombii Tech — I'd like to order ink/toner cartridges.",
+    ctaMessage: "Hi Ntombii Tech - I'd like to order ink/toner cartridges.",
     s1Label: "What we supply",
     s1Heading: "Cartridges for every printer.",
     s1Body:
@@ -424,10 +424,10 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     ],
     ctaHeading: "Running low? We've got you.",
     ctaBody:
-      "WhatsApp us now — tell us your printer make and model and we'll sort you out.",
+      "WhatsApp us now - tell us your printer make and model and we'll sort you out.",
     ctaButton: "Order ink or toner on WhatsApp",
     ctaButtonMessage:
-      "Hi Ntombii Tech — I need ink/toner. My printer brand and model is:",
+      "Hi Ntombii Tech - I need ink/toner. My printer brand and model is:",
     related: [
       { label: "Printing Services", href: "/services/printing" },
       { label: "Corporate Gifts", href: "/services/corporate-gifts" },
@@ -449,11 +449,11 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     body:
       "From shop fronts to vehicle branding, we design and deliver professional signage for businesses across Newcastle and KZN. Make your business visible. Make it memorable.",
     ctaLabel: "Get a signage quote",
-    ctaMessage: "Hi Ntombii Tech — I'd like a quote for signage.",
+    ctaMessage: "Hi Ntombii Tech - I'd like a quote for signage.",
     s1Label: "What we do",
     s1Heading: "Every type of signage your business needs.",
     s1Body:
-      "Whether you're opening a new shop, branding a fleet of vehicles, or need banners for an upcoming event — we handle the design, production and delivery of your signage end to end.",
+      "Whether you're opening a new shop, branding a fleet of vehicles, or need banners for an upcoming event - we handle the design, production and delivery of your signage end to end.",
     s1Cards: [
       {
         title: "Shop front signage",
@@ -494,7 +494,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     s2Label: "Why it matters",
     s2Heading: "Signage is your 24/7 salesperson.",
     s2Body:
-      "Your signage works for you around the clock — while you're closed, while you're busy, while you're sleeping. A poorly branded shopfront loses customers before they even walk in. A well-branded vehicle turns every trip into a marketing opportunity. We help businesses in Newcastle, Madadeni, Osizweni, Dannhauser, Utrecht, Ladysmith, Dundee, Glencoe and across KZN get noticed.",
+      "Your signage works for you around the clock - while you're closed, while you're busy, while you're sleeping. A poorly branded shopfront loses customers before they even walk in. A well-branded vehicle turns every trip into a marketing opportunity. We help businesses in Newcastle, Madadeni, Osizweni, Dannhauser, Utrecht, Ladysmith, Dundee, Glencoe and across KZN get noticed.",
     s3Label: "Process",
     s3Heading: "Three steps. One bold presence.",
     s3Cards: [
@@ -519,7 +519,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       "WhatsApp us for a free signage quote. Tell us what you need and we'll get back to you fast.",
     ctaButton: "Get a free signage quote",
     ctaButtonMessage:
-      "Hi Ntombii Tech — I'd like a free quote for signage.",
+      "Hi Ntombii Tech - I'd like a free quote for signage.",
     related: [
       { label: "Graphic Design", href: "/services/graphic-design" },
       { label: "Branding & Identity", href: "/services/branding" },
@@ -539,14 +539,14 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     headline: "Gifts that represent your brand.",
     headlineItalic: "Branded. Memorable. Delivered.",
     body:
-      "Corporate gifts that go beyond generic. We source, brand and deliver gifts for client appreciation, staff recognition, events and year-end functions — all carrying your company name and logo. Based in Newcastle, serving businesses across KZN.",
+      "Corporate gifts that go beyond generic. We source, brand and deliver gifts for client appreciation, staff recognition, events and year-end functions - all carrying your company name and logo. Based in Newcastle, serving businesses across KZN.",
     ctaLabel: "Get a gifts quote",
     ctaMessage:
-      "Hi Ntombii Tech — I'd like a quote for branded corporate gifts.",
+      "Hi Ntombii Tech - I'd like a quote for branded corporate gifts.",
     s1Label: "What we offer",
     s1Heading: "Branded gifts for every occasion.",
     s1Body:
-      "From a single executive gift to 500 branded items for a year-end function — we handle the sourcing, branding and delivery. You choose what you need. We make it happen.",
+      "From a single executive gift to 500 branded items for a year-end function - we handle the sourcing, branding and delivery. You choose what you need. We make it happen.",
     s1Cards: [
       {
         title: "Branded clothing",
@@ -582,7 +582,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     s2Label: "Why branded gifts",
     s2Heading: "A gift with your logo is a marketing tool.",
     s2Body:
-      "Every time someone uses a branded pen, wears a branded cap, or drinks from a branded mug — your business gets seen. Corporate gifting builds loyalty, creates goodwill and keeps your name top of mind long after the event is over. We supply businesses, NGOs, schools and government departments across Newcastle, Ladysmith, Dundee, Vryheid, Estcourt and the wider KZN region.",
+      "Every time someone uses a branded pen, wears a branded cap, or drinks from a branded mug - your business gets seen. Corporate gifting builds loyalty, creates goodwill and keeps your name top of mind long after the event is over. We supply businesses, NGOs, schools and government departments across Newcastle, Ladysmith, Dundee, Vryheid, Estcourt and the wider KZN region.",
     s3Label: "How it works",
     s3Heading: "Three steps. Done.",
     s3Cards: [
@@ -607,7 +607,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       "WhatsApp us to discuss your corporate gifting needs. No order too small, no brief too big.",
     ctaButton: "Get a corporate gifts quote",
     ctaButtonMessage:
-      "Hi Ntombii Tech — I'd like a quote for branded corporate gifts.",
+      "Hi Ntombii Tech - I'd like a quote for branded corporate gifts.",
     related: [
       { label: "Branding & Identity", href: "/services/branding" },
       { label: "Printing Services", href: "/services/printing" },
@@ -629,17 +629,17 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     body:
       "We design clean, fast, mobile-first websites for South African businesses. Based in Newcastle, serving Amajuba, KZN and the rest of South Africa. Every site is built to be found on Google and easy to update.",
     ctaLabel: "Get a website quote",
-    ctaMessage: "Hi Ntombii Tech — I'd like a quote for a website.",
+    ctaMessage: "Hi Ntombii Tech - I'd like a quote for a website.",
     s1Label: "What you get",
     s1Heading: "Everything a small business needs to look serious online.",
     s1Body:
-      "We design the kind of website your business deserves — one that loads fast, works on every phone, and gives customers a reason to call or WhatsApp you.",
+      "We design the kind of website your business deserves - one that loads fast, works on every phone, and gives customers a reason to call or WhatsApp you.",
     s1Cards: [
       { title: "Mobile-first design", body: "Designed for the phone first, then desktop. Because 80% of your visitors are on mobile." },
-      { title: "Fast, modern build", body: "Built on React for speed. Pages load in under 2 seconds — Google rewards that." },
+      { title: "Fast, modern build", body: "Built on React for speed. Pages load in under 2 seconds - Google rewards that." },
       { title: "On-page SEO", body: "Proper titles, meta descriptions, headings, schema and image alt text on every page." },
       { title: "WhatsApp & call buttons", body: "Sticky CTAs so visitors can reach you in one tap. We track them too." },
-      { title: "Contact forms", body: "Forms that deliver enquiries to your email and WhatsApp — no leads lost." },
+      { title: "Contact forms", body: "Forms that deliver enquiries to your email and WhatsApp - no leads lost." },
       { title: "Easy to update", body: "We hand it over with a simple guide, or stay on as your maintainer. Your call." },
     ],
     s2Label: "Who this is for",
@@ -660,9 +660,9 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       { title: "Launch & train", body: "We launch on your domain and show you how to update it. You're in control." },
     ],
     ctaHeading: "Ready for a website that actually works for your business?",
-    ctaBody: "WhatsApp us your idea — even a voice note works. We'll send you a quote and timeline fast.",
+    ctaBody: "WhatsApp us your idea - even a voice note works. We'll send you a quote and timeline fast.",
     ctaButton: "Start your website on WhatsApp",
-    ctaButtonMessage: "Hi Ntombii Tech — I'd like to start a website project.",
+    ctaButtonMessage: "Hi Ntombii Tech - I'd like to start a website project.",
     related: [
       { label: "Web Development", href: "/services/web-development" },
       { label: "E-commerce", href: "/services/ecommerce" },
@@ -685,15 +685,15 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     body:
       "When a template won't cut it, we build it from scratch. Modern React + TypeScript stacks, proper integrations, real performance. For businesses that need their website to do real work.",
     ctaLabel: "Discuss your project",
-    ctaMessage: "Hi Ntombii Tech — I'd like to discuss a web development project.",
+    ctaMessage: "Hi Ntombii Tech - I'd like to discuss a web development project.",
     s1Label: "What we build",
     s1Heading: "Custom websites and web apps engineered to last.",
     s1Body:
-      "We don't drop a template and call it a day. We build with React, TypeScript and Tailwind — the same stack used by global companies — tuned for South African connections and devices.",
+      "We don't drop a template and call it a day. We build with React, TypeScript and Tailwind - the same stack used by global companies - tuned for South African connections and devices.",
     s1Cards: [
       { title: "Custom websites", body: "Bespoke designs, custom features, custom CMS. Whatever your business needs to do, we build it." },
       { title: "Web applications", body: "Dashboards, booking systems, calculators, member portals, internal tools." },
-      { title: "API integrations", body: "Connect to WhatsApp Business, payment gateways, CRMs, email marketing — anything with an API." },
+      { title: "API integrations", body: "Connect to WhatsApp Business, payment gateways, CRMs, email marketing - anything with an API." },
       { title: "Performance optimisation", body: "Sub-2-second load times. Core Web Vitals green. Built for SA network conditions." },
       { title: "Headless CMS", body: "Edit your own content without breaking the design. Sanity, Supabase or custom admin." },
       { title: "Maintenance & upgrades", body: "Ongoing care plans. Security, backups, bug fixes, new features." },
@@ -701,18 +701,18 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     s2Label: "Who this is for",
     s2Heading: "Businesses with a real brief, not just a brochure site.",
     s2Body:
-      "If you've outgrown WordPress, your developer ghosted you, or you need something genuinely custom — talk to us. We work with growing businesses across South Africa from our base in Newcastle, KZN.",
+      "If you've outgrown WordPress, your developer ghosted you, or you need something genuinely custom - talk to us. We work with growing businesses across South Africa from our base in Newcastle, KZN.",
     s3Label: "How it works",
     s3Heading: "We scope properly. Then we build.",
     s3Cards: [
       { title: "Discovery call", body: "A proper conversation about what you actually need. No assumptions." },
       { title: "Scope & quote", body: "A written scope, fixed quote, and timeline. You know exactly what you're getting." },
-      { title: "Build & deploy", body: "Weekly demos, transparent progress. Launch when it's right — not when it's late." },
+      { title: "Build & deploy", body: "Weekly demos, transparent progress. Launch when it's right - not when it's late." },
     ],
     ctaHeading: "Have a real build in mind?",
     ctaBody: "WhatsApp us a short brief. If it's a fit, we'll set up a call this week.",
     ctaButton: "Send your brief",
-    ctaButtonMessage: "Hi Ntombii Tech — here's my web development brief:",
+    ctaButtonMessage: "Hi Ntombii Tech - here's my web development brief:",
     related: [
       { label: "Web Design", href: "/services/web-design" },
       { label: "Web Apps", href: "/services/web-apps" },
@@ -733,20 +733,20 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     headline: "Sell online,",
     headlineItalic: "without selling your soul to fees.",
     body:
-      "We build online stores for South African businesses — proper checkout, local payment gateways, WhatsApp order confirmations and shipping that actually works in SA.",
+      "We build online stores for South African businesses - proper checkout, local payment gateways, WhatsApp order confirmations and shipping that actually works in SA.",
     ctaLabel: "Get an online store quote",
-    ctaMessage: "Hi Ntombii Tech — I'd like a quote for an online store.",
+    ctaMessage: "Hi Ntombii Tech - I'd like a quote for an online store.",
     s1Label: "What's included",
     s1Heading: "Everything you need to start selling.",
     s1Body:
-      "From product photos to checkout to delivery — we build the whole engine, not just a storefront.",
+      "From product photos to checkout to delivery - we build the whole engine, not just a storefront.",
     s1Cards: [
       { title: "Product catalogue", body: "Unlimited products with images, variants, stock tracking and categories." },
-      { title: "SA payment gateways", body: "PayFast, Yoco, Peach, Stripe — accept cards, EFT, SnapScan and Zapper." },
+      { title: "SA payment gateways", body: "PayFast, Yoco, Peach, Stripe - accept cards, EFT, SnapScan and Zapper." },
       { title: "Shipping & delivery", body: "Courier integrations, pickup points, local delivery zones for KZN." },
-      { title: "WhatsApp order alerts", body: "You get notified the moment an order comes in — and so does the customer." },
+      { title: "WhatsApp order alerts", body: "You get notified the moment an order comes in - and so does the customer." },
       { title: "Mobile checkout", body: "One-page checkout that works on every phone. No abandoned carts because of bad UX." },
-      { title: "SEO for products", body: "Every product page gets proper schema, meta and structured data — Google can sell for you." },
+      { title: "SEO for products", body: "Every product page gets proper schema, meta and structured data - Google can sell for you." },
     ],
     s2Label: "Who this is for",
     s2Heading: "Retailers, makers and brands ready to sell beyond the shop floor.",
@@ -756,13 +756,13 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     s3Heading: "From catalogue to checkout in 3 steps.",
     s3Cards: [
       { title: "Plan", body: "We map your products, payment, shipping and tax setup before we touch the design." },
-      { title: "Build", body: "Storefront, checkout, admin and integrations — all built and tested." },
+      { title: "Build", body: "Storefront, checkout, admin and integrations - all built and tested." },
       { title: "Launch & train", body: "We load your first products with you and train you to run the store yourself." },
     ],
     ctaHeading: "Ready to sell online?",
     ctaBody: "WhatsApp us about your products. We'll send a quote with options for your stage of business.",
     ctaButton: "Start your online store",
-    ctaButtonMessage: "Hi Ntombii Tech — I'd like to start an online store.",
+    ctaButtonMessage: "Hi Ntombii Tech - I'd like to start an online store.",
     related: [
       { label: "Web Design", href: "/services/web-design" },
       { label: "Local SEO", href: "/services/local-seo" },
@@ -783,17 +783,17 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     headline: "Websites that make your school",
     headlineItalic: "the obvious choice for parents.",
     body:
-      "We design and build websites for primary schools, high schools and colleges across KZN and South Africa — built around what parents actually need to find: fees, admissions, news, contact.",
+      "We design and build websites for primary schools, high schools and colleges across KZN and South Africa - built around what parents actually need to find: fees, admissions, news, contact.",
     ctaLabel: "Get a school website quote",
-    ctaMessage: "Hi Ntombii Tech — I'd like a quote for a school website.",
+    ctaMessage: "Hi Ntombii Tech - I'd like a quote for a school website.",
     s1Label: "What's included",
     s1Heading: "Built for the real questions parents ask.",
     s1Body:
-      "Most school sites bury the information parents want. We put it front and centre — admissions, fees, term dates, contact — then layer in the rest.",
+      "Most school sites bury the information parents want. We put it front and centre - admissions, fees, term dates, contact - then layer in the rest.",
     s1Cards: [
       { title: "Admissions & forms", body: "Online application forms that deliver to the office email, with PDF downloads." },
       { title: "News & announcements", body: "Easy to update news section so the principal can post without calling us." },
-      { title: "Calendar & events", body: "Term dates, sports fixtures, parent meetings — all in one place." },
+      { title: "Calendar & events", body: "Term dates, sports fixtures, parent meetings - all in one place." },
       { title: "Photo galleries", body: "Showcase school life, events, sports and achievements." },
       { title: "Staff & departments", body: "Profiles for leadership and academic teams. Builds trust before the first visit." },
       { title: "POPIA-compliant", body: "Privacy policy, consent on forms, and secure handling of learner data." },
@@ -810,9 +810,9 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       { title: "Launch & training", body: "We train the school's chosen person to update news and events." },
     ],
     ctaHeading: "Ready to give your school the website it deserves?",
-    ctaBody: "WhatsApp us — we'll send a quote and examples of school sites we've built.",
+    ctaBody: "WhatsApp us - we'll send a quote and examples of school sites we've built.",
     ctaButton: "Get a school website quote",
-    ctaButtonMessage: "Hi Ntombii Tech — I'd like a quote for a school website.",
+    ctaButtonMessage: "Hi Ntombii Tech - I'd like a quote for a school website.",
     related: [
       { label: "Web Design", href: "/services/web-design" },
       { label: "Branding & Identity", href: "/services/branding" },
@@ -835,17 +835,17 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     body:
       "Local SEO that gets you into the Google Map pack, on the first page for your services + town, and recommended by AI search like ChatGPT and Gemini. Built for South African small businesses.",
     ctaLabel: "Get a local SEO audit",
-    ctaMessage: "Hi Ntombii Tech — I'd like a local SEO audit.",
+    ctaMessage: "Hi Ntombii Tech - I'd like a local SEO audit.",
     s1Label: "What we do",
-    s1Heading: "The full local SEO stack — not just keywords.",
+    s1Heading: "The full local SEO stack - not just keywords.",
     s1Body:
       "Local SEO is part technical, part content, part listings, part reputation. We do all four, in the right order, with monthly reporting.",
     s1Cards: [
       { title: "Google Business Profile", body: "Full setup or rescue. Categories, services, photos, posts and review strategy." },
       { title: "On-page SEO", body: "Titles, meta, headings, schema, internal linking on every page that matters." },
-      { title: "Location pages", body: "Dedicated pages for each town and service combination — built to rank." },
+      { title: "Location pages", body: "Dedicated pages for each town and service combination - built to rank." },
       { title: "Local citations", body: "Consistent name, address, phone across SA directories and platforms." },
-      { title: "Reviews strategy", body: "A system for getting more Google reviews — ethically, consistently." },
+      { title: "Reviews strategy", body: "A system for getting more Google reviews - ethically, consistently." },
       { title: "AI search optimisation", body: "Entity, schema and content tuning so ChatGPT, Gemini and Perplexity recommend you." },
     ],
     s2Label: "Who this is for",
@@ -862,13 +862,13 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     s3Heading: "Audit. Fix. Grow.",
     s3Cards: [
       { title: "Audit", body: "We benchmark your site, listings, reviews and competitors. You get a written report." },
-      { title: "Fix the foundations", body: "Technical SEO, Google Business, schema, location pages — all sorted first." },
+      { title: "Fix the foundations", body: "Technical SEO, Google Business, schema, location pages - all sorted first." },
       { title: "Grow rankings", body: "Monthly content, citations, reviews and link-building to push you up." },
     ],
     ctaHeading: "Want to know where you stand on Google?",
     ctaBody: "WhatsApp us your website and town. We'll do a free quick check before quoting.",
     ctaButton: "Request a free SEO check",
-    ctaButtonMessage: "Hi Ntombii Tech — please do a free local SEO check on my business.",
+    ctaButtonMessage: "Hi Ntombii Tech - please do a free local SEO check on my business.",
     related: [
       { label: "Web Design", href: "/services/web-design" },
       { label: "Web Development", href: "/services/web-development" },
@@ -891,23 +891,23 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     body:
       "Custom logo design for South African businesses, schools and startups. Original concepts, proper vector files, every format you'll ever need. Based in Newcastle, KZN.",
     ctaLabel: "Get a logo quote",
-    ctaMessage: "Hi Ntombii Tech — I'd like a quote for a logo.",
+    ctaMessage: "Hi Ntombii Tech - I'd like a quote for a logo.",
     s1Label: "What you get",
-    s1Heading: "More than a picture — a working brand mark.",
+    s1Heading: "More than a picture - a working brand mark.",
     s1Body:
       "A logo isn't art. It's a tool. We design logos that work small, big, in colour, in black, on a t-shirt, on a sign, online and on a business card.",
     s1Cards: [
       { title: "Primary logo", body: "Full horizontal/stacked logo with your name and mark." },
       { title: "Logo variations", body: "Alternate layouts for tight spaces, dark backgrounds and social icons." },
       { title: "Icon mark", body: "A standalone symbol for favicons, app icons and watermarks." },
-      { title: "Vector files", body: "AI, SVG, EPS — scale to any size without losing quality." },
+      { title: "Vector files", body: "AI, SVG, EPS - scale to any size without losing quality." },
       { title: "Web & print files", body: "PNG, JPG and PDF in correct colour profiles for screen and print." },
       { title: "Mini brand sheet", body: "Your colours, fonts and clear-space rules on a one-page reference." },
     ],
     s2Label: "Who this is for",
     s2Heading: "Anyone starting up, rebranding, or finally going pro.",
     s2Body:
-      "New businesses, side hustles going formal, churches, schools, NGOs, sports teams — if it needs a logo, we'll design one that fits.",
+      "New businesses, side hustles going formal, churches, schools, NGOs, sports teams - if it needs a logo, we'll design one that fits.",
     s2Cards: [
       { title: "Starting price", body: "From R1 500 for a logo + variations + files." },
       { title: "Turnaround", body: "First concepts in 3–5 working days." },
@@ -924,7 +924,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     ctaHeading: "Need a logo that doesn't look like everyone else's?",
     ctaBody: "WhatsApp us your business name and a sentence about what you do.",
     ctaButton: "Start your logo on WhatsApp",
-    ctaButtonMessage: "Hi Ntombii Tech — I'd like a quote for a logo.",
+    ctaButtonMessage: "Hi Ntombii Tech - I'd like a quote for a logo.",
     related: [
       { label: "Branding & Identity", href: "/services/branding" },
       { label: "Graphic Design", href: "/services/graphic-design" },
@@ -945,25 +945,25 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     headline: "Custom digital systems",
     headlineItalic: "that run your business.",
     body:
-      "When spreadsheets stop scaling and off-the-shelf software doesn't fit, we build the system you actually need. Built on modern, maintainable stacks — owned by you.",
+      "When spreadsheets stop scaling and off-the-shelf software doesn't fit, we build the system you actually need. Built on modern, maintainable stacks - owned by you.",
     ctaLabel: "Discuss your web app",
-    ctaMessage: "Hi Ntombii Tech — I'd like to discuss a web app project.",
+    ctaMessage: "Hi Ntombii Tech - I'd like to discuss a web app project.",
     s1Label: "What we build",
     s1Heading: "Software shaped exactly to your operation.",
     s1Body:
       "Every business has those processes that everyone hates because no software does it right. We build the one that does.",
     s1Cards: [
-      { title: "Booking & scheduling", body: "Service bookings, appointments, room reservations — with reminders and payments." },
-      { title: "Admin dashboards", body: "Custom dashboards for your team — orders, jobs, customers, reports in one place." },
+      { title: "Booking & scheduling", body: "Service bookings, appointments, room reservations - with reminders and payments." },
+      { title: "Admin dashboards", body: "Custom dashboards for your team - orders, jobs, customers, reports in one place." },
       { title: "Member & client portals", body: "Logged-in areas for clients to view documents, status, invoices and history." },
       { title: "Internal tools", body: "Replace messy spreadsheets with a real interface your team will actually use." },
       { title: "Workflow automation", body: "Forms that route, notify, calculate and trigger the next step automatically." },
-      { title: "Integrations", body: "Connect to WhatsApp, accounting, payments, email — anything with an API." },
+      { title: "Integrations", body: "Connect to WhatsApp, accounting, payments, email - anything with an API." },
     ],
     s2Label: "Who this is for",
     s2Heading: "Businesses ready to invest in proper systems.",
     s2Body:
-      "If you've outgrown spreadsheets, paid for SaaS you don't use, or have a process only one person knows how to run — let's talk. We work with SMEs across KZN and South Africa from our Newcastle base.",
+      "If you've outgrown spreadsheets, paid for SaaS you don't use, or have a process only one person knows how to run - let's talk. We work with SMEs across KZN and South Africa from our Newcastle base.",
     s3Label: "How it works",
     s3Heading: "Scope first. Build right. Hand over clean.",
     s3Cards: [
@@ -974,7 +974,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     ctaHeading: "Got a process begging for proper software?",
     ctaBody: "WhatsApp us a short description. We'll set up a free scoping call.",
     ctaButton: "Discuss your web app",
-    ctaButtonMessage: "Hi Ntombii Tech — I'd like to discuss a web app:",
+    ctaButtonMessage: "Hi Ntombii Tech - I'd like to discuss a web app:",
     related: [
       { label: "Web Development", href: "/services/web-development" },
       { label: "E-commerce", href: "/services/ecommerce" },

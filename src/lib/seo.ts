@@ -1,4 +1,4 @@
-// SEO helpers — schema generators + shared constants.
+// SEO helpers - schema generators + shared constants.
 import { SITE } from "@/lib/site";
 import { LOCATIONS } from "@/lib/locations";
 
@@ -17,7 +17,7 @@ export const localBusinessSchema = () => ({
   name: SITE.name,
   alternateName: "Ntombii Communications",
   description:
-    "South African digital solutions and web design company based in Newcastle, KwaZulu-Natal — building websites, web apps, brand systems, print, signage, ink and corporate gifts for local businesses, schools and organisations.",
+    "South African digital solutions and web design company based in Newcastle, KwaZulu-Natal - building websites, web apps, brand systems, print, signage, ink and corporate gifts for local businesses, schools and organisations.",
   slogan: "Design that works online and in real life.",
   url: SITE_URL,
   telephone: ORG_PHONE,
@@ -61,7 +61,7 @@ export const localBusinessSchema = () => ({
     alternateName: "The Technoking",
     jobTitle: "Founder",
     description:
-      "Sabelo Ndlovu (The Technoking) is the founder of Ntombii Tech — a tech creative and digital builder helping brands, businesses and entrepreneurs grow through modern websites, smart digital solutions and a strong online presence.",
+      "Sabelo Ndlovu (The Technoking) is the founder of Ntombii Tech - a tech creative and digital builder helping brands, businesses and entrepreneurs grow through modern websites, smart digital solutions and a strong online presence.",
     sameAs: [SITE.socials.instagram, SITE.socials.facebook].filter(Boolean),
   },
   taxID: "2022/529038/07",
@@ -181,7 +181,7 @@ export const locationBusinessSchema = (town: {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "@id": `${SITE_URL}/areas/${town.slug}#business`,
-  name: `${SITE.name} — ${town.name}`,
+  name: `${SITE.name} - ${town.name}`,
   description: `Web design, web development and branding services for businesses in ${town.name}, ${town.region}.`,
   url: absUrl(`/areas/${town.slug}`),
   telephone: ORG_PHONE,

@@ -7,7 +7,7 @@ Ntombii Tech is a design and development studio based in Newcastle, KwaZulu-Nata
 ## Pages
 
 - [Home](/): Studio overview, capabilities and selected work.
-- [Services](/services): Full list of services — web, brand, print, signage, gifts.
+- [Services](/services): Full list of services - web, brand, print, signage, gifts.
 - [Work](/work): Selected client projects and case studies.
 - [Pricing](/pricing): Transparent packages and starting prices.
 - [About](/about): Team, story and how we work.

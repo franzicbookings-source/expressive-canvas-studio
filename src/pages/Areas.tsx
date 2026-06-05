@@ -20,7 +20,7 @@ const Areas = () => {
   return (
     <>
       <SEO
-        title="Areas We Serve — Web Design Across Northern KZN"
+        title="Areas We Serve - Web Design Across Northern KZN"
         description="Ntombii Tech designs and builds websites for businesses across Newcastle, Madadeni, Vryheid, Ladysmith, Dundee, Utrecht and the wider Northern KwaZulu-Natal region."
         path="/areas"
         keywords="web design Northern KZN, web designer Newcastle, web design Vryheid, web designer Ladysmith, KZN web agency"

@@ -207,7 +207,7 @@ export const SiteFooter = () => {
     const email = (form.elements.namedItem("email") as HTMLInputElement)?.value?.trim();
     if (!email) return;
     const wa = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(
-      `Hi Ntombii Tech — please add me to the studio newsletter: ${email}`,
+      `Hi Ntombii Tech - please add me to the studio newsletter: ${email}`,
     )}`;
     window.open(wa, "_blank", "noopener");
     form.reset();
@@ -224,7 +224,7 @@ export const SiteFooter = () => {
               One short email a month. <span className="serif text-accent">No spam, ever.</span>
             </h3>
             <p className="mt-2 text-sm text-muted-foreground max-w-md">
-              Notes from the studio — what we shipped, what we learned, and the
+              Notes from the studio - what we shipped, what we learned, and the
               local KZN web stories worth your time.
             </p>
           </div>
