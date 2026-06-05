@@ -236,7 +236,7 @@ export const SiteFooter = () => {
               type="email"
               required
               placeholder="you@business.co.za"
-              className="flex-1 rounded-full border border-border bg-background px-5 py-3 text-sm placeholder:text-muted-foreground/70 focus:outline-none focus:border-foreground/40 transition"
+              className="flex-1 rounded-full border border-border bg-background px-5 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:border-foreground/40 transition"
             />
             <button
               type="submit"
