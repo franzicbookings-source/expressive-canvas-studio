@@ -132,15 +132,15 @@ const CaseStudy = () => {
       {/* Challenge / Approach / Outcome */}
       <section className="container-wide py-12 md:py-16 border-t border-border/60 grid gap-10 md:grid-cols-3">
         <Reveal>
-          <p className="eyebrow">Challenge</p>
+          <h2 className="eyebrow">Challenge</h2>
           <p className="mt-5 text-foreground/85 leading-relaxed">{c.challenge}</p>
         </Reveal>
         <Reveal delay={100}>
-          <p className="eyebrow">Approach</p>
+          <h2 className="eyebrow">Approach</h2>
           <p className="mt-5 text-foreground/85 leading-relaxed">{c.approach}</p>
         </Reveal>
         <Reveal delay={200}>
-          <p className="eyebrow">Outcome</p>
+          <h2 className="eyebrow">Outcome</h2>
           <p className="mt-5 text-foreground/85 leading-relaxed">{c.outcome}</p>
         </Reveal>
       </section>
@@ -148,7 +148,7 @@ const CaseStudy = () => {
       {/* Scope + results */}
       <section className="container-wide py-12 md:py-16 border-t border-border/60 grid gap-10 md:grid-cols-2">
         <Reveal>
-          <p className="eyebrow">Scope</p>
+          <h2 className="eyebrow">Scope</h2>
           <ul className="mt-6 grid gap-3">
             {c.scope.map((s) => (
               <li key={s} className="flex items-start gap-3 text-foreground/85">
@@ -159,7 +159,7 @@ const CaseStudy = () => {
           </ul>
         </Reveal>
         <Reveal delay={100}>
-          <p className="eyebrow">Results</p>
+          <h2 className="eyebrow">Results</h2>
           <ul className="mt-6 grid gap-3">
             {c.results.map((r) => (
               <li key={r} className="flex items-start gap-3 text-foreground/85">
@@ -174,7 +174,7 @@ const CaseStudy = () => {
       {/* Related services */}
       {c.related.length > 0 && (
         <section className="container-wide py-12 md:py-16 border-t border-border/60">
-          <p className="eyebrow mb-6">Services delivered</p>
+          <h2 className="eyebrow mb-6">Services delivered</h2>
           <div className="grid gap-5 md:grid-cols-2">
             {c.related.map((r) => (
               <Link
