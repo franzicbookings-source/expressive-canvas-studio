@@ -89,8 +89,8 @@ const Index = () => {
   return (
     <>
       <SEO
-        title="Web Design & Digital Solutions Company in Newcastle, KZN | Ntombii Tech"
-        description="Ntombii Tech is a South African digital solutions and web design company in Newcastle, KwaZulu-Natal. We build websites, web apps, brand systems, print, signage, ink solutions and corporate gifts for businesses, schools and organisations across KZN and South Africa."
+        title="Web Design & Digital Solutions | Ntombii Tech"
+        description="Ntombii Tech builds websites, web apps, brands, print and signage for South African businesses in Newcastle, KwaZulu-Natal."
         path="/"
         keywords="web design Newcastle KZN, web designer Newcastle, website development South Africa, affordable business websites, small business web design KZN, school websites South Africa, branding Newcastle, local SEO KZN, print and signage Newcastle, corporate gifts KZN, Ntombii Tech"
         schemas={[
