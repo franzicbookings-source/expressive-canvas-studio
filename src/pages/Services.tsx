@@ -17,7 +17,7 @@ const Services = () => (
   <>
     <SEO
       title="Services - Web Design, Development & Branding in KZN"
-      description="UI/UX, web development, mobile design and brand systems for South African businesses. Built in Newcastle, serving Northern KZN. Mobile-first, AI-assisted, fast delivery."
+      description="Web design, development and branding for South African businesses. Based in Newcastle, KZN. Mobile-first, fast delivery."
       path="/services"
       keywords="web design services Newcastle, web development KZN, branding agency Newcastle, UI UX design South Africa, mobile design Northern KZN"
       schemas={[

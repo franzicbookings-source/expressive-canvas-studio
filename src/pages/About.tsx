@@ -23,7 +23,7 @@ const About = () => (
   <>
     <SEO
       title="About - Newcastle Digital Studio | Ntombii Tech"
-      description="Ntombii Tech is a Newcastle-born digital studio. We design and build mobile-first websites and brand systems for African companies - fast, focused, and AI-assisted."
+      description="Ntombii Tech is a Newcastle-born digital studio. We design and build mobile-first websites and brand systems for African companies."
       path="/about"
       keywords="Ntombii Tech about, Newcastle web agency, KZN digital studio, African design agency"
       schemas={[
