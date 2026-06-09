@@ -10,44 +10,44 @@
 
 @layer base {
   :root {
-    /* Surfaces */
-    --background: 40 33% 98%;          /* #FBFBFD-ish, warm off-white */
-    --foreground: 220 14% 11%;         /* near-black */
+    /* Surfaces — paper / bone */
+    --background: 44 25% 94%;          /* #F4F2EC paper */
+    --foreground: 0 0% 7%;             /* near-black ink */
 
     --card: 0 0% 100%;
-    --card-foreground: 220 14% 11%;
+    --card-foreground: 0 0% 7%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 14% 11%;
+    --popover-foreground: 0 0% 7%;
 
     /* Brand */
-    --primary: 220 14% 11%;            /* near-black primary surface */
-    --primary-foreground: 40 33% 98%;
+    --primary: 0 0% 7%;
+    --primary-foreground: 44 25% 94%;
 
-    --accent: 14 95% 55%;              /* refined warm orange */
+    --accent: 11 100% 54%;             /* hotter editorial orange-red */
     --accent-foreground: 0 0% 100%;
-    --accent-soft: 14 95% 96%;
+    --accent-soft: 11 100% 96%;
 
-    --secondary: 220 13% 96%;
-    --secondary-foreground: 220 14% 11%;
+    --secondary: 44 20% 89%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 220 13% 96%;
-    --muted-foreground: 220 8% 42%;
+    --muted: 44 20% 89%;
+    --muted-foreground: 0 0% 35%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 220 14% 11%;
+    --border: 0 0% 86%;
+    --input: 44 15% 82%;
+    --ring: 0 0% 7%;
 
-    --radius: 1rem;
+    --radius: 0.25rem;
 
     /* Effects */
-    --shadow-soft: 0 1px 2px hsl(220 14% 11% / 0.04), 0 8px 24px -8px hsl(220 14% 11% / 0.08);
-    --shadow-lift: 0 1px 2px hsl(220 14% 11% / 0.06), 0 24px 48px -16px hsl(220 14% 11% / 0.12);
-    --gradient-warm: radial-gradient(1200px 600px at 80% 0%, hsl(14 95% 55% / 0.10), transparent 60%);
-    --gradient-hero: linear-gradient(180deg, hsl(40 33% 98%) 0%, hsl(40 30% 96%) 100%);
+    --shadow-soft: 0 1px 2px hsl(0 0% 7% / 0.04), 0 8px 24px -8px hsl(0 0% 7% / 0.08);
+    --shadow-lift: 0 1px 2px hsl(0 0% 7% / 0.06), 0 24px 48px -16px hsl(0 0% 7% / 0.12);
+    --gradient-warm: radial-gradient(1200px 600px at 80% 0%, hsl(11 100% 54% / 0.05), transparent 60%);
+    --gradient-hero: linear-gradient(180deg, hsl(44 25% 94%) 0%, hsl(44 22% 91%) 100%);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -121,16 +121,23 @@
     @apply mx-auto w-full max-w-7xl px-6 sm:px-8;
   }
   .display {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.035em;
-    line-height: 1.02;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 0.94;
   }
   .serif {
     font-family: 'Instrument Serif', serif;
     font-style: italic;
     font-weight: 400;
     letter-spacing: -0.01em;
+  }
+  .mono-label {
+    font-family: 'Space Grotesk', monospace;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 11px;
   }
   .eyebrow {
     @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground;
@@ -179,26 +186,26 @@
 
   /* Editorial display sizes */
   .display-mega {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.045em;
-    line-height: 0.98;
-    font-size: clamp(2rem, 6.2vw, 5.25rem);
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 0.88;
+    font-size: clamp(2.75rem, 11vw, 10rem);
     overflow-wrap: break-word;
   }
   .display-xl {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.035em;
-    line-height: 1;
-    font-size: clamp(2rem, 5vw, 4.25rem);
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 0.94;
+    font-size: clamp(2.25rem, 6.5vw, 5.75rem);
   }
   .display-lg {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-weight: 600;
     letter-spacing: -0.03em;
-    line-height: 1.05;
-    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    line-height: 1.02;
+    font-size: clamp(1.75rem, 3.8vw, 3.25rem);
   }
   .max-w-prose-wide { max-width: 68ch; }
 
