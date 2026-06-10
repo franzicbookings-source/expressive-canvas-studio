@@ -1,88 +1,88 @@
-# Homepage redesign — Editorial Brutalist, built to rank in Newcastle/KZN
+# Homepage adjustments — pricing, founder, copy + socials fix, faster image, logo rotator
 
-A complete homepage rebuild in the spirit of Pentagram, Order, Manual, Mast & Studio Dumbar — heavy editorial type, raw grid, oversized numerals, monochrome with a single hot accent — but engineered so every section also earns its keep with Google. Other pages, nav, footer, and global styles stay as they are for now.
+Six focused changes. Editorial brutalist system stays intact — new sections use the existing `SectionHead`, hairline grid, mono labels, and accent.
 
-## The visual world
+## 1. Add a Pricing section to the homepage `(05) Pricing`
 
-- **Black-on-bone** palette. Background goes from warm white to a colder paper white (`#F4F2EC`). Foreground near-black. Single accent: a hotter, more saturated orange-red (`#FF3B14`) used sparingly — accent dot, one headline word, hover state.
-- **Type**: keep Instrument Serif for italic punctuation, replace Inter display usage with a stronger editorial sans (Söhne-feel — we can use **Geist** or **Neue Haas Grotesk Display** via fontsource/Google equivalent like **Space Grotesk** at heavy weight). Body stays neutral.
-- **Hairline grid**: visible 12-column rules, oversized section numerals `(01) — (07)`, ALL-CAPS micro labels, tabular numerals everywhere.
-- **No stock photos. No gradients. No glassmorphism. No drop shadows on cards.** Depth comes from typography scale and whitespace, not effects.
-- **Motion**: slow, deliberate. Letter-by-letter reveal on the H1, marquee for service ticker, subtle weight-shift on hover for capability rows. No parallax theatrics.
+Insert a new section between **(04) Areas** and the current Proof block. Renumber subsequent sections so the page reads `00 → 07` cleanly.
 
-## New homepage structure
+- Pulls from `SITE.pricing` (Starter R2,500 / Business R3,500 / Premium R7,500).
+- Three-column editorial table on desktop, stacked on mobile. No card shadows — hairline rules only.
+- Each tier: name, "from" price (display size), strikethrough original, 4–6 feature bullets, single CTA → `/contact`.
+- The "Business" tier gets a thin accent rule on top + `Popular` mono-label (no coloured card backgrounds).
+- CTA row beneath: "See full pricing" → `/pricing`.
+
+## 2. Add a Founder section to the homepage `(06) Founder`
+
+New section after Pricing. Two-column on desktop:
+
+- **Left (5 cols)**: founder portrait, square crop, hairline frame.
+- **Right (7 cols)**: numeral `(06)`, mono label `Founder`, display headline `Sabelo Ndlovu — Technoking.`, one short bio paragraph, a small `dl` with role / based / contact, and a "More about the studio" link → `/about`.
+
+Copy will be rewritten per fix #3 below.
+
+## 3. Fix the "Technoking" copy + socials
+
+- **`src/pages/About.tsx`**: change the bio from "Sabelo Ndlovu, also known as **The Technoking**, is the founder…" to wording that treats Technoking as a role title, e.g. "Sabelo Ndlovu is **Technoking** (the company's CEO-equivalent role) and founder of Ntombii Tech." Update the headline `Sabelo Ndlovu — The Technoking.` → `Sabelo Ndlovu — Technoking.`. Update the image `alt` to drop "known as".
+- **`src/lib/seo.ts`**: remove `alternateName: "The Technoking"` (it's not a nickname) and rewrite the founder `description` to match.
+- **Socials**: leave `SITE.socials.instagram` / `facebook` as-is on the site footer — they already point to the **company** accounts (`ntombii_tech`, the company Facebook share link). The new homepage Founder section will **not** render Instagram/Facebook icons next to the founder — only role + studio + a link to `/about`. This prevents the impression that those handles belong to Sabelo personally.
+
+## 4. Make the founder image load way faster
+
+Current file is a **1.8 MB PNG** loaded eagerly on `/about`. Fix:
+
+- Regenerate a compact, optimised **WebP** portrait (~600×600, quality 78, target <80 KB) using `imagegen` (or downscale + re-encode the existing PNG with `cwebp`/`sharp` via a one-off script) and upload via `lovable-assets` to replace the pointer at `src/assets/sabelo-ndlovu-founder.png.asset.json` with a new `.webp.asset.json`.
+- Add `loading="eager"` + `fetchpriority="high"` + explicit `width`/`height` on the homepage Founder `<img>` (above the fold on mobile after scroll, but we want it ready). Use `loading="lazy"` only on `/about` where it's further down.
+- Add a `<link rel="preload" as="image" href="…webp" fetchpriority="high">` in `index.html` so it starts downloading with the HTML.
+- Delete the old 1.8 MB PNG asset pointer once references are migrated.
+
+Expected: ~95% file-size reduction, image appears effectively instant on Newcastle 4G.
+
+## 5. Remove the testimonial Proof section
+
+Delete the entire current `(05) PROOF` block (the large quote + the small "Trusted by" name list beneath it). The visual testimonial goes away completely. The review JSON-LD schema array stays in the `<SEO>` head so Google still sees the reviews — purely a visual removal.
+
+## 6. Replace with a "Worked with" logo rotator (blink in/out, one group at a time)
+
+New section in the slot where Proof used to be. Behaviour:
+
+- Show **one group of 2–3 client logos at a time** (so on mobile maybe 2 logos visible; desktop 3).
+- Group fades in (≈400 ms), holds for ~2.2 s, fades out (≈400 ms), next group fades in. Loops.
+- Uses the existing logos in `src/components/home/TrustedBy.tsx` (`knawpLogo`, `sknowhiteLogo`, `auntywamaLogo`, `nyateeLogo`, `umzilikaziLogo`). Five logos → ~2 groups on mobile, ~2 groups on desktop.
+- Implemented with a small React `useEffect` interval + CSS `opacity` transition. No external libs.
+- Respects `prefers-reduced-motion`: when reduced, render all logos in a single static row instead of cycling.
+- Layout: numeral `(05)`, label `Worked with`, then a single horizontally centred row that holds the current group, with a fixed min-height so the page doesn't jump between groups.
+
+## Final section order
 
 ```text
-┌─────────────────────────────────────────────────┐
-│ (00) MASTHEAD                                   │
-│   Oversized editorial H1 — "Web design          │
-│   studio in Newcastle, KZN."                    │
-│   Sub: one tight sentence. Two CTAs.            │
-│   Right rail: live status, location, year est.  │
-├─────────────────────────────────────────────────┤
-│ MARQUEE — towns we serve (SEO + motion)         │
-│   Newcastle · Madadeni · Vryheid · Ladysmith…  │
-├─────────────────────────────────────────────────┤
-│ (01) INDEX — what we do, as a table             │
-│   Numbered rows, hover reveals one-line answer  │
-├─────────────────────────────────────────────────┤
-│ (02) SELECTED WORK — full-bleed editorial       │
-│   One large case, then 3-up tighter grid        │
-├─────────────────────────────────────────────────┤
-│ (03) MANIFESTO — display quote, single column   │
-├─────────────────────────────────────────────────┤
-│ (04) AREAS WE SERVE — SEO power section         │
-│   Grid of 8-10 KZN towns linking to /areas/*    │
-│   Each tile: town name, population, "Web        │
-│   design in {town}" link. LocalBusiness schema. │
-├─────────────────────────────────────────────────┤
-│ (05) PROOF — one testimonial, large, with       │
-│   client name + 4 logos beneath                 │
-├─────────────────────────────────────────────────┤
-│ (06) PROCESS — 4 steps as a horizontal ledger   │
-├─────────────────────────────────────────────────┤
-│ (07) CONTACT — full-bleed black panel           │
-│   "Start a project" + WhatsApp + email          │
-└─────────────────────────────────────────────────┘
+(00) Masthead
+(01) Index — services
+(02) Selected work
+(03) Manifesto
+(04) Areas served
+(05) Worked with — logo rotator    ← replaces Proof
+(06) Pricing                        ← new
+(07) Founder                        ← new
+(08) Process
+(09) Contact
 ```
 
-Removed from current home: the device mockup hero, the floating black caption card, the "Made in Newcastle" stamp, the dense capabilities card grid (replaced by editorial index), pricing table (lives on /pricing), blog cards, FAQs (kept on schema but visually removed — fewer sections, more weight per section).
+(Two extra numerals — we accept the slightly longer page; the Process and Contact section headers get their numerals updated.)
 
-## SEO moves baked into the design
+## Files to edit
 
-1. **H1 contains the money phrase**: "Web design studio in Newcastle, KZN." — exact-match for the local search opportunity we identified (KDI 0).
-2. **Areas section** isn't decoration — it's the SEO engine. 8-10 internal links to `/areas/{town}` with descriptive anchors ("Web design in Madadeni", not "Madadeni →"). LocalBusiness JSON-LD lists `areaServed` with all towns.
-3. **Town marquee** is real text (not an image) for crawlers.
-4. **Index section** uses semantic `<h2>` per capability with descriptive anchors to `/services/{slug}`.
-5. **Page-specific OG** stays from the previous fix. Title tightened to "Web design Newcastle, KZN — Ntombii Tech" (<60 chars). Meta description rewritten around Newcastle + services + 150 chars.
-6. **Schema**: keep LocalBusiness, Website, FAQ, Review schemas (move FAQ schema-only since visual FAQ is removed — still crawlable).
+- `src/pages/Index.tsx` — add Pricing + Founder + LogoRotator sections, remove Proof, renumber.
+- `src/pages/About.tsx` — copy + alt update, swap to new webp asset, set `loading="lazy"` (keep).
+- `src/lib/seo.ts` — drop `alternateName`, update founder description.
+- `src/assets/sabelo-ndlovu-founder.webp.asset.json` — new (smaller) asset.
+- Old `src/assets/sabelo-ndlovu-founder.png.asset.json` — delete after migration.
+- `index.html` — add preload for the new founder webp.
+- Optional: a small `src/components/home/LogoRotator.tsx` to keep `Index.tsx` tidy.
 
-## What changes / what stays
+## Out of scope
 
-**Edited:**
-- `src/pages/Index.tsx` — full rewrite of the page composition
-- `src/index.css` — add brutalist tokens (paper background, hotter accent, new display sizes, hairline rule helpers); load new display font via `<link>` in `index.html`
-- `index.html` — add font link + tightened title/description
-- `src/lib/seo.ts` — extend `localBusinessSchema()` to include `areaServed` array (Newcastle, Madadeni, Vryheid, Ladysmith, Dundee, Utrecht, Osizweni, Pongola)
+- No changes to nav, footer, other pages, service detail pages, or the existing `TrustedBy.tsx` marquee component (untouched, may be reused elsewhere later).
+- No changes to `SITE.socials` URLs — they're already the company accounts and the founder section won't link personal socials.
 
-**Untouched (this round):**
-- Nav, Footer, all other pages, service detail pages, location pages, components/ui, site.ts content (we reuse SITE data)
-
-**Possibly removed from `src/components/home/`** (only if unused after rewrite): `HoverPreview`, `CursorGlow`, `StatusBar` — confirmed during build.
-
-## Technical notes
-
-- New font loaded with `rel="preconnect"` + `display=swap` to keep LCP intact.
-- All new colors added as HSL tokens in `index.css`; no hardcoded hex in components.
-- Reveal animation respects `prefers-reduced-motion`.
-- Mobile (current viewport: 384px) gets a single-column stack with the same editorial weight — display sizes use `clamp()` so the H1 stays huge but never overflows.
-- After build I'll snapshot the preview at 384px and 1440px to confirm composition, then mark the relevant SEO findings (`metadata_quality`, `social_preview`) as fixed if the new metadata satisfies them.
-
-## Out of scope (for follow-ups, in priority order)
-
-1. Rebuild `/services` and `/work` in the same editorial system
-2. Build `/web-design-newcastle` and `/website-design-and-seo-packages` landing pages (the KDI-0 opportunities from earlier research)
-3. Redesign `/areas/{town}` template with LocalBusiness schema per page
-4. Apply the brutalist system to nav + footer
-
-Approve and I'll build the homepage.
+Approve and I'll build.
