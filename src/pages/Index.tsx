@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Check } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { LOCATIONS } from "@/lib/locations";
 import { Reveal } from "@/components/site/Reveal";
 import { SEO } from "@/components/seo/SEO";
+import { LogoRotator } from "@/components/home/LogoRotator";
+import founderImage from "@/assets/sabelo-ndlovu-founder.webp.asset.json";
 import {
   faqSchema,
   localBusinessSchema,
   reviewSchema,
   websiteSchema,
 } from "@/lib/seo";
+
 
 // Editorial section header: oversized numeral + hairline + label
 const SectionHead = ({
@@ -59,9 +62,10 @@ const featuredAreas = [
 ].map((slug) => LOCATIONS.find((l) => l.slug === slug)!).filter(Boolean);
 
 const Index = () => {
-  const testimonial = SITE.testimonials.find((t) => t.project === "umzilikazi") ?? SITE.testimonials[0];
   const featuredProject = SITE.projects[0];
   const otherProjects = SITE.projects.slice(1, 4);
+
+
 
   return (
     <>
