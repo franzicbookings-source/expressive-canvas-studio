@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Check } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { LOCATIONS } from "@/lib/locations";
 import { Reveal } from "@/components/site/Reveal";
 import { SEO } from "@/components/seo/SEO";
+import { LogoRotator } from "@/components/home/LogoRotator";
+import founderImage from "@/assets/sabelo-ndlovu-founder.webp.asset.json";
 import {
   faqSchema,
   localBusinessSchema,
   reviewSchema,
   websiteSchema,
 } from "@/lib/seo";
+
 
 // Editorial section header: oversized numeral + hairline + label
 const SectionHead = ({
@@ -59,9 +62,10 @@ const featuredAreas = [
 ].map((slug) => LOCATIONS.find((l) => l.slug === slug)!).filter(Boolean);
 
 const Index = () => {
-  const testimonial = SITE.testimonials.find((t) => t.project === "umzilikazi") ?? SITE.testimonials[0];
   const featuredProject = SITE.projects[0];
   const otherProjects = SITE.projects.slice(1, 4);
+
+
 
   return (
     <>
@@ -331,40 +335,144 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ═══════════════ (05) PROOF ═══════════════ */}
+      {/* ═══════════════ (05) WORKED WITH — logo rotator ═══════════════ */}
       <section className="border-t border-foreground/15 bg-secondary">
-        <div className="container-wide py-24 md:py-32">
-          <SectionHead n="05" label="Proof — client word" />
+        <div className="container-wide py-20 md:py-28">
+          <SectionHead n="05" label="Worked with" />
           <Reveal>
-            <blockquote className="max-w-5xl">
-              <p className="display text-2xl md:text-4xl lg:text-5xl leading-tight">
-                <span className="serif font-normal text-accent text-5xl md:text-6xl leading-none mr-1">“</span>
-                {testimonial.quote}
-              </p>
-              <footer className="mt-10 flex flex-wrap items-baseline gap-x-6 gap-y-2 mono-label">
-                <span className="text-foreground">— {testimonial.name}</span>
-                <span className="text-muted-foreground">{testimonial.role}</span>
-              </footer>
-            </blockquote>
+            <LogoRotator />
           </Reveal>
-
-          {/* Client roll */}
-          <div className="mt-16 md:mt-20 pt-8 border-t border-foreground/15">
-            <p className="mono-label text-muted-foreground mb-6">Trusted by</p>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-3 text-foreground/80">
-              {SITE.clients.map((c) => (
-                <span key={c} className="display text-base md:text-lg truncate">
-                  {c}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* ═══════════════ (06) PROCESS ═══════════════ */}
+      {/* ═══════════════ (06) PRICING ═══════════════ */}
+      <section className="container-wide py-20 md:py-28 border-t border-foreground/15">
+        <SectionHead n="06" label="Pricing — fixed, transparent" />
+        <Reveal>
+          <h2 className="display-xl max-w-4xl mb-12 md:mb-16">
+            Three tiers. <span className="serif font-normal text-accent">No surprises.</span>
+          </h2>
+        </Reveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-foreground/15">
+          {SITE.pricing.map((tier, i) => (
+            <Reveal
+              key={tier.name}
+              delay={i * 80}
+              className={`border-b md:border-b-0 md:border-r last:md:border-r-0 border-foreground/15 p-6 md:p-8 flex flex-col ${
+                tier.popular ? "bg-foreground text-background" : ""
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <span className={`mono-label tabular-nums ${tier.popular ? "text-accent" : "text-muted-foreground"}`}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                {tier.popular && <span className="mono-label text-accent">Popular</span>}
+              </div>
+
+              <h3 className={`display mt-6 md:mt-10 text-2xl md:text-3xl ${tier.popular ? "text-background" : ""}`}>
+                {tier.name}
+              </h3>
+
+              <div className="mt-6 flex items-baseline gap-3">
+                <span className={`mono-label ${tier.popular ? "text-background/60" : "text-muted-foreground"}`}>From</span>
+                <span className={`display text-4xl md:text-5xl tabular-nums ${tier.popular ? "text-background" : ""}`}>
+                  {tier.from}
+                </span>
+                {tier.original && (
+                  <span className={`text-sm line-through ${tier.popular ? "text-background/50" : "text-muted-foreground"}`}>
+                    {tier.original}
+                  </span>
+                )}
+              </div>
+
+              <ul className={`mt-8 space-y-3 text-sm ${tier.popular ? "text-background/85" : "text-foreground/85"}`}>
+                {tier.features.map((f) => (
+                  <li key={f} className="flex items-start gap-3">
+                    <Check className={`h-4 w-4 mt-0.5 shrink-0 ${tier.popular ? "text-accent" : "text-foreground/50"}`} />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                to="/contact"
+                className={`mt-10 inline-flex items-center justify-between gap-2 px-5 py-3.5 text-sm font-medium transition ${
+                  tier.popular
+                    ? "bg-accent text-accent-foreground hover:bg-background hover:text-foreground"
+                    : "bg-foreground text-background hover:bg-accent"
+                }`}
+              >
+                Get started
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="mt-10 flex justify-end">
+          <Link to="/pricing" className="inline-flex items-center gap-2 mono-label hover:text-accent transition">
+            See full pricing
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+      </section>
+
+      {/* ═══════════════ (07) FOUNDER ═══════════════ */}
+      <section className="container-wide py-20 md:py-28 border-t border-foreground/15">
+        <SectionHead n="07" label="Founder" />
+        <div className="grid grid-cols-12 gap-8 md:gap-12 items-center">
+          <Reveal className="col-span-12 md:col-span-5">
+            <div className="overflow-hidden border border-foreground/15 bg-card aspect-[4/5]">
+              <img
+                src={founderImage.url}
+                alt="Sabelo Ndlovu, Technoking and founder of Ntombii Tech"
+                width={800}
+                height={1000}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={120} className="col-span-12 md:col-span-7">
+            <h2 className="display-xl">
+              Sabelo Ndlovu — <span className="serif font-normal text-accent">Technoking.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/80 leading-relaxed max-w-prose-wide">
+              Technoking is the company's CEO-equivalent role at Ntombii Tech. Sabelo founded the studio in Newcastle and leads every project personally — from the first WhatsApp brief to the live site — bringing the same standards to a local salon's first website as to a school's full digital rebuild.
+            </p>
+            <dl className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-px bg-foreground/15 border border-foreground/15">
+              <div className="bg-background p-5">
+                <dt className="mono-label text-muted-foreground">Role</dt>
+                <dd className="mt-2 text-sm font-medium">Technoking, Founder</dd>
+              </div>
+              <div className="bg-background p-5">
+                <dt className="mono-label text-muted-foreground">Based</dt>
+                <dd className="mt-2 text-sm font-medium">Newcastle, KZN</dd>
+              </div>
+              <div className="bg-background p-5">
+                <dt className="mono-label text-muted-foreground">Studio est.</dt>
+                <dd className="mt-2 text-sm font-medium">2024</dd>
+              </div>
+            </dl>
+            <Link
+              to="/about"
+              className="mt-10 inline-flex items-center gap-2 mono-label hover:text-accent transition"
+            >
+              More about the studio
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+
+      {/* ═══════════════ (08) PROCESS ═══════════════ */}
       <section id="process" className="container-wide py-20 md:py-28 border-t border-foreground/15">
-        <SectionHead n="06" label="Process — four moves" />
+        <SectionHead n="08" label="Process — four moves" />
+
         <Reveal>
           <h2 className="display-xl max-w-3xl mb-12 md:mb-16">
             From first call to <span className="serif font-normal text-accent">live in days,</span> not months.
@@ -390,10 +498,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ═══════════════ (07) CONTACT — full bleed ═══════════════ */}
+      {/* ═══════════════ (09) CONTACT — full bleed ═══════════════ */}
       <section className="border-t border-foreground/15 bg-foreground text-background relative noise overflow-hidden">
         <div className="container-wide py-24 md:py-36">
-          <SectionHead n="07" label="Contact — start something" tone="dark" />
+          <SectionHead n="09" label="Contact — start something" tone="dark" />
+
           <Reveal>
             <h2 className="display-mega max-w-[14ch] text-background">
               Let's make<br />
