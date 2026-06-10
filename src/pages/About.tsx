@@ -100,12 +100,13 @@ const About = () => (
               <dd className="mt-2 font-medium">2022/529038/07</dd>
             </div>
             <div className="rounded-2xl border border-border/70 bg-card p-5">
-              <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Find him on</dt>
+              <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Studio socials</dt>
               <dd className="mt-2 flex flex-wrap gap-x-4 gap-y-1 font-medium">
                 <a href={SITE.socials.instagram} target="_blank" rel="noreferrer" className="hover:text-accent">Instagram</a>
                 <a href={SITE.socials.facebook} target="_blank" rel="noreferrer" className="hover:text-accent">Facebook</a>
               </dd>
             </div>
+
           </dl>
         </Reveal>
       </div>
