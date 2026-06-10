@@ -58,12 +58,12 @@ export const localBusinessSchema = () => ({
   founder: {
     "@type": "Person",
     name: "Sabelo Ndlovu",
-    alternateName: "The Technoking",
-    jobTitle: "Founder",
+    jobTitle: "Technoking",
     description:
-      "Sabelo Ndlovu (The Technoking) is the founder of Ntombii Tech - a tech creative and digital builder helping brands, businesses and entrepreneurs grow through modern websites, smart digital solutions and a strong online presence.",
+      "Sabelo Ndlovu is Technoking (the CEO-equivalent role) and founder of Ntombii Tech — a tech creative and digital builder helping brands, businesses and entrepreneurs grow through modern websites, smart digital solutions and a strong online presence.",
     sameAs: [SITE.socials.instagram, SITE.socials.facebook].filter(Boolean),
   },
+
   taxID: "2022/529038/07",
   openingHoursSpecification: [
     {
