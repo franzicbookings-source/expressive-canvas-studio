@@ -121,11 +121,14 @@ export const SITE = {
     },
   ],
   projects: [
-    { slug: "nyatee", title: "Nyatee Foundation", category: "Non-Profit Branding & Web", image: portfolioNyatee, href: "https://nyateefoundation.org.za/" },
-    { slug: "events", title: "Where Every Detail Tells Your Story", category: "Luxury Events & Hospitality", image: portfolioEvents, href: "https://sknowhiteevents.co.za/" },
-    { slug: "umzilikazi", title: "Umzilikazi Senior Secondary", category: "Education & Institutional Web", image: portfolioUmzilikazi, href: "https://umzilikazi.vercel.app/" },
-    
-    { slug: "keepnnalive", title: "Keep Newcastle Alive With Possibilities", category: "Community & Civic Web", image: portfolioKeepNNAlive, href: "https://keepnnalive.org.za/" },
+    { slug: "nyatee", title: "Nyatee Foundation", category: "Non-Profit Branding & Web", image: portfolioNyatee as string | null, href: "https://nyateefoundation.org.za/" },
+    { slug: "events", title: "Sknowhite Events", category: "Luxury Events & Hospitality", image: portfolioEvents as string | null, href: "https://sknowhiteevents.co.za/" },
+    { slug: "umzilikazi", title: "Umzilikazi Senior Secondary", category: "School Website", image: portfolioUmzilikazi as string | null, href: "https://umzilikazi.vercel.app/" },
+    { slug: "keepnnalive", title: "Keep Newcastle Alive With Possibilities", category: "Community & Civic Web", image: portfolioKeepNNAlive as string | null, href: "https://keepnnalive.org.za/" },
+    { slug: "snesenzo", title: "Snesenzo Security Group", category: "Security · Brand & Web", image: null as string | null, href: "#" },
+    { slug: "spazatap", title: "Spaza Tap", category: "Local Commerce App", image: null as string | null, href: "#" },
+    { slug: "rnb-gathering", title: "RnB Soulful Groove Gathering", category: "Event Branding & Web", image: null as string | null, href: "#" },
+    { slug: "auntywama", title: "Aunty Wama 2K", category: "Event · Brand & Promo Site", image: null as string | null, href: "#" },
   ],
   pricing: [
     {
@@ -152,28 +155,44 @@ export const SITE = {
   ],
   faqs: [
     {
-      q: "What are your agency's main services?",
-      a: "We design and build mobile-first websites, web apps, and brand systems. That includes UI/UX, web development, mobile design, and branding - all delivered with an AI-assisted workflow to keep things fast and focused.",
+      q: "How much does a website cost in Newcastle, KZN?",
+      a: "Starter websites begin at R2,500, Business builds at R3,500, and Premium builds from R7,500. Most Newcastle small businesses launch on the Business package. Custom builds, e-commerce and booking systems are quoted after a short WhatsApp chat.",
     },
     {
-      q: "How fast can you build a website?",
-      a: "Starter sites can launch in under a week. Business builds typically run a 72-hour sprint kickoff and ship in 1–2 weeks. Premium builds with custom UX run 2–4 weeks depending on scope.",
+      q: "How long does it take to build a website?",
+      a: "Starter sites typically launch in under a week. Business websites run a 72-hour design sprint and ship in 1–2 weeks. Larger custom builds, school sites and e-commerce stores usually take 2–4 weeks depending on content and approvals.",
     },
     {
-      q: "What's the typical cost for your services?",
-      a: "Starter from R2,500, Business from R3,500, Premium from R7,500. Custom web apps and e-commerce are quoted based on scope after a short discovery call.",
+      q: "Do you build websites for small businesses?",
+      a: "Yes. Most of our clients are small businesses, sole traders and family-run shops across Newcastle, Madadeni, Osizweni, Dundee and the wider Amajuba District. We keep pricing fair and the process simple over WhatsApp.",
     },
     {
-      q: "What will the process look like for your project?",
-      a: "Discovery → wireframes → design → build → review → launch. You get checkpoints at every step on WhatsApp, with clear approvals so nothing stalls.",
+      q: "Do you build websites for schools and NGOs?",
+      a: "Yes. We've built sites for KZN schools, NGOs, churches and community organisations — including Umzilikazi Senior Secondary, Nyatee Foundation and Keep Newcastle Alive With Possibilities. We understand budgets are tight and design accordingly.",
     },
     {
-      q: "How will we communicate and collaborate?",
-      a: "Mainly WhatsApp for fast async updates, plus email and scheduled calls when needed. You always know who to message and when to expect a reply.",
+      q: "Can you help my business show on Google?",
+      a: "Yes. Every website we build is structured for Google from day one — clean code, fast load, local schema, and proper page titles. We also help set up your Google Business Profile so customers in Newcastle and KZN can find and call you.",
     },
     {
-      q: "Is the SEO local to Newcastle/KZN?",
-      a: "Yes - we set up local SEO for Newcastle, Vryheid, Pongola, Nongoma, Dundee, Madadeni and surrounding KZN towns, with Google Business profile guidance included.",
+      q: "Do you offer local SEO?",
+      a: "Yes — local SEO for Newcastle and KZN is one of our core services. That includes town-targeted pages, local schema, Google Business Profile setup, and content built around what your customers actually search for.",
+    },
+    {
+      q: "Can you connect WhatsApp, booking forms or payments?",
+      a: "Yes. We add WhatsApp click-to-chat buttons, contact and booking forms, calendar bookings, and payment gateways (Payfast, Yoco, Stripe) depending on what your business needs.",
+    },
+    {
+      q: "Do you offer website maintenance?",
+      a: "Yes. We offer ongoing maintenance, content updates, hosting support and security checks — billed monthly or per change. Most clients message us on WhatsApp when something needs updating.",
+    },
+    {
+      q: "Do I own my website after it is built?",
+      a: "Yes. You fully own your website, domain, content and brand assets. We hand over all logins and files at launch — nothing is locked behind us.",
+    },
+    {
+      q: "Can you redesign my old website?",
+      a: "Yes. Website redesigns are a big part of what we do. We can rebuild your existing site on a faster, modern foundation, keep your content, and improve how it ranks on Google and converts visitors into calls.",
     },
   ],
   posts: [
