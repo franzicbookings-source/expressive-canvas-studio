@@ -5,6 +5,7 @@ import { LOCATIONS } from "@/lib/locations";
 import { Reveal } from "@/components/site/Reveal";
 import { SEO } from "@/components/seo/SEO";
 import { LogoRotator } from "@/components/home/LogoRotator";
+import founderImage from "@/assets/sabelo-ndlovu-founder.webp.asset.json";
 import {
   Accordion,
   AccordionContent,
@@ -490,10 +491,103 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ═══════════════ (09) FINAL CTA ═══════════════ */}
+      {/* ═══════════════ (09) PRICING ═══════════════ */}
+      <section className="container-wide py-20 md:py-28 border-t border-foreground/15">
+        <SectionHead n="09" label="Pricing — fixed, no surprises" />
+        <Reveal>
+          <h2 className="display-xl max-w-4xl mb-12 md:mb-16">
+            Clear packages. <span className="serif font-normal text-accent">Honest prices.</span>
+          </h2>
+        </Reveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-foreground/15 border border-foreground/15">
+          {SITE.pricing.map((tier, i) => (
+            <Reveal
+              key={tier.name}
+              delay={i * 70}
+              className={`bg-background p-6 md:p-8 flex flex-col ${tier.popular ? "ring-2 ring-accent ring-inset relative" : ""}`}
+            >
+              {tier.popular && (
+                <span className="absolute top-4 right-4 mono-label text-accent">Most picked</span>
+              )}
+              <span className="mono-label tabular-nums text-muted-foreground">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="display mt-6 text-2xl md:text-3xl">{tier.name}</h3>
+              <div className="mt-4 flex items-baseline gap-3">
+                <span className="display text-3xl md:text-4xl">From {tier.from}</span>
+                {tier.original && (
+                  <span className="mono-label text-muted-foreground line-through">{tier.original}</span>
+                )}
+              </div>
+              <ul className="mt-8 space-y-3 text-sm">
+                {tier.features.slice(0, 4).map((f) => (
+                  <li key={f} className="flex items-start gap-2.5">
+                    <Check className="h-4 w-4 mt-0.5 text-accent shrink-0" />
+                    <span className="text-foreground/80">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/contact"
+                className="mt-10 inline-flex items-center justify-center gap-2 border border-foreground/40 px-5 py-3 text-sm font-medium hover:bg-foreground hover:text-background transition"
+              >
+                Get this package
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="mt-10 flex justify-end">
+          <Link to="/pricing" className="inline-flex items-center gap-2 mono-label hover:text-accent transition">
+            See full pricing
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+      </section>
+
+      {/* ═══════════════ (10) FOUNDER PREVIEW ═══════════════ */}
+      <section className="container-wide py-20 md:py-28 border-t border-foreground/15">
+        <SectionHead n="10" label="Founder — meet the Technoking" />
+        <div className="grid grid-cols-12 gap-8 md:gap-14 items-center">
+          <Reveal className="col-span-12 md:col-span-5">
+            <div className="relative overflow-hidden border border-foreground/15 bg-card aspect-[4/5]">
+              <img
+                src={founderImage.url}
+                alt="Sabelo Ndlovu, Technoking and founder of Ntombii Tech"
+                className="h-full w-full object-cover"
+                loading="lazy"
+                width={800}
+                height={1000}
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={120} className="col-span-12 md:col-span-7">
+            <h2 className="display-xl">
+              Sabelo Ndlovu — <span className="serif font-normal text-accent">Technoking.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/80 leading-relaxed">
+              Sabelo Ndlovu is the <strong>Technoking</strong> of Ntombii Tech — his own twist on "founder and CEO." Based in Newcastle, KwaZulu-Natal, he builds websites, web apps and digital solutions for businesses and entrepreneurs across the region.
+            </p>
+            <p className="mt-4 text-foreground/70 leading-relaxed">
+              Self-taught and AI-native, he leads every project personally — from the first conversation to the final product live.
+            </p>
+            <Link
+              to="/about"
+              className="mt-8 inline-flex items-center gap-2 mono-label hover:text-accent transition"
+            >
+              Read the full story
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ═══════════════ (11) FINAL CTA ═══════════════ */}
       <section className="border-t border-foreground/15 bg-foreground text-background relative noise overflow-hidden">
         <div className="container-wide py-24 md:py-36">
-          <SectionHead n="09" label="Start — get a website quote" tone="dark" />
+          <SectionHead n="11" label="Start — get a website quote" tone="dark" />
 
           <Reveal>
             <h2 className="display-mega max-w-[16ch] text-background">
