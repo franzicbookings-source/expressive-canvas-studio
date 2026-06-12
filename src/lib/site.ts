@@ -3,6 +3,8 @@ import portfolioNyatee from "@/assets/portfolio-nyatee.webp";
 import portfolioEvents from "@/assets/portfolio-events.webp";
 import portfolioUmzilikazi from "@/assets/portfolio-umzilikazi.webp";
 import portfolioKeepNNAlive from "@/assets/portfolio-keepnnalive.webp";
+import portfolioSnesenzoAsset from "@/assets/portfolio-snesenzo.png.asset.json";
+import portfolioRnbAsset from "@/assets/portfolio-rnb.png.asset.json";
 import blogNorthernKznBehind from "@/assets/blog-northern-kzn-behind.webp";
 import blogVryheidZululand from "@/assets/blog-vryheid-zululand.webp";
 import blogConstructionTrades from "@/assets/blog-construction-trades.webp";
@@ -125,10 +127,8 @@ export const SITE = {
     { slug: "events", title: "Sknowhite Events", category: "Luxury Events & Hospitality", image: portfolioEvents as string | null, href: "https://sknowhiteevents.co.za/" },
     { slug: "umzilikazi", title: "Umzilikazi Senior Secondary", category: "School Website", image: portfolioUmzilikazi as string | null, href: "https://umzilikazi.vercel.app/" },
     { slug: "keepnnalive", title: "Keep Newcastle Alive With Possibilities", category: "Community & Civic Web", image: portfolioKeepNNAlive as string | null, href: "https://keepnnalive.org.za/" },
-    { slug: "snesenzo", title: "Snesenzo Security Group", category: "Security · Brand & Web", image: null as string | null, href: "#" },
-    { slug: "spazatap", title: "Spaza Tap", category: "Local Commerce App", image: null as string | null, href: "#" },
-    { slug: "rnb-gathering", title: "RnB Soulful Groove Gathering", category: "Event Branding & Web", image: null as string | null, href: "#" },
-    { slug: "auntywama", title: "Aunty Wama 2K", category: "Event · Brand & Promo Site", image: null as string | null, href: "#" },
+    { slug: "snesenzo", title: "Snesenzo Security Group", category: "Security · Brand & Web", image: portfolioSnesenzoAsset.url as string | null, href: "https://www.snesenzosecuritygroup.co.za/" },
+    { slug: "rnb-gathering", title: "RnB Soulful Groove Gathering", category: "Event Branding & Web", image: portfolioRnbAsset.url as string | null, href: "https://rnbsoulfulgroovegathering.co.za/" },
   ],
   pricing: [
     {

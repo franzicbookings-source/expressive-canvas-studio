@@ -80,10 +80,13 @@ const About = () => (
             Sabelo Ndlovu — <span className="serif text-accent">Technoking.</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Sabelo Ndlovu is <strong className="text-foreground">Technoking</strong> — the CEO-equivalent role at Ntombii Tech — and the studio's founder. He's a tech creative and digital builder focused on helping brands, businesses and entrepreneurs grow through modern websites, smart digital solutions and a strong online presence.
+            Sabelo Ndlovu is the <strong className="text-foreground">Technoking</strong> of Ntombii Tech — his own twist on "founder and CEO." Based in Newcastle, KwaZulu-Natal, he builds websites, web apps and digital solutions for businesses and entrepreneurs across the region.
           </p>
           <p className="mt-4 text-muted-foreground">
-            Based in Newcastle, KwaZulu-Natal, Sabelo leads every project personally - from the first WhatsApp brief to the live site - bringing the same standards to a local salon's first website as to a school's full digital rebuild.
+            Self-taught from the ground up, Sabelo learned everything through hands-on practice and AI-powered workflows. He builds AI-native, using the most powerful tools available to deliver fast, high-quality work without the agency overhead.
+          </p>
+          <p className="mt-4 text-muted-foreground">
+            He leads every project personally, from the first conversation to the final product live.
           </p>
 
           <dl className="mt-8 grid gap-4 sm:grid-cols-2 text-sm">
