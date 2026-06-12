@@ -1,103 +1,77 @@
-# Homepage SEO + Conversion Optimisation
+## 1. Upload new logo & project images as Lovable Assets
 
-Goal: rank Ntombii Tech for "web design Newcastle KZN" and related local searches, improve AI-search visibility (clear, factual, location-rich copy + schema), and raise homepage conversion — **without redesigning the site**. Existing brand style, routes, components, navigation, footer, and forms stay intact. Only the homepage (`src/pages/Index.tsx`), homepage-relevant SEO meta (`index.html`), and a small content additions in `src/lib/site.ts` will change.
+Upload from `/mnt/user-uploads/`:
+- `164317-removebg-preview.png` → Snesenzo Security Group logo (`src/assets/clients/snesenzo.png.asset.json`)
+- `164314-removebg-preview.png` → Ntombii Tech mark (`src/assets/clients/ntombii.png.asset.json`)
+- `164313-removebg-preview.png` → Amajuba Top Women Awards (`src/assets/clients/amajuba.png.asset.json`)
+- `file_000000007e7071f489d23d89977b697a.png` → Snesenzo project mockup (`src/assets/portfolio-snesenzo.png.asset.json`)
+- `file_00000000f9cc71f8987489c6ab421f3b.png` → RnB Soulful Groove Gathering mockup (`src/assets/portfolio-rnb.png.asset.json`)
 
-## What will change
+## 2. Rewrite `LogoRotator` — single cycling logo
 
-### 1. SEO meta (homepage only)
-- `index.html` `<title>` → `Web Design Newcastle KZN | Ntombii Tech`
-- `index.html` `<meta name="description">` → new local-focused copy (see Copy Bank)
-- `src/pages/Index.tsx` `<SEO>` title/description/keywords updated to match (Helmet overrides for the route)
-- Keep canonical, OG, Twitter, and JSON-LD as-is (already correct). FAQ JSON-LD will auto-update because it's generated from the new FAQs in `site.ts`.
+Install `framer-motion` (currently not in `package.json`).
 
-### 2. Homepage section order (rewrite `src/pages/Index.tsx`)
-The page is rebuilt in the order you specified, reusing existing design tokens, `SectionHead`, `Reveal`, `LogoRotator`, and current colour/typography system (no new aesthetic):
+Replace `src/components/home/LogoRotator.tsx` with a component that:
+- Accepts `logos: { name: string; src: string }[]` as a prop (defaults to internal list so I can pass overrides later).
+- Renders one fixed-size centered container (`h-24 md:h-32`, max-w ~`280px md:360px`).
+- Uses `AnimatePresence` + `motion.img` keyed by index. Each logo: slides up from below (`y: 40, opacity: 0` → `y: 0, opacity: 1`), holds ~1.8s, then fades/slides out upward (`y: -40, opacity: 0`) as next slides in.
+- Loop interval ~2.4s. Respects `prefers-reduced-motion` (shows a static grid).
+- CSS fallback only if framer-motion install fails.
 
-```
-00  Hero (new H1, sub, two CTAs, local trust line)
-01  Trust proof strip (LogoRotator + short "Trusted across KZN" label)
-02  Main services (8 service cards → internal links)
-03  Why choose Ntombii Tech (4 short value props)
-04  Featured work (8 projects in editorial grid)
-05  Areas served (Newcastle + 7 KZN towns, with link to /areas)
-06  Process (Discovery → Design → Build → Launch → Support)
-07  Reviews / review-request strip (existing testimonials + "Leave a review" CTA)
-08  FAQ (10 new local Q&As, accordion-style)
-09  Final CTA (Get a Website Quote + WhatsApp)
-```
+Default logo list (order):
+1. Nyatee Foundation
+2. Sknowhite Events
+3. Keep Newcastle Alive
+4. Umzilikazi SSS
+5. Aunty Wama 2K (keep in rotator since it's a past client)
+6. Snesenzo Security Group (new)
+7. Ntombii Tech (new)
+8. Amajuba Top Women Awards (new)
 
-Pricing, founder, manifesto, marquee — removed from homepage (kept on their own pages: `/pricing`, `/about`). This tightens the page for the local-SEO + conversion goal.
+(Note: Aunty Wama 2K stays as a logo in the trust strip; only the *project card* gets removed per request.)
 
-### 3. Hero copy (exact)
-- **H1:** `Web Design Newcastle KZN — Websites That Help Local Businesses Get More Calls`
-- **Sub:** `Ntombii Tech builds fast, professional websites for businesses, schools, NGOs, churches, events and local brands in Newcastle, Amajuba District and across KwaZulu-Natal.`
-- **CTAs:** Primary `Get a Website Quote` → `/contact`; Secondary `View Our Work` → `/work`
-- **Trust line (under CTAs):** `Newcastle Born // KZN Roots // Built for Local Businesses`
+## 3. Update `SITE.projects` in `src/lib/site.ts`
 
-### 4. Services block — 8 cards with internal links
-| Card | Link |
-|---|---|
-| Website Design | `/services/web-design` |
-| Web Development | `/services/web-development` |
-| Local SEO | `/services/local-seo` |
-| E-commerce Websites | `/services/ecommerce` |
-| Booking Websites | `/services/booking-websites` *(missing — see below)* |
-| School Websites | `/services/school-websites` |
-| NGO Websites | `/services/ngo-websites` *(missing — see below)* |
-| Website Redesigns | `/services/website-redesign` *(missing — see below)* |
+- Remove `spazatap` and `auntywama` entries.
+- Update `snesenzo`: `image: portfolioSnesenzo`, `href: "https://www.snesenzosecuritygroup.co.za/"`.
+- Update `rnb-gathering`: `image: portfolioRnb`, `href: "https://rnbsoulfulgroovegathering.co.za/"`.
+- Final 6 projects: Nyatee, Sknowhite, Umzilikazi, Keep NN Alive, Snesenzo, RnB Gathering.
 
-Links will be rendered now so internal-link SEO is in place; missing pages are flagged in the summary so we can add them in the next prompt.
+## 4. Add Pricing + Founder preview to homepage `src/pages/Index.tsx`
 
-### 5. Featured work — 8 projects
-Will extend `SITE.projects` in `src/lib/site.ts` to include the 4 missing ones (Snesenzo Security Group, Spaza Tap, RnB Soulful Groove Gathering, Aunty Wama 2K). Existing 4 (Nyatee, Sknowhite, Umzilikazi, Keep Newcastle Alive) stay. New entries reuse existing client logos where possible (auntywama, sknowhite, etc.); for ones with no asset, a clean placeholder card (no broken image) is shown — listed in summary for follow-up.
+Insert two new sections before the Final CTA, after FAQ. Keep the editorial brutalist style (SectionHead, mono labels, sharp borders, `display-xl`).
 
-### 6. Areas served — internal links
-Newcastle, Madadeni, Dundee, Utrecht, Osizweni, Vryheid, Ladysmith + Amajuba District. `/areas/amajuba-district` doesn't exist yet — link will go to `/areas` (district overview) and is flagged in the summary.
+**Section (09) Pricing — homepage tier teaser**
+- Renumber existing FAQ→(08), Pricing→(09), Founder→(10), Final CTA→(11). Update `SectionHead` numbers accordingly.
+- 3-column grid using `SITE.pricing` (Starter / Business / Premium). Show: name, "From {from}" (with `original` strikethrough if present), first 4 features (Check icon), and a "Get this package" link → `/contact`.
+- Highlight the `popular` tier with accent border.
+- Below grid: link "See full pricing →" → `/pricing`.
 
-### 7. FAQ — 10 new questions
-The 10 questions you provided will replace `SITE.faqs` content with local, conversion-led answers (Copy Bank below). FAQ JSON-LD is auto-emitted via existing `faqSchema(SITE.faqs)`.
+**Section (10) Founder — short preview**
+- Two-column layout (image left ~5/12, text right ~7/12) using the existing `src/assets/sabelo-ndlovu-founder.webp.asset.json` (already optimised).
+- Heading: `Sabelo Ndlovu — <serif accent>Technoking.</serif>`
+- New short bio (2 paragraphs only):
+  1. "Sabelo Ndlovu is the Technoking of Ntombii Tech — his own twist on 'founder and CEO.' Based in Newcastle, KwaZulu-Natal, he builds websites, web apps and digital solutions for businesses and entrepreneurs across the region."
+  2. "Self-taught and AI-native, he leads every project personally — from the first conversation to the final product live."
+- CTA: `Read the full story →` → `/about`.
 
-### 8. Reviews section
-Keep the 3 existing testimonials (already wired into review schema). Add a small "Leave a Google review" link block — no design change, just plain text + button.
+## 5. Update `src/pages/About.tsx` founder bio
 
-### 9. Process — 5 steps
-Discovery → Design → Build → Launch → Support. Reuses the editorial numbered-row pattern from the current homepage.
+Replace founder paragraphs with the full 3-paragraph version:
+1. "Sabelo Ndlovu is the Technoking of Ntombii Tech — his own twist on 'founder and CEO.' Based in Newcastle, KwaZulu-Natal, he builds websites, web apps and digital solutions for businesses and entrepreneurs across the region."
+2. "Self-taught from the ground up, Sabelo learned everything through hands-on practice and AI-powered workflows. He builds AI-native, using the most powerful tools available to deliver fast, high-quality work without the agency overhead."
+3. "He leads every project personally, from the first conversation to the final product live."
 
-## Copy bank (drop-in)
+## Files touched
 
-**Meta description (≤160 chars):**
-> Ntombii Tech is a Newcastle, KZN web design company building professional websites, booking systems, e-commerce stores, web apps and local SEO-ready sites for businesses, schools, NGOs and events.
+- `package.json` (+ framer-motion)
+- `src/components/home/LogoRotator.tsx` (rewrite)
+- `src/lib/site.ts` (projects array)
+- `src/pages/Index.tsx` (add Pricing + Founder sections, renumber)
+- `src/pages/About.tsx` (founder copy)
+- New asset pointers under `src/assets/clients/` and `src/assets/`
 
-**Why choose us (4 props):**
-1. Newcastle-based, KZN-focused
-2. Built for local search & Google rankings
-3. WhatsApp-first communication
-4. Fixed pricing, no surprises
+## Out of scope (flag only)
 
-**FAQ answers** — short, plain-spoken, town-specific, no keyword stuffing. (Full text written into `SITE.faqs`.)
-
-## Performance & quality
-- All images keep `loading="lazy"` except hero. No new heavy assets.
-- No font changes. No CSS framework changes.
-- All headings semantic (single `<h1>`, `<h2>` per section, `<h3>` for cards).
-- Mobile-first grid retained from current page.
-
-## Files edited
-- `index.html` — title + meta description only
-- `src/pages/Index.tsx` — full homepage rewrite per the new section order
-- `src/lib/site.ts` — extend `projects` (add 4), replace `faqs` (10 local Q&As)
-
-No routing, layout, nav, footer, form, or other page is touched.
-
-## After implementation, summary will list
-- What changed (with bullet diff)
-- Files edited
-- Missing routes/pages that need creation in a follow-up prompt:
-  - `/services/booking-websites`
-  - `/services/ngo-websites`
-  - `/services/website-redesign`
-  - `/areas/amajuba-district`
-  - Case-study assets for: Snesenzo Security Group, Spaza Tap, RnB Soulful Groove Gathering
-- SEO items still to do later: Google Business Profile review embeds, dedicated town × service landing pages, blog cadence for local terms.
-
-Approve and I'll build.
+- `TrustedBy.tsx` marquee component is not used on the homepage anymore — leaving it untouched.
+- No design system / brand color changes.
