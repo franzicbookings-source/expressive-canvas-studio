@@ -1,66 +1,56 @@
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import knawpLogo from "@/assets/clients/knawp.webp";
 import sknowhiteLogo from "@/assets/clients/sknowhite.webp";
 import auntywamaLogo from "@/assets/clients/auntywama.webp";
 import nyateeLogo from "@/assets/clients/nyatee.webp";
 import umzilikaziLogo from "@/assets/clients/umzilikazi.webp";
+import snesenzoAsset from "@/assets/clients/snesenzo.png.asset.json";
+import ntombiiAsset from "@/assets/clients/ntombii.png.asset.json";
+import amajubaAsset from "@/assets/clients/amajuba.png.asset.json";
 
-type Logo = { name: string; src: string };
+export type Logo = { name: string; src: string };
 
-const LOGOS: Logo[] = [
+const DEFAULT_LOGOS: Logo[] = [
   { name: "Nyatee Foundation", src: nyateeLogo },
   { name: "Sknowhite Events", src: sknowhiteLogo },
-  { name: "Aunty Wama 2K", src: auntywamaLogo },
   { name: "Keep Newcastle Alive With Possibilities", src: knawpLogo },
   { name: "Umzilikazi Senior Secondary School", src: umzilikaziLogo },
+  { name: "Aunty Wama 2K", src: auntywamaLogo },
+  { name: "Snesenzo Security Group", src: snesenzoAsset.url },
+  { name: "Ntombii Tech", src: ntombiiAsset.url },
+  { name: "Amajuba Top Women Awards", src: amajubaAsset.url },
 ];
 
-function chunk<T>(arr: T[], size: number): T[][] {
-  const out: T[][] = [];
-  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
-  return out;
-}
+type Props = {
+  logos?: Logo[];
+  intervalMs?: number;
+};
 
-export const LogoRotator = () => {
-  const [isMobile, setIsMobile] = useState(false);
+export const LogoRotator = ({ logos = DEFAULT_LOGOS, intervalMs = 2400 }: Props) => {
   const [reduced, setReduced] = useState(false);
   const [idx, setIdx] = useState(0);
-  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px)");
     const rm = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const onMq = () => setIsMobile(mq.matches);
     const onRm = () => setReduced(rm.matches);
-    onMq();
     onRm();
-    mq.addEventListener("change", onMq);
     rm.addEventListener("change", onRm);
-    return () => {
-      mq.removeEventListener("change", onMq);
-      rm.removeEventListener("change", onRm);
-    };
+    return () => rm.removeEventListener("change", onRm);
   }, []);
 
-  const groups = chunk(LOGOS, isMobile ? 2 : 3);
-
   useEffect(() => {
-    if (reduced || groups.length <= 1) return;
-    const tick = () => {
-      setVisible(false);
-      window.setTimeout(() => {
-        setIdx((i) => (i + 1) % groups.length);
-        setVisible(true);
-      }, 400);
-    };
-    const id = window.setInterval(tick, 2600);
+    if (reduced || logos.length <= 1) return;
+    const id = window.setInterval(() => {
+      setIdx((i) => (i + 1) % logos.length);
+    }, intervalMs);
     return () => window.clearInterval(id);
-  }, [reduced, groups.length]);
+  }, [reduced, logos.length, intervalMs]);
 
   if (reduced) {
     return (
       <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
-        {LOGOS.map((l) => (
+        {logos.map((l) => (
           <img
             key={l.name}
             src={l.src}
@@ -73,25 +63,26 @@ export const LogoRotator = () => {
     );
   }
 
-  const current = groups[idx] ?? [];
+  const current = logos[idx];
 
   return (
-    <div className="min-h-[88px] md:min-h-[112px] flex items-center justify-center">
-      <div
-        className="flex items-center justify-center gap-10 md:gap-20 transition-opacity duration-[400ms] ease-out"
-        style={{ opacity: visible ? 1 : 0 }}
-        aria-live="polite"
-      >
-        {current.map((l) => (
-          <img
-            key={l.name}
-            src={l.src}
-            alt={`${l.name} logo`}
-            className="h-12 md:h-16 w-auto object-contain"
-            loading="lazy"
-          />
-        ))}
-      </div>
+    <div
+      className="relative mx-auto flex items-center justify-center overflow-hidden h-24 md:h-32 w-full max-w-[280px] md:max-w-[360px]"
+      aria-live="polite"
+    >
+      <AnimatePresence mode="popLayout" initial={false}>
+        <motion.img
+          key={current.name}
+          src={current.src}
+          alt={`${current.name} logo`}
+          loading="lazy"
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -40, opacity: 0 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute max-h-full max-w-full w-auto h-auto object-contain"
+        />
+      </AnimatePresence>
     </div>
   );
 };
