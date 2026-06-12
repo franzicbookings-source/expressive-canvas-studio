@@ -10,7 +10,7 @@
 
 @layer base {
   :root {
-    /* Surfaces — paper / bone */
+    /* Surfaces - paper / bone */
     --background: 44 25% 94%;          /* #F4F2EC paper */
     --foreground: 0 0% 7%;             /* near-black ink */
 

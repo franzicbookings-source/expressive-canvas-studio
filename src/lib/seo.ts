@@ -60,7 +60,7 @@ export const localBusinessSchema = () => ({
     name: "Sabelo Ndlovu",
     jobTitle: "Technoking",
     description:
-      "Sabelo Ndlovu is Technoking (the CEO-equivalent role) and founder of Ntombii Tech — a tech creative and digital builder helping brands, businesses and entrepreneurs grow through modern websites, smart digital solutions and a strong online presence.",
+      "Sabelo Ndlovu is Technoking (the CEO-equivalent role) and founder of Ntombii Tech - a tech creative and digital builder helping brands, businesses and entrepreneurs grow through modern websites, smart digital solutions and a strong online presence.",
     sameAs: [SITE.socials.instagram, SITE.socials.facebook].filter(Boolean),
   },
 

@@ -168,15 +168,15 @@ export const SITE = {
     },
     {
       q: "Do you build websites for schools and NGOs?",
-      a: "Yes. We've built sites for KZN schools, NGOs, churches and community organisations — including Umzilikazi Senior Secondary, Nyatee Foundation and Keep Newcastle Alive With Possibilities. We understand budgets are tight and design accordingly.",
+      a: "Yes. We've built sites for KZN schools, NGOs, churches and community organisations - including Umzilikazi Senior Secondary, Nyatee Foundation and Keep Newcastle Alive With Possibilities. We understand budgets are tight and design accordingly.",
     },
     {
       q: "Can you help my business show on Google?",
-      a: "Yes. Every website we build is structured for Google from day one — clean code, fast load, local schema, and proper page titles. We also help set up your Google Business Profile so customers in Newcastle and KZN can find and call you.",
+      a: "Yes. Every website we build is structured for Google from day one - clean code, fast load, local schema, and proper page titles. We also help set up your Google Business Profile so customers in Newcastle and KZN can find and call you.",
     },
     {
       q: "Do you offer local SEO?",
-      a: "Yes — local SEO for Newcastle and KZN is one of our core services. That includes town-targeted pages, local schema, Google Business Profile setup, and content built around what your customers actually search for.",
+      a: "Yes - local SEO for Newcastle and KZN is one of our core services. That includes town-targeted pages, local schema, Google Business Profile setup, and content built around what your customers actually search for.",
     },
     {
       q: "Can you connect WhatsApp, booking forms or payments?",
@@ -184,11 +184,11 @@ export const SITE = {
     },
     {
       q: "Do you offer website maintenance?",
-      a: "Yes. We offer ongoing maintenance, content updates, hosting support and security checks — billed monthly or per change. Most clients message us on WhatsApp when something needs updating.",
+      a: "Yes. We offer ongoing maintenance, content updates, hosting support and security checks - billed monthly or per change. Most clients message us on WhatsApp when something needs updating.",
     },
     {
       q: "Do I own my website after it is built?",
-      a: "Yes. You fully own your website, domain, content and brand assets. We hand over all logins and files at launch — nothing is locked behind us.",
+      a: "Yes. You fully own your website, domain, content and brand assets. We hand over all logins and files at launch - nothing is locked behind us.",
     },
     {
       q: "Can you redesign my old website?",

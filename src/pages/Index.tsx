@@ -53,10 +53,10 @@ const SectionHead = ({
 // Main services with internal links (local SEO power block)
 const services = [
   { n: "01", label: "Website Design", desc: "Mobile-first, fast-loading marketing sites built for Newcastle businesses.", href: "/services/web-design" },
-  { n: "02", label: "Web Development", desc: "Custom builds, web apps and integrations — clean code, real performance.", href: "/services/web-development" },
+  { n: "02", label: "Web Development", desc: "Custom builds, web apps and integrations - clean code, real performance.", href: "/services/web-development" },
   { n: "03", label: "Local SEO", desc: "Rank in Newcastle, Madadeni and across KZN. Schema, GBP, town pages.", href: "/services/local-seo" },
-  { n: "04", label: "E-commerce Websites", desc: "Online stores with Payfast, Yoco and Stripe — built to sell.", href: "/services/ecommerce" },
-  { n: "05", label: "Booking Websites", desc: "Calendar bookings, WhatsApp enquiries and deposits — done right.", href: "/services/booking-websites" },
+  { n: "04", label: "E-commerce Websites", desc: "Online stores with Payfast, Yoco and Stripe - built to sell.", href: "/services/ecommerce" },
+  { n: "05", label: "Booking Websites", desc: "Calendar bookings, WhatsApp enquiries and deposits - done right.", href: "/services/booking-websites" },
   { n: "06", label: "School Websites", desc: "Professional, parent-friendly sites for KZN schools and colleges.", href: "/services/school-websites" },
   { n: "07", label: "NGO Websites", desc: "Donation-ready, story-led sites for non-profits and community groups.", href: "/services/ngo-websites" },
   { n: "08", label: "Website Redesigns", desc: "Rebuild your old site faster, cleaner and ready to rank.", href: "/services/website-redesign" },
@@ -70,7 +70,7 @@ const whyUs = [
   { t: "Fixed pricing, no surprises", d: "Clear quotes. Clear timelines. You always know what you're paying for." },
 ];
 
-// Areas (featured) — Newcastle first, then KZN towns + district link
+// Areas (featured) - Newcastle first, then KZN towns + district link
 const featuredAreas = [
   { name: "Newcastle", slug: "newcastle", district: "Amajuba" },
   { name: "Madadeni", slug: "madadeni", district: "Amajuba" },
@@ -79,7 +79,7 @@ const featuredAreas = [
   { name: "Utrecht", slug: "utrecht", district: "Amajuba" },
   { name: "Ladysmith", slug: "ladysmith", district: "uThukela" },
   { name: "Vryheid", slug: "vryheid", district: "Zululand" },
-  // Amajuba District page doesn't exist yet — link to /areas
+  // Amajuba District page doesn't exist yet - link to /areas
   { name: "Amajuba District", slug: "__areas", district: "KZN" },
 ];
 
@@ -112,15 +112,15 @@ const Index = () => {
               <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
               <span>Studio open · Mon–Fri</span>
             </span>
-            <span className="hidden md:inline">Est. 2024 — Newcastle, KZN</span>
-            <span>(№ 001 — Index)</span>
+            <span className="hidden md:inline">Est. 2024 - Newcastle, KZN</span>
+            <span>(№ 001 - Index)</span>
           </div>
 
           <Reveal>
             <h1 className="display-mega max-w-[18ch] leading-[0.95]">
               Web Design{" "}
               <span className="text-accent">Newcastle</span>{" "}
-              <span className="serif font-normal">KZN</span> —<br />
+              <span className="serif font-normal">KZN</span> -<br />
               Websites That Help Local Businesses{" "}
               <span className="serif font-normal text-accent">Get More Calls.</span>
             </h1>
@@ -160,7 +160,7 @@ const Index = () => {
           </Reveal>
         </div>
 
-        {/* SEO marquee — towns we serve */}
+        {/* SEO marquee - towns we serve */}
         <div className="border-t border-foreground/15 overflow-hidden marquee-pause bg-foreground text-background">
           <div className="marquee flex w-max items-center py-4 mono-label">
             {[...Array(2)].map((_, dup) => (
@@ -196,10 +196,10 @@ const Index = () => {
 
       {/* ═══════════════ (02) SERVICES ═══════════════ */}
       <section className="container-wide py-20 md:py-28">
-        <SectionHead n="02" label="Services — what we build" />
+        <SectionHead n="02" label="Services - what we build" />
         <Reveal>
           <h2 className="display-xl max-w-4xl mb-12 md:mb-16">
-            Websites that <span className="serif font-normal text-accent">work for Newcastle</span> — and the businesses building it.
+            Websites that <span className="serif font-normal text-accent">work for Newcastle</span> - and the businesses building it.
           </h2>
         </Reveal>
 
@@ -255,7 +255,7 @@ const Index = () => {
 
       {/* ═══════════════ (04) FEATURED WORK ═══════════════ */}
       <section className="container-wide py-20 md:py-28">
-        <SectionHead n="04" label="Featured work — 2024–2026" />
+        <SectionHead n="04" label="Featured work - 2024–2026" />
         <Reveal>
           <h2 className="display-xl max-w-4xl mb-12 md:mb-16">
             Real websites for <span className="serif font-normal text-accent">real KZN brands.</span>
@@ -271,7 +271,7 @@ const Index = () => {
                   {p.image ? (
                     <img
                       src={p.image}
-                      alt={`${p.title} — Ntombii Tech project`}
+                      alt={`${p.title} - Ntombii Tech project`}
                       loading="lazy"
                       width={640}
                       height={480}
@@ -319,7 +319,7 @@ const Index = () => {
 
       {/* ═══════════════ (05) AREAS SERVED ═══════════════ */}
       <section className="container-wide py-20 md:py-28 border-t border-foreground/15">
-        <SectionHead n="05" label="Areas served — KwaZulu-Natal" />
+        <SectionHead n="05" label="Areas served - KwaZulu-Natal" />
 
         <div className="grid grid-cols-12 gap-6 md:gap-10 mb-12 md:mb-16">
           <Reveal className="col-span-12 md:col-span-7">
@@ -371,7 +371,7 @@ const Index = () => {
 
       {/* ═══════════════ (06) PROCESS ═══════════════ */}
       <section id="process" className="container-wide py-20 md:py-28 border-t border-foreground/15">
-        <SectionHead n="06" label="Process — how we work" />
+        <SectionHead n="06" label="Process - how we work" />
         <Reveal>
           <h2 className="display-xl max-w-3xl mb-12 md:mb-16">
             From first WhatsApp to <span className="serif font-normal text-accent">live website,</span> in days.
@@ -380,10 +380,10 @@ const Index = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 border-t border-foreground/15">
           {[
             { n: "01", t: "Discovery", d: "Short WhatsApp or call to understand your business, goals and customers." },
-            { n: "02", t: "Design", d: "We design your site — clean, on-brand, mobile-first. You approve every screen." },
+            { n: "02", t: "Design", d: "We design your site - clean, on-brand, mobile-first. You approve every screen." },
             { n: "03", t: "Build", d: "Production code, fast load, local SEO and schema built in from day one." },
             { n: "04", t: "Launch", d: "We connect your domain, test on real devices and hand over all logins." },
-            { n: "05", t: "Support", d: "Ongoing updates, content changes and maintenance — all via WhatsApp." },
+            { n: "05", t: "Support", d: "Ongoing updates, content changes and maintenance - all via WhatsApp." },
           ].map((p, i) => (
             <Reveal
               key={p.n}
@@ -401,7 +401,7 @@ const Index = () => {
       {/* ═══════════════ (07) REVIEWS ═══════════════ */}
       <section className="border-t border-foreground/15 bg-secondary">
         <div className="container-wide py-20 md:py-28">
-          <SectionHead n="07" label="Reviews — what clients say" />
+          <SectionHead n="07" label="Reviews - what clients say" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-foreground/15 border border-foreground/15">
             {SITE.testimonials.map((t, i) => (
               <Reveal
@@ -426,10 +426,10 @@ const Index = () => {
           <Reveal delay={120}>
             <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-foreground/15 pt-8">
               <p className="text-sm text-muted-foreground max-w-xl">
-                Worked with us? Help other Newcastle businesses find us — leave a quick Google review.
+                Worked with us? Help other Newcastle businesses find us - leave a quick Google review.
               </p>
               <a
-                href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent("Hi Ntombii Tech — I'd like to leave a review.")}`}
+                href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent("Hi Ntombii Tech - I'd like to leave a review.")}`}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 border border-foreground/40 px-5 py-3 text-sm font-medium hover:border-foreground hover:bg-foreground hover:text-background transition"
@@ -444,14 +444,14 @@ const Index = () => {
 
       {/* ═══════════════ (08) FAQ ═══════════════ */}
       <section className="container-wide py-20 md:py-28 border-t border-foreground/15">
-        <SectionHead n="08" label="FAQ — common questions" />
+        <SectionHead n="08" label="FAQ - common questions" />
         <div className="grid grid-cols-12 gap-6 md:gap-10">
           <Reveal className="col-span-12 md:col-span-5">
             <h2 className="display-xl">
               Answers <span className="serif font-normal text-accent">before</span> you ask.
             </h2>
             <p className="mt-6 text-foreground/75 leading-relaxed max-w-md">
-              Still unsure? Send us a WhatsApp — we reply within a few hours
+              Still unsure? Send us a WhatsApp - we reply within a few hours
               during the day.
             </p>
             <a
@@ -493,7 +493,7 @@ const Index = () => {
 
       {/* ═══════════════ (09) PRICING ═══════════════ */}
       <section className="container-wide py-20 md:py-28 border-t border-foreground/15">
-        <SectionHead n="09" label="Pricing — fixed, no surprises" />
+        <SectionHead n="09" label="Pricing - fixed, no surprises" />
         <Reveal>
           <h2 className="display-xl max-w-4xl mb-12 md:mb-16">
             Clear packages. <span className="serif font-normal text-accent">Honest prices.</span>
@@ -549,7 +549,7 @@ const Index = () => {
 
       {/* ═══════════════ (10) FOUNDER PREVIEW ═══════════════ */}
       <section className="container-wide py-20 md:py-28 border-t border-foreground/15">
-        <SectionHead n="10" label="Founder — meet the Technoking" />
+        <SectionHead n="10" label="Founder - meet the Technoking" />
         <div className="grid grid-cols-12 gap-8 md:gap-14 items-center">
           <Reveal className="col-span-12 md:col-span-5">
             <div className="relative overflow-hidden border border-foreground/15 bg-card aspect-[4/5]">
@@ -565,13 +565,13 @@ const Index = () => {
           </Reveal>
           <Reveal delay={120} className="col-span-12 md:col-span-7">
             <h2 className="display-xl">
-              Sabelo Ndlovu — <span className="serif font-normal text-accent">Technoking.</span>
+              Sabelo Ndlovu - <span className="serif font-normal text-accent">Technoking.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/80 leading-relaxed">
-              Sabelo Ndlovu is the <strong>Technoking</strong> of Ntombii Tech — his own twist on "founder and CEO." Based in Newcastle, KwaZulu-Natal, he builds websites, web apps and digital solutions for businesses and entrepreneurs across the region.
+              Sabelo Ndlovu is the <strong>Technoking</strong> of Ntombii Tech - his own twist on "founder and CEO." Based in Newcastle, KwaZulu-Natal, he builds websites, web apps and digital solutions for businesses and entrepreneurs across the region.
             </p>
             <p className="mt-4 text-foreground/70 leading-relaxed">
-              Self-taught and AI-native, he leads every project personally — from the first conversation to the final product live.
+              Self-taught and AI-native, he leads every project personally - from the first conversation to the final product live.
             </p>
             <Link
               to="/about"
@@ -587,7 +587,7 @@ const Index = () => {
       {/* ═══════════════ (11) FINAL CTA ═══════════════ */}
       <section className="border-t border-foreground/15 bg-foreground text-background relative noise overflow-hidden">
         <div className="container-wide py-24 md:py-36">
-          <SectionHead n="11" label="Start — get a website quote" tone="dark" />
+          <SectionHead n="11" label="Start - get a website quote" tone="dark" />
 
           <Reveal>
             <h2 className="display-mega max-w-[16ch] text-background">
@@ -599,7 +599,7 @@ const Index = () => {
           <div className="mt-12 md:mt-16 grid grid-cols-12 gap-6 md:gap-10 items-end">
             <Reveal delay={80} className="col-span-12 md:col-span-7">
               <p className="text-lg md:text-xl text-background/80 max-w-xl leading-snug">
-                Tell us about your business — we'll come back within a day with
+                Tell us about your business - we'll come back within a day with
                 a clear plan and a fixed quote for your Newcastle or KZN project.
               </p>
             </Reveal>

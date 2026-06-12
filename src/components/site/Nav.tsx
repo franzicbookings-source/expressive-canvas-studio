@@ -8,7 +8,7 @@ import logoUrl from "@/assets/ntombii-tech-logo.webp";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/#capabilities", label: "Capabilities" },
+  { to: "/capabilities", label: "Capabilities" },
   { to: "/work", label: "Work" },
   { to: "/#process", label: "Process" },
   { to: "/pricing", label: "Pricing" },

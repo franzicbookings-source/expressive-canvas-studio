@@ -27,25 +27,46 @@ type Props = {
   intervalMs?: number;
 };
 
+function chunk<T>(arr: T[], size: number): T[][] {
+  const out: T[][] = [];
+  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
+  return out;
+}
+
 export const LogoRotator = ({ logos = DEFAULT_LOGOS, intervalMs = 2400 }: Props) => {
   const [reduced, setReduced] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [idx, setIdx] = useState(0);
 
   useEffect(() => {
     const rm = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mq = window.matchMedia("(max-width: 767px)");
     const onRm = () => setReduced(rm.matches);
+    const onMq = () => setIsMobile(mq.matches);
     onRm();
+    onMq();
     rm.addEventListener("change", onRm);
-    return () => rm.removeEventListener("change", onRm);
+    mq.addEventListener("change", onMq);
+    return () => {
+      rm.removeEventListener("change", onRm);
+      mq.removeEventListener("change", onMq);
+    };
   }, []);
 
+  const groupSize = isMobile ? 2 : 3;
+  const groups = chunk(logos, groupSize);
+
   useEffect(() => {
-    if (reduced || logos.length <= 1) return;
+    setIdx(0);
+  }, [groupSize, logos.length]);
+
+  useEffect(() => {
+    if (reduced || groups.length <= 1) return;
     const id = window.setInterval(() => {
-      setIdx((i) => (i + 1) % logos.length);
+      setIdx((i) => (i + 1) % groups.length);
     }, intervalMs);
     return () => window.clearInterval(id);
-  }, [reduced, logos.length, intervalMs]);
+  }, [reduced, groups.length, intervalMs]);
 
   if (reduced) {
     return (
@@ -63,25 +84,32 @@ export const LogoRotator = ({ logos = DEFAULT_LOGOS, intervalMs = 2400 }: Props)
     );
   }
 
-  const current = logos[idx];
+  const current = groups[idx] ?? [];
 
   return (
     <div
-      className="relative mx-auto flex items-center justify-center overflow-hidden h-24 md:h-32 w-full max-w-[280px] md:max-w-[360px]"
+      className="relative mx-auto flex items-center justify-center overflow-hidden h-24 md:h-32 w-full"
       aria-live="polite"
     >
-      <AnimatePresence mode="popLayout" initial={false}>
-        <motion.img
-          key={current.name}
-          src={current.src}
-          alt={`${current.name} logo`}
-          loading="lazy"
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={idx}
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -40, opacity: 0 }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute max-h-full max-w-full w-auto h-auto object-contain"
-        />
+          className="flex items-center justify-center gap-10 md:gap-20"
+        >
+          {current.map((l) => (
+            <img
+              key={l.name}
+              src={l.src}
+              alt={`${l.name} logo`}
+              loading="lazy"
+              className="h-12 md:h-16 w-auto max-w-[140px] md:max-w-[180px] object-contain"
+            />
+          ))}
+        </motion.div>
       </AnimatePresence>
     </div>
   );
