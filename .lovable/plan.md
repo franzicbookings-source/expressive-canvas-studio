@@ -1,77 +1,49 @@
-## 1. Upload new logo & project images as Lovable Assets
+## 1. LogoRotator — show groups of 3 (2 on mobile)
 
-Upload from `/mnt/user-uploads/`:
-- `164317-removebg-preview.png` → Snesenzo Security Group logo (`src/assets/clients/snesenzo.png.asset.json`)
-- `164314-removebg-preview.png` → Ntombii Tech mark (`src/assets/clients/ntombii.png.asset.json`)
-- `164313-removebg-preview.png` → Amajuba Top Women Awards (`src/assets/clients/amajuba.png.asset.json`)
-- `file_000000007e7071f489d23d89977b697a.png` → Snesenzo project mockup (`src/assets/portfolio-snesenzo.png.asset.json`)
-- `file_00000000f9cc71f8987489c6ab421f3b.png` → RnB Soulful Groove Gathering mockup (`src/assets/portfolio-rnb.png.asset.json`)
+Rewrite `src/components/home/LogoRotator.tsx` to cycle **groups** instead of single logos:
 
-## 2. Rewrite `LogoRotator` — single cycling logo
+- Keep the `logos: Logo[]` prop API so the user can still add/remove logos.
+- Compute group size from a `useEffect` matchMedia listener: `3` on `md+`, `2` on mobile (`<768px`).
+- Chunk the logo array into groups of that size. If the last group is short, it still shows (with empty space) — keeps order intuitive.
+- Render one fixed-height row (`h-24 md:h-32`) with the group laid out as a flex row (`gap-10 md:gap-20`, `justify-center`).
+- Use `framer-motion` `AnimatePresence mode="wait"` keyed by group index. Each group slides up from below (`y: 40, opacity: 0` → `y: 0, opacity: 1`), holds, then exits upward (`y: -40, opacity: 0`).
+- Interval: ~2400ms between group changes; transition ~550ms.
+- Respect `prefers-reduced-motion` — fall back to a static wrap of all logos.
 
-Install `framer-motion` (currently not in `package.json`).
+## 2. Remove em dashes site-wide
 
-Replace `src/components/home/LogoRotator.tsx` with a component that:
-- Accepts `logos: { name: string; src: string }[]` as a prop (defaults to internal list so I can pass overrides later).
-- Renders one fixed-size centered container (`h-24 md:h-32`, max-w ~`280px md:360px`).
-- Uses `AnimatePresence` + `motion.img` keyed by index. Each logo: slides up from below (`y: 40, opacity: 0` → `y: 0, opacity: 1`), holds ~1.8s, then fades/slides out upward (`y: -40, opacity: 0`) as next slides in.
-- Loop interval ~2.4s. Respects `prefers-reduced-motion` (shows a static grid).
-- CSS fallback only if framer-motion install fails.
+39 occurrences of `—` (U+2014) across user-facing content files. Replace every em dash with a hyphen `-` (matches the rest of the copy, which already uses hyphens for the same purpose).
 
-Default logo list (order):
-1. Nyatee Foundation
-2. Sknowhite Events
-3. Keep Newcastle Alive
-4. Umzilikazi SSS
-5. Aunty Wama 2K (keep in rotator since it's a past client)
-6. Snesenzo Security Group (new)
-7. Ntombii Tech (new)
-8. Amajuba Top Women Awards (new)
+Files to sweep:
+- `src/pages/Index.tsx` (29)
+- `src/lib/site.ts` (5)
+- `src/pages/About.tsx` (2)
+- `src/lib/seo.ts` (1)
+- `src/index.css` (1) — comment text only, safe
+- `index.html` (1)
 
-(Note: Aunty Wama 2K stays as a logo in the trust strip; only the *project card* gets removed per request.)
+Single `sed -i 's/—/-/g'` pass across those files. Will spot-check after for awkward spacing (e.g. ` - ` reads fine, but `town—Newcastle` would become `town-Newcastle`; from the visible copy all current uses are surrounded by spaces).
 
-## 3. Update `SITE.projects` in `src/lib/site.ts`
+En dashes (`–`) and hyphens are left alone — the user asked only about em dashes.
 
-- Remove `spazatap` and `auntywama` entries.
-- Update `snesenzo`: `image: portfolioSnesenzo`, `href: "https://www.snesenzosecuritygroup.co.za/"`.
-- Update `rnb-gathering`: `image: portfolioRnb`, `href: "https://rnbsoulfulgroovegathering.co.za/"`.
-- Final 6 projects: Nyatee, Sknowhite, Umzilikazi, Keep NN Alive, Snesenzo, RnB Gathering.
+## 3. Capabilities page
 
-## 4. Add Pricing + Founder preview to homepage `src/pages/Index.tsx`
+The nav links to `/#capabilities` but there is no section with that id and no `/capabilities` route. Two changes:
 
-Insert two new sections before the Final CTA, after FAQ. Keep the editorial brutalist style (SectionHead, mono labels, sharp borders, `display-xl`).
+**a) Create `src/pages/Capabilities.tsx`** — a proper page in the same editorial brutalist style as the homepage. Sections:
+- Hero: H1 "Capabilities", short intro line about what the studio does end-to-end.
+- Full capabilities grid driven by `SITE.services` (already has 8 entries with `title`, `summary`, `includes[]`). Render each as a numbered card with checklist.
+- "How we work" — reuse the 5-step process content.
+- Final CTA → `/contact`.
+- `<SEO>` with title "Capabilities | Ntombii Tech", local description, breadcrumb schema.
 
-**Section (09) Pricing — homepage tier teaser**
-- Renumber existing FAQ→(08), Pricing→(09), Founder→(10), Final CTA→(11). Update `SectionHead` numbers accordingly.
-- 3-column grid using `SITE.pricing` (Starter / Business / Premium). Show: name, "From {from}" (with `original` strikethrough if present), first 4 features (Check icon), and a "Get this package" link → `/contact`.
-- Highlight the `popular` tier with accent border.
-- Below grid: link "See full pricing →" → `/pricing`.
-
-**Section (10) Founder — short preview**
-- Two-column layout (image left ~5/12, text right ~7/12) using the existing `src/assets/sabelo-ndlovu-founder.webp.asset.json` (already optimised).
-- Heading: `Sabelo Ndlovu — <serif accent>Technoking.</serif>`
-- New short bio (2 paragraphs only):
-  1. "Sabelo Ndlovu is the Technoking of Ntombii Tech — his own twist on 'founder and CEO.' Based in Newcastle, KwaZulu-Natal, he builds websites, web apps and digital solutions for businesses and entrepreneurs across the region."
-  2. "Self-taught and AI-native, he leads every project personally — from the first conversation to the final product live."
-- CTA: `Read the full story →` → `/about`.
-
-## 5. Update `src/pages/About.tsx` founder bio
-
-Replace founder paragraphs with the full 3-paragraph version:
-1. "Sabelo Ndlovu is the Technoking of Ntombii Tech — his own twist on 'founder and CEO.' Based in Newcastle, KwaZulu-Natal, he builds websites, web apps and digital solutions for businesses and entrepreneurs across the region."
-2. "Self-taught from the ground up, Sabelo learned everything through hands-on practice and AI-powered workflows. He builds AI-native, using the most powerful tools available to deliver fast, high-quality work without the agency overhead."
-3. "He leads every project personally, from the first conversation to the final product live."
+**b) Wire it up**:
+- Add lazy import + `<Route path="/capabilities" element={<Capabilities />} />` in `src/App.tsx` (before the catch-all `/:slug`).
+- Update `src/components/site/Nav.tsx` link from `/#capabilities` to `/capabilities`.
 
 ## Files touched
 
-- `package.json` (+ framer-motion)
 - `src/components/home/LogoRotator.tsx` (rewrite)
-- `src/lib/site.ts` (projects array)
-- `src/pages/Index.tsx` (add Pricing + Founder sections, renumber)
-- `src/pages/About.tsx` (founder copy)
-- New asset pointers under `src/assets/clients/` and `src/assets/`
-
-## Out of scope (flag only)
-
-- `TrustedBy.tsx` marquee component is not used on the homepage anymore — leaving it untouched.
-- No design system / brand color changes.
+- `src/pages/Index.tsx`, `src/lib/site.ts`, `src/pages/About.tsx`, `src/lib/seo.ts`, `src/index.css`, `index.html` (em dash sweep)
+- `src/pages/Capabilities.tsx` (new)
+- `src/App.tsx`, `src/components/site/Nav.tsx` (route + nav link)

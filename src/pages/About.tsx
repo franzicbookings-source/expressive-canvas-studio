@@ -77,10 +77,10 @@ const About = () => (
         <Reveal delay={120} className="md:col-span-7">
           <p className="eyebrow">Founder</p>
           <h2 className="display mt-4 text-3xl md:text-5xl leading-[1.05]">
-            Sabelo Ndlovu — <span className="serif text-accent">Technoking.</span>
+            Sabelo Ndlovu - <span className="serif text-accent">Technoking.</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Sabelo Ndlovu is the <strong className="text-foreground">Technoking</strong> of Ntombii Tech — his own twist on "founder and CEO." Based in Newcastle, KwaZulu-Natal, he builds websites, web apps and digital solutions for businesses and entrepreneurs across the region.
+            Sabelo Ndlovu is the <strong className="text-foreground">Technoking</strong> of Ntombii Tech - his own twist on "founder and CEO." Based in Newcastle, KwaZulu-Natal, he builds websites, web apps and digital solutions for businesses and entrepreneurs across the region.
           </p>
           <p className="mt-4 text-muted-foreground">
             Self-taught from the ground up, Sabelo learned everything through hands-on practice and AI-powered workflows. He builds AI-native, using the most powerful tools available to deliver fast, high-quality work without the agency overhead.
