@@ -20,6 +20,7 @@ const Contact = lazy(() => import("./pages/Contact.tsx"));
 const Areas = lazy(() => import("./pages/Areas.tsx"));
 const LocationPage = lazy(() => import("./pages/LocationPage.tsx"));
 const LocationServicePage = lazy(() => import("./pages/LocationServicePage.tsx"));
+const Process = lazy(() => import("./pages/Process.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/areas" element={<Areas />} />
               <Route path="/areas/:town" element={<LocationPage />} />
+              <Route path="/process" element={<Process />} />
               <Route path="/:slug" element={<LocationServicePage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
