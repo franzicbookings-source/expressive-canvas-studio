@@ -21,6 +21,7 @@ const Areas = lazy(() => import("./pages/Areas.tsx"));
 const LocationPage = lazy(() => import("./pages/LocationPage.tsx"));
 const LocationServicePage = lazy(() => import("./pages/LocationServicePage.tsx"));
 const Process = lazy(() => import("./pages/Process.tsx"));
+const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient();
 
