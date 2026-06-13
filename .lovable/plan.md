@@ -1,49 +1,24 @@
-## 1. LogoRotator — show groups of 3 (2 on mobile)
+## 1. Remove "(№ 001 - Index)" from hero
 
-Rewrite `src/components/home/LogoRotator.tsx` to cycle **groups** instead of single logos:
+In `src/pages/Index.tsx` line 116, delete the `<span>(№ 001 - Index)</span>`. Keep the other two meta spans ("Studio open · Mon-Fri" and "Est. 2024 - Newcastle, KZN") so the row still balances.
 
-- Keep the `logos: Logo[]` prop API so the user can still add/remove logos.
-- Compute group size from a `useEffect` matchMedia listener: `3` on `md+`, `2` on mobile (`<768px`).
-- Chunk the logo array into groups of that size. If the last group is short, it still shows (with empty space) — keeps order intuitive.
-- Render one fixed-height row (`h-24 md:h-32`) with the group laid out as a flex row (`gap-10 md:gap-20`, `justify-center`).
-- Use `framer-motion` `AnimatePresence mode="wait"` keyed by group index. Each group slides up from below (`y: 40, opacity: 0` → `y: 0, opacity: 1`), holds, then exits upward (`y: -40, opacity: 0`).
-- Interval: ~2400ms between group changes; transition ~550ms.
-- Respect `prefers-reduced-motion` — fall back to a static wrap of all logos.
+## 2. Make the 4 small logos match Nyatee Foundation's visual size
 
-## 2. Remove em dashes site-wide
+The rotator already uses the same CSS box (`h-12 md:h-16`, `max-w-[140px] md:max-w-[180px]`) for every logo. Aunty Wama 2K, Snesenzo, Ntombii Tech and Amajuba look smaller only because their source PNGs have transparent padding around the mark, so they render shrunk inside the box.
 
-39 occurrences of `—` (U+2014) across user-facing content files. Replace every em dash with a hyphen `-` (matches the rest of the copy, which already uses hyphens for the same purpose).
+Fix without touching the source files: extend the `Logo` type in `src/components/home/LogoRotator.tsx` with an optional per-logo `scale` (default 1) and an optional `className`. In the render, apply `style={{ transform: \`scale(${l.scale ?? 1})\` }}` to those four logos so they visually fill the same height as the Nyatee logo.
 
-Files to sweep:
-- `src/pages/Index.tsx` (29)
-- `src/lib/site.ts` (5)
-- `src/pages/About.tsx` (2)
-- `src/lib/seo.ts` (1)
-- `src/index.css` (1) — comment text only, safe
-- `index.html` (1)
+Tuned scales (to be verified visually in preview after build):
+- Aunty Wama 2K - `scale: 1.6`
+- Snesenzo Security Group - `scale: 1.5`
+- Ntombii Tech - `scale: 1.7`
+- Amajuba Top Women Awards - `scale: 1.5`
 
-Single `sed -i 's/—/-/g'` pass across those files. Will spot-check after for awkward spacing (e.g. ` - ` reads fine, but `town—Newcastle` would become `town-Newcastle`; from the visible copy all current uses are surrounded by spaces).
+Container stays `overflow-hidden` so the scaled-up marks stay inside the row and rhythm with the other logos. Nyatee, Sknowhite, KNAWP, Umzilikazi keep `scale: 1`.
 
-En dashes (`–`) and hyphens are left alone — the user asked only about em dashes.
-
-## 3. Capabilities page
-
-The nav links to `/#capabilities` but there is no section with that id and no `/capabilities` route. Two changes:
-
-**a) Create `src/pages/Capabilities.tsx`** — a proper page in the same editorial brutalist style as the homepage. Sections:
-- Hero: H1 "Capabilities", short intro line about what the studio does end-to-end.
-- Full capabilities grid driven by `SITE.services` (already has 8 entries with `title`, `summary`, `includes[]`). Render each as a numbered card with checklist.
-- "How we work" — reuse the 5-step process content.
-- Final CTA → `/contact`.
-- `<SEO>` with title "Capabilities | Ntombii Tech", local description, breadcrumb schema.
-
-**b) Wire it up**:
-- Add lazy import + `<Route path="/capabilities" element={<Capabilities />} />` in `src/App.tsx` (before the catch-all `/:slug`).
-- Update `src/components/site/Nav.tsx` link from `/#capabilities` to `/capabilities`.
+If after preview any logo is still off, nudge that one value only - no other layout changes needed.
 
 ## Files touched
 
-- `src/components/home/LogoRotator.tsx` (rewrite)
-- `src/pages/Index.tsx`, `src/lib/site.ts`, `src/pages/About.tsx`, `src/lib/seo.ts`, `src/index.css`, `index.html` (em dash sweep)
-- `src/pages/Capabilities.tsx` (new)
-- `src/App.tsx`, `src/components/site/Nav.tsx` (route + nav link)
+- `src/pages/Index.tsx` (remove one span)
+- `src/components/home/LogoRotator.tsx` (add optional `scale`, apply per-logo transform on the 4 PNG logos)

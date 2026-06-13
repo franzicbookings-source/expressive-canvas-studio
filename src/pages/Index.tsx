@@ -113,7 +113,6 @@ const Index = () => {
               <span>Studio open · Mon–Fri</span>
             </span>
             <span className="hidden md:inline">Est. 2024 - Newcastle, KZN</span>
-            <span>(№ 001 - Index)</span>
           </div>
 
           <Reveal>
