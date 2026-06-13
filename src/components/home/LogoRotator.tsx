@@ -106,6 +106,7 @@ export const LogoRotator = ({ logos = DEFAULT_LOGOS, intervalMs = 2400 }: Props)
               src={l.src}
               alt={`${l.name} logo`}
               loading="lazy"
+              style={l.scale ? { transform: `scale(${l.scale})` } : undefined}
               className="h-12 md:h-16 w-auto max-w-[140px] md:max-w-[180px] object-contain"
             />
           ))}
