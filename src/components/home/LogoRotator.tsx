@@ -9,17 +9,17 @@ import snesenzoAsset from "@/assets/clients/snesenzo.png.asset.json";
 import ntombiiAsset from "@/assets/clients/ntombii.png.asset.json";
 import amajubaAsset from "@/assets/clients/amajuba.png.asset.json";
 
-export type Logo = { name: string; src: string };
+export type Logo = { name: string; src: string; scale?: number };
 
 const DEFAULT_LOGOS: Logo[] = [
   { name: "Nyatee Foundation", src: nyateeLogo },
   { name: "Sknowhite Events", src: sknowhiteLogo },
   { name: "Keep Newcastle Alive With Possibilities", src: knawpLogo },
   { name: "Umzilikazi Senior Secondary School", src: umzilikaziLogo },
-  { name: "Aunty Wama 2K", src: auntywamaLogo },
-  { name: "Snesenzo Security Group", src: snesenzoAsset.url },
-  { name: "Ntombii Tech", src: ntombiiAsset.url },
-  { name: "Amajuba Top Women Awards", src: amajubaAsset.url },
+  { name: "Aunty Wama 2K", src: auntywamaLogo, scale: 1.6 },
+  { name: "Snesenzo Security Group", src: snesenzoAsset.url, scale: 1.5 },
+  { name: "Ntombii Tech", src: ntombiiAsset.url, scale: 1.7 },
+  { name: "Amajuba Top Women Awards", src: amajubaAsset.url, scale: 1.5 },
 ];
 
 type Props = {
@@ -106,6 +106,7 @@ export const LogoRotator = ({ logos = DEFAULT_LOGOS, intervalMs = 2400 }: Props)
               src={l.src}
               alt={`${l.name} logo`}
               loading="lazy"
+              style={l.scale ? { transform: `scale(${l.scale})` } : undefined}
               className="h-12 md:h-16 w-auto max-w-[140px] md:max-w-[180px] object-contain"
             />
           ))}
