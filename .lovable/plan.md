@@ -1,24 +1,49 @@
-## 1. Remove "(№ 001 - Index)" from hero
+## 1. Make (01) Trusted across KZN logos clickable + fix Nyatee location
 
-In `src/pages/Index.tsx` line 116, delete the `<span>(№ 001 - Index)</span>`. Keep the other two meta spans ("Studio open · Mon-Fri" and "Est. 2024 - Newcastle, KZN") so the row still balances.
+Edit `src/pages/Index.tsx`:
 
-## 2. Make the 4 small logos match Nyatee Foundation's visual size
+- Add an `href` to each entry in `trustedClients` and correct Nyatee's note to reflect Gauteng/Sandton.
+- Wrap each card body in `<a target="_blank" rel="noopener noreferrer">` so visitors can verify each org. Keep the existing editorial card style — only add a subtle hover (logo opacity + small arrow icon in top-right corner).
+- Add `aria-label="Visit {name} website (opens in new tab)"` on each anchor.
 
-The rotator already uses the same CSS box (`h-12 md:h-16`, `max-w-[140px] md:max-w-[180px]`) for every logo. Aunty Wama 2K, Snesenzo, Ntombii Tech and Amajuba look smaller only because their source PNGs have transparent padding around the mark, so they render shrunk inside the box.
+Final card data:
 
-Fix without touching the source files: extend the `Logo` type in `src/components/home/LogoRotator.tsx` with an optional per-logo `scale` (default 1) and an optional `className`. In the render, apply `style={{ transform: \`scale(${l.scale ?? 1})\` }}` to those four logos so they visually fill the same height as the Nyatee logo.
+| Card | Link | Note |
+|---|---|---|
+| Nyatee Foundation | https://nyateefoundation.org.za/ | NGO website · Sandton, Gauteng |
+| Umzilikazi Senior Secondary School | https://umzilikazi.vercel.app/ | School website · Newcastle KZN |
+| Snesenzo Security Group | https://www.snesenzosecuritygroup.co.za/ | Security company · Newcastle KZN |
+| KNAWP | https://keepnnalive.org.za/ | Community organisation · Newcastle KZN |
+| Amajuba Top Women Awards | https://amajubawomenawarda.co.za/ | Awards platform · Newcastle KZN |
+| Ntombii Tech | https://ntombii.tech/ | Studio · Newcastle KZN |
 
-Tuned scales (to be verified visually in preview after build):
-- Aunty Wama 2K - `scale: 1.6`
-- Snesenzo Security Group - `scale: 1.5`
-- Ntombii Tech - `scale: 1.7`
-- Amajuba Top Women Awards - `scale: 1.5`
+No other sections touched.
 
-Container stays `overflow-hidden` so the scaled-up marks stay inside the row and rhythm with the other logos. Nyatee, Sknowhite, KNAWP, Umzilikazi keep `scale: 1`.
+Note: section heading currently reads "Trusted across KZN", but Nyatee is in Gauteng. Want me to soften it to "Trusted across KZN & beyond"? Default: leave it as-is unless you say otherwise.
 
-If after preview any logo is still off, nudge that one value only - no other layout changes needed.
+## 2. Google Search Console — URLs to resubmit
 
-## Files touched
+**Submit/resubmit sitemap (priority):**
+- https://ntombii.tech/sitemap.xml
 
-- `src/pages/Index.tsx` (remove one span)
-- `src/components/home/LogoRotator.tsx` (add optional `scale`, apply per-logo transform on the 4 PNG logos)
+**Manually Request Indexing for high-priority pages:**
+- https://ntombii.tech/
+- https://ntombii.tech/services
+- https://ntombii.tech/work
+- https://ntombii.tech/pricing
+- https://ntombii.tech/about
+- https://ntombii.tech/contact
+- https://ntombii.tech/process
+- https://ntombii.tech/blog
+- https://ntombii.tech/areas
+
+**New SEO-friendly location aliases (worth manual submit):**
+- https://ntombii.tech/web-design-newcastle-kzn
+- https://ntombii.tech/web-design-madadeni
+- https://ntombii.tech/web-design-osizweni
+- https://ntombii.tech/web-design-dundee-kzn
+- https://ntombii.tech/web-design-utrecht-kzn
+- https://ntombii.tech/web-design-ladysmith-kzn
+- https://ntombii.tech/web-design-amajuba-district
+
+The remaining ~140 routes (all `/areas/*`, `/services/*`, `/blog/*`, `/work/*`, and location-service combos) live in `public/sitemap.xml` and Google will discover them from the sitemap submit.
