@@ -309,7 +309,9 @@ const Index = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-foreground/15 border border-foreground/15">
           {SITE.projects.map((p, i) => {
-            const isExternal = p.href.startsWith("http");
+            const liveHost = (() => {
+              try { return new URL(p.href).host.replace(/^www\./, ""); } catch { return ""; }
+            })();
             const inner = (
               <div className="group block bg-background p-5 md:p-6 h-full">
                 <div className="overflow-hidden border border-foreground/15 bg-card aspect-[4/3] flex items-center justify-center">
@@ -331,24 +333,24 @@ const Index = () => {
                   )}
                 </div>
                 <div className="mt-5 flex items-start justify-between gap-3">
-                  <div>
+                  <div className="min-w-0">
                     <p className="mono-label text-muted-foreground tabular-nums">
                       {String(i + 1).padStart(3, "0")}
                     </p>
                     <h3 className="display mt-2 text-base md:text-lg">{p.title}</h3>
                     <p className="text-xs text-muted-foreground mt-1">{p.category}</p>
+                    <p className="text-xs text-muted-foreground mt-1">Newcastle, KZN</p>
+                    {liveHost && (
+                      <p className="text-xs text-accent mt-2 truncate">{liveHost}</p>
+                    )}
                   </div>
-                  <ArrowUpRight className="h-4 w-4 mt-1 text-muted-foreground group-hover:text-accent group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition" />
+                  <ArrowUpRight className="h-4 w-4 mt-1 text-muted-foreground group-hover:text-accent group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition shrink-0" />
                 </div>
               </div>
             );
             return (
               <Reveal key={p.slug} delay={i * 50}>
-                {isExternal ? (
-                  <a href={p.href} target="_blank" rel="noreferrer">{inner}</a>
-                ) : (
-                  <Link to="/work">{inner}</Link>
-                )}
+                <Link to={`/work/${p.slug}`}>{inner}</Link>
               </Reveal>
             );
           })}
