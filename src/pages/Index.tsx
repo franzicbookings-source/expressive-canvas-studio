@@ -8,6 +8,8 @@ import nyateeLogo from "@/assets/clients/nyatee.webp";
 import knawpLogo from "@/assets/clients/knawp.webp";
 import umzilikaziLogo from "@/assets/clients/umzilikazi.webp";
 import snesenzoAsset from "@/assets/clients/snesenzo.png.asset.json";
+import amajubaTopWomenAsset from "@/assets/clients/amajuba-top-women.png.asset.json";
+import ntombiiTechAsset from "@/assets/clients/ntombii-tech.png.asset.json";
 import founderImage from "@/assets/sabelo-ndlovu-founder.webp.asset.json";
 import {
   Accordion,
@@ -26,9 +28,10 @@ import {
 const trustedClients = [
   { name: "Nyatee Foundation", note: "NGO website · Newcastle KZN", logo: nyateeLogo as string | null },
   { name: "Umzilikazi Senior Secondary School", note: "School website · Newcastle KZN", logo: umzilikaziLogo as string | null },
-  { name: "Snesenzo Security Group", note: "Security company website · Newcastle KZN", logo: snesenzoAsset.url },
+  { name: "Snesenzo Security Group", note: "Security company · Newcastle KZN", logo: snesenzoAsset.url },
   { name: "KNAWP", note: "Community organisation · Newcastle KZN", logo: knawpLogo as string | null },
-  { name: "Which Way Agency", note: "Events brand · Newcastle KZN", logo: null },
+  { name: "Amajuba Top Women Awards", note: "Awards platform · Newcastle KZN", logo: amajubaTopWomenAsset.url },
+  { name: "Ntombii Tech", note: "Studio · Newcastle KZN", logo: ntombiiTechAsset.url },
 ];
 
 // Editorial section header
