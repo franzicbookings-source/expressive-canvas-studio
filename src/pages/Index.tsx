@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, ArrowRight, Check, MapPin } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Check, MapPin, MessageCircle } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { LOCATIONS } from "@/lib/locations";
 import { Reveal } from "@/components/site/Reveal";
 import { SEO } from "@/components/seo/SEO";
-import { LogoRotator } from "@/components/home/LogoRotator";
+import nyateeLogo from "@/assets/clients/nyatee.webp";
+import knawpLogo from "@/assets/clients/knawp.webp";
+import umzilikaziLogo from "@/assets/clients/umzilikazi.webp";
+import snesenzoAsset from "@/assets/clients/snesenzo.png.asset.json";
 import founderImage from "@/assets/sabelo-ndlovu-founder.webp.asset.json";
 import {
   Accordion,
@@ -18,6 +21,15 @@ import {
   reviewSchema,
   websiteSchema,
 } from "@/lib/seo";
+
+// Proof clients shown in the Trusted strip
+const trustedClients = [
+  { name: "Nyatee Foundation", note: "NGO website · Newcastle KZN", logo: nyateeLogo as string | null },
+  { name: "Umzilikazi Senior Secondary School", note: "School website · Newcastle KZN", logo: umzilikaziLogo as string | null },
+  { name: "Snesenzo Security Group", note: "Security company website · Newcastle KZN", logo: snesenzoAsset.url },
+  { name: "KNAWP", note: "Community organisation · Newcastle KZN", logo: knawpLogo as string | null },
+  { name: "Which Way Agency", note: "Events brand · Newcastle KZN", logo: null },
+];
 
 // Editorial section header
 const SectionHead = ({
