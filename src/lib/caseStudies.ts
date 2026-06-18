@@ -169,7 +169,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       "How Ntombii Tech built the Keep Newcastle Alive With Possibilities civic platform - a mobile-first community site with sponsor-ready content and local SEO.",
     keywords: "civic website South Africa, community initiative web design, Newcastle community website, KNAWP case study, NGO website Newcastle",
   },
-  },
   {
     slug: "snesenzo",
     client: "Snesenzo Security Group",
