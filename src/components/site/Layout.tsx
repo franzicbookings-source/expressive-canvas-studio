@@ -9,7 +9,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteNav />
-      <main className="flex-1 pt-16">{children}</main>
+      <main className="flex-1 pt-16 pb-20 md:pb-0">{children}</main>
       <SiteFooter />
       <WhatsAppFab />
     </div>
