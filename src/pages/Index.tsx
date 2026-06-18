@@ -82,17 +82,16 @@ const whyUs = [
   { t: "Fixed pricing, no surprises", d: "Clear quotes. Clear timelines. You always know what you're paying for." },
 ];
 
-// Areas (featured) - Newcastle first, then KZN towns + district link
+// Areas (featured) - Newcastle first, then KZN towns + district link.
+// Hrefs use the SEO-friendly /web-design-* slugs.
 const featuredAreas = [
-  { name: "Newcastle", slug: "newcastle", district: "Amajuba" },
-  { name: "Madadeni", slug: "madadeni", district: "Amajuba" },
-  { name: "Osizweni", slug: "osizweni", district: "Amajuba" },
-  { name: "Dundee", slug: "dundee", district: "uMzinyathi" },
-  { name: "Utrecht", slug: "utrecht", district: "Amajuba" },
-  { name: "Ladysmith", slug: "ladysmith", district: "uThukela" },
-  { name: "Vryheid", slug: "vryheid", district: "Zululand" },
-  // Amajuba District page doesn't exist yet - link to /areas
-  { name: "Amajuba District", slug: "__areas", district: "KZN" },
+  { name: "Newcastle", href: "/web-design-newcastle-kzn", district: "Amajuba" },
+  { name: "Madadeni", href: "/web-design-madadeni", district: "Amajuba" },
+  { name: "Osizweni", href: "/web-design-osizweni", district: "Amajuba" },
+  { name: "Dundee", href: "/web-design-dundee-kzn", district: "uMzinyathi" },
+  { name: "Utrecht", href: "/web-design-utrecht-kzn", district: "Amajuba" },
+  { name: "Ladysmith", href: "/web-design-ladysmith-kzn", district: "uThukela" },
+  { name: "Amajuba District", href: "/web-design-amajuba-district", district: "KZN" },
 ];
 
 const Index = () => {
