@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, ArrowRight, Check, MapPin } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Check, MapPin, MessageCircle } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { LOCATIONS } from "@/lib/locations";
 import { Reveal } from "@/components/site/Reveal";
 import { SEO } from "@/components/seo/SEO";
-import { LogoRotator } from "@/components/home/LogoRotator";
+import nyateeLogo from "@/assets/clients/nyatee.webp";
+import knawpLogo from "@/assets/clients/knawp.webp";
+import umzilikaziLogo from "@/assets/clients/umzilikazi.webp";
+import snesenzoAsset from "@/assets/clients/snesenzo.png.asset.json";
 import founderImage from "@/assets/sabelo-ndlovu-founder.webp.asset.json";
 import {
   Accordion,
@@ -18,6 +21,15 @@ import {
   reviewSchema,
   websiteSchema,
 } from "@/lib/seo";
+
+// Proof clients shown in the Trusted strip
+const trustedClients = [
+  { name: "Nyatee Foundation", note: "NGO website · Newcastle KZN", logo: nyateeLogo as string | null },
+  { name: "Umzilikazi Senior Secondary School", note: "School website · Newcastle KZN", logo: umzilikaziLogo as string | null },
+  { name: "Snesenzo Security Group", note: "Security company website · Newcastle KZN", logo: snesenzoAsset.url },
+  { name: "KNAWP", note: "Community organisation · Newcastle KZN", logo: knawpLogo as string | null },
+  { name: "Which Way Agency", note: "Events brand · Newcastle KZN", logo: null },
+];
 
 // Editorial section header
 const SectionHead = ({
@@ -70,17 +82,16 @@ const whyUs = [
   { t: "Fixed pricing, no surprises", d: "Clear quotes. Clear timelines. You always know what you're paying for." },
 ];
 
-// Areas (featured) - Newcastle first, then KZN towns + district link
+// Areas (featured) - Newcastle first, then KZN towns + district link.
+// Hrefs use the SEO-friendly /web-design-* slugs.
 const featuredAreas = [
-  { name: "Newcastle", slug: "newcastle", district: "Amajuba" },
-  { name: "Madadeni", slug: "madadeni", district: "Amajuba" },
-  { name: "Osizweni", slug: "osizweni", district: "Amajuba" },
-  { name: "Dundee", slug: "dundee", district: "uMzinyathi" },
-  { name: "Utrecht", slug: "utrecht", district: "Amajuba" },
-  { name: "Ladysmith", slug: "ladysmith", district: "uThukela" },
-  { name: "Vryheid", slug: "vryheid", district: "Zululand" },
-  // Amajuba District page doesn't exist yet - link to /areas
-  { name: "Amajuba District", slug: "__areas", district: "KZN" },
+  { name: "Newcastle", href: "/web-design-newcastle-kzn", district: "Amajuba" },
+  { name: "Madadeni", href: "/web-design-madadeni", district: "Amajuba" },
+  { name: "Osizweni", href: "/web-design-osizweni", district: "Amajuba" },
+  { name: "Dundee", href: "/web-design-dundee-kzn", district: "uMzinyathi" },
+  { name: "Utrecht", href: "/web-design-utrecht-kzn", district: "Amajuba" },
+  { name: "Ladysmith", href: "/web-design-ladysmith-kzn", district: "uThukela" },
+  { name: "Amajuba District", href: "/web-design-amajuba-district", district: "KZN" },
 ];
 
 const Index = () => {
@@ -88,9 +99,9 @@ const Index = () => {
     <>
       <SEO
         title="Web Design Newcastle KZN | Ntombii Tech"
-        description="Ntombii Tech is a Newcastle, KZN web design company building professional websites, booking systems, e-commerce stores, web apps and local SEO-ready sites for businesses, schools, NGOs and events."
+        description="Web design Newcastle KZN. Mobile-first websites for businesses, schools, NGOs and events across Newcastle, Amajuba and KwaZulu-Natal."
         path="/"
-        keywords="web design Newcastle KZN, website design Newcastle, web designer Newcastle KZN, web design company Newcastle, local SEO Newcastle KZN, web development Newcastle, e-commerce website KZN, school website KZN, NGO website KZN, booking website Newcastle"
+        keywords="web design Newcastle KZN, website design Newcastle, web designer Newcastle KZN, website design KZN, web developer Newcastle KZN, website design for schools KZN, website design for NGOs KZN, website design for security companies KZN, local SEO Newcastle KZN"
         schemas={[
           localBusinessSchema(),
           websiteSchema(),
@@ -116,12 +127,15 @@ const Index = () => {
           </div>
 
           <Reveal>
-            <h1 className="display-mega max-w-[18ch] leading-[0.95]">
-              Web Design{" "}
-              <span className="text-accent">Newcastle</span>{" "}
-              <span className="serif font-normal">KZN</span> -<br />
-              Websites That Help Local Businesses{" "}
-              <span className="serif font-normal text-accent">Get More Calls.</span>
+            <h1 className="display-mega leading-[0.95] max-w-[20ch]">
+              <span className="block">
+                Web Design in{" "}
+                <span className="text-accent">Newcastle, KZN</span>
+              </span>
+              <span className="block mt-2 md:mt-3">
+                Websites That Help Local Businesses{" "}
+                <span className="serif font-normal text-accent">Get More Calls.</span>
+              </span>
             </h1>
           </Reveal>
 
@@ -130,7 +144,7 @@ const Index = () => {
               <p className="text-lg md:text-xl text-foreground/80 leading-snug max-w-2xl">
                 Ntombii Tech builds fast, professional websites for businesses,
                 schools, NGOs, churches, events and local brands in Newcastle,
-                Amajuba District and across KwaZulu-Natal.
+                the Amajuba District and across KwaZulu-Natal.
               </p>
             </Reveal>
             <Reveal delay={180} className="col-span-12 md:col-span-5 md:col-start-8 flex flex-wrap gap-3">
@@ -147,6 +161,15 @@ const Index = () => {
               >
                 View Our Work
               </Link>
+              <a
+                href={`https://wa.me/${SITE.whatsapp}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3.5 text-sm font-medium hover:opacity-90 transition"
+              >
+                <MessageCircle className="h-4 w-4" />
+                WhatsApp Us
+              </a>
             </Reveal>
           </div>
 
@@ -176,20 +199,43 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ═══════════════ (01) TRUST STRIP ═══════════════ */}
+      {/* ═══════════════ (01) TRUSTED ACROSS KZN ═══════════════ */}
       <section className="border-b border-foreground/15 bg-secondary">
-        <div className="container-wide py-12 md:py-16">
-          <div className="mb-8 flex items-center justify-between">
-            <span className="mono-label text-muted-foreground">
-              (01) Trusted across KZN
-            </span>
+        <div className="container-wide py-16 md:py-20">
+          <div className="mb-6 flex items-center justify-between">
+            <span className="mono-label text-muted-foreground">(01) Trusted across KZN</span>
             <span className="hidden md:block mono-label text-muted-foreground">
-              Schools · NGOs · Events · Local Business
+              Schools · NGOs · Security · Community · Events
             </span>
           </div>
           <Reveal>
-            <LogoRotator />
+            <h2 className="display text-2xl md:text-4xl max-w-3xl">
+              Trusted by local businesses, schools, NGOs and{" "}
+              <span className="serif font-normal text-accent">community brands</span> across KZN.
+            </h2>
           </Reveal>
+
+          <ul className="mt-10 md:mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-foreground/15 border border-foreground/15">
+            {trustedClients.map((c, i) => (
+              <Reveal key={c.name} delay={i * 60}>
+                <li className="bg-background h-full p-5 md:p-6 flex flex-col items-center justify-center text-center min-h-[160px]">
+                  {c.logo ? (
+                    <img
+                      src={c.logo}
+                      alt={`${c.name} logo`}
+                      loading="lazy"
+                      className="h-12 md:h-14 w-auto max-w-[140px] object-contain"
+                    />
+                  ) : (
+                    <span className="display text-base md:text-lg leading-tight">{c.name}</span>
+                  )}
+                  <p className="mt-4 text-[11px] md:text-xs text-muted-foreground leading-relaxed">
+                    {c.note}
+                  </p>
+                </li>
+              </Reveal>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -263,7 +309,9 @@ const Index = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-foreground/15 border border-foreground/15">
           {SITE.projects.map((p, i) => {
-            const isExternal = p.href.startsWith("http");
+            const liveHost = (() => {
+              try { return new URL(p.href).host.replace(/^www\./, ""); } catch { return ""; }
+            })();
             const inner = (
               <div className="group block bg-background p-5 md:p-6 h-full">
                 <div className="overflow-hidden border border-foreground/15 bg-card aspect-[4/3] flex items-center justify-center">
@@ -285,24 +333,24 @@ const Index = () => {
                   )}
                 </div>
                 <div className="mt-5 flex items-start justify-between gap-3">
-                  <div>
+                  <div className="min-w-0">
                     <p className="mono-label text-muted-foreground tabular-nums">
                       {String(i + 1).padStart(3, "0")}
                     </p>
                     <h3 className="display mt-2 text-base md:text-lg">{p.title}</h3>
                     <p className="text-xs text-muted-foreground mt-1">{p.category}</p>
+                    <p className="text-xs text-muted-foreground mt-1">Newcastle, KZN</p>
+                    {liveHost && (
+                      <p className="text-xs text-accent mt-2 truncate">{liveHost}</p>
+                    )}
                   </div>
-                  <ArrowUpRight className="h-4 w-4 mt-1 text-muted-foreground group-hover:text-accent group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition" />
+                  <ArrowUpRight className="h-4 w-4 mt-1 text-muted-foreground group-hover:text-accent group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition shrink-0" />
                 </div>
               </div>
             );
             return (
               <Reveal key={p.slug} delay={i * 50}>
-                {isExternal ? (
-                  <a href={p.href} target="_blank" rel="noreferrer">{inner}</a>
-                ) : (
-                  <Link to="/work">{inner}</Link>
-                )}
+                <Link to={`/work/${p.slug}`}>{inner}</Link>
               </Reveal>
             );
           })}
@@ -336,28 +384,25 @@ const Index = () => {
         </div>
 
         <ul className="grid grid-cols-2 md:grid-cols-4 gap-px bg-foreground/15 border border-foreground/15">
-          {featuredAreas.map((loc, i) => {
-            const to = loc.slug === "__areas" ? "/areas" : `/areas/${loc.slug}`;
-            return (
-              <li key={loc.name}>
-                <Link
-                  to={to}
-                  className="group block bg-background p-6 md:p-8 h-full hover:bg-foreground hover:text-background transition-colors"
-                >
-                  <div className="flex items-start justify-between">
-                    <span className="mono-label tabular-nums opacity-60">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <ArrowUpRight className="h-4 w-4 opacity-60 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition" />
-                  </div>
-                  <h3 className="display mt-8 md:mt-12 text-xl md:text-2xl">
-                    Web design in {loc.name}
-                  </h3>
-                  <p className="mt-2 text-xs opacity-60">{loc.district} District</p>
-                </Link>
-              </li>
-            );
-          })}
+          {featuredAreas.map((loc, i) => (
+            <li key={loc.name}>
+              <Link
+                to={loc.href}
+                className="group block bg-background p-6 md:p-8 h-full hover:bg-foreground hover:text-background transition-colors"
+              >
+                <div className="flex items-start justify-between">
+                  <span className="mono-label tabular-nums opacity-60">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <ArrowUpRight className="h-4 w-4 opacity-60 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition" />
+                </div>
+                <h3 className="display mt-8 md:mt-12 text-xl md:text-2xl">
+                  Web design in {loc.name}
+                </h3>
+                <p className="mt-2 text-xs opacity-60">{loc.district} District</p>
+              </Link>
+            </li>
+          ))}
         </ul>
 
         <div className="mt-10 flex justify-end">
@@ -365,6 +410,54 @@ const Index = () => {
             All {LOCATIONS.length} areas
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
+        </div>
+      </section>
+
+      {/* ═══════════════ (05b) LOCAL SEO ═══════════════ */}
+      <section className="container-wide py-20 md:py-28 border-t border-foreground/15 bg-secondary -mx-[max(1rem,calc((100vw-80rem)/2))] px-[max(1rem,calc((100vw-80rem)/2))]">
+        <SectionHead n="5b" label="Local SEO - get found on Google" />
+        <div className="grid grid-cols-12 gap-6 md:gap-10">
+          <Reveal className="col-span-12 md:col-span-6">
+            <h2 className="display-xl">
+              Get Found on Google -{" "}
+              <span className="serif font-normal text-accent">Local SEO</span> for Newcastle Businesses.
+            </h2>
+          </Reveal>
+          <Reveal delay={80} className="col-span-12 md:col-span-6">
+            <p className="text-foreground/80 leading-relaxed text-lg">
+              Ntombii Tech helps Newcastle and KZN businesses show up on
+              Google Search and Google Maps - so the right customers find you
+              when they search for what you do.
+            </p>
+            <p className="mt-4 text-foreground/70 leading-relaxed">
+              We handle the technical bits in plain language: website SEO,
+              Google Business Profile setup, review support, schema markup,
+              town-targeted local pages, and monthly updates to keep your
+              listing fresh.
+            </p>
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+              {[
+                "Website SEO + clean code",
+                "Google Business Profile setup",
+                "Review collection support",
+                "Schema markup (LocalBusiness)",
+                "Town-targeted local pages",
+                "Monthly SEO updates",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2.5">
+                  <Check className="h-4 w-4 mt-0.5 text-accent shrink-0" />
+                  <span className="text-foreground/80">{item}</span>
+                </div>
+              ))}
+            </div>
+            <Link
+              to="/services/local-seo"
+              className="mt-8 inline-flex items-center gap-2 mono-label hover:text-accent transition"
+            >
+              See local SEO services
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </Reveal>
         </div>
       </section>
 

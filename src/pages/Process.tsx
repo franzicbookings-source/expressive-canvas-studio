@@ -11,7 +11,7 @@ const steps = [
     t: "Discovery",
     d: "Short WhatsApp or call to understand your business, goals and customers.",
     detail:
-      "We start with a quick chat — usually on WhatsApp — to understand what you do, who your customers are and what you want the website to achieve. No long forms, no jargon.",
+      "We start with a quick chat - usually on WhatsApp - to understand what you do, who your customers are and what you want the website to achieve. No long forms, no jargon.",
     outcomes: ["Clear project scope", "Target audience defined", "Competitor review"],
   },
   {
@@ -27,7 +27,7 @@ const steps = [
     t: "Build",
     d: "Production code, fast load, local SEO and schema built in from day one.",
     detail:
-      "We write clean, modern code with React and Tailwind. Every site ships with local SEO, schema markup, fast hosting and accessibility baked in — not bolted on later.",
+      "We write clean, modern code with React and Tailwind. Every site ships with local SEO, schema markup, fast hosting and accessibility baked in - not bolted on later.",
     outcomes: ["Clean, maintainable code", "Local SEO & schema markup", "Fast hosting & SSL"],
   },
   {

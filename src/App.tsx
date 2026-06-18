@@ -48,6 +48,14 @@ const App = () => (
               <Route path="/areas" element={<Areas />} />
               <Route path="/areas/:town" element={<LocationPage />} />
               <Route path="/process" element={<Process />} />
+              {/* SEO-friendly /web-design-* aliases for key KZN towns */}
+              <Route path="/web-design-newcastle-kzn" element={<LocationPage townSlug="newcastle" canonicalPath="/web-design-newcastle-kzn" />} />
+              <Route path="/web-design-madadeni" element={<LocationPage townSlug="madadeni" canonicalPath="/web-design-madadeni" />} />
+              <Route path="/web-design-osizweni" element={<LocationPage townSlug="osizweni" canonicalPath="/web-design-osizweni" />} />
+              <Route path="/web-design-dundee-kzn" element={<LocationPage townSlug="dundee" canonicalPath="/web-design-dundee-kzn" />} />
+              <Route path="/web-design-utrecht-kzn" element={<LocationPage townSlug="utrecht" canonicalPath="/web-design-utrecht-kzn" />} />
+              <Route path="/web-design-ladysmith-kzn" element={<LocationPage townSlug="ladysmith" canonicalPath="/web-design-ladysmith-kzn" />} />
+              <Route path="/web-design-amajuba-district" element={<LocationPage townSlug="amajuba-district" canonicalPath="/web-design-amajuba-district" />} />
               <Route path="/:slug" element={<LocationServicePage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -3,6 +3,8 @@ import portfolioNyatee from "@/assets/portfolio-nyatee.webp";
 import portfolioEvents from "@/assets/portfolio-events.webp";
 import portfolioUmzilikazi from "@/assets/portfolio-umzilikazi.webp";
 import portfolioKeepNNAlive from "@/assets/portfolio-keepnnalive.webp";
+import portfolioSnesenzoAsset from "@/assets/portfolio-snesenzo.png.asset.json";
+import portfolioRnbAsset from "@/assets/portfolio-rnb.png.asset.json";
 
 export type CaseStudy = {
   slug: string;
@@ -166,6 +168,41 @@ export const CASE_STUDIES: CaseStudy[] = [
     seoDescription:
       "How Ntombii Tech built the Keep Newcastle Alive With Possibilities civic platform - a mobile-first community site with sponsor-ready content and local SEO.",
     keywords: "civic website South Africa, community initiative web design, Newcastle community website, KNAWP case study, NGO website Newcastle",
+  },
+  {
+    slug: "snesenzo",
+    client: "Snesenzo Security Group",
+    title: "Snesenzo Security Group - A security brand site that closes contracts.",
+    category: "Security · Brand & Web",
+    sector: "Security services",
+    location: "Newcastle, KZN",
+    year: "2025",
+    liveUrl: "https://www.snesenzosecuritygroup.co.za/",
+    image: portfolioSnesenzoAsset.url,
+    summary:
+      "A credible, contract-ready website for a Newcastle security company - clear company profile, service breakdown, and a WhatsApp CTA that turns site visitors into qualified enquiries.",
+    scope: ["Brand alignment", "Website design", "Web development", "WhatsApp CTA", "Local SEO setup"],
+    challenge:
+      "Snesenzo Security Group competes for contracts where credibility decides the deal. Without a proper website, prospective clients had nowhere to verify the brand, scan services, or see a professional online presence before signing.",
+    approach:
+      "We built a security-first information site: company profile, service breakdown (guarding, armed response, events), contact, and a prominent WhatsApp CTA. Mobile-first because most enquiries land from phones. Schema markup so the site shows up in 'security company Newcastle' searches.",
+    outcome:
+      "Snesenzo now has a contract-ready URL to share with property managers, schools, retailers and event organisers - and enquiries land directly on WhatsApp for fast response.",
+    results: [
+      "Mobile-first company profile",
+      "Service pages: guarding, armed response, events",
+      "WhatsApp CTA on every page",
+      "Schema markup for SecurityService + LocalBusiness",
+      "Local SEO targeting 'security company Newcastle'",
+    ],
+    related: [
+      { label: "Web Design", href: "/services/web-design" },
+      { label: "Local SEO", href: "/services/local-seo" },
+    ],
+    seoTitle: "Snesenzo Security Group Website - Case Study | Ntombii Tech",
+    seoDescription:
+      "How Ntombii Tech built the Snesenzo Security Group website - a credible, mobile-first security company site with WhatsApp enquiry CTA and local SEO for Newcastle KZN.",
+    keywords: "security company website KZN, website design for security companies KZN, Snesenzo case study, Newcastle security website, web design Newcastle KZN",
   },
 ];
 
