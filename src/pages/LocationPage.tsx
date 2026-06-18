@@ -18,13 +18,16 @@ const services = [
   { t: "Local SEO", d: "Google Business profile setup, schema markup, and town-targeted page copy." },
 ];
 
-const LocationPage = () => {
+type Props = { townSlug?: string; canonicalPath?: string };
+
+const LocationPage = ({ townSlug, canonicalPath }: Props = {}) => {
   const { town } = useParams();
-  const loc = getLocation(town);
+  const loc = getLocation(townSlug ?? town);
   if (!loc) return <Navigate to="/areas" replace />;
 
+  const path = canonicalPath ?? `/areas/${loc.slug}`;
   const title = `Web Design in ${loc.name} - Websites, Branding & Local SEO`;
-  const description = `Affordable, mobile-first websites for ${loc.name} businesses. Built by Ntombii Tech in Newcastle, serving ${loc.region}. Branding, web design and local SEO from R2,500.`;
+  const description = `Mobile-first websites for ${loc.name} businesses. Web design, branding and local SEO by Ntombii Tech in Newcastle, KZN. From R2,500.`;
   const keywords = [
     `web designer ${loc.name}`,
     `web design ${loc.name}`,
@@ -42,7 +45,7 @@ const LocationPage = () => {
       <SEO
         title={title}
         description={description}
-        path={`/areas/${loc.slug}`}
+        path={path}
         keywords={keywords}
         schemas={[
           locationBusinessSchema(loc),
