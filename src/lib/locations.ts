@@ -332,6 +332,24 @@ export const LOCATIONS: Location[] = [
       { q: "Do you accept EFT and card payments?", a: "Yes - EFT, card via Yoco/Stripe, and 50% deposit terms for projects over R5,000. Full invoice issued for SARS compliance." },
     ],
   },
+  {
+    slug: "amajuba-district",
+    name: "Amajuba District",
+    region: "Amajuba District, KZN",
+    district: "Amajuba",
+    intro:
+      "The Amajuba District covers Newcastle, Madadeni, Osizweni, Utrecht, Dannhauser and surrounding rural areas - one of KZN's most active mining, manufacturing and trade economies. Most businesses here still rely on Facebook or word of mouth while customers are already searching Google.",
+    hook: "Amajuba customers search before they call. Be the result that loads first.",
+    industries: ["Mining & coal", "Manufacturing", "Retail & wholesale", "Schools & NGOs", "Trades", "Hospitality"],
+    neighborhoods: ["Newcastle", "Madadeni", "Osizweni", "Utrecht", "Dannhauser", "Charlestown"],
+    landmarks: ["Amcor Dam", "Drakensberg foothills", "Newcastle Mall", "Balele Game Park"],
+    geo: { lat: -27.7574, lng: 29.9318 },
+    faqs: [
+      { q: "Do you build websites across the whole Amajuba District?", a: "Yes - Newcastle, Madadeni, Osizweni, Utrecht, Dannhauser and Charlestown. Every project runs on WhatsApp so distance is no obstacle." },
+      { q: "How much does a website cost for an Amajuba business?", a: "Starter sites start at R2,500. Most Amajuba SMEs launch on Business at R3,500. Larger custom builds and e-commerce begin at R7,500." },
+      { q: "Can you help us rank for our town name on Google?", a: "Yes - every Amajuba build includes Google Business Profile setup, local schema markup, and town-targeted page copy for the specific area you serve." },
+    ],
+  },
 ];
 
 export const getLocation = (slug?: string) =>
