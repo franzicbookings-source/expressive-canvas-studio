@@ -26,12 +26,12 @@ import {
 
 // Proof clients shown in the Trusted strip
 const trustedClients = [
-  { name: "Nyatee Foundation", note: "NGO website · Newcastle KZN", logo: nyateeLogo as string | null },
-  { name: "Umzilikazi Senior Secondary School", note: "School website · Newcastle KZN", logo: umzilikaziLogo as string | null },
-  { name: "Snesenzo Security Group", note: "Security company · Newcastle KZN", logo: snesenzoAsset.url },
-  { name: "KNAWP", note: "Community organisation · Newcastle KZN", logo: knawpLogo as string | null },
-  { name: "Amajuba Top Women Awards", note: "Awards platform · Newcastle KZN", logo: amajubaTopWomenAsset.url },
-  { name: "Ntombii Tech", note: "Studio · Newcastle KZN", logo: ntombiiTechAsset.url },
+  { name: "Nyatee Foundation", note: "NGO website · Sandton, Gauteng", logo: nyateeLogo as string | null, href: "https://nyateefoundation.org.za/" },
+  { name: "Umzilikazi Senior Secondary School", note: "School website · Newcastle KZN", logo: umzilikaziLogo as string | null, href: "https://umzilikazi.vercel.app/" },
+  { name: "Snesenzo Security Group", note: "Security company · Newcastle KZN", logo: snesenzoAsset.url, href: "https://www.snesenzosecuritygroup.co.za/" },
+  { name: "KNAWP", note: "Community organisation · Newcastle KZN", logo: knawpLogo as string | null, href: "https://keepnnalive.org.za/" },
+  { name: "Amajuba Top Women Awards", note: "Awards platform · Newcastle KZN", logo: amajubaTopWomenAsset.url, href: "https://amajubawomenawarda.co.za/" },
+  { name: "Ntombii Tech", note: "Studio · Newcastle KZN", logo: ntombiiTechAsset.url, href: "https://ntombii.tech/" },
 ];
 
 // Editorial section header
@@ -221,20 +221,32 @@ const Index = () => {
           <ul className="mt-10 md:mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-foreground/15 border border-foreground/15">
             {trustedClients.map((c, i) => (
               <Reveal key={c.name} delay={i * 60}>
-                <li className="bg-background h-full p-5 md:p-6 flex flex-col items-center justify-center text-center min-h-[160px]">
-                  {c.logo ? (
-                    <img
-                      src={c.logo}
-                      alt={`${c.name} logo`}
-                      loading="lazy"
-                      className="h-12 md:h-14 w-auto max-w-[140px] object-contain"
+                <li className="bg-background h-full">
+                  <a
+                    href={c.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${c.name} website (opens in new tab)`}
+                    className="group relative h-full p-5 md:p-6 flex flex-col items-center justify-center text-center min-h-[160px] hover:bg-secondary/40 transition-colors"
+                  >
+                    <ArrowUpRight
+                      className="absolute top-3 right-3 h-3.5 w-3.5 text-muted-foreground/50 group-hover:text-accent group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition"
+                      aria-hidden
                     />
-                  ) : (
-                    <span className="display text-base md:text-lg leading-tight">{c.name}</span>
-                  )}
-                  <p className="mt-4 text-[11px] md:text-xs text-muted-foreground leading-relaxed">
-                    {c.note}
-                  </p>
+                    {c.logo ? (
+                      <img
+                        src={c.logo}
+                        alt={`${c.name} logo`}
+                        loading="lazy"
+                        className="h-12 md:h-14 w-auto max-w-[140px] object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                      />
+                    ) : (
+                      <span className="display text-base md:text-lg leading-tight">{c.name}</span>
+                    )}
+                    <p className="mt-4 text-[11px] md:text-xs text-muted-foreground leading-relaxed">
+                      {c.note}
+                    </p>
+                  </a>
                 </li>
               </Reveal>
             ))}
