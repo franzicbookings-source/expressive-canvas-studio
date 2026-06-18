@@ -99,9 +99,9 @@ const Index = () => {
     <>
       <SEO
         title="Web Design Newcastle KZN | Ntombii Tech"
-        description="Ntombii Tech is a Newcastle, KZN web design company building professional websites, booking systems, e-commerce stores, web apps and local SEO-ready sites for businesses, schools, NGOs and events."
+        description="Web design Newcastle KZN. Mobile-first websites for businesses, schools, NGOs and events across Newcastle, Amajuba and KwaZulu-Natal."
         path="/"
-        keywords="web design Newcastle KZN, website design Newcastle, web designer Newcastle KZN, web design company Newcastle, local SEO Newcastle KZN, web development Newcastle, e-commerce website KZN, school website KZN, NGO website KZN, booking website Newcastle"
+        keywords="web design Newcastle KZN, website design Newcastle, web designer Newcastle KZN, website design KZN, web developer Newcastle KZN, website design for schools KZN, website design for NGOs KZN, website design for security companies KZN, local SEO Newcastle KZN"
         schemas={[
           localBusinessSchema(),
           websiteSchema(),
@@ -127,12 +127,15 @@ const Index = () => {
           </div>
 
           <Reveal>
-            <h1 className="display-mega max-w-[18ch] leading-[0.95]">
-              Web Design{" "}
-              <span className="text-accent">Newcastle</span>{" "}
-              <span className="serif font-normal">KZN</span> -<br />
-              Websites That Help Local Businesses{" "}
-              <span className="serif font-normal text-accent">Get More Calls.</span>
+            <h1 className="display-mega leading-[0.95] max-w-[20ch]">
+              <span className="block">
+                Web Design in{" "}
+                <span className="text-accent">Newcastle, KZN</span>
+              </span>
+              <span className="block mt-2 md:mt-3">
+                Websites That Help Local Businesses{" "}
+                <span className="serif font-normal text-accent">Get More Calls.</span>
+              </span>
             </h1>
           </Reveal>
 
@@ -141,7 +144,7 @@ const Index = () => {
               <p className="text-lg md:text-xl text-foreground/80 leading-snug max-w-2xl">
                 Ntombii Tech builds fast, professional websites for businesses,
                 schools, NGOs, churches, events and local brands in Newcastle,
-                Amajuba District and across KwaZulu-Natal.
+                the Amajuba District and across KwaZulu-Natal.
               </p>
             </Reveal>
             <Reveal delay={180} className="col-span-12 md:col-span-5 md:col-start-8 flex flex-wrap gap-3">
@@ -158,6 +161,15 @@ const Index = () => {
               >
                 View Our Work
               </Link>
+              <a
+                href={`https://wa.me/${SITE.whatsapp}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3.5 text-sm font-medium hover:opacity-90 transition"
+              >
+                <MessageCircle className="h-4 w-4" />
+                WhatsApp Us
+              </a>
             </Reveal>
           </div>
 
@@ -187,20 +199,43 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ═══════════════ (01) TRUST STRIP ═══════════════ */}
+      {/* ═══════════════ (01) TRUSTED ACROSS KZN ═══════════════ */}
       <section className="border-b border-foreground/15 bg-secondary">
-        <div className="container-wide py-12 md:py-16">
-          <div className="mb-8 flex items-center justify-between">
-            <span className="mono-label text-muted-foreground">
-              (01) Trusted across KZN
-            </span>
+        <div className="container-wide py-16 md:py-20">
+          <div className="mb-6 flex items-center justify-between">
+            <span className="mono-label text-muted-foreground">(01) Trusted across KZN</span>
             <span className="hidden md:block mono-label text-muted-foreground">
-              Schools · NGOs · Events · Local Business
+              Schools · NGOs · Security · Community · Events
             </span>
           </div>
           <Reveal>
-            <LogoRotator />
+            <h2 className="display text-2xl md:text-4xl max-w-3xl">
+              Trusted by local businesses, schools, NGOs and{" "}
+              <span className="serif font-normal text-accent">community brands</span> across KZN.
+            </h2>
           </Reveal>
+
+          <ul className="mt-10 md:mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-foreground/15 border border-foreground/15">
+            {trustedClients.map((c, i) => (
+              <Reveal key={c.name} delay={i * 60}>
+                <li className="bg-background h-full p-5 md:p-6 flex flex-col items-center justify-center text-center min-h-[160px]">
+                  {c.logo ? (
+                    <img
+                      src={c.logo}
+                      alt={`${c.name} logo`}
+                      loading="lazy"
+                      className="h-12 md:h-14 w-auto max-w-[140px] object-contain"
+                    />
+                  ) : (
+                    <span className="display text-base md:text-lg leading-tight">{c.name}</span>
+                  )}
+                  <p className="mt-4 text-[11px] md:text-xs text-muted-foreground leading-relaxed">
+                    {c.note}
+                  </p>
+                </li>
+              </Reveal>
+            ))}
+          </ul>
         </div>
       </section>
 
