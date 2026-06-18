@@ -3,6 +3,8 @@ import portfolioNyatee from "@/assets/portfolio-nyatee.webp";
 import portfolioEvents from "@/assets/portfolio-events.webp";
 import portfolioUmzilikazi from "@/assets/portfolio-umzilikazi.webp";
 import portfolioKeepNNAlive from "@/assets/portfolio-keepnnalive.webp";
+import portfolioSnesenzoAsset from "@/assets/portfolio-snesenzo.png.asset.json";
+import portfolioRnbAsset from "@/assets/portfolio-rnb.png.asset.json";
 
 export type CaseStudy = {
   slug: string;
