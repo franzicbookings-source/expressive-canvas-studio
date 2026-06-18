@@ -66,18 +66,12 @@ export const localBusinessSchema = () => ({
 
   taxID: "2022/529038/07",
   openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
-      closes: "18:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "09:00",
-      closes: "13:00",
-    },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "08:30", closes: "18:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "08:00", closes: "18:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "08:00", closes: "18:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "07:30", closes: "23:59" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "00:00", closes: "06:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "07:00", closes: "22:30" },
   ],
   aggregateRating: {
     "@type": "AggregateRating",
