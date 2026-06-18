@@ -382,28 +382,25 @@ const Index = () => {
         </div>
 
         <ul className="grid grid-cols-2 md:grid-cols-4 gap-px bg-foreground/15 border border-foreground/15">
-          {featuredAreas.map((loc, i) => {
-            const to = loc.slug === "__areas" ? "/areas" : `/areas/${loc.slug}`;
-            return (
-              <li key={loc.name}>
-                <Link
-                  to={to}
-                  className="group block bg-background p-6 md:p-8 h-full hover:bg-foreground hover:text-background transition-colors"
-                >
-                  <div className="flex items-start justify-between">
-                    <span className="mono-label tabular-nums opacity-60">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <ArrowUpRight className="h-4 w-4 opacity-60 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition" />
-                  </div>
-                  <h3 className="display mt-8 md:mt-12 text-xl md:text-2xl">
-                    Web design in {loc.name}
-                  </h3>
-                  <p className="mt-2 text-xs opacity-60">{loc.district} District</p>
-                </Link>
-              </li>
-            );
-          })}
+          {featuredAreas.map((loc, i) => (
+            <li key={loc.name}>
+              <Link
+                to={loc.href}
+                className="group block bg-background p-6 md:p-8 h-full hover:bg-foreground hover:text-background transition-colors"
+              >
+                <div className="flex items-start justify-between">
+                  <span className="mono-label tabular-nums opacity-60">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <ArrowUpRight className="h-4 w-4 opacity-60 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition" />
+                </div>
+                <h3 className="display mt-8 md:mt-12 text-xl md:text-2xl">
+                  Web design in {loc.name}
+                </h3>
+                <p className="mt-2 text-xs opacity-60">{loc.district} District</p>
+              </Link>
+            </li>
+          ))}
         </ul>
 
         <div className="mt-10 flex justify-end">
@@ -411,6 +408,54 @@ const Index = () => {
             All {LOCATIONS.length} areas
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
+        </div>
+      </section>
+
+      {/* ═══════════════ (05b) LOCAL SEO ═══════════════ */}
+      <section className="container-wide py-20 md:py-28 border-t border-foreground/15 bg-secondary -mx-[max(1rem,calc((100vw-80rem)/2))] px-[max(1rem,calc((100vw-80rem)/2))]">
+        <SectionHead n="5b" label="Local SEO - get found on Google" />
+        <div className="grid grid-cols-12 gap-6 md:gap-10">
+          <Reveal className="col-span-12 md:col-span-6">
+            <h2 className="display-xl">
+              Get Found on Google -{" "}
+              <span className="serif font-normal text-accent">Local SEO</span> for Newcastle Businesses.
+            </h2>
+          </Reveal>
+          <Reveal delay={80} className="col-span-12 md:col-span-6">
+            <p className="text-foreground/80 leading-relaxed text-lg">
+              Ntombii Tech helps Newcastle and KZN businesses show up on
+              Google Search and Google Maps - so the right customers find you
+              when they search for what you do.
+            </p>
+            <p className="mt-4 text-foreground/70 leading-relaxed">
+              We handle the technical bits in plain language: website SEO,
+              Google Business Profile setup, review support, schema markup,
+              town-targeted local pages, and monthly updates to keep your
+              listing fresh.
+            </p>
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+              {[
+                "Website SEO + clean code",
+                "Google Business Profile setup",
+                "Review collection support",
+                "Schema markup (LocalBusiness)",
+                "Town-targeted local pages",
+                "Monthly SEO updates",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2.5">
+                  <Check className="h-4 w-4 mt-0.5 text-accent shrink-0" />
+                  <span className="text-foreground/80">{item}</span>
+                </div>
+              ))}
+            </div>
+            <Link
+              to="/services/local-seo"
+              className="mt-8 inline-flex items-center gap-2 mono-label hover:text-accent transition"
+            >
+              See local SEO services
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </Reveal>
         </div>
       </section>
 
