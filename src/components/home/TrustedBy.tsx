@@ -15,7 +15,7 @@ const clientLogos = [
 const LogoItem = ({ c }: { c: (typeof clientLogos)[number] }) => (
   <img
     src={c.src}
-    alt={`${c.name} logo`}
+    alt={c.name}
     loading="lazy"
     className={`${c.h} w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 shrink-0`}
   />

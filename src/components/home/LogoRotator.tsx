@@ -75,7 +75,7 @@ export const LogoRotator = ({ logos = DEFAULT_LOGOS, intervalMs = 2400 }: Props)
           <img
             key={l.name}
             src={l.src}
-            alt={`${l.name} logo`}
+            alt={l.name}
             className="h-12 md:h-14 w-auto object-contain opacity-80"
             loading="lazy"
           />
@@ -104,7 +104,7 @@ export const LogoRotator = ({ logos = DEFAULT_LOGOS, intervalMs = 2400 }: Props)
             <img
               key={l.name}
               src={l.src}
-              alt={`${l.name} logo`}
+              alt={l.name}
               loading="lazy"
               style={l.scale ? { transform: `scale(${l.scale})` } : undefined}
               className="h-12 md:h-16 w-auto max-w-[140px] md:max-w-[180px] object-contain"
