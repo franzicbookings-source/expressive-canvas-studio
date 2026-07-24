@@ -121,8 +121,12 @@ const Index = () => {
         ]}
       />
 
+      <CustomCursor />
+      <ScrollProgress />
+
       {/* ═══════════════ (00) HERO ═══════════════ */}
       <section className="relative noise vignette overflow-hidden border-b border-foreground/15">
+        <AuroraMesh />
         <div
           aria-hidden
           className="absolute inset-0 -z-10"
