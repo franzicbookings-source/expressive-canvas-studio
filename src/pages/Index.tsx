@@ -4,6 +4,13 @@ import { SITE } from "@/lib/site";
 import { LOCATIONS } from "@/lib/locations";
 import { Reveal } from "@/components/site/Reveal";
 import { SEO } from "@/components/seo/SEO";
+import { CustomCursor } from "@/components/home/CustomCursor";
+import { ScrollProgress } from "@/components/home/ScrollProgress";
+import { MagneticButton } from "@/components/home/MagneticButton";
+import { TiltCard } from "@/components/home/TiltCard";
+import { KineticMarquee } from "@/components/home/KineticMarquee";
+import { AuroraMesh } from "@/components/home/AuroraMesh";
+import { SplitTextReveal } from "@/components/home/SplitTextReveal";
 import nyateeLogo from "@/assets/clients/nyatee.webp";
 import knawpLogo from "@/assets/clients/knawp.webp";
 import umzilikaziLogo from "@/assets/clients/umzilikazi.webp";
@@ -23,6 +30,7 @@ import {
   reviewSchema,
   websiteSchema,
 } from "@/lib/seo";
+
 
 // Proof clients shown in the Trusted strip
 const trustedClients = [
@@ -113,8 +121,12 @@ const Index = () => {
         ]}
       />
 
+      <CustomCursor />
+      <ScrollProgress />
+
       {/* ═══════════════ (00) HERO ═══════════════ */}
       <section className="relative noise vignette overflow-hidden border-b border-foreground/15">
+        <AuroraMesh />
         <div
           aria-hidden
           className="absolute inset-0 -z-10"
@@ -152,29 +164,36 @@ const Index = () => {
               </p>
             </Reveal>
             <Reveal delay={180} className="col-span-12 md:col-span-5 md:col-start-8 flex flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-2 bg-foreground text-background px-6 py-3.5 text-sm font-medium hover:bg-accent transition"
-              >
-                Get a Website Quote
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-              <Link
-                to="/work"
-                className="inline-flex items-center gap-2 border border-foreground/40 px-6 py-3.5 text-sm font-medium hover:border-foreground transition"
-              >
-                View Our Work
-              </Link>
-              <a
-                href={`https://wa.me/${SITE.whatsapp}`}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3.5 text-sm font-medium hover:opacity-90 transition"
-              >
-                <MessageCircle className="h-4 w-4" />
-                WhatsApp Us
-              </a>
+              <MagneticButton>
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center gap-2 bg-foreground text-background px-6 py-3.5 text-sm font-medium hover:bg-accent transition"
+                >
+                  Get a Website Quote
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </MagneticButton>
+              <MagneticButton>
+                <Link
+                  to="/work"
+                  className="inline-flex items-center gap-2 border border-foreground/40 px-6 py-3.5 text-sm font-medium hover:border-foreground transition"
+                >
+                  View Our Work
+                </Link>
+              </MagneticButton>
+              <MagneticButton>
+                <a
+                  href={`https://wa.me/${SITE.whatsapp}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3.5 text-sm font-medium hover:opacity-90 transition"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  WhatsApp Us
+                </a>
+              </MagneticButton>
             </Reveal>
+
           </div>
 
           <Reveal delay={240}>
@@ -366,9 +385,12 @@ const Index = () => {
             );
             return (
               <Reveal key={p.slug} delay={i * 50}>
-                <Link to={`/work/${p.slug}`}>{inner}</Link>
+                <TiltCard className="h-full">
+                  <Link to={`/work/${p.slug}`} className="block h-full">{inner}</Link>
+                </TiltCard>
               </Reveal>
             );
+
           })}
         </div>
 
@@ -379,6 +401,16 @@ const Index = () => {
           </Link>
         </div>
       </section>
+
+      {/* ═══════════════ Kinetic type band ═══════════════ */}
+      <section aria-hidden className="relative border-y border-foreground/15 bg-foreground text-background overflow-hidden">
+        <KineticMarquee
+          words={["Websites", "SEO", "Brand", "Newcastle", "KZN", "Speed", "Ranked"]}
+          speed={38}
+        />
+      </section>
+
+
 
       {/* ═══════════════ (05) AREAS SERVED ═══════════════ */}
       <section className="container-wide py-20 md:py-28 border-t border-foreground/15">
@@ -610,41 +642,45 @@ const Index = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-foreground/15 border border-foreground/15">
           {SITE.pricing.map((tier, i) => (
-            <Reveal
-              key={tier.name}
-              delay={i * 70}
-              className={`paper p-6 md:p-8 flex flex-col transition-transform duration-500 hover:-translate-y-1 ${tier.popular ? "ring-2 ring-accent ring-inset relative shadow-[var(--shadow-lift)]" : ""}`}
-            >
-              {tier.popular && (
-                <span className="absolute top-4 right-4 mono-label text-accent">Most picked</span>
-              )}
-              <span className="mono-label tabular-nums text-muted-foreground">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="display mt-6 text-2xl md:text-3xl">{tier.name}</h3>
-              <div className="mt-4 flex items-baseline gap-3">
-                <span className="display text-3xl md:text-4xl">From {tier.from}</span>
-                {tier.original && (
-                  <span className="mono-label text-muted-foreground line-through">{tier.original}</span>
-                )}
-              </div>
-              <ul className="mt-8 space-y-3 text-sm">
-                {tier.features.slice(0, 4).map((f) => (
-                  <li key={f} className="flex items-start gap-2.5">
-                    <Check className="h-4 w-4 mt-0.5 text-accent shrink-0" />
-                    <span className="text-foreground/80">{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                to="/contact"
-                className="mt-10 inline-flex items-center justify-center gap-2 border border-foreground/40 px-5 py-3 text-sm font-medium hover:bg-foreground hover:text-background transition"
+            <Reveal key={tier.name} delay={i * 70}>
+              <TiltCard
+                max={5}
+                className={`paper p-6 md:p-8 flex flex-col h-full ${tier.popular ? "ring-2 ring-accent ring-inset relative shadow-[var(--shadow-lift)]" : ""}`}
               >
-                Get this package
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+                {tier.popular && (
+                  <span className="absolute top-4 right-4 mono-label text-accent">Most picked</span>
+                )}
+                <span className="mono-label tabular-nums text-muted-foreground">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="display mt-6 text-2xl md:text-3xl">{tier.name}</h3>
+                <div className="mt-4 flex items-baseline gap-3">
+                  <span className="display text-3xl md:text-4xl">From {tier.from}</span>
+                  {tier.original && (
+                    <span className="mono-label text-muted-foreground line-through">{tier.original}</span>
+                  )}
+                </div>
+                <ul className="mt-8 space-y-3 text-sm">
+                  {tier.features.slice(0, 4).map((f) => (
+                    <li key={f} className="flex items-start gap-2.5">
+                      <Check className="h-4 w-4 mt-0.5 text-accent shrink-0" />
+                      <span className="text-foreground/80">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <MagneticButton className="mt-10">
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center justify-center gap-2 border border-foreground/40 px-5 py-3 text-sm font-medium hover:bg-foreground hover:text-background transition"
+                  >
+                    Get this package
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </MagneticButton>
+              </TiltCard>
             </Reveal>
           ))}
+
         </div>
 
         <div className="mt-10 flex justify-end">
@@ -660,17 +696,23 @@ const Index = () => {
         <SectionHead n="10" label="Founder - meet the Technoking" />
         <div className="grid grid-cols-12 gap-8 md:gap-14 items-center">
           <Reveal className="col-span-12 md:col-span-5">
-            <div className="relative tick-corners overflow-hidden border border-foreground/15 bg-card aspect-[4/5] shadow-[var(--shadow-lift)]">
-              <img
-                src={founderImage.url}
-                alt="Sabelo Ndlovu, Technoking and founder of Ntombii Tech"
-                className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
-                loading="lazy"
-                width={800}
-                height={1000}
-              />
-            </div>
+            <TiltCard max={6}>
+              <div className="relative tick-corners overflow-hidden sheen border border-foreground/15 bg-card aspect-[4/5] shadow-[var(--shadow-lift)]">
+                <img
+                  src={founderImage.url}
+                  alt="Sabelo Ndlovu, Technoking and founder of Ntombii Tech"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
+                  loading="lazy"
+                  width={800}
+                  height={1000}
+                />
+                <span className="absolute bottom-3 left-3 mono-label text-background bg-foreground/80 px-2 py-1">
+                  Plate 001 · Founder
+                </span>
+              </div>
+            </TiltCard>
           </Reveal>
+
           <Reveal delay={120} className="col-span-12 md:col-span-7">
             <h2 className="display-xl">
               Sabelo Ndlovu - <span className="serif font-normal text-accent">Technoking.</span>
@@ -712,22 +754,27 @@ const Index = () => {
               </p>
             </Reveal>
             <Reveal delay={140} className="col-span-12 md:col-span-5 md:col-start-8 flex flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3.5 text-sm font-medium hover:bg-background hover:text-foreground transition"
-              >
-                Get a Website Quote
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-              <a
-                href={`https://wa.me/${SITE.whatsapp}`}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 border border-background/40 text-background px-6 py-3.5 text-sm font-medium hover:border-background transition"
-              >
-                WhatsApp Us
-              </a>
+              <MagneticButton>
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3.5 text-sm font-medium hover:bg-background hover:text-foreground transition"
+                >
+                  Get a Website Quote
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </MagneticButton>
+              <MagneticButton>
+                <a
+                  href={`https://wa.me/${SITE.whatsapp}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 border border-background/40 text-background px-6 py-3.5 text-sm font-medium hover:border-background transition"
+                >
+                  WhatsApp Us
+                </a>
+              </MagneticButton>
             </Reveal>
+
           </div>
 
           <div className="mt-20 md:mt-28 pt-8 border-t border-background/20 grid grid-cols-2 md:grid-cols-4 gap-6 mono-label text-background/60">

@@ -334,4 +334,123 @@
 
   /* Tabular nums helper */
   .nums { font-variant-numeric: tabular-nums; }
+
+  /* ═══════════ Kinetic Editorial add-ons ═══════════ */
+
+  /* Aurora mesh blobs behind hero */
+  .aurora {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.55;
+    mix-blend-mode: multiply;
+    will-change: transform;
+  }
+  .aurora-1 {
+    width: 55vw; height: 55vw;
+    top: -18vw; left: -12vw;
+    background: radial-gradient(circle at 30% 30%, hsl(12 88% 55% / 0.55), transparent 60%);
+    animation: auroraDrift1 22s ease-in-out infinite alternate;
+  }
+  .aurora-2 {
+    width: 48vw; height: 48vw;
+    top: 8vw; right: -14vw;
+    background: radial-gradient(circle at 60% 40%, hsl(38 90% 60% / 0.45), transparent 60%);
+    animation: auroraDrift2 28s ease-in-out infinite alternate;
+  }
+  .aurora-3 {
+    width: 42vw; height: 42vw;
+    bottom: -18vw; left: 25%;
+    background: radial-gradient(circle at 50% 50%, hsl(24 40% 30% / 0.28), transparent 60%);
+    animation: auroraDrift3 34s ease-in-out infinite alternate;
+  }
+  @keyframes auroraDrift1 {
+    from { transform: translate3d(0,0,0) scale(1); }
+    to   { transform: translate3d(6vw, 4vw, 0) scale(1.15); }
+  }
+  @keyframes auroraDrift2 {
+    from { transform: translate3d(0,0,0) scale(1.05); }
+    to   { transform: translate3d(-8vw, 6vw, 0) scale(0.95); }
+  }
+  @keyframes auroraDrift3 {
+    from { transform: translate3d(0,0,0) scale(1); }
+    to   { transform: translate3d(4vw, -3vw, 0) scale(1.1); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .aurora { animation: none !important; }
+  }
+
+  /* Tilt card ember glow follows cursor via --gx / --gy */
+  .tilt-card {
+    transform-style: preserve-3d;
+    position: relative;
+  }
+  .tilt-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .4s ease;
+    background: radial-gradient(
+      420px circle at var(--gx, 50%) var(--gy, 50%),
+      hsl(var(--accent) / 0.14),
+      transparent 55%
+    );
+    mix-blend-mode: multiply;
+  }
+  .tilt-card:hover::after { opacity: 1; }
+
+  /* Sticky gutter numeral */
+  .gutter-numeral {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(6rem, 12vw, 14rem);
+    line-height: 0.85;
+    letter-spacing: -0.06em;
+    color: hsl(var(--foreground) / 0.05);
+    -webkit-text-stroke: 1px hsl(var(--foreground) / 0.18);
+    user-select: none;
+    pointer-events: none;
+  }
+
+  /* Ember focus ring */
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid hsl(var(--accent));
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Custom-cursor: hide native pointer where we take over */
+  @media (hover: hover) and (pointer: fine) {
+    html.has-custom-cursor,
+    html.has-custom-cursor a,
+    html.has-custom-cursor button {
+      cursor: none;
+    }
+  }
+
+  /* Subtle glossy sheen used on featured tiles */
+  .sheen {
+    position: relative;
+    overflow: hidden;
+  }
+  .sheen::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -80%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      100deg,
+      transparent 0%,
+      hsl(var(--background) / 0.35) 50%,
+      transparent 100%
+    );
+    transform: skewX(-18deg);
+    transition: left .9s cubic-bezier(.2,.7,.2,1);
+    pointer-events: none;
+  }
+  .sheen:hover::before { left: 130%; }
 }
+
