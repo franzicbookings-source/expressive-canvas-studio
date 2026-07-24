@@ -42,7 +42,7 @@ const trustedClients = [
   { name: "Ntombii Tech", note: "Studio · Newcastle KZN", logo: ntombiiTechAsset.url, href: "https://ntombii.tech/" },
 ];
 
-// Editorial section header
+// Editorial section header - Exhibition plate register
 const SectionHead = ({
   n,
   label,
@@ -52,24 +52,18 @@ const SectionHead = ({
   label: string;
   tone?: "light" | "dark";
 }) => (
-  <div
-    className={`flex items-baseline gap-4 md:gap-6 mb-10 md:mb-14 ${
-      tone === "dark" ? "text-background" : "text-foreground"
-    }`}
-  >
-    <span
-      className={`mono-label tabular-nums ${
-        tone === "dark" ? "text-background/60" : "text-muted-foreground"
-      }`}
-    >
-      ({n})
-    </span>
-    <span
-      className={`h-px flex-1 ${
-        tone === "dark" ? "bg-background/20" : "bg-foreground/15"
-      }`}
-    />
-    <span className="mono-label">{label}</span>
+  <div className={`mb-10 md:mb-14 ${tone === "dark" ? "text-background" : "text-foreground"}`}>
+    <div className="flex items-baseline gap-4 md:gap-6">
+      <span className="chapter-numeral">{n}</span>
+      <span className={`h-px flex-1 ${tone === "dark" ? "bg-background/20" : "bg-foreground/15"}`} />
+      <span
+        className={`text-[10px] uppercase tracking-[0.24em] font-medium ${
+          tone === "dark" ? "text-background/60" : "text-foreground/60"
+        }`}
+      >
+        Chapter · {label}
+      </span>
+    </div>
   </div>
 );
 
