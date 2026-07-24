@@ -1,15 +1,41 @@
-import { MessageCircle } from "lucide-react";
 import { SITE } from "@/lib/site";
+import waAsset from "@/assets/whatsapp.png.asset.json";
 
 export const WhatsAppFab = () => (
-  <a
-    href={`https://wa.me/${SITE.whatsapp}`}
-    target="_blank"
-    rel="noreferrer"
-    aria-label="Chat on WhatsApp"
-    className="fixed bottom-3 right-3 md:bottom-5 md:right-5 z-40 inline-flex items-center gap-1.5 md:gap-2 rounded-full bg-foreground text-background pl-2.5 pr-3 py-2 md:pl-3 md:pr-4 md:py-3 shadow-[var(--shadow-lift)] hover:scale-[1.03] transition"
-  >
-    <MessageCircle className="h-3.5 w-3.5 md:h-4 md:w-4" />
-    <span className="text-xs md:text-sm font-medium">WhatsApp</span>
-  </a>
+  <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40 group">
+    {/* Ping rings */}
+    <span
+      aria-hidden
+      className="pointer-events-none absolute inset-0 rounded-full bg-[#25D366] opacity-60 motion-safe:animate-[wa-ping_2.2s_cubic-bezier(0,0,0.2,1)_infinite] motion-reduce:hidden group-hover:[animation-play-state:paused]"
+    />
+    <span
+      aria-hidden
+      className="pointer-events-none absolute inset-0 rounded-full bg-[#25D366] opacity-60 motion-safe:animate-[wa-ping_2.2s_cubic-bezier(0,0,0.2,1)_infinite] motion-reduce:hidden group-hover:[animation-play-state:paused]"
+      style={{ animationDelay: "1.1s" }}
+    />
+
+    {/* Tooltip */}
+    <span
+      aria-hidden
+      className="pointer-events-none absolute right-full top-1/2 -translate-y-1/2 mr-3 whitespace-nowrap rounded-full bg-foreground text-background px-3 py-1.5 text-xs font-medium opacity-0 translate-x-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 shadow-[var(--shadow-lift)]"
+    >
+      Chat with us
+    </span>
+
+    <a
+      href={`https://wa.me/${SITE.whatsapp}`}
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Chat on WhatsApp"
+      className="relative inline-flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full bg-white shadow-[var(--shadow-lift)] ring-1 ring-black/5 transition-transform duration-300 will-change-transform hover:scale-110 motion-safe:animate-[wa-breathe_2.2s_ease-in-out_infinite,wa-wiggle_5s_ease-in-out_infinite]"
+    >
+      <img
+        src={waAsset.url}
+        alt=""
+        aria-hidden
+        className="h-9 w-9 md:h-10 md:w-10 select-none pointer-events-none"
+        draggable={false}
+      />
+    </a>
+  </div>
 );
