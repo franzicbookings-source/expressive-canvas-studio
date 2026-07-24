@@ -402,6 +402,16 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ═══════════════ Kinetic type band ═══════════════ */}
+      <section aria-hidden className="relative border-y border-foreground/15 bg-foreground text-background overflow-hidden">
+        <KineticMarquee
+          words={["Websites", "SEO", "Brand", "Newcastle", "KZN", "Speed", "Ranked"]}
+          speed={38}
+        />
+      </section>
+
+
+
       {/* ═══════════════ (05) AREAS SERVED ═══════════════ */}
       <section className="container-wide py-20 md:py-28 border-t border-foreground/15">
         <SectionHead n="05" label="Areas served - KwaZulu-Natal" />
