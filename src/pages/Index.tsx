@@ -696,17 +696,23 @@ const Index = () => {
         <SectionHead n="10" label="Founder - meet the Technoking" />
         <div className="grid grid-cols-12 gap-8 md:gap-14 items-center">
           <Reveal className="col-span-12 md:col-span-5">
-            <div className="relative tick-corners overflow-hidden border border-foreground/15 bg-card aspect-[4/5] shadow-[var(--shadow-lift)]">
-              <img
-                src={founderImage.url}
-                alt="Sabelo Ndlovu, Technoking and founder of Ntombii Tech"
-                className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
-                loading="lazy"
-                width={800}
-                height={1000}
-              />
-            </div>
+            <TiltCard max={6}>
+              <div className="relative tick-corners overflow-hidden sheen border border-foreground/15 bg-card aspect-[4/5] shadow-[var(--shadow-lift)]">
+                <img
+                  src={founderImage.url}
+                  alt="Sabelo Ndlovu, Technoking and founder of Ntombii Tech"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
+                  loading="lazy"
+                  width={800}
+                  height={1000}
+                />
+                <span className="absolute bottom-3 left-3 mono-label text-background bg-foreground/80 px-2 py-1">
+                  Plate 001 · Founder
+                </span>
+              </div>
+            </TiltCard>
           </Reveal>
+
           <Reveal delay={120} className="col-span-12 md:col-span-7">
             <h2 className="display-xl">
               Sabelo Ndlovu - <span className="serif font-normal text-accent">Technoking.</span>
