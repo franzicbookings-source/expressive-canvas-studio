@@ -642,41 +642,45 @@ const Index = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-foreground/15 border border-foreground/15">
           {SITE.pricing.map((tier, i) => (
-            <Reveal
-              key={tier.name}
-              delay={i * 70}
-              className={`paper p-6 md:p-8 flex flex-col transition-transform duration-500 hover:-translate-y-1 ${tier.popular ? "ring-2 ring-accent ring-inset relative shadow-[var(--shadow-lift)]" : ""}`}
-            >
-              {tier.popular && (
-                <span className="absolute top-4 right-4 mono-label text-accent">Most picked</span>
-              )}
-              <span className="mono-label tabular-nums text-muted-foreground">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="display mt-6 text-2xl md:text-3xl">{tier.name}</h3>
-              <div className="mt-4 flex items-baseline gap-3">
-                <span className="display text-3xl md:text-4xl">From {tier.from}</span>
-                {tier.original && (
-                  <span className="mono-label text-muted-foreground line-through">{tier.original}</span>
-                )}
-              </div>
-              <ul className="mt-8 space-y-3 text-sm">
-                {tier.features.slice(0, 4).map((f) => (
-                  <li key={f} className="flex items-start gap-2.5">
-                    <Check className="h-4 w-4 mt-0.5 text-accent shrink-0" />
-                    <span className="text-foreground/80">{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                to="/contact"
-                className="mt-10 inline-flex items-center justify-center gap-2 border border-foreground/40 px-5 py-3 text-sm font-medium hover:bg-foreground hover:text-background transition"
+            <Reveal key={tier.name} delay={i * 70}>
+              <TiltCard
+                max={5}
+                className={`paper p-6 md:p-8 flex flex-col h-full ${tier.popular ? "ring-2 ring-accent ring-inset relative shadow-[var(--shadow-lift)]" : ""}`}
               >
-                Get this package
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+                {tier.popular && (
+                  <span className="absolute top-4 right-4 mono-label text-accent">Most picked</span>
+                )}
+                <span className="mono-label tabular-nums text-muted-foreground">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="display mt-6 text-2xl md:text-3xl">{tier.name}</h3>
+                <div className="mt-4 flex items-baseline gap-3">
+                  <span className="display text-3xl md:text-4xl">From {tier.from}</span>
+                  {tier.original && (
+                    <span className="mono-label text-muted-foreground line-through">{tier.original}</span>
+                  )}
+                </div>
+                <ul className="mt-8 space-y-3 text-sm">
+                  {tier.features.slice(0, 4).map((f) => (
+                    <li key={f} className="flex items-start gap-2.5">
+                      <Check className="h-4 w-4 mt-0.5 text-accent shrink-0" />
+                      <span className="text-foreground/80">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <MagneticButton className="mt-10">
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center justify-center gap-2 border border-foreground/40 px-5 py-3 text-sm font-medium hover:bg-foreground hover:text-background transition"
+                  >
+                    Get this package
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </MagneticButton>
+              </TiltCard>
             </Reveal>
           ))}
+
         </div>
 
         <div className="mt-10 flex justify-end">
