@@ -329,7 +329,7 @@ const Index = () => {
               try { return new URL(p.href).host.replace(/^www\./, ""); } catch { return ""; }
             })();
             const inner = (
-              <div className="group block bg-background p-5 md:p-6 h-full">
+              <div className="group block paper p-5 md:p-6 h-full transition-shadow duration-500 hover:shadow-[var(--shadow-lift)]">
                 <div className="overflow-hidden border border-foreground/15 bg-card aspect-[4/3] flex items-center justify-center">
                   {p.image ? (
                     <img
