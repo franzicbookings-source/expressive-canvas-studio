@@ -152,13 +152,46 @@
     @apply border-t border-border/70;
   }
   .lift {
-    transition: transform .35s ease, box-shadow .35s ease;
+    transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s cubic-bezier(.2,.7,.2,1);
   }
   .lift:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-lift);
   }
+
+  /* Paper card - subtle warmth + inset highlight */
+  .paper {
+    background: linear-gradient(180deg, hsl(var(--card)) 0%, hsl(var(--background)) 100%);
+    box-shadow: var(--shadow-inset), var(--shadow-soft);
+  }
+
+  /* Corner tick marks - editorial page-registration ornament */
+  .tick-corners {
+    position: relative;
+  }
+  .tick-corners::before,
+  .tick-corners::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: hsl(var(--foreground) / 0.35);
+    border-style: solid;
+    border-width: 0;
+    pointer-events: none;
+  }
+  .tick-corners::before {
+    top: -1px; left: -1px;
+    border-top-width: 1px;
+    border-left-width: 1px;
+  }
+  .tick-corners::after {
+    bottom: -1px; right: -1px;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+  }
 }
+
 
 @layer utilities {
   .marquee {
