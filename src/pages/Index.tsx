@@ -660,11 +660,11 @@ const Index = () => {
         <SectionHead n="10" label="Founder - meet the Technoking" />
         <div className="grid grid-cols-12 gap-8 md:gap-14 items-center">
           <Reveal className="col-span-12 md:col-span-5">
-            <div className="relative overflow-hidden border border-foreground/15 bg-card aspect-[4/5]">
+            <div className="relative tick-corners overflow-hidden border border-foreground/15 bg-card aspect-[4/5] shadow-[var(--shadow-lift)]">
               <img
                 src={founderImage.url}
                 alt="Sabelo Ndlovu, Technoking and founder of Ntombii Tech"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
                 loading="lazy"
                 width={800}
                 height={1000}
