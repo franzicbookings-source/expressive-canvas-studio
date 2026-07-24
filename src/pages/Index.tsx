@@ -748,22 +748,27 @@ const Index = () => {
               </p>
             </Reveal>
             <Reveal delay={140} className="col-span-12 md:col-span-5 md:col-start-8 flex flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3.5 text-sm font-medium hover:bg-background hover:text-foreground transition"
-              >
-                Get a Website Quote
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-              <a
-                href={`https://wa.me/${SITE.whatsapp}`}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 border border-background/40 text-background px-6 py-3.5 text-sm font-medium hover:border-background transition"
-              >
-                WhatsApp Us
-              </a>
+              <MagneticButton>
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3.5 text-sm font-medium hover:bg-background hover:text-foreground transition"
+                >
+                  Get a Website Quote
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </MagneticButton>
+              <MagneticButton>
+                <a
+                  href={`https://wa.me/${SITE.whatsapp}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 border border-background/40 text-background px-6 py-3.5 text-sm font-medium hover:border-background transition"
+                >
+                  WhatsApp Us
+                </a>
+              </MagneticButton>
             </Reveal>
+
           </div>
 
           <div className="mt-20 md:mt-28 pt-8 border-t border-background/20 grid grid-cols-2 md:grid-cols-4 gap-6 mono-label text-background/60">
