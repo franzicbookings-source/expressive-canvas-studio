@@ -114,12 +114,13 @@ const Index = () => {
       />
 
       {/* ═══════════════ (00) HERO ═══════════════ */}
-      <section className="relative noise overflow-hidden border-b border-foreground/15">
+      <section className="relative noise vignette overflow-hidden border-b border-foreground/15">
         <div
           aria-hidden
           className="absolute inset-0 -z-10"
           style={{ background: "var(--gradient-warm), var(--gradient-hero)" }}
         />
+
         <div className="container-wide pt-10 md:pt-16 pb-12 md:pb-20">
           <div className="flex flex-wrap items-center justify-between gap-4 mb-10 md:mb-16 mono-label text-muted-foreground">
             <span className="flex items-center gap-2">
