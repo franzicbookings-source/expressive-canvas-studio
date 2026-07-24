@@ -327,6 +327,18 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Editorial interlude - pull quote */}
+      <section className="border-b border-foreground/15 bg-background">
+        <div className="container-tight py-24 md:py-36 text-center">
+          <span className="exhibition-eyebrow justify-center">Marginalia</span>
+          <blockquote className="pull-quote mt-8 max-w-4xl mx-auto">
+            "A website is a promise. We keep ours <span className="text-accent">fast, honest,</span> and shipped on time."
+          </blockquote>
+          <div className="mt-8 mx-auto w-16 rule-accent" />
+          <p className="mt-6 text-xs uppercase tracking-[0.22em] text-foreground/50">Ntombii Tech · Newcastle KZN</p>
+        </div>
+      </section>
+
       {/* ═══════════════ (04) FEATURED WORK ═══════════════ */}
       <section className="container-wide py-20 md:py-28">
         <SectionHead n="04" label="Featured work - 2024–2026" />
