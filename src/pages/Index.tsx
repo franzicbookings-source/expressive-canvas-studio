@@ -4,6 +4,13 @@ import { SITE } from "@/lib/site";
 import { LOCATIONS } from "@/lib/locations";
 import { Reveal } from "@/components/site/Reveal";
 import { SEO } from "@/components/seo/SEO";
+import { CustomCursor } from "@/components/home/CustomCursor";
+import { ScrollProgress } from "@/components/home/ScrollProgress";
+import { MagneticButton } from "@/components/home/MagneticButton";
+import { TiltCard } from "@/components/home/TiltCard";
+import { KineticMarquee } from "@/components/home/KineticMarquee";
+import { AuroraMesh } from "@/components/home/AuroraMesh";
+import { SplitTextReveal } from "@/components/home/SplitTextReveal";
 import nyateeLogo from "@/assets/clients/nyatee.webp";
 import knawpLogo from "@/assets/clients/knawp.webp";
 import umzilikaziLogo from "@/assets/clients/umzilikazi.webp";
@@ -23,6 +30,7 @@ import {
   reviewSchema,
   websiteSchema,
 } from "@/lib/seo";
+
 
 // Proof clients shown in the Trusted strip
 const trustedClients = [
