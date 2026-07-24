@@ -15,6 +15,7 @@ export const CustomCursor = () => {
     const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     if (reduce || !fine) return;
     setEnabled(true);
+    document.documentElement.classList.add("has-custom-cursor");
 
     let mx = window.innerWidth / 2;
     let my = window.innerHeight / 2;
@@ -46,6 +47,7 @@ export const CustomCursor = () => {
     return () => {
       window.removeEventListener("mousemove", onMove);
       cancelAnimationFrame(raf);
+      document.documentElement.classList.remove("has-custom-cursor");
     };
   }, []);
 
