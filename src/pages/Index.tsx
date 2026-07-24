@@ -164,29 +164,36 @@ const Index = () => {
               </p>
             </Reveal>
             <Reveal delay={180} className="col-span-12 md:col-span-5 md:col-start-8 flex flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-2 bg-foreground text-background px-6 py-3.5 text-sm font-medium hover:bg-accent transition"
-              >
-                Get a Website Quote
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-              <Link
-                to="/work"
-                className="inline-flex items-center gap-2 border border-foreground/40 px-6 py-3.5 text-sm font-medium hover:border-foreground transition"
-              >
-                View Our Work
-              </Link>
-              <a
-                href={`https://wa.me/${SITE.whatsapp}`}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3.5 text-sm font-medium hover:opacity-90 transition"
-              >
-                <MessageCircle className="h-4 w-4" />
-                WhatsApp Us
-              </a>
+              <MagneticButton>
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center gap-2 bg-foreground text-background px-6 py-3.5 text-sm font-medium hover:bg-accent transition"
+                >
+                  Get a Website Quote
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </MagneticButton>
+              <MagneticButton>
+                <Link
+                  to="/work"
+                  className="inline-flex items-center gap-2 border border-foreground/40 px-6 py-3.5 text-sm font-medium hover:border-foreground transition"
+                >
+                  View Our Work
+                </Link>
+              </MagneticButton>
+              <MagneticButton>
+                <a
+                  href={`https://wa.me/${SITE.whatsapp}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3.5 text-sm font-medium hover:opacity-90 transition"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  WhatsApp Us
+                </a>
+              </MagneticButton>
             </Reveal>
+
           </div>
 
           <Reveal delay={240}>
