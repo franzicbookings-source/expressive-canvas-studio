@@ -248,7 +248,7 @@
   }
   .max-w-prose-wide { max-width: 68ch; }
 
-  /* Subtle film grain */
+  /* Subtle film grain - two-layer for warmth */
   .noise {
     position: relative;
   }
@@ -257,10 +257,53 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.045;
+    opacity: 0.055;
     mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
+  /* Vignette wrapper - warms edges without dulling center */
+  .vignette::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: var(--gradient-vignette);
+  }
+
+  /* Refined ember underline for hover accents */
+  .ember-underline {
+    background-image: linear-gradient(hsl(var(--accent)), hsl(var(--accent)));
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    transition: background-size .5s cubic-bezier(.2,.7,.2,1);
+  }
+  .group:hover .ember-underline,
+  .ember-underline:hover {
+    background-size: 100% 1px;
+  }
+
+  /* Editorial drop cap - first letter magnified in italic serif */
+  .drop-cap::first-letter {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    float: left;
+    font-size: 3.6em;
+    line-height: 0.85;
+    padding: 0.08em 0.12em 0 0;
+    color: hsl(var(--accent));
+  }
+
+  /* Wax-seal accent dot for section labels */
+  .wax {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 999px;
+    background: hsl(var(--accent));
+    box-shadow: 0 0 0 3px hsl(var(--accent) / 0.14);
+  }
+
 
   .ticker {
     animation: ticker 60s linear infinite;
