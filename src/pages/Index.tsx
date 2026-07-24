@@ -42,7 +42,7 @@ const trustedClients = [
   { name: "Ntombii Tech", note: "Studio · Newcastle KZN", logo: ntombiiTechAsset.url, href: "https://ntombii.tech/" },
 ];
 
-// Editorial section header
+// Editorial section header - Exhibition plate register
 const SectionHead = ({
   n,
   label,
@@ -52,24 +52,18 @@ const SectionHead = ({
   label: string;
   tone?: "light" | "dark";
 }) => (
-  <div
-    className={`flex items-baseline gap-4 md:gap-6 mb-10 md:mb-14 ${
-      tone === "dark" ? "text-background" : "text-foreground"
-    }`}
-  >
-    <span
-      className={`mono-label tabular-nums ${
-        tone === "dark" ? "text-background/60" : "text-muted-foreground"
-      }`}
-    >
-      ({n})
-    </span>
-    <span
-      className={`h-px flex-1 ${
-        tone === "dark" ? "bg-background/20" : "bg-foreground/15"
-      }`}
-    />
-    <span className="mono-label">{label}</span>
+  <div className={`mb-10 md:mb-14 ${tone === "dark" ? "text-background" : "text-foreground"}`}>
+    <div className="flex items-baseline gap-4 md:gap-6">
+      <span className="chapter-numeral">{n}</span>
+      <span className={`h-px flex-1 ${tone === "dark" ? "bg-background/20" : "bg-foreground/15"}`} />
+      <span
+        className={`text-[10px] uppercase tracking-[0.24em] font-medium ${
+          tone === "dark" ? "text-background/60" : "text-foreground/60"
+        }`}
+      >
+        Chapter · {label}
+      </span>
+    </div>
   </div>
 );
 
@@ -134,12 +128,12 @@ const Index = () => {
         />
 
         <div className="container-wide pt-10 md:pt-16 pb-12 md:pb-20">
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-10 md:mb-16 mono-label text-muted-foreground">
+          <div className="mb-10 md:mb-16 meta-strip">
             <span className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-              <span>Studio open · Mon–Fri</span>
+              <span>Plate 00 · Studio open Mon–Fri</span>
             </span>
-            <span className="hidden md:inline">Est. 2024 - Newcastle, KZN</span>
+            <span className="hidden md:inline">Exhibition · Est. 2024 · Newcastle KZN</span>
           </div>
 
           <Reveal>
@@ -330,6 +324,18 @@ const Index = () => {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Editorial interlude - pull quote */}
+      <section className="border-b border-foreground/15 bg-background">
+        <div className="container-tight py-24 md:py-36 text-center">
+          <span className="exhibition-eyebrow justify-center">Marginalia</span>
+          <blockquote className="pull-quote mt-8 max-w-4xl mx-auto">
+            "A website is a promise. We keep ours <span className="text-accent">fast, honest,</span> and shipped on time."
+          </blockquote>
+          <div className="mt-8 mx-auto w-16 rule-accent" />
+          <p className="mt-6 text-xs uppercase tracking-[0.22em] text-foreground/50">Ntombii Tech · Newcastle KZN</p>
         </div>
       </section>
 
