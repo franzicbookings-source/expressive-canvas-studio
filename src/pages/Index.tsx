@@ -385,9 +385,12 @@ const Index = () => {
             );
             return (
               <Reveal key={p.slug} delay={i * 50}>
-                <Link to={`/work/${p.slug}`}>{inner}</Link>
+                <TiltCard className="h-full">
+                  <Link to={`/work/${p.slug}`} className="block h-full">{inner}</Link>
+                </TiltCard>
               </Reveal>
             );
+
           })}
         </div>
 
