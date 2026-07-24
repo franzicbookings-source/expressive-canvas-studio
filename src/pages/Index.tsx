@@ -128,12 +128,12 @@ const Index = () => {
         />
 
         <div className="container-wide pt-10 md:pt-16 pb-12 md:pb-20">
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-10 md:mb-16 mono-label text-muted-foreground">
+          <div className="mb-10 md:mb-16 meta-strip">
             <span className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-              <span>Studio open · Mon–Fri</span>
+              <span>Plate 00 · Studio open Mon–Fri</span>
             </span>
-            <span className="hidden md:inline">Est. 2024 - Newcastle, KZN</span>
+            <span className="hidden md:inline">Exhibition · Est. 2024 · Newcastle KZN</span>
           </div>
 
           <Reveal>
