@@ -10,44 +10,50 @@
 
 @layer base {
   :root {
-    /* Surfaces - paper / bone */
-    --background: 44 25% 94%;          /* #F4F2EC paper */
-    --foreground: 0 0% 7%;             /* near-black ink */
+    /* Surfaces - warm ivory paper with a whisper of vignette */
+    --background: 40 30% 95.5%;         /* #F6F3EC ivory */
+    --foreground: 24 12% 8%;            /* warm near-black ink */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 7%;
+    --card: 40 40% 98%;                 /* elevated paper */
+    --card-foreground: 24 12% 8%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 7%;
+    --popover: 40 40% 98%;
+    --popover-foreground: 24 12% 8%;
 
-    /* Brand */
-    --primary: 0 0% 7%;
-    --primary-foreground: 44 25% 94%;
+    /* Brand - ink and ember */
+    --primary: 24 12% 8%;
+    --primary-foreground: 40 30% 95.5%;
 
-    --accent: 11 100% 54%;             /* hotter editorial orange-red */
+    --accent: 12 88% 50%;               /* deeper editorial ember */
     --accent-foreground: 0 0% 100%;
-    --accent-soft: 11 100% 96%;
+    --accent-soft: 12 100% 96%;
 
-    --secondary: 44 20% 89%;
-    --secondary-foreground: 0 0% 7%;
+    --secondary: 40 22% 91%;            /* warm biscuit */
+    --secondary-foreground: 24 12% 8%;
 
-    --muted: 44 20% 89%;
-    --muted-foreground: 0 0% 35%;
+    --muted: 40 18% 90%;
+    --muted-foreground: 30 8% 34%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 86%;
-    --input: 44 15% 82%;
-    --ring: 0 0% 7%;
+    --border: 30 12% 82%;               /* warm hairline */
+    --input: 30 12% 80%;
+    --ring: 24 12% 8%;
 
     --radius: 0.25rem;
 
-    /* Effects */
-    --shadow-soft: 0 1px 2px hsl(0 0% 7% / 0.04), 0 8px 24px -8px hsl(0 0% 7% / 0.08);
-    --shadow-lift: 0 1px 2px hsl(0 0% 7% / 0.06), 0 24px 48px -16px hsl(0 0% 7% / 0.12);
-    --gradient-warm: radial-gradient(1200px 600px at 80% 0%, hsl(11 100% 54% / 0.05), transparent 60%);
-    --gradient-hero: linear-gradient(180deg, hsl(44 25% 94%) 0%, hsl(44 22% 91%) 100%);
+    /* Effects - refined editorial depth */
+    --shadow-soft: 0 1px 2px hsl(24 12% 8% / 0.04), 0 12px 32px -12px hsl(24 12% 8% / 0.10);
+    --shadow-lift: 0 1px 2px hsl(24 12% 8% / 0.06), 0 32px 64px -20px hsl(24 12% 8% / 0.16);
+    --shadow-inset: inset 0 1px 0 hsl(0 0% 100% / 0.6), inset 0 -1px 0 hsl(24 12% 8% / 0.04);
+
+    /* Backgrounds - layered warmth */
+    --gradient-warm: radial-gradient(1400px 700px at 82% -10%, hsl(12 88% 50% / 0.06), transparent 60%);
+    --gradient-hero: linear-gradient(180deg, hsl(40 34% 96.5%) 0%, hsl(40 25% 92%) 100%);
+    --gradient-vignette: radial-gradient(120% 80% at 50% 100%, transparent 55%, hsl(24 12% 8% / 0.055) 100%);
+    --gradient-parchment: linear-gradient(135deg, hsl(40 30% 95.5%) 0%, hsl(38 26% 93%) 50%, hsl(40 30% 95.5%) 100%);
+
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -146,13 +152,46 @@
     @apply border-t border-border/70;
   }
   .lift {
-    transition: transform .35s ease, box-shadow .35s ease;
+    transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s cubic-bezier(.2,.7,.2,1);
   }
   .lift:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-lift);
   }
+
+  /* Paper card - subtle warmth + inset highlight */
+  .paper {
+    background: linear-gradient(180deg, hsl(var(--card)) 0%, hsl(var(--background)) 100%);
+    box-shadow: var(--shadow-inset), var(--shadow-soft);
+  }
+
+  /* Corner tick marks - editorial page-registration ornament */
+  .tick-corners {
+    position: relative;
+  }
+  .tick-corners::before,
+  .tick-corners::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: hsl(var(--foreground) / 0.35);
+    border-style: solid;
+    border-width: 0;
+    pointer-events: none;
+  }
+  .tick-corners::before {
+    top: -1px; left: -1px;
+    border-top-width: 1px;
+    border-left-width: 1px;
+  }
+  .tick-corners::after {
+    bottom: -1px; right: -1px;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+  }
 }
+
 
 @layer utilities {
   .marquee {
@@ -209,7 +248,7 @@
   }
   .max-w-prose-wide { max-width: 68ch; }
 
-  /* Subtle film grain */
+  /* Subtle film grain - two-layer for warmth */
   .noise {
     position: relative;
   }
@@ -218,10 +257,53 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.045;
+    opacity: 0.055;
     mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
+  /* Vignette wrapper - warms edges without dulling center */
+  .vignette::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: var(--gradient-vignette);
+  }
+
+  /* Refined ember underline for hover accents */
+  .ember-underline {
+    background-image: linear-gradient(hsl(var(--accent)), hsl(var(--accent)));
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    transition: background-size .5s cubic-bezier(.2,.7,.2,1);
+  }
+  .group:hover .ember-underline,
+  .ember-underline:hover {
+    background-size: 100% 1px;
+  }
+
+  /* Editorial drop cap - first letter magnified in italic serif */
+  .drop-cap::first-letter {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    float: left;
+    font-size: 3.6em;
+    line-height: 0.85;
+    padding: 0.08em 0.12em 0 0;
+    color: hsl(var(--accent));
+  }
+
+  /* Wax-seal accent dot for section labels */
+  .wax {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 999px;
+    background: hsl(var(--accent));
+    box-shadow: 0 0 0 3px hsl(var(--accent) / 0.14);
+  }
+
 
   .ticker {
     animation: ticker 60s linear infinite;

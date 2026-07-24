@@ -114,12 +114,13 @@ const Index = () => {
       />
 
       {/* ═══════════════ (00) HERO ═══════════════ */}
-      <section className="relative noise overflow-hidden border-b border-foreground/15">
+      <section className="relative noise vignette overflow-hidden border-b border-foreground/15">
         <div
           aria-hidden
           className="absolute inset-0 -z-10"
           style={{ background: "var(--gradient-warm), var(--gradient-hero)" }}
         />
+
         <div className="container-wide pt-10 md:pt-16 pb-12 md:pb-20">
           <div className="flex flex-wrap items-center justify-between gap-4 mb-10 md:mb-16 mono-label text-muted-foreground">
             <span className="flex items-center gap-2">
@@ -328,7 +329,7 @@ const Index = () => {
               try { return new URL(p.href).host.replace(/^www\./, ""); } catch { return ""; }
             })();
             const inner = (
-              <div className="group block bg-background p-5 md:p-6 h-full">
+              <div className="group block paper p-5 md:p-6 h-full transition-shadow duration-500 hover:shadow-[var(--shadow-lift)]">
                 <div className="overflow-hidden border border-foreground/15 bg-card aspect-[4/3] flex items-center justify-center">
                   {p.image ? (
                     <img
@@ -612,7 +613,7 @@ const Index = () => {
             <Reveal
               key={tier.name}
               delay={i * 70}
-              className={`bg-background p-6 md:p-8 flex flex-col ${tier.popular ? "ring-2 ring-accent ring-inset relative" : ""}`}
+              className={`paper p-6 md:p-8 flex flex-col transition-transform duration-500 hover:-translate-y-1 ${tier.popular ? "ring-2 ring-accent ring-inset relative shadow-[var(--shadow-lift)]" : ""}`}
             >
               {tier.popular && (
                 <span className="absolute top-4 right-4 mono-label text-accent">Most picked</span>
@@ -659,11 +660,11 @@ const Index = () => {
         <SectionHead n="10" label="Founder - meet the Technoking" />
         <div className="grid grid-cols-12 gap-8 md:gap-14 items-center">
           <Reveal className="col-span-12 md:col-span-5">
-            <div className="relative overflow-hidden border border-foreground/15 bg-card aspect-[4/5]">
+            <div className="relative tick-corners overflow-hidden border border-foreground/15 bg-card aspect-[4/5] shadow-[var(--shadow-lift)]">
               <img
                 src={founderImage.url}
                 alt="Sabelo Ndlovu, Technoking and founder of Ntombii Tech"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
                 loading="lazy"
                 width={800}
                 height={1000}
