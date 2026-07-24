@@ -613,7 +613,7 @@ const Index = () => {
             <Reveal
               key={tier.name}
               delay={i * 70}
-              className={`bg-background p-6 md:p-8 flex flex-col ${tier.popular ? "ring-2 ring-accent ring-inset relative" : ""}`}
+              className={`paper p-6 md:p-8 flex flex-col transition-transform duration-500 hover:-translate-y-1 ${tier.popular ? "ring-2 ring-accent ring-inset relative shadow-[var(--shadow-lift)]" : ""}`}
             >
               {tier.popular && (
                 <span className="absolute top-4 right-4 mono-label text-accent">Most picked</span>
