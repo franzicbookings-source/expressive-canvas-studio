@@ -274,6 +274,147 @@
     line-height: 1.5;
   }
   .prose-agent pre code { background: transparent; padding: 0; }
+
+  /* Agent Guide - dark editorial surface (page-scoped) */
+  .agent-surface {
+    --ag-bg: 24 12% 7%;
+    --ag-panel: 24 10% 10%;
+    --ag-text: 40 30% 95.5%;
+    --ag-muted: 40 12% 68%;
+    --ag-border: 40 15% 96% / 0.12;
+    --ag-accent: 12 88% 58%;
+    background-color: hsl(var(--ag-bg));
+    color: hsl(var(--ag-text));
+    background-image:
+      radial-gradient(1200px 600px at 12% -10%, hsl(var(--ag-accent) / 0.10), transparent 60%),
+      radial-gradient(900px 500px at 100% 8%, hsl(200 60% 40% / 0.06), transparent 60%);
+  }
+  .agent-surface::selection,
+  .agent-surface ::selection { background: hsl(var(--ag-accent) / 0.35); color: hsl(var(--ag-text)); }
+
+  .agent-surface .ag-muted { color: hsl(var(--ag-muted)); }
+  .agent-surface .ag-hairline { border-color: hsl(var(--ag-border)); }
+  .agent-surface .ag-panel {
+    background: hsl(var(--ag-panel));
+    border: 1px solid hsl(var(--ag-border));
+  }
+  .agent-surface .ag-chip {
+    display: inline-flex; align-items: center; gap: .5rem;
+    padding: .25rem .625rem; border-radius: 999px;
+    border: 1px solid hsl(var(--ag-border));
+    background: hsl(var(--ag-text) / 0.03);
+    font-family: 'Space Grotesk', ui-monospace, monospace;
+    font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+    color: hsl(var(--ag-muted));
+  }
+  .agent-surface .ag-chip .dot {
+    width: 6px; height: 6px; border-radius: 999px; background: hsl(var(--ag-accent));
+    box-shadow: 0 0 12px hsl(var(--ag-accent) / 0.7);
+  }
+  .agent-surface .ag-btn {
+    display: inline-flex; align-items: center; gap: .5rem;
+    padding: .55rem .9rem; border-radius: 999px;
+    border: 1px solid hsl(var(--ag-border));
+    background: hsl(var(--ag-text) / 0.04);
+    color: hsl(var(--ag-text)); font-size: .8125rem; font-weight: 500;
+    transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+  }
+  .agent-surface .ag-btn:hover {
+    background: hsl(var(--ag-text) / 0.09);
+    border-color: hsl(var(--ag-text) / 0.28);
+  }
+  .agent-surface .ag-btn-accent {
+    background: hsl(var(--ag-accent));
+    border-color: hsl(var(--ag-accent));
+    color: hsl(24 12% 7%);
+  }
+  .agent-surface .ag-btn-accent:hover {
+    background: hsl(var(--ag-accent) / 0.9);
+    border-color: hsl(var(--ag-accent) / 0.9);
+  }
+
+  .agent-surface .ag-prose h2 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 700; font-size: 1.65rem; letter-spacing: -0.02em;
+    margin-top: 2.5rem; margin-bottom: .9rem; padding-bottom: .6rem;
+    border-bottom: 1px solid hsl(var(--ag-border));
+    scroll-margin-top: 110px;
+    display: flex; align-items: center; gap: .6rem;
+  }
+  .agent-surface .ag-prose h2 .ag-hash {
+    opacity: 0; transition: opacity .2s ease; color: hsl(var(--ag-accent));
+    font-weight: 400; font-size: 1.1rem;
+    background: transparent; border: 0; cursor: pointer;
+  }
+  .agent-surface .ag-prose h2:hover .ag-hash,
+  .agent-surface .ag-prose h2 .ag-hash:focus-visible { opacity: 1; }
+  .agent-surface .ag-prose p { margin-bottom: .85rem; color: hsl(var(--ag-text) / 0.86); line-height: 1.7; }
+  .agent-surface .ag-prose ul { list-style: none; padding-left: 0; margin-bottom: .85rem; }
+  .agent-surface .ag-prose ul li {
+    position: relative; padding-left: 1.25rem; margin-bottom: .4rem;
+    color: hsl(var(--ag-text) / 0.86); line-height: 1.65;
+  }
+  .agent-surface .ag-prose ul li::before {
+    content: ""; position: absolute; left: 0; top: .7em;
+    width: 6px; height: 1px; background: hsl(var(--ag-accent));
+  }
+  .agent-surface .ag-prose a {
+    color: hsl(var(--ag-text)); text-decoration: none;
+    background-image: linear-gradient(hsl(var(--ag-accent)), hsl(var(--ag-accent)));
+    background-position: 0 100%; background-repeat: no-repeat;
+    background-size: 100% 1px; transition: background-size .3s ease;
+    padding-bottom: 1px;
+  }
+  .agent-surface .ag-prose a:hover { background-size: 100% 2px; }
+  .agent-surface .ag-prose code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: .86em; background: hsl(var(--ag-text) / 0.06);
+    border: 1px solid hsl(var(--ag-border));
+    padding: .08em .38em; border-radius: 4px;
+    color: hsl(var(--ag-text));
+  }
+  .agent-surface .ag-prose pre {
+    position: relative;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: .82rem; background: hsl(24 10% 5%);
+    border: 1px solid hsl(var(--ag-border));
+    border-left: 2px solid hsl(var(--ag-accent));
+    padding: 1rem 1rem 1rem 1.1rem; overflow-x: auto;
+    margin: .5rem 0 1rem; line-height: 1.6; border-radius: 4px;
+    color: hsl(var(--ag-text) / 0.9);
+  }
+  .agent-surface .ag-prose pre code { background: transparent; border: 0; padding: 0; color: inherit; }
+
+  .agent-surface .ag-notice {
+    position: relative; border: 1px solid hsl(var(--ag-accent) / 0.35);
+    background: linear-gradient(180deg, hsl(var(--ag-accent) / 0.08), hsl(var(--ag-accent) / 0.02));
+    padding: 1.1rem 1.25rem; border-radius: 6px;
+  }
+  .agent-surface .ag-notice .ag-notice-label {
+    display: inline-block; font-family: 'Space Grotesk', monospace;
+    font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase;
+    color: hsl(var(--ag-accent)); margin-bottom: .5rem;
+  }
+
+  .agent-surface .ag-toc-link {
+    display: block; padding: .35rem .5rem .35rem .75rem;
+    font-size: .8125rem; color: hsl(var(--ag-muted));
+    border-left: 1px solid hsl(var(--ag-border));
+    transition: color .15s ease, border-color .15s ease, background .15s ease;
+    line-height: 1.35;
+  }
+  .agent-surface .ag-toc-link:hover { color: hsl(var(--ag-text)); }
+  .agent-surface .ag-toc-link[data-active="true"] {
+    color: hsl(var(--ag-text));
+    border-left-color: hsl(var(--ag-accent));
+    background: hsl(var(--ag-text) / 0.03);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .agent-surface *, .agent-surface *::before, .agent-surface *::after {
+      transition: none !important; animation: none !important;
+    }
+  }
 }
 
 
