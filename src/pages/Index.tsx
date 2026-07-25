@@ -129,10 +129,6 @@ const Index = () => {
 
         <div className="container-wide pt-10 md:pt-16 pb-12 md:pb-20">
           <div className="mb-10 md:mb-16 meta-strip">
-            <span className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-              <span>Plate 00 · Studio open Mon–Fri</span>
-            </span>
             <span className="hidden md:inline">Exhibition · Est. 2024 · Newcastle KZN</span>
           </div>
 
