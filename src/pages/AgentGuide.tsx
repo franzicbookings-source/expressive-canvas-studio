@@ -47,6 +47,18 @@ const AgentGuide = () => {
           </div>
         </header>
 
+        <section className="mb-12">
+          <div className="mb-3 flex items-center justify-between gap-3">
+            <p className="mono-label text-muted-foreground">The Markdown file</p>
+            <p className="text-xs text-muted-foreground">Scroll to read</p>
+          </div>
+          <pre
+            className="max-h-[70vh] overflow-auto whitespace-pre-wrap break-words border border-border bg-card p-4 md:p-6 text-[13px] md:text-sm leading-relaxed font-mono text-foreground"
+          >
+{AGENT_GUIDE_MARKDOWN}
+          </pre>
+        </section>
+
         <div className="prose-agent space-y-10 leading-relaxed">
           <section>
             <h2>Hello, Agent</h2>
