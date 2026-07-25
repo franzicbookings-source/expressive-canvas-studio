@@ -65,6 +65,8 @@ const STATIC_ROUTES = [
   { url: "/blog", priority: "0.8", change: "weekly" },
   { url: "/contact", priority: "0.8", change: "monthly" },
   { url: "/areas", priority: "0.9", change: "monthly" },
+  { url: "/agents", priority: "0.3", change: "monthly" },
+  { url: "/llms", priority: "0.3", change: "monthly" },
 ];
 
 const today = new Date().toISOString().split("T")[0];

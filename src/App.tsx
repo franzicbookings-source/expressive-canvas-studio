@@ -22,6 +22,7 @@ const LocationPage = lazy(() => import("./pages/LocationPage.tsx"));
 const LocationServicePage = lazy(() => import("./pages/LocationServicePage.tsx"));
 const Process = lazy(() => import("./pages/Process.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
+const AgentGuide = lazy(() => import("./pages/AgentGuide.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,8 @@ const App = () => (
               <Route path="/web-design-utrecht-kzn" element={<LocationPage townSlug="utrecht" canonicalPath="/web-design-utrecht-kzn" />} />
               <Route path="/web-design-ladysmith-kzn" element={<LocationPage townSlug="ladysmith" canonicalPath="/web-design-ladysmith-kzn" />} />
               <Route path="/web-design-amajuba-district" element={<LocationPage townSlug="amajuba-district" canonicalPath="/web-design-amajuba-district" />} />
+              <Route path="/agents" element={<AgentGuide />} />
+              <Route path="/llms" element={<AgentGuide />} />
               <Route path="/:slug" element={<LocationServicePage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
