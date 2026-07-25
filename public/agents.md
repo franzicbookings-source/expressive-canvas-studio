@@ -1,11 +1,6 @@
-// Single source of truth for the Agent Guide page and its Markdown download.
-// Keep in sync with site copy. No em-dashes.
+# Ntombii Tech - Agent Guide
 
-export const AGENT_GUIDE_UPDATED = "2026-07-25";
-
-export const AGENT_GUIDE_MARKDOWN = `# Ntombii Tech - Agent Guide
-
-_Last updated: ${AGENT_GUIDE_UPDATED}_
+_Last updated: 2026-07-25_
 
 Structured documentation for AI assistants, coding agents, and web design tools working with the Ntombii Tech website, brand, and design system.
 
@@ -197,5 +192,4 @@ For inquiries, use the contact channels below.
 
 ## 17. Last Updated
 
-${AGENT_GUIDE_UPDATED}
-`;
+2026-07-25
