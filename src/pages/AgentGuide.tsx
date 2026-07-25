@@ -381,7 +381,7 @@ const AgentGuide = () => {
     <>
       <SEO
         title="Agent Guide - Ntombii Tech"
-        description="A page for humans and AI agents. Structured reference for the Ntombii Tech website, brand, design system, and technology."
+        description="A structured reference for AI agents. Documentation for the Ntombii Tech website, brand, design system, and technology."
         path="/agents"
       />
 
