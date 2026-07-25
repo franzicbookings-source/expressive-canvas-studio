@@ -708,9 +708,6 @@ const Index = () => {
                   width={800}
                   height={1000}
                 />
-                <span className="absolute bottom-3 left-3 mono-label text-background bg-foreground/80 px-2 py-1">
-                  Plate 001 · Founder
-                </span>
               </div>
             </TiltCard>
           </Reveal>
