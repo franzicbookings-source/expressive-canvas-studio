@@ -464,7 +464,7 @@ const AgentGuide = () => {
 
           {/* Desktop TOC */}
           <aside className="hidden lg:block">
-            <div className="sticky top-32">
+            <div className="sticky top-40">
               <p className="mono-label ag-muted mb-3 text-[10.5px] tracking-[0.24em]">On this page</p>
               <nav className="flex flex-col">
                 {SECTIONS.map((s) => (
