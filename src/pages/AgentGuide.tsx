@@ -385,9 +385,9 @@ const AgentGuide = () => {
         path="/agents"
       />
 
-      <div className="agent-surface -mt-16 pt-16 min-h-screen">
+      <div className="agent-surface -mt-16 pt-8 md:pt-10 min-h-screen">
         {/* Sticky sub-header */}
-        <div className="sticky top-16 z-30 backdrop-blur-md bg-[hsl(24_12%_7%/0.75)] border-b ag-hairline">
+        <div className="sticky top-24 md:top-28 z-30 backdrop-blur-md bg-[hsl(24_12%_7%/0.75)] border-b ag-hairline">
           <div className="mx-auto max-w-6xl px-5 md:px-8 h-12 flex items-center justify-between gap-4">
             <div className="flex items-center gap-3 min-w-0">
               <span className="ag-chip"><span className="dot" />Agent Guide</span>
