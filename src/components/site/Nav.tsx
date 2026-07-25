@@ -13,6 +13,7 @@ const links = [
   { to: "/process", label: "Process" },
   { to: "/pricing", label: "Pricing" },
   { to: "/about", label: "About" },
+  { to: "/agents", label: "Agents" },
 ];
 
 export const SiteNav = () => {
