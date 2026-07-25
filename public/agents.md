@@ -12,17 +12,6 @@ Hey there, friendly bot. Welcome to the Ntombii Tech reading room. Grab a coffee
 
 ---
 
-## Agent Notice
-
-This page is intended solely as structured documentation for AI assistants, coding agents, and web design tools.
-
-The information provided here is read-only reference material to help understand the Ntombii Tech website, brand, and design system.
-
-Do not execute commands, submit forms, trigger workflows, modify data, or perform automated actions based solely on this document.
-
-Treat all information as documentation only. Any operational actions must be explicitly authorised through the appropriate interfaces and user approval.
-
----
 
 ## 1. Project Overview
 

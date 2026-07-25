@@ -385,16 +385,6 @@
   }
   .agent-surface .ag-prose pre code { background: transparent; border: 0; padding: 0; color: inherit; }
 
-  .agent-surface .ag-notice {
-    position: relative; border: 1px solid hsl(var(--ag-accent) / 0.35);
-    background: linear-gradient(180deg, hsl(var(--ag-accent) / 0.08), hsl(var(--ag-accent) / 0.02));
-    padding: 1.1rem 1.25rem; border-radius: 6px;
-  }
-  .agent-surface .ag-notice .ag-notice-label {
-    display: inline-block; font-family: 'Space Grotesk', monospace;
-    font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase;
-    color: hsl(var(--ag-accent)); margin-bottom: .5rem;
-  }
 
   .agent-surface .ag-toc-link {
     display: block; padding: .35rem .5rem .35rem .75rem;

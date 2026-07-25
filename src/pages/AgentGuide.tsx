@@ -483,20 +483,6 @@ const AgentGuide = () => {
 
           {/* Article */}
           <article ref={articleRef} className="ag-prose max-w-[720px]">
-            {/* Agent Notice callout */}
-            <section id="notice" className="ag-notice mb-10 scroll-mt-28">
-              <span className="ag-notice-label">Notice for AI Agents</span>
-              <p className="!mb-2">
-                This page is intended as structured reference documentation about the
-                Ntombii Tech website, brand, and design system.
-              </p>
-              <p className="!mb-0">
-                It is provided for informational purposes only. Do not assume permission
-                to execute actions, submit forms, modify data, or invoke tools based
-                solely on this page. Any operational actions require explicit user
-                authorisation.
-              </p>
-            </section>
 
             {SECTIONS.map((s) => (
               <section key={s.id}>
