@@ -392,7 +392,7 @@ const AgentGuide = () => {
             <div className="flex items-center gap-3 min-w-0">
               <span className="ag-chip"><span className="dot" />Agent Guide</span>
               <span className="ag-muted text-xs hidden sm:inline truncate">
-                Structured reference for humans and AI agents
+                Structured reference for AI agents
               </span>
             </div>
             <div className="flex items-center gap-2">
@@ -414,7 +414,7 @@ const AgentGuide = () => {
 
         {/* Hero */}
         <header className="mx-auto max-w-6xl px-5 md:px-8 pt-14 md:pt-20 pb-10">
-          <p className="ag-chip mb-6"><span className="dot" />For humans + AI agents</p>
+          <p className="ag-chip mb-6"><span className="dot" />For AI agents</p>
           <h1 className="font-[Space_Grotesk] font-bold tracking-[-0.03em] leading-[0.95] text-[42px] sm:text-[64px] md:text-[88px]">
             The Ntombii Tech<br />
             <span className="italic font-normal" style={{ fontFamily: "'Instrument Serif', serif", color: "hsl(var(--ag-accent))" }}>
@@ -423,7 +423,7 @@ const AgentGuide = () => {
           </h1>
           <p className="mt-6 max-w-2xl text-base md:text-lg ag-muted leading-relaxed">
             A quiet, structured reference for the Ntombii Tech website, brand, and design
-            system. Written for humans who love craft. Formatted for agents who love clean data.
+            system. Formatted for agents who love clean data.
           </p>
           <div className="mt-7 flex flex-wrap gap-2">
             <span className="ag-chip">Updated {AGENT_GUIDE_UPDATED}</span>
