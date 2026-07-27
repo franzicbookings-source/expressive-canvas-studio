@@ -11,6 +11,7 @@ import { TiltCard } from "@/components/home/TiltCard";
 import { KineticMarquee } from "@/components/home/KineticMarquee";
 import { AuroraMesh } from "@/components/home/AuroraMesh";
 import { SplitTextReveal } from "@/components/home/SplitTextReveal";
+import { SculpturalHero } from "@/components/home/SculpturalHero";
 import nyateeLogo from "@/assets/clients/nyatee.webp";
 import knawpLogo from "@/assets/clients/knawp.webp";
 import umzilikaziLogo from "@/assets/clients/umzilikazi.webp";
@@ -127,26 +128,40 @@ const Index = () => {
           style={{ background: "var(--gradient-warm), var(--gradient-hero)" }}
         />
 
-        <div className="container-wide pt-10 md:pt-16 pb-12 md:pb-20">
-          <div className="mb-10 md:mb-16 meta-strip">
-            <span className="hidden md:inline">Exhibition · Est. 2024 · Newcastle KZN</span>
+        <div className="container-wide pt-8 md:pt-14 pb-12 md:pb-20">
+          <div className="mb-8 md:mb-12 meta-strip">
+            <span className="hidden md:inline">Studio · Est. 2024 · Newcastle KZN</span>
+            <span className="inline-flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-counter animate-pulse" />
+              Open for new work
+            </span>
           </div>
 
-          <Reveal>
-            <h1 className="display-mega leading-[0.95] max-w-[20ch]">
-              <span className="block">
-                Web Design in{" "}
-                <span className="text-accent">Newcastle, KZN</span>
-              </span>
-              <span className="block mt-2 md:mt-3">
-                Websites That Help Local Businesses{" "}
-                <span className="serif font-normal text-accent">Get More Calls.</span>
-              </span>
-            </h1>
-          </Reveal>
+          <div className="grid grid-cols-12 gap-6 md:gap-10 items-center">
+            {/* Headline column */}
+            <div className="col-span-12 lg:col-span-8 order-2 lg:order-1">
+              <Reveal>
+                <h1 className="display-mega leading-[0.9] max-w-[16ch]">
+                  <span className="block">
+                    Web Design in{" "}
+                    <span className="text-accent">Newcastle, KZN</span>
+                  </span>
+                  <span className="block mt-2 md:mt-3">
+                    Websites That Help Local Businesses{" "}
+                    <span className="serif font-normal text-counter">Get More Calls.</span>
+                  </span>
+                </h1>
+              </Reveal>
+            </div>
+
+            {/* Sculptural centerpiece — mobile: top, desktop: right */}
+            <Reveal delay={100} className="col-span-12 lg:col-span-4 order-1 lg:order-2">
+              <SculpturalHero />
+            </Reveal>
+          </div>
 
           <div className="mt-10 md:mt-14 grid grid-cols-12 gap-6 md:gap-10 items-end">
-            <Reveal delay={120} className="col-span-12 md:col-span-7 lg:col-span-7">
+            <Reveal delay={120} className="col-span-12 md:col-span-7">
               <p className="text-lg md:text-xl text-foreground/80 leading-snug max-w-2xl">
                 Ntombii Tech builds fast, professional websites for businesses,
                 schools, NGOs, churches, events and local brands in Newcastle,
@@ -176,7 +191,7 @@ const Index = () => {
                   href={`https://wa.me/${SITE.whatsapp}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3.5 text-sm font-medium hover:opacity-90 transition"
+                  className="inline-flex items-center gap-2 bg-counter text-counter-foreground px-6 py-3.5 text-sm font-medium hover:opacity-90 transition"
                 >
                   <MessageCircle className="h-4 w-4" />
                   WhatsApp Us
@@ -647,10 +662,10 @@ const Index = () => {
             <Reveal key={tier.name} delay={i * 70}>
               <TiltCard
                 max={5}
-                className={`paper p-6 md:p-8 flex flex-col h-full ${tier.popular ? "ring-2 ring-accent ring-inset relative shadow-[var(--shadow-lift)]" : ""}`}
+                className={`paper p-6 md:p-8 flex flex-col h-full relative ${tier.popular ? "ring-2 ring-counter ring-inset shadow-[var(--shadow-lift)]" : ""}`}
               >
                 {tier.popular && (
-                  <span className="absolute top-4 right-4 mono-label text-accent">Most picked</span>
+                  <span className="absolute -top-3 left-4 bg-counter text-counter-foreground px-2.5 py-1 mono-label">Most picked</span>
                 )}
                 <span className="mono-label tabular-nums text-muted-foreground">
                   {String(i + 1).padStart(2, "0")}

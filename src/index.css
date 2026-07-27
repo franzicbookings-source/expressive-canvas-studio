@@ -10,49 +10,54 @@
 
 @layer base {
   :root {
-    /* Surfaces - warm ivory paper with a whisper of vignette */
-    --background: 40 30% 95.5%;         /* #F6F3EC ivory */
-    --foreground: 24 12% 8%;            /* warm near-black ink */
+    /* Surfaces - bone paper with editorial depth */
+    --background: 42 22% 90%;           /* #EDE8DE bone */
+    --foreground: 0 0% 4%;              /* #0A0A0A ink */
 
-    --card: 40 40% 98%;                 /* elevated paper */
-    --card-foreground: 24 12% 8%;
+    --card: 44 27% 94%;                 /* #F1EDE3 chalk */
+    --card-foreground: 0 0% 4%;
 
-    --popover: 40 40% 98%;
-    --popover-foreground: 24 12% 8%;
+    --popover: 44 27% 94%;
+    --popover-foreground: 0 0% 4%;
 
-    /* Brand - ink and ember */
-    --primary: 24 12% 8%;
-    --primary-foreground: 40 30% 95.5%;
+    /* Brand - ink primary + electric blue accent + orange counter-punch */
+    --primary: 0 0% 4%;
+    --primary-foreground: 42 22% 90%;
 
-    --accent: 12 88% 50%;               /* deeper editorial ember */
+    --accent: 233 100% 62%;             /* #3B4BFF electric blue */
     --accent-foreground: 0 0% 100%;
-    --accent-soft: 12 100% 96%;
+    --accent-soft: 233 100% 96%;
 
-    --secondary: 40 22% 91%;            /* warm biscuit */
-    --secondary-foreground: 24 12% 8%;
+    --counter: 24 100% 50%;             /* #FF6A00 orange counter-punch */
+    --counter-foreground: 0 0% 4%;
 
-    --muted: 40 18% 90%;
-    --muted-foreground: 30 8% 34%;
+    --secondary: 42 18% 86%;            /* warm secondary surface */
+    --secondary-foreground: 0 0% 4%;
+
+    --muted: 42 14% 84%;
+    --muted-foreground: 30 4% 34%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 12% 82%;               /* warm hairline */
-    --input: 30 12% 80%;
-    --ring: 24 12% 8%;
+    --border: 30 8% 78%;                /* hairline */
+    --input: 30 8% 76%;
+    --ring: 233 100% 62%;
 
-    --radius: 0.25rem;
+    --radius: 0.125rem;
 
-    /* Effects - refined editorial depth */
-    --shadow-soft: 0 1px 2px hsl(24 12% 8% / 0.04), 0 12px 32px -12px hsl(24 12% 8% / 0.10);
-    --shadow-lift: 0 1px 2px hsl(24 12% 8% / 0.06), 0 32px 64px -20px hsl(24 12% 8% / 0.16);
-    --shadow-inset: inset 0 1px 0 hsl(0 0% 100% / 0.6), inset 0 -1px 0 hsl(24 12% 8% / 0.04);
+    /* Effects - poster-editorial depth */
+    --shadow-soft: 0 1px 2px hsl(0 0% 4% / 0.05), 0 14px 34px -14px hsl(0 0% 4% / 0.12);
+    --shadow-lift: 0 1px 2px hsl(0 0% 4% / 0.08), 0 34px 68px -22px hsl(0 0% 4% / 0.22);
+    --shadow-inset: inset 0 1px 0 hsl(0 0% 100% / 0.65), inset 0 -1px 0 hsl(0 0% 4% / 0.04);
+    --shadow-poster: 10px 10px 0 hsl(233 100% 62%);
+    --shadow-poster-counter: 10px 10px 0 hsl(24 100% 50%);
 
-    /* Backgrounds - layered warmth */
-    --gradient-warm: radial-gradient(1400px 700px at 82% -10%, hsl(12 88% 50% / 0.06), transparent 60%);
-    --gradient-hero: linear-gradient(180deg, hsl(40 34% 96.5%) 0%, hsl(40 25% 92%) 100%);
-    --gradient-vignette: radial-gradient(120% 80% at 50% 100%, transparent 55%, hsl(24 12% 8% / 0.055) 100%);
-    --gradient-parchment: linear-gradient(135deg, hsl(40 30% 95.5%) 0%, hsl(38 26% 93%) 50%, hsl(40 30% 95.5%) 100%);
+    /* Backgrounds - electric layers */
+    --gradient-warm: radial-gradient(1400px 700px at 82% -10%, hsl(233 100% 62% / 0.10), transparent 60%);
+    --gradient-hero: linear-gradient(180deg, hsl(42 24% 92%) 0%, hsl(42 18% 87%) 100%);
+    --gradient-vignette: radial-gradient(120% 80% at 50% 100%, transparent 55%, hsl(0 0% 4% / 0.06) 100%);
+    --gradient-parchment: linear-gradient(135deg, hsl(42 22% 90%) 0%, hsl(42 18% 87%) 50%, hsl(42 22% 90%) 100%);
 
 
     --sidebar-background: 0 0% 98%;
@@ -127,10 +132,11 @@
     @apply mx-auto w-full max-w-7xl px-6 sm:px-8;
   }
   .display {
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.04em;
+    font-family: 'Archivo Black', 'Inter Tight', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.03em;
     line-height: 0.94;
+    text-transform: none;
   }
   .serif {
     font-family: 'Instrument Serif', serif;
@@ -139,8 +145,8 @@
     letter-spacing: -0.01em;
   }
   .mono-label {
-    font-family: 'Space Grotesk', monospace;
-    font-weight: 500;
+    font-family: 'Space Grotesk', ui-monospace, monospace;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.22em;
     font-size: 11px;
@@ -438,30 +444,60 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Editorial display sizes */
+  /* Poster display sizes - Archivo Black energy, tuned to keep long headlines contained */
   .display-mega {
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.05em;
-    line-height: 0.88;
-    font-size: clamp(2.75rem, 11vw, 10rem);
+    font-family: 'Archivo Black', 'Inter Tight', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.035em;
+    line-height: 0.92;
+    font-size: clamp(2rem, 6.4vw, 5.75rem);
     overflow-wrap: break-word;
+    word-break: normal;
+    text-wrap: balance;
+    hyphens: none;
+    text-transform: none;
   }
   .display-xl {
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 0.94;
-    font-size: clamp(2.25rem, 6.5vw, 5.75rem);
+    font-family: 'Archivo Black', 'Inter Tight', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 0.98;
+    font-size: clamp(1.85rem, 4.6vw, 4rem);
+    text-wrap: balance;
   }
   .display-lg {
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    line-height: 1.02;
-    font-size: clamp(1.75rem, 3.8vw, 3.25rem);
+    font-family: 'Archivo Black', 'Inter Tight', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    font-size: clamp(1.5rem, 3.2vw, 2.75rem);
   }
   .max-w-prose-wide { max-width: 68ch; }
+
+  /* Poster block - offset color panel behind an element (Base44 energy) */
+  .poster-block {
+    position: relative;
+    isolation: isolate;
+  }
+  .poster-block::before {
+    content: "";
+    position: absolute;
+    inset: 12px -12px -12px 12px;
+    background: hsl(var(--accent));
+    z-index: -1;
+    transition: transform .5s cubic-bezier(.2,.7,.2,1);
+  }
+  .poster-block:hover::before {
+    transform: translate(4px, 4px);
+  }
+  .poster-block-counter::before {
+    background: hsl(var(--counter));
+  }
+
+  /* Counter accent utility - orange */
+  .text-counter { color: hsl(var(--counter)); }
+  .bg-counter { background: hsl(var(--counter)); color: hsl(var(--counter-foreground)); }
+  .ring-counter { box-shadow: 0 0 0 2px hsl(var(--counter)) inset; }
 
   /* Subtle film grain - two-layer for warmth */
   .noise {
@@ -564,19 +600,19 @@
   .aurora-1 {
     width: 55vw; height: 55vw;
     top: -18vw; left: -12vw;
-    background: radial-gradient(circle at 30% 30%, hsl(12 88% 55% / 0.55), transparent 60%);
+    background: radial-gradient(circle at 30% 30%, hsl(233 100% 62% / 0.42), transparent 60%);
     animation: auroraDrift1 22s ease-in-out infinite alternate;
   }
   .aurora-2 {
     width: 48vw; height: 48vw;
     top: 8vw; right: -14vw;
-    background: radial-gradient(circle at 60% 40%, hsl(38 90% 60% / 0.45), transparent 60%);
+    background: radial-gradient(circle at 60% 40%, hsl(24 100% 55% / 0.38), transparent 60%);
     animation: auroraDrift2 28s ease-in-out infinite alternate;
   }
   .aurora-3 {
     width: 42vw; height: 42vw;
     bottom: -18vw; left: 25%;
-    background: radial-gradient(circle at 50% 50%, hsl(24 40% 30% / 0.28), transparent 60%);
+    background: radial-gradient(circle at 50% 50%, hsl(233 100% 62% / 0.22), transparent 60%);
     animation: auroraDrift3 34s ease-in-out infinite alternate;
   }
   @keyframes auroraDrift1 {
