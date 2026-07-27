@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, ArrowRight, Check, MapPin, MessageCircle } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Check, MessageCircle, Plus } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { LOCATIONS } from "@/lib/locations";
 import { Reveal } from "@/components/site/Reveal";
@@ -7,11 +7,6 @@ import { SEO } from "@/components/seo/SEO";
 import { CustomCursor } from "@/components/home/CustomCursor";
 import { ScrollProgress } from "@/components/home/ScrollProgress";
 import { MagneticButton } from "@/components/home/MagneticButton";
-import { TiltCard } from "@/components/home/TiltCard";
-import { KineticMarquee } from "@/components/home/KineticMarquee";
-import { AuroraMesh } from "@/components/home/AuroraMesh";
-import { SplitTextReveal } from "@/components/home/SplitTextReveal";
-import { SculpturalHero } from "@/components/home/SculpturalHero";
 import nyateeLogo from "@/assets/clients/nyatee.webp";
 import knawpLogo from "@/assets/clients/knawp.webp";
 import umzilikaziLogo from "@/assets/clients/umzilikazi.webp";
@@ -20,84 +15,49 @@ import amajubaTopWomenAsset from "@/assets/clients/amajuba-top-women.png.asset.j
 import ntombiiTechAsset from "@/assets/clients/ntombii-tech.png.asset.json";
 import founderImage from "@/assets/sabelo-ndlovu-founder.webp.asset.json";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
   faqSchema,
   localBusinessSchema,
   reviewSchema,
   websiteSchema,
 } from "@/lib/seo";
 
-
 // Proof clients shown in the Trusted strip
 const trustedClients = [
-  { name: "Nyatee Foundation", note: "NGO website · Sandton, Gauteng", logo: nyateeLogo as string | null, href: "https://nyateefoundation.org.za/" },
-  { name: "Umzilikazi Senior Secondary School", note: "School website · Newcastle KZN", logo: umzilikaziLogo as string | null, href: "https://umzilikazi.vercel.app/" },
-  { name: "Snesenzo Security Group", note: "Security company · Newcastle KZN", logo: snesenzoAsset.url, href: "https://www.snesenzosecuritygroup.co.za/" },
-  { name: "KNAWP", note: "Community organisation · Newcastle KZN", logo: knawpLogo as string | null, href: "https://keepnnalive.org.za/" },
-  { name: "Amajuba Top Women Awards", note: "Awards platform · Newcastle KZN", logo: amajubaTopWomenAsset.url, href: "https://amajubawomenawarda.co.za/" },
-  { name: "Ntombii Tech", note: "Studio · Newcastle KZN", logo: ntombiiTechAsset.url, href: "https://ntombii.tech/" },
+  { name: "Nyatee Foundation", logo: nyateeLogo as string | null, href: "https://nyateefoundation.org.za/" },
+  { name: "Umzilikazi SSS", logo: umzilikaziLogo as string | null, href: "https://umzilikazi.vercel.app/" },
+  { name: "Snesenzo Security", logo: snesenzoAsset.url, href: "https://www.snesenzosecuritygroup.co.za/" },
+  { name: "KNAWP", logo: knawpLogo as string | null, href: "https://keepnnalive.org.za/" },
+  { name: "Amajuba Top Women", logo: amajubaTopWomenAsset.url, href: "https://amajubawomenawarda.co.za/" },
+  { name: "Ntombii Tech", logo: ntombiiTechAsset.url, href: "https://ntombii.tech/" },
 ];
 
-// Editorial section header - Exhibition plate register
-const SectionHead = ({
-  n,
-  label,
-  tone = "light",
-}: {
-  n: string;
-  label: string;
-  tone?: "light" | "dark";
-}) => (
-  <div className={`mb-10 md:mb-14 ${tone === "dark" ? "text-background" : "text-foreground"}`}>
-    <div className="flex items-baseline gap-4 md:gap-6">
-      <span className="chapter-numeral">{n}</span>
-      <span className={`h-px flex-1 ${tone === "dark" ? "bg-background/20" : "bg-foreground/15"}`} />
-      <span
-        className={`text-[10px] uppercase tracking-[0.24em] font-medium ${
-          tone === "dark" ? "text-background/60" : "text-foreground/60"
-        }`}
-      >
-        Chapter · {label}
-      </span>
-    </div>
-  </div>
-);
-
-// Main services with internal links (local SEO power block)
 const services = [
-  { n: "01", label: "Website Design", desc: "Mobile-first, fast-loading marketing sites built for Newcastle businesses.", href: "/services/web-design" },
-  { n: "02", label: "Web Development", desc: "Custom builds, web apps and integrations - clean code, real performance.", href: "/services/web-development" },
-  { n: "03", label: "Local SEO", desc: "Rank in Newcastle, Madadeni and across KZN. Schema, GBP, town pages.", href: "/services/local-seo" },
-  { n: "04", label: "E-commerce Websites", desc: "Online stores with Payfast, Yoco and Stripe - built to sell.", href: "/services/ecommerce" },
-  { n: "05", label: "Booking Websites", desc: "Calendar bookings, WhatsApp enquiries and deposits - done right.", href: "/services/booking-websites" },
-  { n: "06", label: "School Websites", desc: "Professional, parent-friendly sites for KZN schools and colleges.", href: "/services/school-websites" },
-  { n: "07", label: "NGO Websites", desc: "Donation-ready, story-led sites for non-profits and community groups.", href: "/services/ngo-websites" },
-  { n: "08", label: "Website Redesigns", desc: "Rebuild your old site faster, cleaner and ready to rank.", href: "/services/website-redesign" },
+  { n: "01", label: "Website Design", desc: "Mobile-first, fast-loading marketing sites built for Newcastle businesses.", href: "/services/web-design", tone: "accent" },
+  { n: "02", label: "Web Development", desc: "Custom builds, web apps and integrations. Clean code, real performance.", href: "/services/web-development", tone: "counter" },
+  { n: "03", label: "Local SEO", desc: "Rank in Newcastle, Madadeni and across KZN. Schema, GBP, town pages.", href: "/services/local-seo", tone: "accent" },
+  { n: "04", label: "E-commerce", desc: "Online stores with Payfast, Yoco and Stripe. Built to sell.", href: "/services/ecommerce", tone: "counter" },
+  { n: "05", label: "Booking Websites", desc: "Calendar bookings, WhatsApp enquiries and deposits, done right.", href: "/services/booking-websites", tone: "accent" },
+  { n: "06", label: "School Websites", desc: "Professional, parent-friendly sites for KZN schools and colleges.", href: "/services/school-websites", tone: "counter" },
+  { n: "07", label: "NGO Websites", desc: "Donation-ready, story-led sites for non-profits and community groups.", href: "/services/ngo-websites", tone: "accent" },
+  { n: "08", label: "Redesigns", desc: "Rebuild your old site faster, cleaner and ready to rank.", href: "/services/website-redesign", tone: "counter" },
 ];
 
-// Why choose
-const whyUs = [
-  { t: "Newcastle-based, KZN-focused", d: "We live here. We know how local customers search, buy and message." },
-  { t: "Built to rank on Google", d: "Local SEO, schema and clean code shipped on every site by default." },
-  { t: "WhatsApp-first communication", d: "Quick voice notes, fast approvals. No long email chains, no stalled projects." },
-  { t: "Fixed pricing, no surprises", d: "Clear quotes. Clear timelines. You always know what you're paying for." },
+const process = [
+  { n: "01", t: "Discovery", d: "Short WhatsApp or call to understand your business, goals and customers." },
+  { n: "02", t: "Design", d: "Clean, on-brand, mobile-first. You approve every screen." },
+  { n: "03", t: "Build", d: "Production code, fast load, local SEO and schema from day one." },
+  { n: "04", t: "Launch", d: "Domain, testing, handover of every login." },
+  { n: "05", t: "Support", d: "Ongoing updates and maintenance, all via WhatsApp." },
 ];
 
-// Areas (featured) - Newcastle first, then KZN towns + district link.
-// Hrefs use the SEO-friendly /web-design-* slugs.
 const featuredAreas = [
-  { name: "Newcastle", href: "/web-design-newcastle-kzn", district: "Amajuba" },
-  { name: "Madadeni", href: "/web-design-madadeni", district: "Amajuba" },
-  { name: "Osizweni", href: "/web-design-osizweni", district: "Amajuba" },
-  { name: "Dundee", href: "/web-design-dundee-kzn", district: "uMzinyathi" },
-  { name: "Utrecht", href: "/web-design-utrecht-kzn", district: "Amajuba" },
-  { name: "Ladysmith", href: "/web-design-ladysmith-kzn", district: "uThukela" },
-  { name: "Amajuba District", href: "/web-design-amajuba-district", district: "KZN" },
+  { name: "Newcastle", href: "/web-design-newcastle-kzn" },
+  { name: "Madadeni", href: "/web-design-madadeni" },
+  { name: "Osizweni", href: "/web-design-osizweni" },
+  { name: "Dundee", href: "/web-design-dundee-kzn" },
+  { name: "Utrecht", href: "/web-design-utrecht-kzn" },
+  { name: "Ladysmith", href: "/web-design-ladysmith-kzn" },
+  { name: "Amajuba District", href: "/web-design-amajuba-district" },
 ];
 
 const Index = () => {
@@ -107,7 +67,7 @@ const Index = () => {
         title="Web Design Newcastle KZN | Ntombii Tech"
         description="Web design Newcastle KZN. Mobile-first websites for businesses, schools, NGOs and events across Newcastle, Amajuba and KwaZulu-Natal."
         path="/"
-        keywords="web design Newcastle KZN, website design Newcastle, web designer Newcastle KZN, website design KZN, web developer Newcastle KZN, website design for schools KZN, website design for NGOs KZN, website design for security companies KZN, local SEO Newcastle KZN"
+        keywords="web design Newcastle KZN, website design Newcastle, web designer Newcastle KZN, website design KZN, local SEO Newcastle KZN"
         schemas={[
           localBusinessSchema(),
           websiteSchema(),
@@ -119,71 +79,48 @@ const Index = () => {
       <CustomCursor />
       <ScrollProgress />
 
-      {/* ═══════════════ (00) HERO ═══════════════ */}
-      <section className="relative noise vignette overflow-hidden border-b border-foreground/15">
-        <AuroraMesh />
-        <div
-          aria-hidden
-          className="absolute inset-0 -z-10"
-          style={{ background: "var(--gradient-warm), var(--gradient-hero)" }}
-        />
+      <div className="max-w-7xl mx-auto px-6 py-16 md:py-24 lg:py-28">
 
-        <div className="container-wide pt-8 md:pt-14 pb-12 md:pb-20">
-          <div className="mb-8 md:mb-12 meta-strip">
-            <span className="hidden md:inline">Studio · Est. 2024 · Newcastle KZN</span>
-            <span className="inline-flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-counter animate-pulse" />
-              Open for new work
-            </span>
+        {/* ═══════════════ HERO — Asymmetric Editorial (7/5) ═══════════════ */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-end mb-24 md:mb-40">
+          <div className="lg:col-span-7">
+            <Reveal>
+              <div className="inline-block bg-foreground text-background px-4 py-1.5 mb-8 font-display tracking-tight uppercase text-xs">
+                Newcastle · KZN
+              </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.88] tracking-tight">
+                Web Design in{" "}
+                <span className="text-accent">Newcastle</span>
+                <span className="text-accent">.</span>
+                <br />
+                Websites That{" "}
+                <span className="italic font-normal">Bring&nbsp;Calls</span>
+                <span className="text-counter">.</span>
+              </h1>
+            </Reveal>
           </div>
-
-          <div className="grid grid-cols-12 gap-6 md:gap-10 items-center">
-            {/* Headline column */}
-            <div className="col-span-12 lg:col-span-8 order-2 lg:order-1">
-              <Reveal>
-                <h1 className="display-mega leading-[0.9] max-w-[16ch]">
-                  <span className="block">
-                    Web Design in{" "}
-                    <span className="text-accent">Newcastle, KZN</span>
-                  </span>
-                  <span className="block mt-2 md:mt-3">
-                    Websites That Help Local Businesses{" "}
-                    <span className="serif font-normal text-counter">Get More Calls.</span>
-                  </span>
-                </h1>
-              </Reveal>
+          <Reveal delay={160} className="lg:col-span-5 pb-2">
+            <p className="text-xl md:text-2xl font-medium leading-snug mb-8 text-foreground/90">
+              Ntombii Tech builds fast, professional websites for businesses,
+              schools, NGOs and events across Newcastle, the Amajuba District
+              and KwaZulu-Natal.
+            </p>
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-[3px] bg-counter" />
+              <span className="uppercase font-display font-bold tracking-widest text-xs">
+                Web Design Studio · Est. 2024
+              </span>
             </div>
-
-            {/* Sculptural centerpiece — mobile: top, desktop: right */}
-            <Reveal delay={100} className="col-span-12 lg:col-span-4 order-1 lg:order-2">
-              <SculpturalHero />
-            </Reveal>
-          </div>
-
-          <div className="mt-10 md:mt-14 grid grid-cols-12 gap-6 md:gap-10 items-end">
-            <Reveal delay={120} className="col-span-12 md:col-span-7">
-              <p className="text-lg md:text-xl text-foreground/80 leading-snug max-w-2xl">
-                Ntombii Tech builds fast, professional websites for businesses,
-                schools, NGOs, churches, events and local brands in Newcastle,
-                the Amajuba District and across KwaZulu-Natal.
-              </p>
-            </Reveal>
-            <Reveal delay={180} className="col-span-12 md:col-span-5 md:col-start-8 flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3">
               <MagneticButton>
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center gap-2 bg-foreground text-background px-6 py-3.5 text-sm font-medium hover:bg-accent transition"
+                  className="group inline-flex items-center gap-2 bg-foreground text-background px-6 py-4 text-sm font-bold uppercase tracking-wider hover:bg-accent transition"
                 >
-                  Get a Website Quote
+                  Get a Quote
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                </Link>
-              </MagneticButton>
-              <MagneticButton>
-                <Link
-                  to="/work"
-                  className="inline-flex items-center gap-2 border border-foreground/40 px-6 py-3.5 text-sm font-medium hover:border-foreground transition"
-                >
-                  View Our Work
                 </Link>
               </MagneticButton>
               <MagneticButton>
@@ -191,630 +128,411 @@ const Index = () => {
                   href={`https://wa.me/${SITE.whatsapp}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 bg-counter text-counter-foreground px-6 py-3.5 text-sm font-medium hover:opacity-90 transition"
+                  className="inline-flex items-center gap-2 bg-counter text-counter-foreground px-6 py-4 text-sm font-bold uppercase tracking-wider hover:opacity-90 transition"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  WhatsApp Us
+                  WhatsApp
                 </a>
               </MagneticButton>
-            </Reveal>
-
-          </div>
-
-          <Reveal delay={240}>
-            <p className="mt-10 md:mt-14 mono-label text-foreground/70 flex items-center gap-3 flex-wrap">
-              <MapPin className="h-3.5 w-3.5 text-accent" aria-hidden />
-              Newcastle Born <span className="text-foreground/30">//</span> KZN Roots
-              <span className="text-foreground/30">//</span> Built for Local Businesses
-            </p>
+            </div>
           </Reveal>
-        </div>
+        </section>
 
-        {/* SEO marquee - towns we serve */}
-        <div className="border-t border-foreground/15 overflow-hidden marquee-pause bg-foreground text-background">
-          <div className="marquee flex w-max items-center py-4 mono-label">
-            {[...Array(2)].map((_, dup) => (
-              <div key={dup} className="flex items-center" aria-hidden={dup === 1}>
-                {LOCATIONS.slice(0, 12).map((loc) => (
-                  <span key={`${dup}-${loc.slug}`} className="flex items-center">
-                    <span className="px-6">Web design in {loc.name}</span>
-                    <span className="h-1 w-1 rounded-full bg-accent" />
-                  </span>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════ (01) TRUSTED ACROSS KZN ═══════════════ */}
-      <section className="border-b border-foreground/15 bg-secondary">
-        <div className="container-wide py-16 md:py-20">
-          <div className="mb-6 flex items-center justify-between">
-            <span className="mono-label text-muted-foreground">(01) Trusted across KZN</span>
-            <span className="hidden md:block mono-label text-muted-foreground">
-              Schools · NGOs · Security · Community · Events
+        {/* ═══════════════ TRUSTED — Minimal Ink Strip ═══════════════ */}
+        <section className="border-y border-foreground/15 py-8 md:py-10 mb-24 md:mb-40">
+          <div className="flex items-center justify-between gap-6 mb-6">
+            <span className="uppercase font-display font-bold tracking-widest text-xs text-foreground/60">
+              Trusted across KZN
+            </span>
+            <span className="hidden md:inline-block h-px flex-1 bg-foreground/15" />
+            <span className="uppercase font-display font-bold tracking-widest text-xs text-foreground/40">
+              6 partners · 2024–2026
             </span>
           </div>
-          <Reveal>
-            <h2 className="display text-2xl md:text-4xl max-w-3xl">
-              Trusted by local businesses, schools, NGOs and{" "}
-              <span className="serif font-normal text-accent">community brands</span> across KZN.
-            </h2>
-          </Reveal>
-
-          <ul className="mt-10 md:mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-foreground/15 border border-foreground/15">
+          <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-6">
             {trustedClients.map((c, i) => (
-              <Reveal key={c.name} delay={i * 60}>
-                <li className="bg-background h-full">
-                  <a
-                    href={c.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Visit ${c.name} website (opens in new tab)`}
-                    className="group relative h-full p-5 md:p-6 flex flex-col items-center justify-center text-center min-h-[160px] hover:bg-secondary/40 transition-colors"
-                  >
-                    <ArrowUpRight
-                      className="absolute top-3 right-3 h-3.5 w-3.5 text-muted-foreground/50 group-hover:text-accent group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition"
-                      aria-hidden
+              <Reveal key={c.name} delay={i * 40}>
+                <a
+                  href={c.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity"
+                  aria-label={`Visit ${c.name}`}
+                >
+                  {c.logo ? (
+                    <img
+                      src={c.logo}
+                      alt={c.name}
+                      loading="lazy"
+                      className="h-10 md:h-12 w-auto max-w-[120px] object-contain"
                     />
-                    {c.logo ? (
-                      <img
-                        src={c.logo}
-                        alt={`${c.name} logo`}
-                        loading="lazy"
-                        className="h-12 md:h-14 w-auto max-w-[140px] object-contain opacity-80 group-hover:opacity-100 transition-opacity"
-                      />
-                    ) : (
-                      <span className="display text-base md:text-lg leading-tight">{c.name}</span>
-                    )}
-                    <p className="mt-4 text-[11px] md:text-xs text-muted-foreground leading-relaxed">
-                      {c.note}
-                    </p>
-                  </a>
-                </li>
-              </Reveal>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* ═══════════════ (02) SERVICES ═══════════════ */}
-      <section className="container-wide py-20 md:py-28">
-        <SectionHead n="02" label="Services - what we build" />
-        <Reveal>
-          <h2 className="display-xl max-w-4xl mb-12 md:mb-16">
-            Websites that <span className="serif font-normal text-accent">work for Newcastle</span> - and the businesses building it.
-          </h2>
-        </Reveal>
-
-        <div className="border-t border-foreground/15">
-          {services.map((row, i) => (
-            <Reveal key={row.label} delay={i * 30}>
-              <Link
-                to={row.href}
-                className="group grid grid-cols-12 gap-4 items-baseline py-6 md:py-7 border-b border-foreground/15 hover:bg-foreground hover:text-background transition-colors px-2 -mx-2"
-              >
-                <span className="col-span-2 md:col-span-1 mono-label tabular-nums opacity-60">
-                  {row.n}
-                </span>
-                <h3 className="col-span-10 md:col-span-4 display text-xl md:text-3xl lg:text-4xl">
-                  {row.label}
-                </h3>
-                <p className="col-span-12 md:col-span-6 text-sm md:text-base opacity-80 md:pl-6">
-                  {row.desc}
-                </p>
-                <ArrowUpRight className="hidden md:block col-span-1 h-5 w-5 ml-auto opacity-60 group-hover:opacity-100 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* ═══════════════ (03) WHY CHOOSE ═══════════════ */}
-      <section className="border-y border-foreground/15 bg-foreground text-background">
-        <div className="container-wide py-20 md:py-28">
-          <SectionHead n="03" label="Why Ntombii Tech" tone="dark" />
-          <Reveal>
-            <h2 className="display-xl max-w-4xl mb-12 md:mb-16">
-              Local. Fast. <span className="serif font-normal text-accent">Built to convert.</span>
-            </h2>
-          </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-background/10 border border-background/10">
-            {whyUs.map((w, i) => (
-              <Reveal
-                key={w.t}
-                delay={i * 60}
-                className="bg-foreground p-6 md:p-8"
-              >
-                <span className="mono-label text-accent tabular-nums">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="display mt-6 md:mt-10 text-xl md:text-2xl">{w.t}</h3>
-                <p className="mt-3 text-sm text-background/70 leading-relaxed">{w.d}</p>
+                  ) : (
+                    <span className="font-display font-bold text-lg">{c.name}</span>
+                  )}
+                </a>
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Editorial interlude - pull quote */}
-      <section className="border-b border-foreground/15 bg-background">
-        <div className="container-tight py-24 md:py-36 text-center">
-          <span className="exhibition-eyebrow justify-center">Marginalia</span>
-          <blockquote className="pull-quote mt-8 max-w-4xl mx-auto">
-            "A website is a promise. We keep ours <span className="text-accent">fast, honest,</span> and shipped on time."
-          </blockquote>
-          <div className="mt-8 mx-auto w-16 rule-accent" />
-          <p className="mt-6 text-xs uppercase tracking-[0.22em] text-foreground/50">Ntombii Tech · Newcastle KZN</p>
-        </div>
-      </section>
-
-      {/* ═══════════════ (04) FEATURED WORK ═══════════════ */}
-      <section className="container-wide py-20 md:py-28">
-        <SectionHead n="04" label="Featured work - 2024–2026" />
-        <Reveal>
-          <h2 className="display-xl max-w-4xl mb-12 md:mb-16">
-            Real websites for <span className="serif font-normal text-accent">real KZN brands.</span>
-          </h2>
-        </Reveal>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-foreground/15 border border-foreground/15">
-          {SITE.projects.map((p, i) => {
-            const liveHost = (() => {
-              try { return new URL(p.href).host.replace(/^www\./, ""); } catch { return ""; }
-            })();
-            const inner = (
-              <div className="group block paper p-5 md:p-6 h-full transition-shadow duration-500 hover:shadow-[var(--shadow-lift)]">
-                <div className="overflow-hidden border border-foreground/15 bg-card aspect-[4/3] flex items-center justify-center">
-                  {p.image ? (
-                    <img
-                      src={p.image}
-                      alt={`${p.title} - Ntombii Tech project`}
-                      loading="lazy"
-                      width={640}
-                      height={480}
-                      className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center p-6 text-center bg-secondary">
-                      <span className="display text-lg md:text-xl text-foreground/80">
-                        {p.title}
-                      </span>
-                    </div>
-                  )}
-                </div>
-                <div className="mt-5 flex items-start justify-between gap-3">
-                  <div className="min-w-0">
-                    <p className="mono-label text-muted-foreground tabular-nums">
-                      {String(i + 1).padStart(3, "0")}
-                    </p>
-                    <h3 className="display mt-2 text-base md:text-lg">{p.title}</h3>
-                    <p className="text-xs text-muted-foreground mt-1">{p.category}</p>
-                    <p className="text-xs text-muted-foreground mt-1">Newcastle, KZN</p>
-                    {liveHost && (
-                      <p className="text-xs text-accent mt-2 truncate">{liveHost}</p>
-                    )}
-                  </div>
-                  <ArrowUpRight className="h-4 w-4 mt-1 text-muted-foreground group-hover:text-accent group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition shrink-0" />
-                </div>
-              </div>
-            );
-            return (
-              <Reveal key={p.slug} delay={i * 50}>
-                <TiltCard className="h-full">
-                  <Link to={`/work/${p.slug}`} className="block h-full">{inner}</Link>
-                </TiltCard>
-              </Reveal>
-            );
-
-          })}
-        </div>
-
-        <div className="mt-10 flex justify-end">
-          <Link to="/work" className="inline-flex items-center gap-2 mono-label hover:text-accent transition">
-            See all work
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
-      </section>
-
-      {/* ═══════════════ Kinetic type band ═══════════════ */}
-      <section aria-hidden className="relative border-y border-foreground/15 bg-foreground text-background overflow-hidden">
-        <KineticMarquee
-          words={["Websites", "SEO", "Brand", "Newcastle", "KZN", "Speed", "Ranked"]}
-          speed={38}
-        />
-      </section>
-
-
-
-      {/* ═══════════════ (05) AREAS SERVED ═══════════════ */}
-      <section className="container-wide py-20 md:py-28 border-t border-foreground/15">
-        <SectionHead n="05" label="Areas served - KwaZulu-Natal" />
-
-        <div className="grid grid-cols-12 gap-6 md:gap-10 mb-12 md:mb-16">
-          <Reveal className="col-span-12 md:col-span-7">
-            <h2 className="display-xl">
-              From Newcastle <span className="serif font-normal text-accent">outward.</span>
+        {/* ═══════════════ SERVICES — Sticky Split (4/8) ═══════════════ */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-24 md:mb-40">
+          <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit">
+            <span className="uppercase font-display font-bold tracking-widest text-xs text-foreground/50 block mb-4">
+              01 · Services
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold italic mb-6 leading-[0.95]">
+              What we build.
             </h2>
-          </Reveal>
-          <Reveal delay={80} className="col-span-12 md:col-span-5 md:col-start-8">
-            <p className="text-foreground/75 leading-relaxed">
-              We're based in Newcastle and build websites for businesses across
-              the Amajuba District, uMzinyathi, uThukela, Zululand and the wider
-              KZN. Every project ships with town-targeted local SEO.
+            <p className="text-foreground/60 max-w-xs">
+              Eight things we ship for Newcastle businesses. Every website
+              launches with local SEO and clean code by default.
             </p>
-          </Reveal>
-        </div>
-
-        <ul className="grid grid-cols-2 md:grid-cols-4 gap-px bg-foreground/15 border border-foreground/15">
-          {featuredAreas.map((loc, i) => (
-            <li key={loc.name}>
-              <Link
-                to={loc.href}
-                className="group block bg-background p-6 md:p-8 h-full hover:bg-foreground hover:text-background transition-colors"
-              >
-                <div className="flex items-start justify-between">
-                  <span className="mono-label tabular-nums opacity-60">
-                    {String(i + 1).padStart(2, "0")}
+            <div className="mt-10 space-y-2">
+              <div className="w-full h-1 bg-accent" />
+              <div className="w-2/3 h-1 bg-counter" />
+            </div>
+          </div>
+          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-px bg-foreground/15 border border-foreground/15">
+            {services.map((s, i) => (
+              <Reveal key={s.label} delay={i * 40}>
+                <Link
+                  to={s.href}
+                  className="group bg-background hover:bg-foreground hover:text-background transition-colors p-8 md:p-10 h-full block"
+                >
+                  <span className={`font-display font-bold text-sm ${s.tone === "accent" ? "text-accent" : "text-counter"} group-hover:text-background`}>
+                    {s.n}
                   </span>
-                  <ArrowUpRight className="h-4 w-4 opacity-60 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition" />
-                </div>
-                <h3 className="display mt-8 md:mt-12 text-xl md:text-2xl">
-                  Web design in {loc.name}
+                  <h3 className="font-display text-xl md:text-2xl font-bold mt-4 mb-3 uppercase tracking-tight">
+                    {s.label}
+                  </h3>
+                  <p className="text-sm opacity-70 group-hover:opacity-90 leading-relaxed">
+                    {s.desc}
+                  </p>
+                  <ArrowUpRight className="h-4 w-4 mt-6 opacity-40 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition" />
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        {/* ═══════════════ FEATURED WORK — Magazine Layout (8/4 offset) ═══════════════ */}
+        <section className="mb-24 md:mb-40">
+          <div className="flex justify-between items-end mb-12 md:mb-16">
+            <div>
+              <span className="uppercase font-display font-bold tracking-widest text-xs text-foreground/50 block mb-4">
+                02 · Portfolio
+              </span>
+              <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.9] tracking-tight">
+                Featured<br />Cases<span className="text-counter">.</span>
+              </h2>
+            </div>
+            <div className="text-right hidden md:block">
+              <div className="text-xs font-bold uppercase tracking-widest mb-2 text-counter">
+                {SITE.projects.length} projects
+              </div>
+              <div className="h-px w-20 bg-foreground ml-auto" />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Large featured project */}
+            {SITE.projects[0] && (
+              <Reveal className="lg:col-span-8">
+                <Link
+                  to={`/work/${SITE.projects[0].slug}`}
+                  className="group block"
+                >
+                  <div className="aspect-video bg-foreground relative overflow-hidden">
+                    {SITE.projects[0].image && (
+                      <img
+                        src={SITE.projects[0].image}
+                        alt={SITE.projects[0].title}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                        loading="lazy"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-accent/20 group-hover:bg-transparent transition-colors duration-500" />
+                    <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 text-background">
+                      <p className="font-display text-xs uppercase tracking-widest mb-2 bg-background/20 backdrop-blur-sm inline-block px-2.5 py-1">
+                        {SITE.projects[0].category}
+                      </p>
+                      <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight">
+                        {SITE.projects[0].title}
+                      </h3>
+                    </div>
+                  </div>
+                </Link>
+              </Reveal>
+            )}
+            {/* Offset promo tile */}
+            <Reveal delay={120} className="lg:col-span-4 lg:mt-32">
+              <div className="aspect-square bg-accent p-8 md:p-10 flex flex-col justify-between text-background">
+                <h3 className="font-display text-2xl md:text-3xl font-bold leading-[1.05]">
+                  See how we build websites that get calls.
                 </h3>
-                <p className="mt-2 text-xs opacity-60">{loc.district} District</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                <Link
+                  to="/work"
+                  className="inline-flex items-center gap-3 border-2 border-background text-background py-3 px-5 font-bold uppercase text-xs tracking-widest hover:bg-background hover:text-accent transition self-start"
+                >
+                  View Gallery
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </Reveal>
+          </div>
 
-        <div className="mt-10 flex justify-end">
-          <Link to="/areas" className="inline-flex items-center gap-2 mono-label hover:text-accent transition">
-            All {LOCATIONS.length} areas
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
-      </section>
+          {/* Secondary projects row */}
+          {SITE.projects.length > 1 && (
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
+              {SITE.projects.slice(1, 4).map((p, i) => (
+                <Reveal key={p.slug} delay={i * 60}>
+                  <Link to={`/work/${p.slug}`} className="group block">
+                    <div className="aspect-[4/3] bg-foreground/10 overflow-hidden mb-4">
+                      {p.image && (
+                        <img
+                          src={p.image}
+                          alt={p.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                          loading="lazy"
+                        />
+                      )}
+                    </div>
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <p className="font-display text-[10px] uppercase tracking-widest text-foreground/50 mb-1">
+                          {p.category}
+                        </p>
+                        <h4 className="font-display font-bold text-lg leading-tight">{p.title}</h4>
+                      </div>
+                      <ArrowUpRight className="h-4 w-4 opacity-40 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition shrink-0 mt-1" />
+                    </div>
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
+          )}
+        </section>
 
-      {/* ═══════════════ (05b) LOCAL SEO ═══════════════ */}
-      <section className="container-wide py-20 md:py-28 border-t border-foreground/15 bg-secondary -mx-[max(1rem,calc((100vw-80rem)/2))] px-[max(1rem,calc((100vw-80rem)/2))]">
-        <SectionHead n="5b" label="Local SEO - get found on Google" />
-        <div className="grid grid-cols-12 gap-6 md:gap-10">
-          <Reveal className="col-span-12 md:col-span-6">
-            <h2 className="display-xl">
-              Get Found on Google -{" "}
-              <span className="serif font-normal text-accent">Local SEO</span> for Newcastle Businesses.
+        {/* ═══════════════ PROCESS — Offset Step Grid (staircase) ═══════════════ */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24 md:mb-40">
+          <div className="lg:col-span-4">
+            <span className="uppercase font-display font-bold tracking-widest text-xs text-foreground/50 block mb-4">
+              03 · Method
+            </span>
+            <h2 className="font-display text-5xl md:text-6xl font-bold leading-[0.9] tracking-tight">
+              Our<br />Process<span className="text-accent">.</span>
             </h2>
-          </Reveal>
-          <Reveal delay={80} className="col-span-12 md:col-span-6">
-            <p className="text-foreground/80 leading-relaxed text-lg">
-              Ntombii Tech helps Newcastle and KZN businesses show up on
-              Google Search and Google Maps - so the right customers find you
-              when they search for what you do.
+            <p className="mt-6 text-foreground/60 max-w-xs">
+              From first WhatsApp to a live website, in days not months.
             </p>
-            <p className="mt-4 text-foreground/70 leading-relaxed">
-              We handle the technical bits in plain language: website SEO,
-              Google Business Profile setup, review support, schema markup,
-              town-targeted local pages, and monthly updates to keep your
-              listing fresh.
-            </p>
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-              {[
-                "Website SEO + clean code",
-                "Google Business Profile setup",
-                "Review collection support",
-                "Schema markup (LocalBusiness)",
-                "Town-targeted local pages",
-                "Monthly SEO updates",
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-2.5">
-                  <Check className="h-4 w-4 mt-0.5 text-accent shrink-0" />
-                  <span className="text-foreground/80">{item}</span>
+          </div>
+          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {process.slice(0, 3).map((p, i) => (
+              <Reveal
+                key={p.n}
+                delay={i * 60}
+                className={`${i === 1 ? "lg:mt-16" : ""} ${i === 2 ? "lg:mt-32" : ""}`}
+              >
+                <div className="border-t-2 border-foreground pt-6">
+                  <span className="block font-display text-3xl md:text-4xl font-light mb-3 tabular-nums">
+                    {p.n}. {p.t}
+                  </span>
+                  <p className="text-sm leading-relaxed text-foreground/70">{p.d}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          {/* Steps 4 and 5 as secondary row */}
+          <div className="lg:col-span-8 lg:col-start-5 grid grid-cols-1 md:grid-cols-2 gap-8">
+            {process.slice(3).map((p, i) => (
+              <Reveal key={p.n} delay={i * 60}>
+                <div className="border-t border-foreground/30 pt-6">
+                  <span className="block font-display text-2xl md:text-3xl font-light mb-3 tabular-nums">
+                    {p.n}. {p.t}
+                  </span>
+                  <p className="text-sm leading-relaxed text-foreground/70">{p.d}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        {/* ═══════════════ PRICING & FAQ — Bold High Contrast Split ═══════════════ */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-foreground mb-24 md:mb-40 border border-foreground">
+          {/* Pricing left */}
+          <div className="bg-accent p-8 md:p-12 text-background">
+            <span className="uppercase font-display font-bold tracking-widest text-xs opacity-70 block mb-4">
+              04 · Pricing
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-10 leading-[0.95]">
+              Fixed prices.<br />
+              <span className="italic font-normal">No surprises.</span>
+            </h2>
+            <div className="space-y-6">
+              {SITE.pricing.map((tier) => (
+                <div
+                  key={tier.name}
+                  className="flex justify-between items-end border-b border-background/30 pb-5"
+                >
+                  <div>
+                    <h3 className="text-lg md:text-xl font-bold font-display">{tier.name}</h3>
+                    <p className="text-xs opacity-80 mt-1 max-w-[200px]">
+                      {tier.features?.[0]}
+                    </p>
+                  </div>
+                  <div className="text-2xl md:text-3xl font-display font-bold italic whitespace-nowrap">
+                    From {tier.from}
+                  </div>
                 </div>
               ))}
             </div>
             <Link
-              to="/services/local-seo"
-              className="mt-8 inline-flex items-center gap-2 mono-label hover:text-accent transition"
+              to="/pricing"
+              className="mt-8 inline-flex items-center gap-2 text-xs uppercase font-bold tracking-widest border-b-2 border-background pb-1 hover:text-counter hover:border-counter transition"
             >
-              See local SEO services
-              <ArrowRight className="h-3.5 w-3.5" />
+              See full pricing <ArrowRight className="h-3.5 w-3.5" />
             </Link>
-          </Reveal>
-        </div>
-      </section>
+          </div>
 
-      {/* ═══════════════ (06) PROCESS ═══════════════ */}
-      <section id="process" className="container-wide py-20 md:py-28 border-t border-foreground/15">
-        <SectionHead n="06" label="Process - how we work" />
-        <Reveal>
-          <h2 className="display-xl max-w-3xl mb-12 md:mb-16">
-            From first WhatsApp to <span className="serif font-normal text-accent">live website,</span> in days.
-          </h2>
-        </Reveal>
-        <div className="grid grid-cols-1 md:grid-cols-5 border-t border-foreground/15">
-          {[
-            { n: "01", t: "Discovery", d: "Short WhatsApp or call to understand your business, goals and customers." },
-            { n: "02", t: "Design", d: "We design your site - clean, on-brand, mobile-first. You approve every screen." },
-            { n: "03", t: "Build", d: "Production code, fast load, local SEO and schema built in from day one." },
-            { n: "04", t: "Launch", d: "We connect your domain, test on real devices and hand over all logins." },
-            { n: "05", t: "Support", d: "Ongoing updates, content changes and maintenance - all via WhatsApp." },
-          ].map((p, i) => (
-            <Reveal
-              key={p.n}
-              delay={i * 50}
-              className="border-b md:border-b-0 md:border-r last:md:border-r-0 border-foreground/15 p-6 md:p-8"
+          {/* FAQ right */}
+          <div className="bg-background p-8 md:p-12">
+            <span className="uppercase font-display font-bold tracking-widest text-xs text-foreground/50 block mb-4">
+              05 · FAQ
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-10 leading-[0.95]">
+              Common<br />
+              <span className="italic font-normal text-accent">questions.</span>
+            </h2>
+            <div className="space-y-4">
+              {SITE.faqs.slice(0, 6).map((f) => (
+                <details key={f.q} className="group border-b border-foreground/15 pb-4">
+                  <summary className="list-none cursor-pointer flex justify-between items-start gap-4 font-display font-bold text-sm md:text-base">
+                    <span>{f.q}</span>
+                    <Plus className="h-4 w-4 text-counter shrink-0 mt-1 transition-transform group-open:rotate-45" />
+                  </summary>
+                  <p className="text-sm mt-3 text-foreground/70 leading-relaxed pr-8">
+                    {f.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════════ AREAS — Compact Grid ═══════════════ */}
+        <section className="mb-24 md:mb-40">
+          <div className="flex justify-between items-end mb-10">
+            <div>
+              <span className="uppercase font-display font-bold tracking-widest text-xs text-foreground/50 block mb-4">
+                06 · Coverage
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-bold leading-[0.95] tracking-tight">
+                From Newcastle{" "}
+                <span className="italic font-normal">outward.</span>
+              </h2>
+            </div>
+            <Link
+              to="/areas"
+              className="hidden md:inline-flex items-center gap-2 text-xs uppercase font-bold tracking-widest hover:text-accent transition"
             >
-              <span className="mono-label tabular-nums text-accent">{p.n}</span>
-              <h3 className="display mt-6 md:mt-10 text-xl md:text-2xl">{p.t}</h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.d}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* ═══════════════ (07) REVIEWS ═══════════════ */}
-      <section className="border-t border-foreground/15 bg-secondary">
-        <div className="container-wide py-20 md:py-28">
-          <SectionHead n="07" label="Reviews - what clients say" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-foreground/15 border border-foreground/15">
-            {SITE.testimonials.map((t, i) => (
-              <Reveal
-                key={t.name}
-                delay={i * 60}
-                className="bg-background p-6 md:p-8 flex flex-col"
+              All {LOCATIONS.length} areas <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-px bg-foreground/15 border border-foreground/15">
+            {featuredAreas.map((loc) => (
+              <Link
+                key={loc.name}
+                to={loc.href}
+                className="group bg-background p-5 md:p-6 hover:bg-foreground hover:text-background transition-colors"
               >
-                <span className="mono-label tabular-nums text-accent">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="mt-6 text-base md:text-lg text-foreground/85 leading-relaxed">
-                  "{t.quote}"
-                </p>
-                <div className="mt-auto pt-8">
-                  <p className="text-sm font-medium">{t.name}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{t.role}</p>
-                </div>
-              </Reveal>
+                <ArrowUpRight className="h-3.5 w-3.5 opacity-40 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition mb-6" />
+                <h3 className="font-display font-bold text-base md:text-lg leading-tight">
+                  {loc.name}
+                </h3>
+              </Link>
             ))}
           </div>
+        </section>
 
-          <Reveal delay={120}>
-            <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-foreground/15 pt-8">
-              <p className="text-sm text-muted-foreground max-w-xl">
-                Worked with us? Help other Newcastle businesses find us - leave a quick Google review.
-              </p>
-              <a
-                href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent("Hi Ntombii Tech - I'd like to leave a review.")}`}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 border border-foreground/40 px-5 py-3 text-sm font-medium hover:border-foreground hover:bg-foreground hover:text-background transition"
-              >
-                Leave a Review
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ═══════════════ (08) FAQ ═══════════════ */}
-      <section className="container-wide py-20 md:py-28 border-t border-foreground/15">
-        <SectionHead n="08" label="FAQ - common questions" />
-        <div className="grid grid-cols-12 gap-6 md:gap-10">
-          <Reveal className="col-span-12 md:col-span-5">
-            <h2 className="display-xl">
-              Answers <span className="serif font-normal text-accent">before</span> you ask.
-            </h2>
-            <p className="mt-6 text-foreground/75 leading-relaxed max-w-md">
-              Still unsure? Send us a WhatsApp - we reply within a few hours
-              during the day.
-            </p>
-            <a
-              href={`https://wa.me/${SITE.whatsapp}`}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-2 mono-label hover:text-accent transition"
-            >
-              Ask on WhatsApp
-              <ArrowRight className="h-3.5 w-3.5" />
-            </a>
-          </Reveal>
-
-          <div className="col-span-12 md:col-span-7">
-            <Accordion type="single" collapsible className="w-full border-t border-foreground/15">
-              {SITE.faqs.map((f, i) => (
-                <AccordionItem
-                  key={f.q}
-                  value={`item-${i}`}
-                  className="border-b border-foreground/15"
-                >
-                  <AccordionTrigger className="text-left text-base md:text-lg display py-5 md:py-6">
-                    <span className="flex items-baseline gap-4">
-                      <span className="mono-label tabular-nums text-muted-foreground shrink-0">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span>{f.q}</span>
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent className="text-foreground/75 leading-relaxed pl-10 pb-6 text-sm md:text-base">
-                    {f.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════ (09) PRICING ═══════════════ */}
-      <section className="container-wide py-20 md:py-28 border-t border-foreground/15">
-        <SectionHead n="09" label="Pricing - fixed, no surprises" />
-        <Reveal>
-          <h2 className="display-xl max-w-4xl mb-12 md:mb-16">
-            Clear packages. <span className="serif font-normal text-accent">Honest prices.</span>
-          </h2>
-        </Reveal>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-foreground/15 border border-foreground/15">
-          {SITE.pricing.map((tier, i) => (
-            <Reveal key={tier.name} delay={i * 70}>
-              <TiltCard
-                max={5}
-                className={`paper p-6 md:p-8 flex flex-col h-full relative ${tier.popular ? "ring-2 ring-counter ring-inset shadow-[var(--shadow-lift)]" : ""}`}
-              >
-                {tier.popular && (
-                  <span className="absolute -top-3 left-4 bg-counter text-counter-foreground px-2.5 py-1 mono-label">Most picked</span>
-                )}
-                <span className="mono-label tabular-nums text-muted-foreground">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="display mt-6 text-2xl md:text-3xl">{tier.name}</h3>
-                <div className="mt-4 flex items-baseline gap-3">
-                  <span className="display text-3xl md:text-4xl">From {tier.from}</span>
-                  {tier.original && (
-                    <span className="mono-label text-muted-foreground line-through">{tier.original}</span>
-                  )}
-                </div>
-                <ul className="mt-8 space-y-3 text-sm">
-                  {tier.features.slice(0, 4).map((f) => (
-                    <li key={f} className="flex items-start gap-2.5">
-                      <Check className="h-4 w-4 mt-0.5 text-accent shrink-0" />
-                      <span className="text-foreground/80">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <MagneticButton className="mt-10">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center justify-center gap-2 border border-foreground/40 px-5 py-3 text-sm font-medium hover:bg-foreground hover:text-background transition"
-                  >
-                    Get this package
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </MagneticButton>
-              </TiltCard>
-            </Reveal>
-          ))}
-
-        </div>
-
-        <div className="mt-10 flex justify-end">
-          <Link to="/pricing" className="inline-flex items-center gap-2 mono-label hover:text-accent transition">
-            See full pricing
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
-      </section>
-
-      {/* ═══════════════ (10) FOUNDER PREVIEW ═══════════════ */}
-      <section className="container-wide py-20 md:py-28 border-t border-foreground/15">
-        <SectionHead n="10" label="Founder - meet the Technoking" />
-        <div className="grid grid-cols-12 gap-8 md:gap-14 items-center">
-          <Reveal className="col-span-12 md:col-span-5">
-            <TiltCard max={6}>
-              <div className="relative tick-corners overflow-hidden sheen border border-foreground/15 bg-card aspect-[4/5] shadow-[var(--shadow-lift)]">
+        {/* ═══════════════ FOUNDER + CTA — 5/7 Split ═══════════════ */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <Reveal className="lg:col-span-5">
+            <div className="relative">
+              <div className="aspect-[4/5] bg-foreground overflow-hidden">
                 <img
                   src={founderImage.url}
                   alt="Sabelo Ndlovu, Technoking and founder of Ntombii Tech"
-                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
                   loading="lazy"
-                  width={800}
-                  height={1000}
                 />
               </div>
-            </TiltCard>
+              <div className="absolute -bottom-6 -right-4 md:-right-6 bg-background border border-foreground/15 p-5 md:p-6 max-w-[240px]">
+                <p className="font-display font-bold text-base">Sabelo Ndlovu</p>
+                <p className="text-[10px] text-foreground/60 uppercase tracking-widest mt-1">
+                  Technoking · Founder
+                </p>
+              </div>
+            </div>
           </Reveal>
-
-          <Reveal delay={120} className="col-span-12 md:col-span-7">
-            <h2 className="display-xl">
-              Sabelo Ndlovu - <span className="serif font-normal text-accent">Technoking.</span>
+          <Reveal delay={120} className="lg:col-span-7">
+            <span className="uppercase font-display font-bold tracking-widest text-xs text-foreground/50 block mb-4">
+              07 · Founder
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[0.92] tracking-tight mb-8">
+              Let's build something{" "}
+              <span className="text-accent">exceptional</span>{" "}
+              <span className="italic font-normal">together.</span>
             </h2>
-            <p className="mt-6 text-lg text-foreground/80 leading-relaxed">
-              Sabelo Ndlovu is the <strong>Technoking</strong> of Ntombii Tech - his own twist on "founder and CEO." Based in Newcastle, KwaZulu-Natal, he builds websites, web apps and digital solutions for businesses and entrepreneurs across the region.
+            <p className="text-lg text-foreground/75 leading-relaxed mb-4 max-w-xl">
+              Sabelo Ndlovu is the <strong>Technoking</strong> of Ntombii Tech,
+              his own twist on founder and CEO. Based in Newcastle, he builds
+              websites, web apps and digital solutions for businesses and
+              entrepreneurs across KZN.
             </p>
-            <p className="mt-4 text-foreground/70 leading-relaxed">
-              Self-taught and AI-native, he leads every project personally - from the first conversation to the final product live.
+            <p className="text-foreground/60 leading-relaxed mb-10 max-w-xl">
+              Self-taught, AI-native, and personally leading every project from
+              first conversation to launch.
             </p>
-            <Link
-              to="/about"
-              className="mt-8 inline-flex items-center gap-2 mono-label hover:text-accent transition"
-            >
-              Read the full story
-              <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ═══════════════ (11) FINAL CTA ═══════════════ */}
-      <section className="border-t border-foreground/15 bg-foreground text-background relative noise overflow-hidden">
-        <div className="container-wide py-24 md:py-36">
-          <SectionHead n="11" label="Start - get a website quote" tone="dark" />
-
-          <Reveal>
-            <h2 className="display-mega max-w-[16ch] text-background">
-              Ready for a website that{" "}
-              <span className="serif font-normal text-accent">brings calls?</span>
-            </h2>
-          </Reveal>
-
-          <div className="mt-12 md:mt-16 grid grid-cols-12 gap-6 md:gap-10 items-end">
-            <Reveal delay={80} className="col-span-12 md:col-span-7">
-              <p className="text-lg md:text-xl text-background/80 max-w-xl leading-snug">
-                Tell us about your business - we'll come back within a day with
-                a clear plan and a fixed quote for your Newcastle or KZN project.
-              </p>
-            </Reveal>
-            <Reveal delay={140} className="col-span-12 md:col-span-5 md:col-start-8 flex flex-wrap gap-3">
+            <div className="flex flex-wrap items-center gap-6">
               <MagneticButton>
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3.5 text-sm font-medium hover:bg-background hover:text-foreground transition"
+                  className="group inline-flex items-center gap-3 bg-foreground text-background px-8 py-5 text-base font-bold uppercase tracking-wider hover:bg-counter hover:text-counter-foreground transition"
                 >
-                  Get a Website Quote
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  Start a Project
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </MagneticButton>
-              <MagneticButton>
-                <a
-                  href={`https://wa.me/${SITE.whatsapp}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 border border-background/40 text-background px-6 py-3.5 text-sm font-medium hover:border-background transition"
-                >
-                  WhatsApp Us
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-2 text-xs uppercase font-bold tracking-widest hover:text-accent transition border-b border-foreground/30 hover:border-accent pb-1"
+              >
+                Read the full story <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+            <div className="mt-14 pt-8 border-t border-foreground/15 grid grid-cols-2 md:grid-cols-3 gap-6 text-xs">
+              <div>
+                <p className="text-foreground/40 uppercase tracking-widest mb-1.5">Email</p>
+                <a href="mailto:hello@ntombii.tech" className="font-display font-bold hover:text-accent transition">
+                  hello@ntombii.tech
                 </a>
-              </MagneticButton>
-            </Reveal>
+              </div>
+              <div>
+                <p className="text-foreground/40 uppercase tracking-widest mb-1.5">WhatsApp</p>
+                <a href={`https://wa.me/${SITE.whatsapp}`} className="font-display font-bold hover:text-accent transition">
+                  {SITE.whatsappDisplay}
+                </a>
+              </div>
+              <div>
+                <p className="text-foreground/40 uppercase tracking-widest mb-1.5">Studio</p>
+                <p className="font-display font-bold">{SITE.location}</p>
+              </div>
+            </div>
+          </Reveal>
+        </section>
 
-          </div>
-
-          <div className="mt-20 md:mt-28 pt-8 border-t border-background/20 grid grid-cols-2 md:grid-cols-4 gap-6 mono-label text-background/60">
-            <div>
-              <p className="text-background/40 mb-2">Email</p>
-              <a href="mailto:hello@ntombii.tech" className="text-background hover:text-accent normal-case tracking-normal">
-                hello@ntombii.tech
-              </a>
-            </div>
-            <div>
-              <p className="text-background/40 mb-2">WhatsApp</p>
-              <a href={`https://wa.me/${SITE.whatsapp}`} className="text-background hover:text-accent normal-case tracking-normal">
-                {SITE.whatsappDisplay}
-              </a>
-            </div>
-            <div>
-              <p className="text-background/40 mb-2">Studio</p>
-              <p className="text-background normal-case tracking-normal">{SITE.location}</p>
-            </div>
-            <div>
-              <p className="text-background/40 mb-2">Hours</p>
-              <p className="text-background normal-case tracking-normal">Mon–Fri · 09–17 SAST</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </>
   );
 };
