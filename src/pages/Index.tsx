@@ -90,11 +90,10 @@ const Index = () => {
               </div>
             </Reveal>
             <Reveal delay={80}>
-              <h1 className="font-display font-bold leading-[0.92] tracking-tight text-[clamp(2.25rem,5.5vw,4.75rem)]">
-                Web Design in{" "}
-                <span className="text-accent">Newcastle, KZN.</span>
-                <br />
-                <span className="block mt-2">
+              <h1 className="font-display font-bold leading-[0.95] tracking-tight text-[clamp(2rem,4.6vw,4rem)]">
+                <span className="block">Web Design in</span>
+                <span className="block text-accent">Newcastle, KZN.</span>
+                <span className="block mt-3">
                   Websites that{" "}
                   <span className="italic font-normal">bring calls</span>
                   <span className="text-counter">.</span>
