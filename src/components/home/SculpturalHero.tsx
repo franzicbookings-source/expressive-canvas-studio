@@ -13,7 +13,7 @@ export const SculpturalHero = ({ className = "" }: { className?: string }) => {
 
   return (
     <div
-      className={`relative aspect-square w-full max-w-[520px] mx-auto ${className}`}
+      className={`relative aspect-square w-full max-w-[280px] md:max-w-[440px] mx-auto ${className}`}
       aria-hidden
     >
       {/* Electric blue disc — slow rotation */}
